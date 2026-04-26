@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Plonker</h1>
+    <span class="version">v0.1.0</span>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><span class="stat-num" id="rounds">\u2014</span><span class="stat-lbl">rounds</span></div>
+    <div class="stat"><span class="stat-num" id="acc">\u2014</span><span class="stat-lbl">country acc</span></div>
+    <div class="stat"><span class="stat-num" id="weak">\u2014</span><span class="stat-lbl">weakest</span></div>
+  </section>
+
+  <section class="actions">
+    <button id="study" disabled title="Coming in v2">Open study mode</button>
+    <button id="dashboard" disabled title="Coming in v2">Dashboard</button>
+  </section>
+
+  <section class="settings">
+    <details>
+      <summary>Settings</summary>
+      <label class="row">
+        <span>No-spoilers mode</span>
+        <input type="checkbox" id="noSpoilers">
+      </label>
+      <label class="row">
+        <span>Lives per study session</span>
+        <input type="number" id="lives" min="1" max="10" value="3">
+      </label>
+      <label class="row">
+        <span>MC options (3-8)</span>
+        <input type="number" id="mcOptions" min="3" max="8" value="4">
+      </label>
+      <label class="row">
+        <span>Show post-round popup</span>
+        <input type="checkbox" id="postRoundEnabled" checked>
+      </label>
+    </details>
+  </section>
+
+  <footer>
+    <a href="https://www.plonkit.net/guide" target="_blank">plonkit</a>
+    <a href="https://learnablemeta.com/maps" target="_blank">learnable meta</a>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

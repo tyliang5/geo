@@ -1,0 +1,83 @@
+:root {
+  --bg: #1f2937;
+  --bg-elev: #111827;
+  --fg: #f3f4f6;
+  --muted: #9ca3af;
+  --accent: #fbbf24;
+  --border: #374151;
+}
+* { box-sizing: border-box; }
+body {
+  width: 320px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Neo Sans', sans-serif;
+  font-size: 13px;
+}
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+header h1 { margin: 0; font-size: 16px; font-weight: 700; }
+header .version { color: var(--muted); font-size: 11px; }
+.stats { display: flex; padding: 10px 14px; gap: 8px; }
+.stat {
+  flex: 1;
+  background: var(--bg-elev);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+.stat-num { display: block; font-size: 18px; font-weight: 700; }
+.stat-lbl { display: block; font-size: 10px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: .5px; }
+.actions { padding: 8px 14px; display: flex; gap: 8px; }
+.actions button {
+  flex: 1;
+  background: var(--accent);
+  color: #111827;
+  border: 0;
+  padding: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.actions button:disabled { background: var(--border); color: var(--muted); cursor: default; }
+.settings { padding: 8px 14px; }
+.settings details summary {
+  cursor: pointer;
+  color: var(--muted);
+  padding: 4px 0;
+  font-size: 12px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+.row input[type="number"] {
+  width: 60px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 4px;
+  border-radius: 4px;
+  text-align: right;
+}
+footer {
+  display: flex;
+  gap: 12px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+}
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 11px;
+}
+footer a:hover { color: var(--fg); }

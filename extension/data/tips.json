@@ -1,0 +1,218 @@
+{
+  "_meta": {
+    "version": "0.1.0-seed",
+    "source": "hand-curated seed; replaced by scraper/build_bundle.py output",
+    "format": "country-iso2 -> { name, plonkit_slug, identify[], key_meta[], vs{} }"
+  },
+  "AU": {
+    "name": "Australia",
+    "plonkit_slug": "australia",
+    "identify": [
+      "Drives on the LEFT.",
+      "White license plates with state name on top (NSW, VIC, QLD, etc.); bottom edge often has yellow trim in NSW.",
+      "Black guardrail posts with white reflectors.",
+      "Eucalyptus trees almost everywhere; reddish/dusty soil in the interior.",
+      "Yellow diamond warning signs (kangaroo, wombat, koala icons inland)."
+    ],
+    "key_meta": ["Yellow kangaroo signs", "State-name license plates"],
+    "vs": { "NZ": "AU has eucalyptus + redder soil; NZ greener with sheep + Maori-language signs." }
+  },
+  "RU": {
+    "name": "Russia",
+    "plonkit_slug": "russia",
+    "identify": [
+      "Cyrillic alphabet, but check for unique RU letters (\u042b, \u042d, \u042a) absent in UA/BY.",
+      "License plates: white plate, black text, blue Russian-flag strip on right with region number.",
+      "Red/white striped bollards along major roads; orange-tipped poles in colder oblasts.",
+      "Birch forests in the European center, taiga and tundra further east.",
+      "Concrete fence panels around villages are extremely common."
+    ],
+    "key_meta": ["Cyrillic letters \u042b/\u042d", "Russian flag plate strip"],
+    "vs": {
+      "BY": "RU has \u042b/\u042d in scripts; BY uses Belarusian Cyrillic with \u040e and white-red-white motifs.",
+      "UA": "UA plates have a yellow strip + UA letters \u0404\u0406\u0407\u0490; RU has the tricolor strip."
+    }
+  },
+  "BY": {
+    "name": "Belarus",
+    "plonkit_slug": "belarus",
+    "identify": [
+      "Cyrillic with the unique letter \u040e (\"u-short\", looks like a y with a breve).",
+      "License plates: white plate with red Belarusian flag strip on left.",
+      "Lots of birch and pine; flatter and tidier than Russia.",
+      "White or red-and-white painted concrete bollards.",
+      "Shorter signpost designs than Russia, often round white km-markers."
+    ],
+    "key_meta": ["\u040e letter", "Red flag strip on plate"],
+    "vs": { "RU": "BY: \u040e letter + red strip; RU: tricolor strip." }
+  },
+  "UA": {
+    "name": "Ukraine",
+    "plonkit_slug": "ukraine",
+    "identify": [
+      "Cyrillic plus unique letters \u0404 \u0406 \u0407 \u0490.",
+      "Plates: white with blue + yellow strip on left.",
+      "Black-and-white striped bollards in many regions.",
+      "Distinct yellow diamond rural-warning signs (Soviet legacy).",
+      "Coverage is older Gen-2 in many areas; pixelation + saturated colors."
+    ],
+    "key_meta": ["Letters \u0404\u0406\u0407\u0490", "Yellow+blue plate strip"],
+    "vs": { "RU": "UA: yellow+blue strip; RU: tricolor strip + \u042b/\u042d." }
+  },
+  "FR": {
+    "name": "France",
+    "plonkit_slug": "france",
+    "identify": [
+      "License plates: long white euro-style with FR strip on left, black text, yellow rear plate.",
+      "White-painted bollards with red top reflector \u2014 very iconic.",
+      "Plane trees lining country roads (mottled bark).",
+      "Sign for street: \"Rue\", direction signs in white-on-blue (autoroutes) or white-on-green (national).",
+      "House numbers often on small enamel plaques."
+    ],
+    "key_meta": ["White bollard with red top", "Plane trees"],
+    "vs": { "BE": "FR uses red-tipped bollards; BE often has yellow road lines and 'rue/straat' bilingual signs." }
+  },
+  "DE": {
+    "name": "Germany",
+    "plonkit_slug": "germany",
+    "identify": [
+      "Plates: white with blue EU strip on left, black text, region letters first (M, B, HH, etc.).",
+      "Bollards: white with single black diagonal stripe, sometimes reflector top.",
+      "Yellow diamond priority road sign.",
+      "Street signs are dark blue with white text, mounted on walls.",
+      "Forests are dense pine-spruce; very tidy farmland."
+    ],
+    "key_meta": ["Black-stripe bollard", "Yellow priority diamond"],
+    "vs": { "AT": "AT bollards have orange tops; signage uses Austrian phrasings (Ausfahrt vs Abfahrt)." }
+  },
+  "AT": {
+    "name": "Austria",
+    "plonkit_slug": "austria",
+    "identify": [
+      "White bollards with orange reflective top.",
+      "Plates: white with red-white-red strip.",
+      "Road signs use German with Austrian quirks (e.g., \"Mautstelle\" for tolls).",
+      "Mountainous terrain in the west, rolling green in the east.",
+      "Tractor + farm vehicles common on rural roads."
+    ],
+    "key_meta": ["Orange-top bollard", "RWR plate strip"],
+    "vs": { "DE": "AT: orange-top bollards + RWR strip; DE: black-stripe bollards + EU strip only." }
+  },
+  "PL": {
+    "name": "Poland",
+    "plonkit_slug": "poland",
+    "identify": [
+      "Plates: white with blue EU strip + yellow voivodeship letter (W = Warsaw, K = Krakow).",
+      "Road bollards: white with red reflector strip.",
+      "Distinctive 'A' (autostrada) and 'S' (ekspresowa) road signs in white-on-red shields.",
+      "Cyrillic-free Latin alphabet with diacritics: \u0105 \u0119 \u0142 \u015b \u017c.",
+      "Gen-3 coverage with a strong antenna shadow."
+    ],
+    "key_meta": ["A/S road shields", "Voivodeship plate letters"],
+    "vs": { "CZ": "PL has A/S shields and \u0142; CZ uses D + I/D road numbering and \u0159." }
+  },
+  "ES": {
+    "name": "Spain",
+    "plonkit_slug": "spain",
+    "identify": [
+      "Plates: 4 numbers + 3 letters (consonants only); ES strip on left.",
+      "Yellow-edged motorway signs in some regions; AP = peaje.",
+      "White bollards with two black strips and reflector.",
+      "Olive groves, dry scrubland in the south, deciduous forests in the north.",
+      "Town/village signs are red-bordered rectangles."
+    ],
+    "key_meta": ["4-digit + 3-letter plates", "Red-bordered town signs"],
+    "vs": { "PT": "ES has consonant-only plate suffix; PT uses 6-char alphanumeric + region letter." }
+  },
+  "PT": {
+    "name": "Portugal",
+    "plonkit_slug": "portugal",
+    "identify": [
+      "Plates: yellow strip on right with year/month + Portuguese flag on left strip.",
+      "Cobblestone (calcada) sidewalks in towns.",
+      "Eucalyptus + cork oak in central regions.",
+      "Tile street name plaques (azulejos) in cities.",
+      "Older Gen-2 coverage in the interior \u2014 grainy + saturated."
+    ],
+    "key_meta": ["Yellow plate side-strip", "Calcada sidewalks"],
+    "vs": { "ES": "PT has yellow side-strip; ES has only the EU strip on left." }
+  },
+  "BR": {
+    "name": "Brazil",
+    "plonkit_slug": "brazil",
+    "identify": [
+      "Mercosur-style plates (white with blue header) since 2018; older grey plates still common.",
+      "Blue water tanks (caixa d'\u00e1gua) on top of houses \u2014 iconic.",
+      "Yellow-painted curbstones in towns.",
+      "Concrete utility poles with characteristic crossbar shapes.",
+      "Portuguese-language signs (different from Spanish: \u00e7 \u00e3 \u00f5)."
+    ],
+    "key_meta": ["Blue rooftop water tanks", "BR-style poles"],
+    "vs": { "AR": "BR speaks PT (\u00e7\u00e3\u00f5); AR speaks ES with white plates + blue strip." }
+  },
+  "AR": {
+    "name": "Argentina",
+    "plonkit_slug": "argentina",
+    "identify": [
+      "Plates: white with black text, Mercosur header (white with blue and AR flag).",
+      "Road signs in white-on-blue with kilometer info.",
+      "Pampas grasslands in the center; Patagonia steppe in the south.",
+      "Distinctive metal-red soil in the northwest (Misiones).",
+      "Spanish with Argentine voseo (vos / tu)."
+    ],
+    "key_meta": ["Mercosur plate header", "Pampas landscape"],
+    "vs": { "UY": "UY has shorter, more uniform forest cover and yellow license plates with hexagonal flag." }
+  },
+  "JP": {
+    "name": "Japan",
+    "plonkit_slug": "japan",
+    "identify": [
+      "Drives on the LEFT.",
+      "Plates: white background, green text (commercial), or yellow (kei cars), all with kanji prefecture name.",
+      "Distinctive arrow-shaped snow-direction signs in the north.",
+      "Yellow blind-pedestrian tactile paving on sidewalks.",
+      "Power poles cluttered with wires \u2014 'spaghetti pole' meta."
+    ],
+    "key_meta": ["Kei-car yellow plates", "Snow direction arrows"],
+    "vs": { "KR": "JP has narrower roads + kanji; KR uses Hangul + wider concrete poles." }
+  },
+  "KR": {
+    "name": "South Korea",
+    "plonkit_slug": "south-korea",
+    "identify": [
+      "Hangul alphabet (round + square shapes; visually distinct from kanji).",
+      "Plates: white with black text, regional Korean name on top.",
+      "Mountain hillsides extremely common; flatlands rare.",
+      "Distinct concrete utility poles with 'X' bracing pattern.",
+      "Lots of green roadside trees in summer; brown in winter."
+    ],
+    "key_meta": ["Hangul script", "X-bracing concrete poles"],
+    "vs": { "JP": "KR uses Hangul + wider tan-orange highway lines; JP uses kanji + narrow road lines." }
+  },
+  "TH": {
+    "name": "Thailand",
+    "plonkit_slug": "thailand",
+    "identify": [
+      "Drives on the LEFT.",
+      "Thai script (curly, with strokes above/below baseline).",
+      "Plates: white with Thai characters + numbers; province name in Thai.",
+      "Roadside often has bright yellow + orange Buddhist shrines (sala).",
+      "Tropical vegetation; banana plants + bamboo common."
+    ],
+    "key_meta": ["Thai script", "LHT + tropical vegetation"],
+    "vs": { "VN": "TH drives left + has Thai script; VN drives right + uses Vietnamese diacritics." }
+  },
+  "VN": {
+    "name": "Vietnam",
+    "plonkit_slug": "vietnam",
+    "identify": [
+      "Vietnamese: Latin letters with many tone marks (\u00e1\u00e0\u1ea3\u00e3\u1ea1, \u0111).",
+      "White plates with black text; yellow plates for commercial.",
+      "Rice paddies + conical limestone karsts in the north.",
+      "Many scooters, even in the Street View imagery.",
+      "Concrete utility poles with cylindrical transformers."
+    ],
+    "key_meta": ["Vietnamese diacritics", "Karst landscape"],
+    "vs": { "TH": "VN drives right + uses Latin alphabet with diacritics; TH drives left + uses Thai script." }
+  }
+}
