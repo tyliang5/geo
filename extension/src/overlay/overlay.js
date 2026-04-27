@@ -291,39 +291,78 @@ const wireNotesTab = (overlay, ctx) => {
 
 const render = async ({ round, server }) => {
   const container = ensureContainer();
-  const cc2 = round.actual?.countryCode?.toUpperCase() ?? '??';
-  const tips = server?.tips;
+  const actualCc = round.actual?.countryCode?.toUpperCase() ?? '??';
+  const guessCc = round.guess?.countryCode?.toUpperCase() ?? null;
   const diag = server?.diagnostic;
   const isLM = server?.isLearnableMetaMap;
   const { noSpoilers, lastTab } = await settings();
 
-  const veilCls = noSpoilers ? 'plonker-spoiler-veil' : '';
-  const country = tips?.name || cc2;
-
-  const ctx = {
-    roundId: server?.row?.id,
-    roundPlaces: server?.places || [],
-    showAll: false,
+  // View modes: actual (default) and guess (your guessed country, if it
+  // differs and we have data for it).
+  const haveGuessTips = !!server?.guessTips && guessCc && guessCc !== actualCc;
+  const view = {
+    mode: 'actual',
   };
-  const tabs = buildTabs(tips, ctx);
-  const activeId = (lastTab && tabs.some(t => t.id === lastTab)) ? lastTab : tabs[0].id;
 
-  const keyMetaHtml = tips?.key_meta
+  const viewData = () => view.mode === 'guess'
+    ? {
+        cc2: guessCc,
+        tips: server.guessTips,
+        places: server.guessPlaces || [],
+      }
+    : {
+        cc2: actualCc,
+        tips: server?.tips,
+        places: server?.places || [],
+      };
+
+  const headerHtml = () => `
+      <h3>
+        <span><span class="plonker-flag ${veilCls}" data-reveal>${escape(flagEmoji(cc2))}</span><span class="${veilCls}" data-reveal>${escape(country)}</span></span>
+        <span class="plonker-h3-actions">
+          ${round.guess?.roundScore != null ? `<span class="plonker-score">${escape(round.guess.roundScore)} pts</span>` : ''}
+          <button class="plonker-close" title="Close">\u00d7</button>
+        </span>
+      </h3>`;
+
+  const modeSwitchHtml = () => {
+    if (!haveGuessTips) return '';
+    const guessName = server.guessTips?.name || guessCc;
+    return `
+      <div class="plonker-mode-switch" role="tablist">
+        <button class="plonker-mode-btn ${view.mode === 'actual' ? 'active' : ''}" data-mode="actual">
+          \u2714 ${escape(tips?.name || actualCc)}
+        </button>
+        <button class="plonker-mode-btn ${view.mode === 'guess' ? 'active' : ''}" data-mode="guess">
+          Your guess: ${escape(guessName)}
+        </button>
+      </div>`;
+  };
+
+  const linksHtml = () => {
+    const slug = tips?.plonkit_slug || (country.toLowerCase().replace(/\s+/g, '-'));
+    const lat = round.actual?.lat;
+    const lng = round.actual?.lng;
+    const streetViewLink = (view.mode === 'actual' && lat != null && lng != null)
+      ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}&heading=${round.actual?.heading ?? 0}&pitch=${round.actual?.pitch ?? 0}`
+      : null;
+    return `
+      <div class="plonker-links">
+        ${slug ? `<a href="https://www.plonkit.net/${escape(slug)}" target="_blank" rel="noopener">plonkit</a>` : ''}
+        ${streetViewLink ? `<a href="${escape(streetViewLink)}" target="_blank" rel="noopener">street view</a>` : ''}
+        <a href="https://learnablemeta.com/maps" target="_blank" rel="noopener">learn meta</a>
+      </div>`;
+  };
+
+  const keyMetaHtml = () => tips?.key_meta
     ? `<div class="plonker-keymeta"><strong>Key:</strong> ${escape(tips.key_meta)}</div>` : '';
-  const diagHtml = diag ? `
+  const diagHtml = (view.mode === 'actual' && diag) ? `
     <div class="plonker-diag">
       <strong>Why ${escape(diag.correct.country)}, not ${escape(diag.yours.country)}?</strong><br>
       ${escape(diag.distinguisher || diag.correct.key || '')}
     </div>` : '';
 
-  const plonkitSlug = tips?.plonkit_slug || (country.toLowerCase().replace(/\s+/g, '-'));
-  const lat = round.actual?.lat;
-  const lng = round.actual?.lng;
-  const streetViewLink = (lat != null && lng != null)
-    ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}&heading=${round.actual?.heading ?? 0}&pitch=${round.actual?.pitch ?? 0}`
-    : null;
-
-  const tabsHtml = `
+  const tabsHtml = () => `
     <div class="plonker-tab-strip" role="tablist">
       ${tabs.map(t => `
         <button class="plonker-tab ${t.id === activeId ? 'active' : ''}"
@@ -332,33 +371,29 @@ const render = async ({ round, server }) => {
         </button>`).join('')}
     </div>`;
 
-  container.innerHTML = `
+  const fullRender = () => {
+    container.innerHTML = `
     <div class="plonker-overlay" role="dialog" aria-label="Plonker round summary">
-      <h3>
-        <span><span class="plonker-flag ${veilCls}" data-reveal>${escape(flagEmoji(cc2))}</span><span class="${veilCls}" data-reveal>${escape(country)}</span></span>
-        <span class="plonker-h3-actions">
-          ${round.guess?.roundScore != null ? `<span class="plonker-score">${escape(round.guess.roundScore)} pts</span>` : ''}
-          <button class="plonker-close" title="Close">\u00d7</button>
-        </span>
-      </h3>
+      ${headerHtml()}
       ${isLM ? '<div class="plonker-meta">Learnable-meta map \u2014 deliberate drill</div>' : ''}
-      ${keyMetaHtml}
+      ${modeSwitchHtml()}
+      ${keyMetaHtml()}
       ${diagHtml}
-      <div class="plonker-links">
-        ${plonkitSlug ? `<a href="https://www.plonkit.net/${plonkitSlug}" target="_blank" rel="noopener">plonkit</a>` : ''}
-        ${streetViewLink ? `<a href="${escape(streetViewLink)}" target="_blank" rel="noopener">street view</a>` : ''}
-        <a href="https://learnablemeta.com/maps" target="_blank" rel="noopener">learn meta</a>
-      </div>
-      ${tabsHtml}
+      ${linksHtml()}
+      ${tabsHtml()}
       <div class="plonker-tab-content" data-tab-content></div>
     </div>
   `;
+  };
 
-  const overlay = container.querySelector('.plonker-overlay');
-  const contentEl = overlay.querySelector('[data-tab-content]');
+  fullRender();
+
+  let overlay = container.querySelector('.plonker-overlay');
+  let contentEl = overlay.querySelector('[data-tab-content]');
 
   const setTab = (id) => {
     const tab = tabs.find(t => t.id === id) || tabs[0];
+    activeId = tab.id;
     overlay.querySelectorAll('.plonker-tab').forEach(b => {
       const on = b.dataset.tab === tab.id;
       b.classList.toggle('active', on);
@@ -373,14 +408,34 @@ const render = async ({ round, server }) => {
     chrome.storage.local.set({ lastTab: tab.id });
   };
 
-  overlay.querySelectorAll('.plonker-tab').forEach(b => {
-    b.addEventListener('click', () => { ctx.showAll = false; setTab(b.dataset.tab); });
-  });
-  overlay.querySelectorAll('[data-reveal]').forEach(el => {
-    el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));
-  });
-  overlay.querySelector('.plonker-close').addEventListener('click', dismiss);
+  const wireOverlayChrome = () => {
+    overlay.querySelectorAll('.plonker-tab').forEach(b => {
+      b.addEventListener('click', () => { ctx.showAll = false; setTab(b.dataset.tab); });
+    });
+    overlay.querySelectorAll('[data-reveal]').forEach(el => {
+      el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));
+    });
+    overlay.querySelector('.plonker-close').addEventListener('click', dismiss);
+    overlay.querySelectorAll('.plonker-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (view.mode === btn.dataset.mode) return;
+        view.mode = btn.dataset.mode;
+        ({ cc2, tips, places } = viewData());
+        country = tips?.name || cc2;
+        ctx.roundPlaces = places;
+        ctx.showAll = false;
+        tabs = buildTabs(tips, ctx);
+        if (!tabs.some(t => t.id === activeId)) activeId = tabs[0].id;
+        fullRender();
+        overlay = container.querySelector('.plonker-overlay');
+        contentEl = overlay.querySelector('[data-tab-content]');
+        wireOverlayChrome();
+        setTab(activeId);
+      });
+    });
+  };
 
+  wireOverlayChrome();
   setTab(activeId);
 };
 

@@ -586,15 +586,29 @@ def build_country(iso2: str, slug: str, country_name: str,
             return True
         return False
 
+    # Themed maps that should never contribute to key_meta or be high-priority
+    # in Identify. They're useful CONTENT (architecture, stop signs, etc.) but
+    # they're not country-IDENTIFICATION metas in the Plonker sense.
+    THEMED_TITLE_TOKENS = (
+        "architecture", "stop signs", "city names", "license plates",
+        "license plate", "regionguessing", "region guessing",
+        "every country", "bollards (all)", "poles - beginner",
+        "google cars - basics", "google cars - beginner",
+        "pedestrian crosswalk", "babelincoln", "major bajor",
+    )
+
+    def _is_themed(title_lower: str) -> bool:
+        return any(t in title_lower for t in THEMED_TITLE_TOKENS)
+
     def _priority(m: dict) -> tuple:
         """Lower sorts first. Prefer Basics > Beginner > country-specific
-        single-country map > World > themed (Architecture, City Names,
-        Stop Signs, etc.). Within those, prefer descriptions that DON'T
-        mention any of this country's sub-regions."""
+        single-country map > World > themed maps. Within those, prefer
+        descriptions that DON'T mention any of this country's sub-regions
+        (those are regional, not country-wide)."""
         title = (m.get("_map_title") or "").lower()
-        # 0: Basics, 1: Beginner/Novice, 2: country-specific (e.g. "A Learnable
-        # Mexico", "A Learnable Russia"), 3: World, 4: themed/other.
-        if "basics" in title:
+        if _is_themed(title):
+            tier = 5  # always last; treat as supplemental
+        elif "basics" in title:
             tier = 0
         elif "beginner" in title or "novice" in title:
             tier = 1
@@ -604,14 +618,9 @@ def build_country(iso2: str, slug: str, country_name: str,
                 and "europe" not in title and "asia" not in title \
                 and "africa" not in title and "america" not in title:
             tier = 2
-        elif "world" in title and "architecture" not in title \
-                and "stop signs" not in title:
+        elif "world" in title:
             tier = 3
-        elif title.startswith("a learnable ") and not any(
-            t in title for t in ("architecture", "city names", "stop signs",
-                                  "license plates", "license plate",
-                                  "regionguessing", "every country")
-        ):
+        elif title.startswith("a learnable "):
             tier = 3
         else:
             tier = 4
@@ -669,9 +678,16 @@ def build_country(iso2: str, slug: str, country_name: str,
         else:
             out["metas"].append(record)
 
-    if out["metas"]:
-        first = out["metas"][0]["description"]
-        out["key_meta"] = first.split(". ")[0].rstrip(".") + "."
+    # key_meta candidate: best non-themed, non-region-tagged Identify item.
+    # Falls back to first general_rule, otherwise empty.
+    for m in out["metas"]:
+        title = (m.get("from_maps", [""])[0] or "").lower()
+        if _is_themed(title):
+            continue
+        first = m["description"].split(". ")[0].rstrip(".") + "."
+        if 30 < len(first) < 240:
+            out["key_meta"] = first
+            break
 
     # ---- Plonkit-derived: general / regional / spotlight ----
     if plonkit_data:
@@ -721,10 +737,20 @@ def build_country(iso2: str, slug: str, country_name: str,
                             "place": region, "text": text, "images": images,
                         })
 
-    # If we don't have an identify-tab key_meta from LM, fall back to the
-    # first general rule.
-    if not out["key_meta"] and out["general_rules"]:
-        out["key_meta"] = out["general_rules"][0]["text"].split(". ")[0].rstrip(".") + "."
+    # If we don't have an identify-tab key_meta, fall back to the first
+    # general rule, then to the most-common region. Last resort: leave empty.
+    if not out["key_meta"]:
+        for g in out["general_rules"]:
+            first = g["text"].split(". ")[0].rstrip(".") + "."
+            if 30 < len(first) < 240:
+                out["key_meta"] = first
+                break
+    if not out["key_meta"] and out["regions"]:
+        # Use the country name + a hint about regional content available.
+        n_regions = len(out["regions"])
+        out["key_meta"] = (
+            f"No country-wide identifier found \u2014 see Regional ({n_regions} regions covered)."
+        )
 
     return out
 

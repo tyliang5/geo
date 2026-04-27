@@ -1,5 +1,30 @@
 # Plonker — GeoGuessr meta learning extension
 
+## v0.8 decisions (2026-04-26 second discovery — 16 questions)
+
+After bug churn, locked the following architectural decisions before adding more features:
+
+- **Cross-country shared tips**: duplicate per country. No shared-records system.
+- **Easy-confused pairs**: NOT a separate tab/feature. Instead, build a **guess mode** where the overlay can show metas for the country you GUESSED (the country you confused the actual one with) — toggle button at top of overlay.
+- **Multi-region tips** ("found in NSW, Victoria, and Queensland"): duplicate the same card under each region group.
+- **Bundle**: keep bundled. Personal use, file size doesn't matter — **download images into the bundle for offline**.
+- **Empty Regional filter**: keep current "no match" + "Show all" button.
+- **Sub-regions**: flat structure. Pittsburgh appears as its own region key alongside Pennsylvania.
+- **Personal study features (custom tips, mastered toggle, meta-type filter)**: NOT in this scope. User curates by telling me "add this LM map URL" and I scrape + merge.
+- **Adding new tip sources**: manual workflow — user gives URL, I scrape + commit.
+- **v0.9 next priority**: study mode (Leitner SRS, full-page tab).
+
+### v0.8 implementation order (priority Identify > Regional > guess-feature)
+1. **Identify quality** — tighter junk filter, exclude themed maps (Architecture, Stop Signs, City Names) from key_meta candidates entirely.
+2. **Image download into bundle** — during scrape, save plonkit + LM images to extension/assets/. Update tip URLs to local paths via chrome.runtime.getURL. Bundle expected ~50-200 MB; OK for personal use.
+3. **Map OCR pipeline** — Tesseract OCR on plonkit images, extract any text matching a known sub-region of that country, tag the image. Free, runs at scrape time.
+4. **Improved region tagging** — combine OCR (most reliable when present) + filename + text scan + KNOWN_SUBDIVISIONS lookup.
+5. **Multi-region UX** — same card under each region group.
+6. **Guess mode** — toggle at top of overlay, switches all tabs to your-guess country's content.
+7. **README**: document the "add tips from this LM map" workflow.
+
+
+
 ## What it is
 A Chrome MV3 extension that overlays geoguessr.com to track how the user does in singleplayer + learnable-meta-map games, then teaches them the metas they keep missing.
 

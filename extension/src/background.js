@@ -142,18 +142,25 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
         const cc2 = normalizeCountry(msg.payload.actual?.countryCode);
         const guess2 = normalizeCountry(msg.payload.guess?.countryCode);
         const { lat, lng } = msg.payload.actual || {};
-        // Fire reverse-geocode in parallel with everything else.
-        const [tips, diagnostic, places] = await Promise.all([
+        const guessLatLng = msg.payload.guess || {};
+        // Fire reverse-geocodes (actual + guess) in parallel.
+        const [tips, guessTips, diagnostic, places, guessPlaces] = await Promise.all([
           tipsForCountry(cc2),
+          guess2 && guess2 !== cc2 ? tipsForCountry(guess2) : Promise.resolve(null),
           buildDiagnostic(cc2, guess2),
           reverseGeocode(lat, lng),
+          guess2 && guess2 !== cc2
+            ? reverseGeocode(guessLatLng.lat, guessLatLng.lng)
+            : Promise.resolve([]),
         ]);
         send({
           ok: !inserted.error,
           row: Array.isArray(inserted) ? inserted[0] : inserted,
           tips,
+          guessTips,
           diagnostic,
           places,
+          guessPlaces,
           isLearnableMetaMap: LEARNABLE_META_MAP_IDS.has(msg.payload.mapId)
         });
       } else if (msg.type === 'save_note') {
