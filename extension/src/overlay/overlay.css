@@ -120,6 +120,34 @@
   text-align: center;
 }
 
+/* Filter chip shown when Regional/Spotlight is narrowed by location */
+.plonker-filter-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #111827;
+  border: 1px solid #374151;
+  border-left: 3px solid #60a5fa;
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #d1d5db;
+}
+.plonker-filter-chip strong { color: #93c5fd; }
+.plonker-show-all {
+  background: transparent;
+  border: 1px solid #374151;
+  color: #93c5fd;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.plonker-show-all:hover { background: #1f2937; border-color: #60a5fa; }
+
 /* Section content (interleaved text + images) */
 .plonker-section { display: flex; flex-direction: column; gap: 10px; }
 .plonker-tip {

@@ -40,6 +40,37 @@ const loadTips = async () => {
   return TIPS_CACHE;
 };
 
+// Reverse-geocode lat/lng -> [city, county, state, region, ...]. Cached in
+// chrome.storage.local keyed by rounded coords (avoid Nominatim's 1 req/sec
+// rate limit when the same approximate location is hit repeatedly).
+const reverseGeocode = async (lat, lng) => {
+  if (lat == null || lng == null) return [];
+  const key = `geo:${lat.toFixed(2)},${lng.toFixed(2)}`;
+  const cached = (await chrome.storage.local.get(key))[key];
+  if (cached) return cached;
+  try {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}&zoom=10&addressdetails=1`;
+    const res = await fetch(url, {
+      headers: { 'Accept': 'application/json', 'Accept-Language': 'en' }
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    const a = data.address || {};
+    const places = [
+      a.city, a.town, a.village, a.hamlet,
+      a.suburb, a.neighbourhood,
+      a.county, a.municipality,
+      a.state, a.region, a.state_district,
+      a['ISO3166-2-lvl4']?.split('-')[1],
+    ].filter(Boolean);
+    await chrome.storage.local.set({ [key]: places });
+    return places;
+  } catch (e) {
+    console.warn('[plonker] reverse-geocode failed', e);
+    return [];
+  }
+};
+
 const persistRound = async (p) => {
   const cc2 = normalizeCountry(p.actual?.countryCode);
   const cc3 = cc2 ? CC2_TO_CC3[cc2] : null;
@@ -104,11 +135,19 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
         const inserted = await persistRound(msg.payload).catch(e => ({ error: String(e) }));
         const cc2 = normalizeCountry(msg.payload.actual?.countryCode);
         const guess2 = normalizeCountry(msg.payload.guess?.countryCode);
+        const { lat, lng } = msg.payload.actual || {};
+        // Fire reverse-geocode in parallel with everything else.
+        const [tips, diagnostic, places] = await Promise.all([
+          tipsForCountry(cc2),
+          buildDiagnostic(cc2, guess2),
+          reverseGeocode(lat, lng),
+        ]);
         send({
           ok: !inserted.error,
           row: Array.isArray(inserted) ? inserted[0] : inserted,
-          tips: await tipsForCountry(cc2),
-          diagnostic: await buildDiagnostic(cc2, guess2),
+          tips,
+          diagnostic,
+          places,
           isLearnableMetaMap: LEARNABLE_META_MAP_IDS.has(msg.payload.mapId)
         });
       } else if (msg.type === 'save_note') {

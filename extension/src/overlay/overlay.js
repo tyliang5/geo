@@ -75,6 +75,47 @@ const buildTabs = (tips) => {
   return tabs;
 };
 
+// Filter section items by place match. A text item is kept if:
+//   * it has no `places` tags (general country-wide tip), OR
+//   * any of its `places` overlaps with the round's geocoded place names.
+// Adjacent images travel with the previous text decision so visual pairing
+// is preserved. Identify section is never filtered.
+const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+const placeMatch = (tipPlaces, roundPlaces) => {
+  if (!tipPlaces || tipPlaces.length === 0) return null; // general
+  const rp = new Set(roundPlaces.map(norm));
+  for (const tp of tipPlaces) {
+    const n = norm(tp);
+    if (n.length < 3) continue;
+    for (const r of rp) {
+      if (r.length < 3) continue;
+      if (r.includes(n) || n.includes(r)) return true;
+    }
+  }
+  return false;
+};
+
+const filterSectionItems = (section, roundPlaces, showAll) => {
+  if (showAll || section.id === 'identify' || !roundPlaces?.length) return section.items;
+  const out = [];
+  let lastTextKept = true;
+  for (const it of section.items) {
+    if (it.type === 'text') {
+      const m = placeMatch(it.places, roundPlaces);
+      // m === null  -> general, keep
+      // m === true  -> match, keep
+      // m === false -> place mismatch, drop
+      const keep = m !== false;
+      if (keep) out.push(it);
+      lastTextKept = keep;
+    } else if (it.type === 'image') {
+      if (lastTextKept) out.push(it);
+    }
+  }
+  // Fall back to all items if filter eliminated everything (signal too low).
+  return out.length === 0 ? section.items : out;
+};
+
 const renderItem = (it) => {
   if (it.type === 'text') return `<p class="plonker-tip">${escape(it.text)}</p>`;
   if (it.type === 'image') {
@@ -86,10 +127,17 @@ const renderItem = (it) => {
   return '';
 };
 
-const renderTabContent = (tab) => {
+const renderTabContent = (tab, ctx) => {
   if (tab.kind === 'section') {
     if (!tab.section.items?.length) return '<div class="plonker-empty">No content for this section.</div>';
-    return `<div class="plonker-section">${tab.section.items.map(renderItem).join('')}</div>`;
+    const filtered = filterSectionItems(tab.section, ctx.roundPlaces, ctx.showAll);
+    const filteredOut = tab.section.items.length - filtered.length;
+    const filterChip = (tab.id !== 'identify' && ctx.roundPlaces?.length && filteredOut > 0 && !ctx.showAll)
+      ? `<div class="plonker-filter-chip">
+           <span>Filtered to <strong>${escape(ctx.roundPlaces.slice(0, 3).join(', '))}</strong> \u2014 hiding ${filteredOut} unrelated tip${filteredOut === 1 ? '' : 's'}.</span>
+           <button class="plonker-show-all">Show all</button>
+         </div>` : '';
+    return `${filterChip}<div class="plonker-section">${filtered.map(renderItem).join('')}</div>`;
   }
   if (tab.kind === 'images') {
     return `<div class="plonker-img-grid">${tab.images.map(img => `
@@ -216,7 +264,11 @@ const render = async ({ round, server }) => {
 
   const overlay = container.querySelector('.plonker-overlay');
   const contentEl = overlay.querySelector('[data-tab-content]');
-  const ctx = { roundId: server?.row?.id };
+  const ctx = {
+    roundId: server?.row?.id,
+    roundPlaces: server?.places || [],
+    showAll: false
+  };
 
   const setTab = (id) => {
     const tab = tabs.find(t => t.id === id) || tabs[0];
@@ -225,14 +277,24 @@ const render = async ({ round, server }) => {
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on);
     });
-    contentEl.innerHTML = renderTabContent(tab);
+    contentEl.innerHTML = renderTabContent(tab, ctx);
     if (tab.kind === 'notes') wireNotesTab(overlay, ctx);
     else wireImageHandlers(overlay);
+    const showAllBtn = overlay.querySelector('.plonker-show-all');
+    if (showAllBtn) {
+      showAllBtn.addEventListener('click', () => {
+        ctx.showAll = true;
+        setTab(tab.id);
+      });
+    }
     chrome.storage.local.set({ lastTab: tab.id });
   };
 
   overlay.querySelectorAll('.plonker-tab').forEach(b => {
-    b.addEventListener('click', () => setTab(b.dataset.tab));
+    b.addEventListener('click', () => {
+      ctx.showAll = false; // reset filter when switching tabs
+      setTab(b.dataset.tab);
+    });
   });
   overlay.querySelectorAll('[data-reveal]').forEach(el => {
     el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));

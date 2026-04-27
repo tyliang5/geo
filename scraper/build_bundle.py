@@ -86,6 +86,58 @@ def first_sentences(text: str, n: int = 2) -> str:
     return " ".join(parts[:n]).strip()
 
 
+# Words that look proper-noun-y but are not place names. Trimmed by hand from
+# inspecting the scraper output. Add as needed.
+PLACE_STOP = frozenset([
+    "The", "A", "An", "In", "On", "Of", "At", "And", "But", "For", "To", "With", "By",
+    "Note", "Notes", "Generation", "Google", "European", "American", "African",
+    "Asian", "EU", "US", "USA", "UK", "Street", "View", "License", "Plate", "Plates",
+    "GeoGuessr", "Spotlight", "Step", "Identify", "Identifying", "Country", "Countries",
+    "World", "Map", "Maps", "Coverage", "Cars", "Car", "Roads", "Road", "Highway",
+    "Interstate", "Bridge", "Bridges", "Style", "Some", "Most", "Many", "All", "These",
+    "Those", "Looking", "Note", "Generally", "However", "Therefore", "Northern",
+    "Southern", "Eastern", "Western", "North", "South", "East", "West", "Central",
+    "Latin", "Old", "New", "Big", "Small", "Long", "Short", "Top", "Front", "Back",
+    "Side", "Local", "Public", "Private", "Mass", "Pass", "Forest", "Forests",
+    "Mountain", "Mountains", "Valley", "Valleys", "River", "Rivers", "Lake", "Lakes",
+    "Sea", "Ocean", "Coast", "Island", "Islands", "Plate.", "Coverage.", "Map.",
+    "Hood", "Suv", "Suvs", "Truck", "Trucks", "Camera", "Government", "Official",
+    "British", "Spanish", "French", "German", "Italian", "English", "Russian",
+    "Chinese", "Japanese", "Korean", "Arabic", "Cyrillic", "Roman",
+    "Christian", "Catholic", "Buddhist", "Muslim", "Hindu",
+    "Federal", "State", "States", "City", "Cities", "Town", "Towns", "Village",
+    "Villages", "County", "Counties", "Province", "Provinces", "Region", "Regions",
+    "Department", "District", "Districts", "Capital", "Border", "Borders",
+])
+
+
+def extract_places(text: str, country_name: str) -> list[str]:
+    """Pull proper-noun phrases that look like place names. Best-effort — the
+    runtime filter is forgiving, and we always fall back to showing everything
+    when the filter eliminates all items in a section."""
+    matches = re.findall(r"\b[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\b", text)
+    seen, out = set(), []
+    cn = country_name.lower()
+    for m in matches:
+        # Skip stop words and any phrase containing the country name.
+        first = m.split()[0]
+        if first in PLACE_STOP:
+            continue
+        if cn in m.lower():
+            continue
+        # Skip ALL-CAPS acronyms (e.g., NOTE, MPH).
+        if m.isupper():
+            continue
+        # Skip leading-of-sentence false positives — single capitalized word
+        # at sentence start that's also a common verb/adverb.
+        key = m.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(m)
+    return out
+
+
 def distill_country(slug: str, raw: dict) -> dict:
     """Preserve plonkit's reading order so each image stays right after the
     text that describes it. Each section becomes an ordered `items` array
@@ -111,7 +163,14 @@ def distill_country(slug: str, raw: dict) -> dict:
             if item["type"] == "text" and b["n_text"] < MAX_TEXT:
                 s = first_sentences(item["text"], 2)
                 if 20 < len(s) < 400 and s not in b["seen_text"]:
-                    b["items"].append({"type": "text", "text": s})
+                    rec = {"type": "text", "text": s}
+                    # Only tag places for region/spotlight; identify stays
+                    # unfiltered at runtime so no point computing places.
+                    if sid in {"regional", "spotlight"}:
+                        places = extract_places(s, raw["name"])
+                        if places:
+                            rec["places"] = places
+                    b["items"].append(rec)
                     b["seen_text"].add(s)
                     b["n_text"] += 1
             elif item["type"] == "image" and b["n_img"] < MAX_IMG:
