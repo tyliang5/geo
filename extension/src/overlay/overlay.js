@@ -58,11 +58,54 @@ const openLightbox = (src, caption) => {
 };
 
 // ---------- tabs ----------
+// Walk Regional + Spotlight items. Untagged text (and the images that follow
+// it) is country-wide-but-useful-for-regional-ID material — phone numbers,
+// plate region letters, postal code patterns. Pull those out into a General
+// tab so Regional/Spotlight can be strictly location-matched.
+const partitionRegionItems = (tips) => {
+  const general = [];
+  const regional = { id: 'regional', title: 'Regional', items: [] };
+  const spotlight = { id: 'spotlight', title: 'Spotlight', items: [] };
+  for (const sec of tips?.sections || []) {
+    if (sec.id === 'identify') continue;
+    const target = sec.id === 'spotlight' ? spotlight : regional;
+    let lastWasGeneral = false;
+    for (const it of sec.items) {
+      if (it.type === 'text') {
+        const isGen = !it.places || it.places.length === 0;
+        if (isGen) {
+          general.push({ ...it, _from: sec.title });
+          lastWasGeneral = true;
+        } else {
+          target.items.push(it);
+          lastWasGeneral = false;
+        }
+      } else if (it.type === 'image') {
+        if (lastWasGeneral) general.push(it);
+        else target.items.push(it);
+      }
+    }
+  }
+  return { general, regional, spotlight };
+};
+
 const buildTabs = (tips) => {
   const tabs = [];
   if (tips?.sections?.length) {
-    for (const sec of tips.sections) {
-      tabs.push({ id: sec.id, label: sec.title, kind: 'section', section: sec });
+    const identify = tips.sections.find(s => s.id === 'identify');
+    if (identify) {
+      tabs.push({ id: 'identify', label: identify.title, kind: 'section', section: identify });
+    }
+    const { general, regional, spotlight } = partitionRegionItems(tips);
+    if (general.length) {
+      tabs.push({ id: 'general', label: 'General', kind: 'section',
+                  section: { id: 'general', title: 'General', items: general } });
+    }
+    if (regional.items.length) {
+      tabs.push({ id: 'regional', label: regional.title, kind: 'section', section: regional });
+    }
+    if (spotlight.items.length) {
+      tabs.push({ id: 'spotlight', label: spotlight.title, kind: 'section', section: spotlight });
     }
     const allImages = tips.sections.flatMap(s =>
       (s.items || []).filter(i => i.type === 'image')
@@ -138,24 +181,25 @@ const placeMatch = (tipPlaces, roundPlaces) => {
 };
 
 const filterSectionItems = (section, roundPlaces, showAll) => {
-  if (showAll || section.id === 'identify' || !roundPlaces?.length) return section.items;
+  // Identify and General are country-wide; never filtered by location.
+  if (showAll || section.id === 'identify' || section.id === 'general' || !roundPlaces?.length) {
+    return section.items;
+  }
   const out = [];
   let lastTextKept = true;
   for (const it of section.items) {
     if (it.type === 'text') {
+      // After partitioning, Regional/Spotlight only contain place-tagged text.
+      // We strictly drop place mismatches here (no "general -> keep" fallback).
       const m = placeMatch(it.places, roundPlaces);
-      // m === null  -> general, keep
-      // m === true  -> match, keep
-      // m === false -> place mismatch, drop
-      const keep = m !== false;
+      const keep = m === true;
       if (keep) out.push(it);
       lastTextKept = keep;
     } else if (it.type === 'image') {
       if (lastTextKept) out.push(it);
     }
   }
-  // Fall back to all items if filter eliminated everything (signal too low).
-  return out.length === 0 ? section.items : out;
+  return out;
 };
 
 const renderItem = (it) => {
@@ -173,8 +217,15 @@ const renderTabContent = (tab, ctx) => {
   if (tab.kind === 'section') {
     if (!tab.section.items?.length) return '<div class="plonker-empty">No content for this section.</div>';
     const filtered = filterSectionItems(tab.section, ctx.roundPlaces, ctx.showAll);
+    if (filtered.length === 0) {
+      return `<div class="plonker-empty">
+        No region-specific tips matched <strong>${escape(ctx.roundPlaces.slice(0, 2).join(', ') || 'this location')}</strong>.
+        <button class="plonker-show-all" style="margin-top:10px;display:inline-block">Show all anyway</button>
+      </div>`;
+    }
     const filteredOut = tab.section.items.length - filtered.length;
-    const filterChip = (tab.id !== 'identify' && ctx.roundPlaces?.length && filteredOut > 0 && !ctx.showAll)
+    const isFilterable = !['identify', 'general'].includes(tab.id);
+    const filterChip = (isFilterable && ctx.roundPlaces?.length && filteredOut > 0 && !ctx.showAll)
       ? `<div class="plonker-filter-chip">
            <span>Filtered to <strong>${escape(ctx.roundPlaces.slice(0, 3).join(', '))}</strong> \u2014 hiding ${filteredOut} unrelated tip${filteredOut === 1 ? '' : 's'}.</span>
            <button class="plonker-show-all">Show all</button>
