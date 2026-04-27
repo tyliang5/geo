@@ -316,6 +316,20 @@ const render = async ({ round, server }) => {
         places: server?.places || [],
       };
 
+  // Stateful view bindings — these are MUTATED by the mode switch (Actual/
+  // Your Guess), so all the render helpers below close over them and re-read
+  // their current values each call.
+  const veilCls = noSpoilers ? 'plonker-spoiler-veil' : '';
+  let { cc2, tips, places } = viewData();
+  let country = tips?.name || cc2;
+  const ctx = {
+    roundId: server?.row?.id,
+    roundPlaces: places,
+    showAll: false,
+  };
+  let tabs = buildTabs(tips, ctx);
+  let activeId = (lastTab && tabs.some(t => t.id === lastTab)) ? lastTab : (tabs[0]?.id || 'notes');
+
   const headerHtml = () => `
       <h3>
         <span><span class="plonker-flag ${veilCls}" data-reveal>${escape(flagEmoji(cc2))}</span><span class="${veilCls}" data-reveal>${escape(country)}</span></span>
@@ -356,7 +370,7 @@ const render = async ({ round, server }) => {
 
   const keyMetaHtml = () => tips?.key_meta
     ? `<div class="plonker-keymeta"><strong>Key:</strong> ${escape(tips.key_meta)}</div>` : '';
-  const diagHtml = (view.mode === 'actual' && diag) ? `
+  const diagHtml = () => (view.mode === 'actual' && diag) ? `
     <div class="plonker-diag">
       <strong>Why ${escape(diag.correct.country)}, not ${escape(diag.yours.country)}?</strong><br>
       ${escape(diag.distinguisher || diag.correct.key || '')}
@@ -378,7 +392,7 @@ const render = async ({ round, server }) => {
       ${isLM ? '<div class="plonker-meta">Learnable-meta map \u2014 deliberate drill</div>' : ''}
       ${modeSwitchHtml()}
       ${keyMetaHtml()}
-      ${diagHtml}
+      ${diagHtml()}
       ${linksHtml()}
       ${tabsHtml()}
       <div class="plonker-tab-content" data-tab-content></div>
