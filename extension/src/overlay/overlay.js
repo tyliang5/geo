@@ -57,11 +57,26 @@ const openLightbox = (src, caption) => {
   document.addEventListener('keydown', onLightboxKey);
 };
 
+// Plonkit's pattern: image first, then the text that describes it. So an
+// image's "owner" is the NEXT text item, not the previous one. This helper
+// returns, for each image index, the index of the text that describes it
+// (or null if the image has no following text).
+const buildImageOwnerMap = (items) => {
+  const map = new Map();
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type !== 'image') continue;
+    for (let j = i + 1; j < items.length; j++) {
+      if (items[j].type === 'text') { map.set(i, j); break; }
+    }
+  }
+  return map;
+};
+
 // ---------- tabs ----------
-// Walk Regional + Spotlight items. Untagged text (and the images that follow
-// it) is country-wide-but-useful-for-regional-ID material — phone numbers,
-// plate region letters, postal code patterns. Pull those out into a General
-// tab so Regional/Spotlight can be strictly location-matched.
+// Walk Regional + Spotlight items. Untagged text (and the images it owns) is
+// country-wide-but-useful-for-regional-ID material — phone numbers, plate
+// region letters, postal patterns. Pull those out into a General tab so
+// Regional/Spotlight can be strictly location-matched.
 const partitionRegionItems = (tips) => {
   const general = [];
   const regional = { id: 'regional', title: 'Regional', items: [] };
@@ -69,22 +84,20 @@ const partitionRegionItems = (tips) => {
   for (const sec of tips?.sections || []) {
     if (sec.id === 'identify') continue;
     const target = sec.id === 'spotlight' ? spotlight : regional;
-    let lastWasGeneral = false;
-    for (const it of sec.items) {
+    const ownerOf = buildImageOwnerMap(sec.items);
+    // Per text, decide its bucket; images follow their owner-text's bucket.
+    const isGeneralText = (it) => !it.places || it.places.length === 0;
+    sec.items.forEach((it, i) => {
       if (it.type === 'text') {
-        const isGen = !it.places || it.places.length === 0;
-        if (isGen) {
-          general.push({ ...it, _from: sec.title });
-          lastWasGeneral = true;
-        } else {
-          target.items.push(it);
-          lastWasGeneral = false;
-        }
+        if (isGeneralText(it)) general.push({ ...it, _from: sec.title });
+        else target.items.push(it);
       } else if (it.type === 'image') {
-        if (lastWasGeneral) general.push(it);
+        const ownerIdx = ownerOf.get(i);
+        const owner = ownerIdx != null ? sec.items[ownerIdx] : null;
+        if (!owner || isGeneralText(owner)) general.push(it);
         else target.items.push(it);
       }
-    }
+    });
   }
   return { general, regional, spotlight };
 };
@@ -185,18 +198,24 @@ const filterSectionItems = (section, roundPlaces, showAll) => {
   if (showAll || section.id === 'identify' || section.id === 'general' || !roundPlaces?.length) {
     return section.items;
   }
+  const items = section.items;
+  const ownerOf = buildImageOwnerMap(items);
+  // Decide each text's keep status first.
+  const textKeep = new Map();
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type === 'text') {
+      textKeep.set(i, placeMatch(items[i].places, roundPlaces) === true);
+    }
+  }
+  // Image is kept iff its owner-text is kept.
   const out = [];
-  let lastTextKept = true;
-  for (const it of section.items) {
+  for (let i = 0; i < items.length; i++) {
+    const it = items[i];
     if (it.type === 'text') {
-      // After partitioning, Regional/Spotlight only contain place-tagged text.
-      // We strictly drop place mismatches here (no "general -> keep" fallback).
-      const m = placeMatch(it.places, roundPlaces);
-      const keep = m === true;
-      if (keep) out.push(it);
-      lastTextKept = keep;
+      if (textKeep.get(i)) out.push(it);
     } else if (it.type === 'image') {
-      if (lastTextKept) out.push(it);
+      const ownerIdx = ownerOf.get(i);
+      if (ownerIdx != null && textKeep.get(ownerIdx)) out.push(it);
     }
   }
   return out;
