@@ -1,11 +1,15 @@
-// Runs in the MAIN world on geoguessr.com from document_start.
-// Monkey-patches window.fetch so we can snoop GeoGuessr's own API responses
-// (game state, round result, lat/lng, country code) without re-authenticating.
-// Strategy borrowed from miraclewhips/geoguessr-event-framework — proven for ~3 years.
+// Runs in MAIN world at document_start. Snoops GeoGuessr's own API responses
+// (game state, round result, lat/lng, country) without re-authenticating.
+// Defends against GG re-wrapping fetch by:
+//   1) Object.defineProperty + non-configurable
+//   2) XHR fallback (GG sometimes uses XHR via axios for game APIs)
+//   3) Periodic re-patch as belt-and-suspenders
+// Strategy adapted from miraclewhips/geoguessr-event-framework.
 
 (() => {
   if (window.__plonkerInstalled) return;
   window.__plonkerInstalled = true;
+  const log = (...a) => console.log('[plonker/inject]', ...a);
 
   const send = (type, payload) => {
     window.postMessage({ source: 'plonker', type, payload }, '*');
@@ -13,35 +17,14 @@
 
   const state = {
     currentGameId: null,
-    currentRound: 0,
-    lastSnapshot: null
-  };
-
-  const handleClassicGame = (data) => {
-    if (!data || !data.token || !Array.isArray(data.rounds)) return;
-    const guesses = data.player?.guesses ?? [];
-    const roundJustEnded = guesses.length === data.round;
-    const newGame = data.token !== state.currentGameId || data.round !== state.currentRound;
-
-    if (newGame && !roundJustEnded) {
-      state.currentGameId = data.token;
-      state.currentRound = data.round;
-      send('round_start', summarizeRound(data));
-    }
-
-    if (roundJustEnded) {
-      state.currentGameId = data.token;
-      state.currentRound = data.round;
-      send('round_end', summarizeRound(data));
-    }
-
-    state.lastSnapshot = data;
+    currentRound: 0
   };
 
   const summarizeRound = (data) => {
-    const idx = data.round - 1;
-    const r = data.rounds[idx] ?? {};
-    const g = (data.player?.guesses ?? [])[idx] ?? {};
+    const idx = (data.round || 1) - 1;
+    const r = (data.rounds || [])[idx] ?? {};
+    const guesses = data.player?.guesses ?? [];
+    const g = guesses[idx] ?? null;
     return {
       gameId: data.token,
       gameType: data.type,
@@ -62,7 +45,7 @@
         zoom: r.zoom,
         countryCode: r.streakLocationCode || null
       },
-      guess: g.lat != null ? {
+      guess: g && g.lat != null ? {
         lat: g.lat,
         lng: g.lng,
         countryCode: g.streakLocationCode || null,
@@ -72,20 +55,89 @@
     };
   };
 
-  const origFetch = window.fetch;
-  window.fetch = async function(...args) {
-    const res = await origFetch.apply(this, args);
+  const handleClassicGame = (data) => {
+    if (!data || !data.token || !Array.isArray(data.rounds)) return;
+    const guesses = data.player?.guesses ?? [];
+    const roundJustEnded = guesses.length === data.round;
+    const newGame = data.token !== state.currentGameId || data.round !== state.currentRound;
+
+    if (roundJustEnded) {
+      state.currentGameId = data.token;
+      state.currentRound = data.round;
+      log('round_end', data.token, 'r', data.round);
+      send('round_end', summarizeRound(data));
+    } else if (newGame) {
+      state.currentGameId = data.token;
+      state.currentRound = data.round;
+      log('round_start', data.token, 'r', data.round);
+      send('round_start', summarizeRound(data));
+    }
+  };
+
+  const isInteresting = (url) => {
+    if (typeof url !== 'string') return false;
+    return url.includes('/api/v3/games/') || url.includes('/api/v3/challenges/');
+  };
+
+  // ---- fetch patch ----
+  const realFetch = window.fetch.bind(window);
+  const plonkerFetch = async function(...args) {
+    const res = await realFetch(...args);
     try {
       const url = typeof args[0] === 'string' ? args[0] : args[0]?.url ?? '';
-      if (url.includes('/api/v3/games/') || url.includes('/api/v3/challenges/')) {
-        const clone = res.clone();
-        clone.json().then(handleClassicGame).catch(() => {});
+      if (isInteresting(url)) {
+        res.clone().json().then(handleClassicGame).catch(() => {});
       }
     } catch (e) { /* swallow */ }
     return res;
   };
+  plonkerFetch.__plonker = true;
 
-  // On initial challenge page load the data is in __NEXT_DATA__.
+  const installFetch = () => {
+    try {
+      Object.defineProperty(window, 'fetch', {
+        configurable: false,
+        writable: false,
+        enumerable: true,
+        value: plonkerFetch
+      });
+      return 'defineProperty';
+    } catch (e) {
+      try { window.fetch = plonkerFetch; return 'assign'; } catch (e2) { return 'failed'; }
+    }
+  };
+  log('fetch install:', installFetch());
+  // Belt-and-suspenders: if GG manages to swap fetch via setter on Window.prototype etc.,
+  // re-check periodically and re-install via direct assignment if needed.
+  let watchdogTicks = 0;
+  const watchdog = setInterval(() => {
+    watchdogTicks++;
+    if (window.fetch !== plonkerFetch && !window.fetch?.__plonker) {
+      try { window.fetch = plonkerFetch; log('re-patched fetch on tick', watchdogTicks); } catch (e) {}
+    }
+    if (watchdogTicks > 60) clearInterval(watchdog); // ~30s of monitoring after load
+  }, 500);
+
+  // ---- XHR patch (axios fallback) ----
+  const realOpen = XMLHttpRequest.prototype.open;
+  const realSend = XMLHttpRequest.prototype.send;
+  XMLHttpRequest.prototype.open = function(method, url, ...rest) {
+    this.__plonkerUrl = url;
+    return realOpen.call(this, method, url, ...rest);
+  };
+  XMLHttpRequest.prototype.send = function(...args) {
+    if (isInteresting(this.__plonkerUrl)) {
+      this.addEventListener('load', () => {
+        try {
+          const data = JSON.parse(this.responseText);
+          handleClassicGame(data);
+        } catch (e) { /* swallow */ }
+      });
+    }
+    return realSend.apply(this, args);
+  };
+
+  // ---- initial NEXT_DATA snapshot (challenge / game pages render with state inline) ----
   try {
     const nd = document.getElementById('__NEXT_DATA__');
     if (nd) {
@@ -95,5 +147,6 @@
     }
   } catch (e) { /* swallow */ }
 
-  send('inject_ready', { v: '0.1.0' });
+  send('inject_ready', { v: '0.1.1' });
+  log('inject ready');
 })();
