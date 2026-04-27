@@ -429,12 +429,17 @@ const render = async ({ round, server }) => {
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on);
     });
-    contentEl.innerHTML = renderTabContent(tab, ctx);
-    if (tab.kind === 'notes') wireNotesTab(overlay, ctx);
-    else wireImageHandlers(overlay);
-    overlay.querySelectorAll('.plonker-show-all').forEach(btn => {
-      btn.addEventListener('click', () => { ctx.showAll = true; setTab(tab.id); });
-    });
+    try {
+      contentEl.innerHTML = renderTabContent(tab, ctx);
+      if (tab.kind === 'notes') wireNotesTab(overlay, ctx);
+      else wireImageHandlers(overlay);
+      overlay.querySelectorAll('.plonker-show-all').forEach(btn => {
+        btn.addEventListener('click', () => { ctx.showAll = true; setTab(tab.id); });
+      });
+    } catch (e) {
+      console.error('[plonker overlay] tab render failed', tab.id, e);
+      contentEl.innerHTML = `<div class="plonker-empty">Couldn't render this tab. ${escape(e.message || '')}</div>`;
+    }
     chrome.storage.local.set({ lastTab: tab.id });
   };
 

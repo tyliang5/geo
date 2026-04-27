@@ -86,7 +86,10 @@ function aggregateByCountry(rounds) {
     else if (r.guess_country_iso2) a.miss++;
   }
   for (const a of Object.values(agg)) {
-    a.acc = a.total ? a.hit / a.total : 0;
+    // Accuracy denominator is hit+miss (i.e. rounds with a guess) so timeouts
+    // / abandoned rounds don't tank the percentage. Matches popup logic.
+    const denom = a.hit + a.miss;
+    a.acc = denom ? a.hit / denom : 0;
   }
   return agg;
 }

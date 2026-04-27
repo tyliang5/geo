@@ -177,12 +177,26 @@ const session = {
   byCountry: {},
 };
 
-function pickCard() {
-  // Weight: prefer cards in lower Leitner boxes (= less mastered).
-  // For v1: random pick for simplicity. SRS weighting comes after we have
-  // some data per card.
+async function pickCard() {
+  // Leitner-weighted random pick: lower boxes (less mastered) get higher
+  // weight. Box 1 (new/missed) is sampled ~5x more often than box 5
+  // (mastered). Tip the scales toward what the user is still learning.
   const live = session.pool.filter(c => session.allCcs.has(c.cc));
-  return live[Math.floor(Math.random() * live.length)];
+  if (!live.length) return null;
+  const keys = live.map(c => leitnerKey(c.cc, c.idx));
+  const stored = await getLeitner(keys);
+  // Weight = 6 - box (so box 1 -> 5, box 5 -> 1).
+  const weights = live.map((c, i) => {
+    const box = stored[keys[i]]?.box ?? 1;
+    return Math.max(1, 6 - box);
+  });
+  const total = weights.reduce((a, b) => a + b, 0);
+  let roll = Math.random() * total;
+  for (let i = 0; i < live.length; i++) {
+    roll -= weights[i];
+    if (roll <= 0) return live[i];
+  }
+  return live[live.length - 1];
 }
 
 async function presentCard(card) {
@@ -276,9 +290,14 @@ function updateTopbar() {
     : '\u2014';
 }
 
-function advance() {
+async function advance() {
   if (session.lives <= 0) return endSession();
-  presentCard(pickCard());
+  const card = await pickCard();
+  if (!card) {
+    alert('Card pool empty — try a different focus.');
+    return;
+  }
+  presentCard(card);
 }
 
 function endSession() {
@@ -328,7 +347,8 @@ async function start() {
   }
 
   updateTopbar();
-  presentCard(pickCard());
+  const first = await pickCard();
+  if (first) presentCard(first);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

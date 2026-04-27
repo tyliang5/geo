@@ -164,6 +164,12 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
           isLearnableMetaMap: LEARNABLE_META_MAP_IDS.has(msg.payload.mapId)
         });
       } else if (msg.type === 'save_note') {
+        // Skip if no round_id — happens when the round_end persist failed
+        // or hadn't completed by the time the user typed a note.
+        if (!msg.payload?.round_id) {
+          send({ ok: false, error: 'note has no round_id (round may not have been persisted)' });
+          return;
+        }
         const r = await sb.insert('plonker_note', msg.payload);
         send({ ok: true, row: r[0] });
       } else if (msg.type === 'get_stats') {

@@ -30,8 +30,14 @@ window.addEventListener('message', async (e) => {
   if (msg.type === 'round_end') {
     await ensureOverlay();
     chrome.runtime.sendMessage({ type: 'round_end', payload: msg.payload }, (resp) => {
+      // chrome.runtime.lastError is set if the SW dropped/errored. Log it
+      // for debugging but still dispatch the event with whatever we got
+      // (or null) so the overlay at least renders something.
+      if (chrome.runtime.lastError) {
+        console.warn('[plonker] background round_end error:', chrome.runtime.lastError.message);
+      }
       window.dispatchEvent(new CustomEvent('plonker:round-end', {
-        detail: { round: msg.payload, server: resp }
+        detail: { round: msg.payload, server: resp || null }
       }));
     });
   } else if (msg.type === 'round_start') {

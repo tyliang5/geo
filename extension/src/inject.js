@@ -17,7 +17,9 @@
 
   const state = {
     currentGameId: null,
-    currentRound: 0
+    currentRound: 0,
+    lastEndedToken: null,
+    lastEndedRound: 0
   };
 
   const summarizeRound = (data) => {
@@ -62,6 +64,13 @@
     const newGame = data.token !== state.currentGameId || data.round !== state.currentRound;
 
     if (roundJustEnded) {
+      // Dedup: NEXT_DATA snapshot + the fetch response can both report the
+      // same round_end. Only fire once per (token, round).
+      if (state.lastEndedToken === data.token && state.lastEndedRound === data.round) {
+        return;
+      }
+      state.lastEndedToken = data.token;
+      state.lastEndedRound = data.round;
       state.currentGameId = data.token;
       state.currentRound = data.round;
       log('round_end', data.token, 'r', data.round);
@@ -106,17 +115,19 @@
       try { window.fetch = plonkerFetch; return 'assign'; } catch (e2) { return 'failed'; }
     }
   };
-  log('fetch install:', installFetch());
-  // Belt-and-suspenders: if GG manages to swap fetch via setter on Window.prototype etc.,
-  // re-check periodically and re-install via direct assignment if needed.
-  let watchdogTicks = 0;
-  const watchdog = setInterval(() => {
-    watchdogTicks++;
-    if (window.fetch !== plonkerFetch && !window.fetch?.__plonker) {
-      try { window.fetch = plonkerFetch; log('re-patched fetch on tick', watchdogTicks); } catch (e) {}
-    }
-    if (watchdogTicks > 60) clearInterval(watchdog); // ~30s of monitoring after load
-  }, 500);
+  const installResult = installFetch();
+  log('fetch install:', installResult);
+  // If defineProperty failed (e.g., browser blocked), fall back to a watchdog
+  // that re-checks every 2 seconds for the lifetime of the tab. With
+  // defineProperty installed, no watchdog needed — the property is
+  // non-configurable so GG can't replace it.
+  if (installResult !== 'defineProperty') {
+    setInterval(() => {
+      if (window.fetch !== plonkerFetch && !window.fetch?.__plonker) {
+        try { window.fetch = plonkerFetch; log('re-patched fetch'); } catch (e) {}
+      }
+    }, 2000);
+  }
 
   // ---- XHR patch (axios fallback) ----
   const realOpen = XMLHttpRequest.prototype.open;
@@ -147,6 +158,6 @@
     }
   } catch (e) { /* swallow */ }
 
-  send('inject_ready', { v: '0.1.1' });
+  send('inject_ready', { v: '0.9.0' });
   log('inject ready');
 })();
