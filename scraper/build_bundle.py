@@ -118,15 +118,24 @@ def extract_places(text: str, country_name: str) -> list[str]:
 
     Subdivisions like 'Upper Austria' / 'New South Wales' are KEPT — only the
     bare country name itself is dropped, since 'Austria' alone matches every
-    Austrian round and adds no signal."""
-    matches = re.findall(r"\b[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\b", text)
+    Austrian round and adds no signal.
+
+    The character classes include Latin-1 and Latin Extended-A so umlauted
+    place names like Mälaren, Västergötland, Oberösterreich, łódź, Köln,
+    São Paulo are matched — without this, those silently get tagged with
+    no places and pass the filter as 'general country-wide tips'."""
+    # Uppercase: ASCII A-Z + Latin-1 upper (À-Ö, Ø-Þ).
+    UPPER = "A-Z\u00C0-\u00D6\u00D8-\u00DE"
+    # Letters: Latin + Latin-1 + Latin Extended-A range.
+    LETTERS = "a-zA-Z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF\u0100-\u017F"
+    pattern = rf"\b[{UPPER}][{LETTERS}'-]+(?:\s+[{UPPER}][{LETTERS}'-]+){{0,3}}\b"
+    matches = re.findall(pattern, text)
     seen, out = set(), []
     cn = country_name.lower().strip()
     for m in matches:
         first = m.split()[0]
         if first in PLACE_STOP:
             continue
-        # Drop bare country name, not subdivisions that include it.
         if m.lower().strip() == cn:
             continue
         if m.isupper():
