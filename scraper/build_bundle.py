@@ -774,19 +774,27 @@ def main() -> None:
             continue
         plonkit_by_iso2[iso2].append((slug, data))
 
+    # The canonical slug for each ISO-2 — used for plonkit URL building and
+    # display name. Sub-territory slugs (alaska, hawaii, azores, madeira)
+    # contribute their content but never become the canonical entry.
+    CANONICAL_SLUGS = {
+        "US": "united-states", "PT": "portugal",
+    }
+
     for iso2, slug_data_list in plonkit_by_iso2.items():
-        # Pick the canonical slug — prefer the one matching the country name
-        # (e.g. "united-states" over "alaska") otherwise just take the first.
-        canonical_slug = slug_data_list[0][0]
-        canonical_data = slug_data_list[0][1]
-        for slug, data in slug_data_list:
-            # Heuristic: shortest slug that's not a sub-territory (we don't
-            # have a great signal here, but US has united-states, alaska,
-            # hawaii — pick united-states because alaska/hawaii are folded in).
-            if len(slug) > len(canonical_slug):
-                continue
-            canonical_slug = slug
-            canonical_data = data
+        canonical_slug = CANONICAL_SLUGS.get(iso2)
+        canonical_data = None
+        if canonical_slug:
+            for slug, data in slug_data_list:
+                if slug == canonical_slug:
+                    canonical_data = data
+                    break
+        if not canonical_data:
+            # Fallback: prefer the LONGEST slug (so 'united-states' beats
+            # 'hawaii' if no explicit canonical was set), tie-break alpha.
+            canonical_slug, canonical_data = max(
+                slug_data_list, key=lambda sd: (len(sd[0]), sd[0])
+            )
 
         # Merge all sections from all folded slugs into one bundle input.
         merged_sections: dict[str, list] = {}

@@ -106,11 +106,17 @@ const tipsForCountry = async (cc2) => {
   const bundled = tips[u] || tips[u.toLowerCase()] || null;
   const meta = COUNTRY_BY_ISO2[u] || null;
   if (!bundled && !meta) return null;
+  // Prefer the static name from country-slugs.js so a bundle with a
+  // sub-territory slug (e.g. US bundle whose plonkit_slug ended up as
+  // "hawaii") still presents as "United States" to the user.
   return {
-    name: bundled?.name || meta?.name || u,
-    plonkit_slug: bundled?.plonkit_slug || meta?.slug || null,
+    name: meta?.name || bundled?.name || u,
+    plonkit_slug: meta?.slug || bundled?.plonkit_slug || null,
     key_meta: bundled?.key_meta || '',
-    sections: bundled?.sections || [],
+    metas: bundled?.metas || [],
+    general_rules: bundled?.general_rules || [],
+    regions: bundled?.regions || {},
+    spotlight: bundled?.spotlight || [],
     vs: bundled?.vs || {}
   };
 };

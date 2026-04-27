@@ -4,8 +4,8 @@
     "source": "plonkit + learnablemeta (v2)"
   },
   "US": {
-    "name": "Hawaii",
-    "plonkit_slug": "hawaii",
+    "name": "United States of America",
+    "plonkit_slug": "united-states",
     "key_meta": "Yellow triangular signs with the text \"No Passing Zone\" are unique to the United States.",
     "metas": [
       {
@@ -709,14 +709,14 @@
     ],
     "general_rules": [
       {
-        "topic": "Numbering",
+        "topic": "Hawaii Numbering",
         "text": "State highways are grouped by their first digit, with 1 and 2 found on Hawaiʻi, 3 on Maui, 4 on Molokaʻi and Lānaʻi, 5 on Kauaʻi and 6 to 9 on Oʻahu. Moreover, all four of the so-called interstate highways are located on Oʻahu.",
         "images": [
           "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_numbering.png"
         ]
       },
       {
-        "topic": "Oahu",
+        "topic": "Hawaii Oahu",
         "text": "The Island of Oʻahu lies southeast of Kauaʻi. It is known for being home to the Honolulu urban area. It also is home to steep, lush hills, which can be commonly seen from all around the island, especially in Honolulu’s suburbs.",
         "images": [
           "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_oahu.png"
@@ -1149,6 +1149,24 @@
           "type": "Hawaii Smallcam"
         },
         {
+          "text": "On the three largest islands, namely Hawaiʻi, Maui and Oʻahu, smallcam coverage was taken with a black Google car.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_blackcar.png"
+          ]
+        },
+        {
+          "text": "Smallcam imagery on the islands of Kauaʻi, Molokaʻi and Lānaʻi was captured by a white car. Just like with the black car, you will often be able to see the unblurred hood and mirrors.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_whitecar.png"
+          ]
+        },
+        {
+          "text": "Generation 2 and non-smallcam Generation 4 coverage can only be found on the islands of Hawaiʻi, Maui and Oʻahu. The other islands only have Generation 3 or smallcam coverage.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/Copy_of_Hawaii_Hint1.png"
+          ]
+        },
+        {
           "text": "The Island of Kauaʻi is the furthest west island in Hawaii with official Google coverage. This island has deep red soil and has large rugged hills with lush, jungle-like vegetation. NOTE: Other islands such as Maui and Molokaʻi have similar soil colours, but the hillsides on them will typically have less dense vegetation.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_kauai_2025.png"
@@ -1158,6 +1176,48 @@
           "text": "Honolulu, located on southern Oʻahu, is by far the largest city and urban area in Hawaii. If you are in a dense urban area and can see tall buildings, you will always be in or near Honolulu.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_honolulu.png"
+          ]
+        },
+        {
+          "text": "The Island of Molokaʻi is just southeast of Oʻahu. It features deep red soil and a prominent volcano on the eastern end of the island. Especially in the older Generation 3 coverage, the vegetation appears very dry. Molokaʻi is also very sparsely populated.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_molokai_new2.png"
+          ]
+        },
+        {
+          "text": "The Island of Lānaʻi is a small, yet distinct island that lies just south of Moloka’i. A volcano is found just east of the centre of the island, adjacent to the town of Lānaʻi. In this area, tall Cook pines are abundant. In addition, some main roads near the centre of the island are lined with younger Cook pines.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_lanaicentral_new.png"
+          ]
+        },
+        {
+          "text": "Towards the coasts of the island of Lānaʻi, hills dotted with dry grass and shrubby vegetation are commonly seen. These areas are very rural with few buildings.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_lanaicoastal_new.png"
+          ]
+        },
+        {
+          "text": "The Island of Maui sits southeast of Molokaʻi. In the centre of the island, you will find dry and somewhat flat grasslands with one or both of the mountain ranges on the island visible.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_mauicentral.png"
+          ]
+        },
+        {
+          "text": "Coastal areas of Maui are noticeably more lush and green. Banana plants, palm trees, and views of the mountains are all common.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_mauicoastal.png"
+          ]
+        },
+        {
+          "text": "The Island of Hawai’i (also referred to as The Big Island) is both the largest and farthest southeast island with Street View coverage in the state. The interior areas feature rolling, grassy plains and volcanic rocks. You can typically see one or more of the island’s volcanoes from the road.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_hawaiicentral.png"
+          ]
+        },
+        {
+          "text": "The coastal areas of the island of Hawai’i are where most of the towns and built-up areas on the island are located. These areas are typically more lush and have more trees and fern plants than the interior.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_hawaiicoastal.png"
           ]
         },
         {
@@ -1371,14 +1431,6 @@
           "type": "Language"
         },
         {
-          "text": "Sabal palmetto is native to the subtropical coastal regions of the American states of Florida, Georgia, South Carolina, southeastern North Carolina, and extreme southern Texas.",
-          "images": [
-            "https://learnablemeta.com/images/1119/1766099796818-UNi.avif",
-            "https://learnablemeta.com/images/1119/1766099800012-zbI.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
           "text": "Buildings with red metal rooftops are most commonly found in the Mid-South and Southern Appalachia states of Virginia, West Virginia, Ohio, Kentucky, Tennessee, Arkansas, and North Carolina.\n\nNOTE: These types of rooftops can be found in other areas, so use other clues before guessing.",
           "images": [
             "https://learnablemeta.com/images/1119/wctKuhfTK3kAladeqDMUfcfd7EY1gcZaaJ8d.avif"
@@ -1391,13 +1443,6 @@
             "https://learnablemeta.com/images/1119/1766534959987-zzm.avif"
           ],
           "type": "Car Meta"
-        },
-        {
-          "text": "You’ll find red soil everywhere in the South. The area where red soil can be found stretches all the way from some parts of Louisiana and Arkansas all the way to southern Virginia through Mississippi, southern Tennessee, Alabama, Georgia, South Carolina, and North Carolina.\n\nThe Oklahoma City region in Oklahoma is also notable for its red soil.",
-          "images": [
-            "https://learnablemeta.com/images/1119/JRq9BNxfA53Q0Wh0Cnv4ZfxWoTAjQQquXAs4.avif"
-          ],
-          "type": "Landscape"
         },
         {
           "text": "You may already know Ohio’s nickname, the Buckeye State, but despite the name, buckeyes grow in other states too. They’re most commonly seen in the east from Ohio down through West Virginia, Virginia, and Kentucky to Tennessee and North Carolina. Some can be found in Missouri too.\n\nCalifornia is the only state in the west where you can see buckeyes.",
@@ -1427,13 +1472,6 @@
             "https://learnablemeta.com/images/1191/VbaUjGWTfkebnUUOh9CXeXkzBcOMZREmOlZO.avif"
           ],
           "type": "Virginia Rectangle White Signs"
-        },
-        {
-          "text": "Yellow posts like this one are common in Colorado and can be seen more rarely in Utah or Texas. It can rarely be seen in other states.\n(Very rare and not the most consistant; I have also seen it twice in Virginia)",
-          "images": [
-            "https://learnablemeta.com/images/1191/mqLcw7ymhhyF7BtUV4oXFmRwY4x1uzABusEA.avif"
-          ],
-          "type": "Yellow Posts"
         },
         {
           "text": "Rectangular white signs can sometimes be seen at intersections in Virginia.",
@@ -1558,6 +1596,21 @@
             "https://learnablemeta.com/images/1119/1771880210761-UGw.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Sabal palmetto is native to the subtropical coastal regions of the American states of Florida, Georgia, South Carolina, southeastern North Carolina, and extreme southern Texas.",
+          "images": [
+            "https://learnablemeta.com/images/1119/1766099796818-UNi.avif",
+            "https://learnablemeta.com/images/1119/1766099800012-zbI.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
+          "text": "You’ll find red soil everywhere in the South. The area where red soil can be found stretches all the way from some parts of Louisiana and Arkansas all the way to southern Virginia through Mississippi, southern Tennessee, Alabama, Georgia, South Carolina, and North Carolina.\n\nThe Oklahoma City region in Oklahoma is also notable for its red soil.",
+          "images": [
+            "https://learnablemeta.com/images/1119/JRq9BNxfA53Q0Wh0Cnv4ZfxWoTAjQQquXAs4.avif"
+          ],
+          "type": "Landscape"
         },
         {
           "text": "Many parts of the Deep South, stretching from Oklahoma to South Carolina, have reddish soil. The exact tint of the soil can range from yellow to deep red.",
@@ -1743,31 +1796,11 @@
           "type": "Oklahoma Stop Sign"
         },
         {
-          "text": "Red metallic fences are very common in Oklahoma and the surrounding states, particularly Kansas, Texas, and Arkansas. This is not 100% so look for other clues before sending.",
-          "images": [
-            "https://learnablemeta.com/images/1191/ROfLUCHC1TBLoCVqQdXjbA1g33jJWTOJv3ai.avif"
-          ],
-          "type": "Oklahoma Fence"
-        },
-        {
-          "text": "The Ouachita Mountains stretch from Eastern Oklahoma into West-Central Arkansas. Unlike the nearby Ozark Mountains, these mountains are typically more steep in nature and easier to see from a distance.",
-          "images": [
-            "https://learnablemeta.com/images/1119/tFmb55tIxEoP6tSFPKysaklctYxvxYQEOIV1.avif"
-          ],
-          "type": "Ouachita Mountains"
-        },
-        {
           "text": "Southwestern Oklahoma features a small area of rocky, shrubby peaks. Some of the mountains are also covered in trees, and the rocks can have a pinkish red tint to them.",
           "images": [
             "https://learnablemeta.com/images/1119/1766535226378-WDE.avif"
           ],
           "type": "Landscape"
-        },
-        {
-          "text": "The Ouachita Mountains stretch from Eastern Oklahoma into West-Central Arkansas. Unlike the nearby Ozark Mountains, these mountains are typically more steep in nature and easier to see from a distance.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/united-states/ouachita_mountains_final.png"
-          ]
         },
         {
           "text": "In Oklahoma, you can often find a green rectangular sign with 3 rows of numbers attached to the back of stop signs at rural intersections.",
@@ -1972,6 +2005,13 @@
             "https://learnablemeta.com/images/1191/KV9fWKBQ1LAEdWNbL4it6HNEMqU2CdMRZABx.avif"
           ],
           "type": "Green Bollard"
+        },
+        {
+          "text": "Yellow posts like this one are common in Colorado and can be seen more rarely in Utah or Texas. It can rarely be seen in other states.\n(Very rare and not the most consistant; I have also seen it twice in Virginia)",
+          "images": [
+            "https://learnablemeta.com/images/1191/mqLcw7ymhhyF7BtUV4oXFmRwY4x1uzABusEA.avif"
+          ],
+          "type": "Yellow Posts"
         }
       ],
       "Alabama": [
@@ -2339,6 +2379,28 @@
           "type": "Infrastructure"
         }
       ],
+      "Arkansas": [
+        {
+          "text": "Red metallic fences are very common in Oklahoma and the surrounding states, particularly Kansas, Texas, and Arkansas. This is not 100% so look for other clues before sending.",
+          "images": [
+            "https://learnablemeta.com/images/1191/ROfLUCHC1TBLoCVqQdXjbA1g33jJWTOJv3ai.avif"
+          ],
+          "type": "Oklahoma Fence"
+        },
+        {
+          "text": "The Ouachita Mountains stretch from Eastern Oklahoma into West-Central Arkansas. Unlike the nearby Ozark Mountains, these mountains are typically more steep in nature and easier to see from a distance.",
+          "images": [
+            "https://learnablemeta.com/images/1119/tFmb55tIxEoP6tSFPKysaklctYxvxYQEOIV1.avif"
+          ],
+          "type": "Ouachita Mountains"
+        },
+        {
+          "text": "The Ouachita Mountains stretch from Eastern Oklahoma into West-Central Arkansas. Unlike the nearby Ozark Mountains, these mountains are typically more steep in nature and easier to see from a distance.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/united-states/ouachita_mountains_final.png"
+          ]
+        }
+      ],
       "Nevada": [
         {
           "text": "This bollard is found in Nevada. It consists of a reflector on a thin stick. The reflector is a vertical rectangle that consists of a white field surrounded by a black outline.",
@@ -2562,25 +2624,12 @@
           "type": "Brownstone Buildings"
         },
         {
-          "text": "In the Appalachian area stretching from southern New York to southern Virginia, there are a lot of forest-covered rolling hills, with flat valleys dividing them. A majority of the ridges are oriented Southwest to Northeast.",
-          "images": [
-            "https://learnablemeta.com/images/1119/wqLsjl9Mw5XCcvlknXEpwLI1YCoVKfsvHfVY.avif"
-          ],
-          "type": "Central Appalachians"
-        },
-        {
           "text": "The Balsam Fir is a very symmetric tree. It has pretty dark needles and often grows close to the ground.\n\nWithin the US, you will find it in the Northeast, starting in Northern New York. You can also see it near the Great Lakes, on Latitudes similar to Vermont/Maine.",
           "images": [
             "https://learnablemeta.com/images/1119/1768243894374-7P9.avif",
             "https://learnablemeta.com/images/1119/1768243899324-FFd.avif"
           ],
           "type": "Vegetation"
-        },
-        {
-          "text": "In the Appalachian area stretching from southern New York to southern Virginia, there are a lot of forest-covered rolling hills, with flat valleys dividing them. A majority of the ridges are oriented Southwest to Northeast.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/united-states/blue_mountains_final.png"
-          ]
         }
       ],
       "Montana": [
@@ -2616,6 +2665,42 @@
           "text": "The area spanning from the Montana Border with Saskatchewan to the Western Great Lakes features many ‘prairie potholes.’ These are areas of low-lying wetlands that feature marshy grasses and small, shallow ponds.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/united-states/prairie_potholes_final.png"
+          ]
+        }
+      ],
+      "Southwest": [
+        {
+          "text": "In the Appalachian area stretching from southern New York to southern Virginia, there are a lot of forest-covered rolling hills, with flat valleys dividing them. A majority of the ridges are oriented Southwest to Northeast.",
+          "images": [
+            "https://learnablemeta.com/images/1119/wqLsjl9Mw5XCcvlknXEpwLI1YCoVKfsvHfVY.avif"
+          ],
+          "type": "Central Appalachians"
+        },
+        {
+          "text": "Big Bend National Park is located along the Mexico border in Southwest Texas. It can be identified by its dry, rocky peaks and shrubby foliage. This park is adjacent to the Chihauhan desert, so plants such as yucca and prickly pear cactus are common.",
+          "images": [
+            "https://learnablemeta.com/images/1119/1766535246139-vEq.avif"
+          ],
+          "type": "Landscape"
+        },
+        {
+          "text": "‘Carl’s Jr.’ and ‘Hardee’s’ are fast food restaurants that are operated by the same company and have a similar logo and colour scheme. However, Carl’s Jr. locations are all located on the West Coast and Southwest US, while Hardee’s are found in the central and Eastern areas of the country. Two states, Wyoming and Oklahoma, have both kinds of restaurants present.",
+          "images": [
+            "https://learnablemeta.com/images/1119/1766090182735-fBD.avif",
+            "https://learnablemeta.com/images/1119/1766090186665-5Ov.avif"
+          ],
+          "type": "Misc"
+        },
+        {
+          "text": "The Southwest, centred around the Four Corners region of Utah, Arizona, New Mexico, and Colorado, feature many mesas and tablelands. Often, these rock formations will be red in colour. Additionally, red soil is common in these areas.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/united-states/southwest_rocks_final.png"
+          ]
+        },
+        {
+          "text": "In the Appalachian area stretching from southern New York to southern Virginia, there are a lot of forest-covered rolling hills, with flat valleys dividing them. A majority of the ridges are oriented Southwest to Northeast.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/united-states/blue_mountains_final.png"
           ]
         }
       ],
@@ -2834,47 +2919,6 @@
             "https://learnablemeta.com/images/1119/1766090212148-07Z.avif"
           ],
           "type": "Misc"
-        },
-        {
-          "text": "The Island of Molokaʻi is just southeast of Oʻahu. It features deep red soil and a prominent volcano on the eastern end of the island. Especially in the older Generation 3 coverage, the vegetation appears very dry. Molokaʻi is also very sparsely populated.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_molokai_new2.png"
-          ]
-        },
-        {
-          "text": "The Island of Maui sits southeast of Molokaʻi. In the centre of the island, you will find dry and somewhat flat grasslands with one or both of the mountain ranges on the island visible.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_mauicentral.png"
-          ]
-        },
-        {
-          "text": "The Island of Hawai’i (also referred to as The Big Island) is both the largest and farthest southeast island with Street View coverage in the state. The interior areas feature rolling, grassy plains and volcanic rocks. You can typically see one or more of the island’s volcanoes from the road.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_hawaiicentral.png"
-          ]
-        }
-      ],
-      "Southwest": [
-        {
-          "text": "Big Bend National Park is located along the Mexico border in Southwest Texas. It can be identified by its dry, rocky peaks and shrubby foliage. This park is adjacent to the Chihauhan desert, so plants such as yucca and prickly pear cactus are common.",
-          "images": [
-            "https://learnablemeta.com/images/1119/1766535246139-vEq.avif"
-          ],
-          "type": "Landscape"
-        },
-        {
-          "text": "‘Carl’s Jr.’ and ‘Hardee’s’ are fast food restaurants that are operated by the same company and have a similar logo and colour scheme. However, Carl’s Jr. locations are all located on the West Coast and Southwest US, while Hardee’s are found in the central and Eastern areas of the country. Two states, Wyoming and Oklahoma, have both kinds of restaurants present.",
-          "images": [
-            "https://learnablemeta.com/images/1119/1766090182735-fBD.avif",
-            "https://learnablemeta.com/images/1119/1766090186665-5Ov.avif"
-          ],
-          "type": "Misc"
-        },
-        {
-          "text": "The Southwest, centred around the Four Corners region of Utah, Arizona, New Mexico, and Colorado, feature many mesas and tablelands. Often, these rock formations will be red in colour. Additionally, red soil is common in these areas.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/united-states/southwest_rocks_final.png"
-          ]
         }
       ],
       "Missouri": [
@@ -2899,6 +2943,20 @@
         "text": "The Denali highway, stretching from Cantwell to Paxson in central Alaska, is a mostly gravel highway in the ‘Alaska’ mountain range. This road runs generally east to west, is covered in the generation 2 camera, and was taken in late summer, so wildflowers and green shrubby plants are common.",
         "images": [
           "https://www.plonkit.net/images/resize/600/80/alaska/ak_denalihighway.png"
+        ]
+      },
+      {
+        "place": "Hawaii",
+        "text": "The infamous “Hawaiian lattice” can be recognized by the volcanic soil and rocks that are abundant in the region. Volcanic vegetation can also be seen lining the roads. Note that the angle of the roads is a big clue for the area, and that this lattice was built on the slope of Mauna Loa.",
+        "images": [
+          "https://www.plonkit.net/images/resize/600/80/hawaii/The_Great_Hawaii_Lattice1.png"
+        ]
+      },
+      {
+        "place": "Hawaii",
+        "text": "On the eastern side of the island of Molokaʻi lies the Kamakou volcano, leading to a significantly hillier and slightly more vegetated landscape than the western parts of the island.",
+        "images": [
+          "https://www.plonkit.net/images/resize/600/80/hawaii/hawaii_molokaivolcano_new.png"
         ]
       },
       {
@@ -4157,6 +4215,13 @@
           "type": "Infrastructure"
         },
         {
+          "text": "Taxis in Neuquen are all yellow. What distinguishes them from Cordoba taxis is that their doors have no logos or paintings on them.",
+          "images": [
+            "https://learnablemeta.com/images/100/jL6uOUEuVmFqlPaL2euYd3sHigvzPiq1cjHZ.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "You can find these unique markers on provincial roads in Cordoba.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/argentina/Cordoba_Markers.png"
@@ -4314,22 +4379,9 @@
           "type": "Agriculture"
         },
         {
-          "text": "The Butia yatay palm has arching, pinnate leaves and often grows at an incline with varying heights. It is most common in Corrientes and Parque Nacional El Palmar, Entre Rios.",
-          "images": [
-            "https://learnablemeta.com/images/100/aY6DeCbYGkf5nsLK80LEUv9xZl2280qcXuIN.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
           "text": "The majority of tree plantations in Argentina are located in the Entre Rios province. NOTE: Uruguay and southern Brazil have them as well. Make sure to look at other clues before guessing.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/argentina/ar_tree_plantations.png"
-          ]
-        },
-        {
-          "text": "The Butia yatay palm has arching, pinnate leaves and often grows at an incline with varying heights. It is most common in Corrientes and Parque Nacional El Palmar, Entre Rios.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/argentina/butiayataypalm.png"
           ]
         }
       ],
@@ -4458,38 +4510,6 @@
           "type": "Landscape"
         }
       ],
-      "Neuquen": [
-        {
-          "text": "Taxis in Neuquen are all yellow. What distinguishes them from Cordoba taxis is that their doors have no logos or paintings on them.",
-          "images": [
-            "https://learnablemeta.com/images/100/jL6uOUEuVmFqlPaL2euYd3sHigvzPiq1cjHZ.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
-          "text": "The monkey puzzle tree can be found in western Neuquen. The most specimens are seen on provincial road 23 + offroads, between Caviahue and Atreuco.",
-          "images": [
-            "https://learnablemeta.com/images/100/1765046537261-uvq.avif",
-            "https://learnablemeta.com/images/100/1765046541944-2bZ.avif",
-            "https://learnablemeta.com/images/100/1765046546631-TZ7.avif",
-            "https://learnablemeta.com/images/100/1765046552795-QnZ.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
-          "text": "The RP1 in Neuquen has dark, cloudy coverage. It is a dark red dirt road and thus resembles Mars. There is some spill onto the RP7 in the North and the RP10 in the South.",
-          "images": [
-            "https://learnablemeta.com/images/100/SlbDpFymtQDSdsF6EMoXXIiwjeuRHNccy4qk.avif"
-          ],
-          "type": "Landscape"
-        },
-        {
-          "text": "Single rows of poplar trees, characterised by their thin and tall appearance, are very common around Neuquén. The area is also very flat.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/argentina/neuquen_plantations.png"
-          ]
-        }
-      ],
       "Catamarca": [
         {
           "text": "These volcanic rocks in Generation 4 coverage can only be found on the RP43 south of Antofagasta de la Sierra in northwestern Catamarca.",
@@ -4547,6 +4567,31 @@
           ]
         }
       ],
+      "Neuquen": [
+        {
+          "text": "The monkey puzzle tree can be found in western Neuquen. The most specimens are seen on provincial road 23 + offroads, between Caviahue and Atreuco.",
+          "images": [
+            "https://learnablemeta.com/images/100/1765046537261-uvq.avif",
+            "https://learnablemeta.com/images/100/1765046541944-2bZ.avif",
+            "https://learnablemeta.com/images/100/1765046546631-TZ7.avif",
+            "https://learnablemeta.com/images/100/1765046552795-QnZ.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
+          "text": "The RP1 in Neuquen has dark, cloudy coverage. It is a dark red dirt road and thus resembles Mars. There is some spill onto the RP7 in the North and the RP10 in the South.",
+          "images": [
+            "https://learnablemeta.com/images/100/SlbDpFymtQDSdsF6EMoXXIiwjeuRHNccy4qk.avif"
+          ],
+          "type": "Landscape"
+        },
+        {
+          "text": "Single rows of poplar trees, characterised by their thin and tall appearance, are very common around Neuquén. The area is also very flat.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/argentina/neuquen_plantations.png"
+          ]
+        }
+      ],
       "Pampas": [
         {
           "text": "Pampas grass (Cortaderia selloana) is one of the most defining flora of the Pampas region. It is recognizable by its long bunched reeds and white fluffy flowerheads.",
@@ -4564,6 +4609,13 @@
       ],
       "Corrientes": [
         {
+          "text": "The Butia yatay palm has arching, pinnate leaves and often grows at an incline with varying heights. It is most common in Corrientes and Parque Nacional El Palmar, Entre Rios.",
+          "images": [
+            "https://learnablemeta.com/images/100/aY6DeCbYGkf5nsLK80LEUv9xZl2280qcXuIN.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
           "text": "Coperinicia alba, also known as the Caranday Wax Palm, have short, fan-like leaves that tend to grow in low-density, single-species forests. Most common in Formosa, they can also be found in Chaco, Corrientes and northern Santa Fe.",
           "images": [
             "https://learnablemeta.com/images/100/FPrW0ezs4Coz8d1udl5O7KpsptQvOrDMZ7kO.avif"
@@ -4574,6 +4626,12 @@
           "text": "Coperinicia alba, also known as the Caranday Wax Palm, have short, fan-like leaves that tend to grow in low-density, single-species forests. Most common in Formosa, they can also be found in Chaco, Corrientes and northern Santa Fe.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/argentina/carandaypalm.png"
+          ]
+        },
+        {
+          "text": "The Butia yatay palm has arching, pinnate leaves and often grows at an incline with varying heights. It is most common in Corrientes and Parque Nacional El Palmar, Entre Rios.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/argentina/butiayataypalm.png"
           ]
         }
       ],
@@ -5624,9 +5682,22 @@
           "type": "Infrastructure"
         },
         {
+          "text": "Traffic lights with a white outline around the frame are found in the eastern and western states of WA, QLD, NSW, ACT and Tas. Traffic lights without a border are found in the remaining, central states.",
+          "images": [
+            "https://learnablemeta.com/images/109/OzggKlWVJlJNOgbDmuOQWILUHAMvmmWBUswx.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "New South Wales is the only state to use red ‘No Stopping’ signs. NOTE: All other states use white versions.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/australia/NSW_stop_sign.png"
+          ]
+        },
+        {
+          "text": "Traffic lights with a white outline around the frame are found in the eastern and western states of WA, QLD, NSW, ACT and Tas. Traffic lights without a border are found in the remaining, central states.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/australia/aaaa.png"
           ]
         },
         {
@@ -5822,33 +5893,6 @@
           ]
         }
       ],
-      "Tas": [
-        {
-          "text": "Traffic lights with a white outline around the frame are found in the eastern and western states of WA, QLD, NSW, ACT and Tas. Traffic lights without a border are found in the remaining, central states.",
-          "images": [
-            "https://learnablemeta.com/images/109/OzggKlWVJlJNOgbDmuOQWILUHAMvmmWBUswx.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
-          "text": "Olive-green possum guards are only found on electricity poles in Tasmania. NOTE: Possum guards are found all over Australia. The colour is what distinguishes them.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/australia/Tas_possum_guard.png"
-          ]
-        },
-        {
-          "text": "White directional signs can only be found in Tasmania.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/australia/Tas_direction_signs.png"
-          ]
-        },
-        {
-          "text": "Traffic lights with a white outline around the frame are found in the eastern and western states of WA, QLD, NSW, ACT and Tas. Traffic lights without a border are found in the remaining, central states.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/australia/aaaa.png"
-          ]
-        }
-      ],
       "Vic": [
         {
           "text": "According to a 2006 review, 64% of all concrete poles are located in the state of Victoria.",
@@ -5878,6 +5922,20 @@
           "text": "These fire hydrants with red painted tops are unique to Victoria.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/australia/Vic_fire_hydrants.png"
+          ]
+        }
+      ],
+      "Tas": [
+        {
+          "text": "Olive-green possum guards are only found on electricity poles in Tasmania. NOTE: Possum guards are found all over Australia. The colour is what distinguishes them.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/australia/Tas_possum_guard.png"
+          ]
+        },
+        {
+          "text": "White directional signs can only be found in Tasmania.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/australia/Tas_direction_signs.png"
           ]
         }
       ],
@@ -6102,8 +6160,8 @@
     ]
   },
   "PT": {
-    "name": "Azores",
-    "plonkit_slug": "azores",
+    "name": "Portugal",
+    "plonkit_slug": "portugal",
     "key_meta": "Old Portuguese license plates have a yellow strip on the right side.",
     "metas": [
       {
@@ -6301,7 +6359,9 @@
           "images": [
             "https://www.plonkit.net/images/resize/600/80/azores/gen4.png"
           ]
-        },
+        }
+      ],
+      "Azores": [
         {
           "text": "Shitcam coverage is found on Ilha de São Miguel and Ilha do Faial. The car seen on São Miguel has an indentation in the centre, while the one on Faial appears as a smooth surface, sometimes with an antenna visible.",
           "images": [
@@ -6912,19 +6972,11 @@
       }
     ],
     "regions": {
-      "Flanders": [
+      "Wallonia": [
         {
           "text": "Belgium has 3 official languages. Dutch (Flemish), spoken in Flanders, the Northern part of Belgium. There is an abundance of letters and combinations like z, w, ee and ij. Dutch (Flemish), spoken in Flanders, the Northern part of Belgium. There is an abundance of letters and combinations like z, w, ee and ij. French (Walloon), spoken in Wallonia, the Southern part of Belgium. You can see letters like ç, é, è and à. French (Walloon), spoken in Wallonia, the Southern part of Belgium. You can see letters like ç, é, è and à. German, spoken in Ostbelgien, a small region in the east of the country. You can see letters like ä, ü, ö and ß. German, spoken in Ostbelgien, a small region in the east of the country. You can see letters like ä, ü, ö and ß.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/belgium/talenmap2_nobg.png"
-          ]
-        }
-      ],
-      "Brussels": [
-        {
-          "text": "Brussels, the capital of Belgium, is bilingual. You will see both French and Dutch on signs.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/belgium/brusselbord.png"
           ]
         },
         {
@@ -6943,6 +6995,14 @@
           "text": "Traffic lights held up by yellow-and-black poles are unique to Flanders. In contrast, Wallonia and Brussels frequently use a red-and-white design.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/belgium/striped_posts_v2.png"
+          ]
+        }
+      ],
+      "Brussels": [
+        {
+          "text": "Brussels, the capital of Belgium, is bilingual. You will see both French and Dutch on signs.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/belgium/brusselbord.png"
           ]
         }
       ],
@@ -12562,6 +12622,13 @@
           "type": "Agriculture"
         },
         {
+          "text": "In general, banana plantation can be found mostly in Quindio and Magdalena, sometimes in Northwest-Antioquia and Cordoba, and rarely in surrounding provinces of Quindio.",
+          "images": [
+            "https://learnablemeta.com/images/698/1771601111704-Czc.avif"
+          ],
+          "type": "Agriculture"
+        },
+        {
           "text": "These pole markings with one short black strip on the top and bottom, and a longer yellow section in the middle, are most commonly found in the Antioquia department. Sometimes, you can find them in the Cordoba department as well.",
           "images": [
             "https://learnablemeta.com/images/DYiHaWiXLpCiTpwgr5t0OzGAhMq0GHTTQ1G0.avif"
@@ -12658,13 +12725,6 @@
           "text": "In Magdalena you will often see banana plantations in a dry sandy/dirty area with mountains to your east.",
           "images": [
             "https://learnablemeta.com/images/698/1771600869692-uM8.avif"
-          ],
-          "type": "Agriculture"
-        },
-        {
-          "text": "In general, banana plantation can be found mostly in Quindio and Magdalena, sometimes in Northwest-Antioquia and Cordoba, and rarely in surrounding provinces of Quindio.",
-          "images": [
-            "https://learnablemeta.com/images/698/1771601111704-Czc.avif"
           ],
           "type": "Agriculture"
         }
@@ -15356,13 +15416,6 @@
           "type": "Architecture"
         },
         {
-          "text": "It is not so rare to see cows, horses, or sheep in France in Geoguessr. If that ever happens, you should consider the West of the country (Brittany, Normandy), as well as the mountainous regions (Pyrenees and Alps). This is where you have the most chances to find animals in France in Google Street View.",
-          "images": [
-            "https://learnablemeta.com/images/1068/1754741448331-tcp.avif"
-          ],
-          "type": "Agriculture"
-        },
-        {
           "text": "Dark green road signposts and backs are most commonly found in Brittany and around Paris, but also various southern regions in the country. NOTE: Beware that this, and the following coloured infrastructure can rarely be found in other parts of the country.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/france/2_darkgreenposts.png"
@@ -15389,6 +15442,13 @@
             "https://learnablemeta.com/images/1068/iFkx1g406L16K3hnprE4n086csybvYr2BoMp.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "It is not so rare to see cows, horses, or sheep in France in Geoguessr. If that ever happens, you should consider the West of the country (Brittany, Normandy), as well as the mountainous regions (Pyrenees and Alps). This is where you have the most chances to find animals in France in Google Street View.",
+          "images": [
+            "https://learnablemeta.com/images/1068/1754741448331-tcp.avif"
+          ],
+          "type": "Agriculture"
         },
         {
           "text": "Roads with a significant red, purple or burgundy tint are most commonly found in an area between Paris and Dijon, with Normandy being a notable exception. The historical region of Burgundy, which gave the name to the shade of red, roughly corresponds to the highlighted area. NOTE: Normal roads may deceptively look reddish under some lighting, so use this with caution.",
@@ -19745,6 +19805,14 @@
           "type": "Vegetation"
         },
         {
+          "text": "Found in Central and East India, in Haryana and Delhi, and sometimes in Gujarat.",
+          "images": [
+            "https://learnablemeta.com/images/937/1762288727838-F5M.avif",
+            "https://learnablemeta.com/images/937/1762288731033-tmL.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "Concrete holey poles are unique to Gujarat and the Union territory of Daman and Diu, and Dadra and Nagar Haveli.",
           "images": [
             "https://learnablemeta.com/images/pVuwNqrikrLrDqHzXbuDPgmlilDmOhDmhUo8.avif",
@@ -19807,6 +19875,13 @@
             "https://learnablemeta.com/images/937/1758282687026-fyg.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "The area on the border of Telangana and Karnataka often have houses with roofs made out of distinctly thin grey bricks. These grey bricks and similar coloured rocks are sometimes also seen in walls and scattered on the ground in stockyards.",
+          "images": [
+            "https://learnablemeta.com/images/937/dT9g9WK3E8viSjCTIo5tAwpIVopkAyZZolfi.avif"
+          ],
+          "type": "Architecture"
         },
         {
           "text": "In Jharkhand, you will very often see the combination of date palms (a lot of them) and palmyra palms. I think it is one of the best clues for getting Jharkhand because it’s pretty unique. I also saw a lot of that combination of palms in Telangana so be careful and look for text before guessing.",
@@ -20461,6 +20536,14 @@
           "type": "Agriculture"
         },
         {
+          "text": "Found in South India, Goa + Maharashtra, and Bihar, West Bengal and Odisha.",
+          "images": [
+            "https://learnablemeta.com/images/937/1762288993993-RTH.avif",
+            "https://learnablemeta.com/images/937/1762288996189-OBw.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "Recognizable by the C-Logo\nFound in South India, and sometimes in Goa and Maharashtra.",
           "images": [
             "https://learnablemeta.com/images/937/1762288695245-yDh.avif",
@@ -20699,14 +20782,6 @@
           "type": "Infrastructure"
         },
         {
-          "text": "Found in South India, Goa + Maharashtra, and Bihar, West Bengal and Odisha.",
-          "images": [
-            "https://learnablemeta.com/images/937/1762288993993-RTH.avif",
-            "https://learnablemeta.com/images/937/1762288996189-OBw.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
           "text": "West Bengal only has E-Rickshaws. They have a unique shape and are often blue.",
           "images": [
             "https://learnablemeta.com/images/937/1764523202146-J6n.avif"
@@ -20902,13 +20977,6 @@
           "type": "Infrastructure"
         },
         {
-          "text": "The area on the border of Telangana and Karnataka often have houses with roofs made out of distinctly thin grey bricks. These grey bricks and similar coloured rocks are sometimes also seen in walls and scattered on the ground in stockyards.",
-          "images": [
-            "https://learnablemeta.com/images/937/dT9g9WK3E8viSjCTIo5tAwpIVopkAyZZolfi.avif"
-          ],
-          "type": "Architecture"
-        },
-        {
           "text": "Kannada is found in Karnataka and has a script with a lot of smooth curves and small circles. Many characters also feature a distinct squiggly tail in the top right corner, which is less common in Telugu. It is very similar to the Telugu script(but that one has usually \"checkmarks\" on top of letters.",
           "images": [
             "https://learnablemeta.com/images/PcUil6PN3TvdG8pQVcG7M62Vgc1v1K3QhKf1.avif",
@@ -20930,14 +20998,6 @@
             "https://learnablemeta.com/images/937/LSEeOJSfn1uGiBZvRRUBzN5Wplgjjt7npkRZ.avif"
           ],
           "type": "Landscape"
-        },
-        {
-          "text": "Found in Central and East India, in Haryana and Delhi, and sometimes in Gujarat.",
-          "images": [
-            "https://learnablemeta.com/images/937/1762288727838-F5M.avif",
-            "https://learnablemeta.com/images/937/1762288731033-tmL.avif"
-          ],
-          "type": "Infrastructure"
         },
         {
           "text": "Small metal poletops in the shape of a window are found in Punjab(super common) and Haryana.",
@@ -21189,12 +21249,6 @@
           "text": "Poles with two diagonal bars forming a ‘<’ shape are common in Meghalaya and Arunachal Pradesh and occasionally found in Assam.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/india/in_meghalayapoletop1.png"
-          ]
-        },
-        {
-          "text": "Chir pines are more or less exclusive to Uttarakhand, Himachal Pradesh, Jammu and Kashmir as well as in westernmost Arunachal Pradesh. These pines can be identified from their generally smooth-looking conical or spherical crowns with very long needles.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/india/in_chirpine2.png"
           ]
         }
       ],
@@ -21805,6 +21859,12 @@
             "https://learnablemeta.com/images/937/n1oXT54EdgzytdlLxskbp3dfpOOM7QzDaUSS.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Chir pines are more or less exclusive to Uttarakhand, Himachal Pradesh, Jammu and Kashmir as well as in westernmost Arunachal Pradesh. These pines can be identified from their generally smooth-looking conical or spherical crowns with very long needles.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/india/in_chirpine2.png"
+          ]
         }
       ],
       "Manipur": [
@@ -21869,7 +21929,7 @@
         ]
       },
       {
-        "place": "Karnataka",
+        "place": "Telangana",
         "text": "The area on the border of Telangana and Karnataka often have houses with roofs made out of distinctly thin grey bricks. These grey bricks and similar coloured rocks are sometimes also seen in walls and scattered on the ground in stockyards.",
         "images": [
           "https://www.plonkit.net/images/resize/600/80/india/in_grayflatbricks.png"
@@ -22691,6 +22751,13 @@
           "type": "Bali Bridge"
         },
         {
+          "text": "Generation 3 antenna coverage is most commonly found on Java, but can very rarely be seen on Bali in and around Denpasar. It is most commonly seen in East Java, as most of the antenna coverage in the west has been overwritten by Generation 4.",
+          "images": [
+            "https://learnablemeta.com/images/859/iLKsOcRPwS9amH5fRs61hNEmE365gF8f4UHZ.avif"
+          ],
+          "type": "Java (And Bali) Antenna"
+        },
+        {
           "text": "dark blue sticker on the pole is only found in Bali and Nusa Pineda i think, and i think a lighter version can be found in west nusas maybe lombok aswell, but both can get faded. If you see a blue sticker your prolly somewhere there. most likely bali i think.",
           "images": [
             "https://learnablemeta.com/images/859/2Mii7uhhENE2t5uT6CsrlBYgQT9RvCAYF6X3.avif"
@@ -22930,13 +22997,6 @@
             "https://learnablemeta.com/images/859/XQmbTEJQzeVKUdmBfsnqpB21pClBXDlkz3Rc.avif"
           ],
           "type": "Java Rock Walls(Volcanic)"
-        },
-        {
-          "text": "Generation 3 antenna coverage is most commonly found on Java, but can very rarely be seen on Bali in and around Denpasar. It is most commonly seen in East Java, as most of the antenna coverage in the west has been overwritten by Generation 4.",
-          "images": [
-            "https://learnablemeta.com/images/859/iLKsOcRPwS9amH5fRs61hNEmE365gF8f4UHZ.avif"
-          ],
-          "type": "Java (And Bali) Antenna"
         },
         {
           "text": "The Nusas typically look drier than other regions in Indonesia. The islands get especially dry towards the east, especially in Generation 3. Vegetation tends to look less tropical, but instead more brown with a lack of leaves. Sumba Island is also the driest of the Nusas.\n\nNOTE: While less common, other regions such as Java can look similarly dry. Make sure to look out for other clues before guessing.",
@@ -28463,6 +28523,13 @@
           "type": "Landscape"
         },
         {
+          "text": "A. karwinskii is exclusively seen in the central desert region of Oaxaca, mostly near the town Miahuatlán de Porfirio Díaz, even though technically its native distribution extends elsewhere in the state and barely into Puebla. Its spiky thin leaves, protruding from the centre in a cylindrical formation, make it quite distinct from other common agaves.",
+          "images": [
+            "https://learnablemeta.com/images/1039/1751314754671-x70.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
           "text": "This exact pavement design with three lines of cobblestone patterning is mainly found in Oaxaca.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/mexico/mx_oaxacapavement.png"
@@ -28610,13 +28677,6 @@
           "type": "Car Meta"
         },
         {
-          "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
-          "images": [
-            "https://learnablemeta.com/images/1039/tDlTZdHe2LwvAYeWk6ZWXN1K1bIfYgP0ITn8.avif"
-          ],
-          "type": "Landscape"
-        },
-        {
           "text": "The Indian Comb (Pachycereus pecten-aboriginum), is a common cactus that always implies Sinaloa, or south Sonora near Sinaloa, although technically its habitat extends elsewhere. Its densely packed branches emerge from a single stem, but most recognisable is its inflorescence - the brightly coloured flowers which usually adorn the tip of its arms.",
           "images": [
             "https://learnablemeta.com/images/1039/1762978799151-4Js.avif"
@@ -28686,13 +28746,6 @@
             "https://learnablemeta.com/images/1039/6BiJ1IG1aZgrydaf3Z8B5Yg7KrmH26HqLbU2.avif"
           ],
           "type": "Infrastructure"
-        },
-        {
-          "text": "Oil palm plantations are most common in Chiapas, and occasionally on the outskirts of the state in Veracruz, Tabasco, and Campeche.",
-          "images": [
-            "https://learnablemeta.com/images/40/aXQPtsZvAwQ0oTvrYRuEF2vmobMH2oLfBNjP.avif"
-          ],
-          "type": "Oil Palm Plantations"
         },
         {
           "text": "The area around Poza Rica in Veracruz features a lot of citrus tree plantations. It is common to see large amounts of these trees grown right on top of the hills.",
@@ -28991,13 +29044,20 @@
           ]
         }
       ],
-      "Nuevo Leon": [
+      "Tamaulipas": [
         {
           "text": "Grainy pavement with a blue-ish grey tinge is a common sight for the states of Tamaulipas and Nuevo Leon.\n\nNOTE: In Tamaulipas, larger roads very commonly feature dashed outer lines.",
           "images": [
             "https://learnablemeta.com/images/40/BP2q3YLXUbDjndEPTcvfZp1VkQ1EGNsSAhhJ.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Cerro del Bernal is a distinct extinct volcano that is found in southern Tamaulipas. It can be found heading directly northwest of Tampico or west of Morón.",
+          "images": [
+            "https://learnablemeta.com/images/1039/A8Nkn9KzTx5bqvmrwPYzmLiC3YQN70nrcxaQ.avif"
+          ],
+          "type": "Landscape"
         },
         {
           "text": "Grainy pavement with a blue-ish grey tinge is a common sight for the states of Tamaulipas and Nuevo Leon. NOTE: In Tamaulipas, larger roads very commonly feature dashed outer lines.",
@@ -29086,6 +29146,13 @@
           "type": "Agriculture"
         },
         {
+          "text": "Oil palm plantations are most common in Chiapas, and occasionally on the outskirts of the state in Veracruz, Tabasco, and Campeche.",
+          "images": [
+            "https://learnablemeta.com/images/40/aXQPtsZvAwQ0oTvrYRuEF2vmobMH2oLfBNjP.avif"
+          ],
+          "type": "Oil Palm Plantations"
+        },
+        {
           "text": "These red agricultural fields surrounded by dense forests of tropical trees are most common in northern Campeche.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/mexico/mx_campecheagriculture.png"
@@ -29115,6 +29182,13 @@
             "https://learnablemeta.com/images/1039/Yy7htyylxzZqv7LldzzpCMj60LxDl1PfNi1e.avif"
           ],
           "type": "Architecture"
+        },
+        {
+          "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
+          "images": [
+            "https://learnablemeta.com/images/1039/tDlTZdHe2LwvAYeWk6ZWXN1K1bIfYgP0ITn8.avif"
+          ],
+          "type": "Landscape"
         },
         {
           "text": "Poles with a lowered crossbar and a single support beam that extend from one end of the crossbar to the pole itself can be found in Durango.",
@@ -29159,15 +29233,6 @@
           "images": [
             "https://www.plonkit.net/images/resize/600/80/mexico/mx_coastalinsulators.png"
           ]
-        }
-      ],
-      "Tamaulipas": [
-        {
-          "text": "Cerro del Bernal is a distinct extinct volcano that is found in southern Tamaulipas. It can be found heading directly northwest of Tampico or west of Morón.",
-          "images": [
-            "https://learnablemeta.com/images/1039/A8Nkn9KzTx5bqvmrwPYzmLiC3YQN70nrcxaQ.avif"
-          ],
-          "type": "Landscape"
         }
       ],
       "Guanajuato": [
@@ -29216,13 +29281,6 @@
             "https://learnablemeta.com/images/1039/FT7lFuNyDjvJYeZxS0maTT2yzCpga0sz79Ry.avif"
           ],
           "type": "Landscape"
-        },
-        {
-          "text": "A. karwinskii is exclusively seen in the central desert region of Oaxaca, mostly near the town Miahuatlán de Porfirio Díaz, even though technically its native distribution extends elsewhere in the state and barely into Puebla. Its spiky thin leaves, protruding from the centre in a cylindrical formation, make it quite distinct from other common agaves.",
-          "images": [
-            "https://learnablemeta.com/images/1039/1751314754671-x70.avif"
-          ],
-          "type": "Vegetation"
         }
       ],
       "Baja California Sur": [
@@ -29287,7 +29345,7 @@
         ]
       },
       {
-        "place": "Sinaloa",
+        "place": "Durango",
         "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
         "images": [
           "https://www.plonkit.net/images/resize/600/80/mexico/mx_40d.png"
@@ -30303,12 +30361,6 @@
           ]
         },
         {
-          "text": "A medium sized black vertical sticker with 5 digits is found in West Coast, Tasman, southern Canterbury and southern Northland.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/new-zealand/nz_5digitblacksticker.png"
-          ]
-        },
-        {
           "text": "A typical bollard, but with a green stripe, is common in southern Canterbury, as well as in some pockets in eastern Southland.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/new-zealand/nz_greenstripedbollard.png"
@@ -30334,6 +30386,14 @@
           "text": "A warning sticker attached to poles, which has a yellow danger triangle between two white rectangles, is found in Hawke’s Bay, from lake Taupo to lake Rotorua, in northern Waikato and south of Auckland city.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/new-zealand/nz_warningsticker.png"
+          ]
+        }
+      ],
+      "West Coast": [
+        {
+          "text": "A medium sized black vertical sticker with 5 digits is found in West Coast, Tasman, southern Canterbury and southern Northland.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/new-zealand/nz_5digitblacksticker.png"
           ]
         }
       ],
@@ -31525,13 +31585,27 @@
     ],
     "general_rules": [],
     "regions": {
-      "Landscape": [
+      "Mountains": [
         {
           "text": "Northern Oman features a dry mountainous landscape similar to eastern UAE. The south coast of Oman also rarely features some similar mountains.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/oman/15.png"
           ]
         },
+        {
+          "text": "The mountains north of Nizwa have an amount of green bushes that are unusually large for the north. The mountains are very rocky and jagged, which differentiates them from the more rolling mountains in the south.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/oman/45.png"
+          ]
+        },
+        {
+          "text": "Salalah is located on a flat coastal plain with rolling mountains surrounding it to the north.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/oman/21.png"
+          ]
+        }
+      ],
+      "Landscape": [
         {
           "text": "Close to the southern coast, especially around Salalah, you will find a rolling hills landscape. The area commonly features rocky ground, bushes and small trees as well as some fairly green valleys.",
           "images": [
@@ -31548,20 +31622,6 @@
           "text": "Masirah Island features a dry and slightly hilly landscape, typically with somewhat grey soil and with brown shrubs visible. Road 51, which circulates the island, usually only has a white centre road line, which can help in recognising it. The front camera on the island is slightly smudged.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/oman/22.png"
-          ]
-        }
-      ],
-      "Mountains": [
-        {
-          "text": "The mountains north of Nizwa have an amount of green bushes that are unusually large for the north. The mountains are very rocky and jagged, which differentiates them from the more rolling mountains in the south.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/oman/45.png"
-          ]
-        },
-        {
-          "text": "Salalah is located on a flat coastal plain with rolling mountains surrounding it to the north.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/oman/21.png"
           ]
         }
       ],
@@ -31598,7 +31658,7 @@
         ]
       },
       {
-        "place": "Landscape",
+        "place": "Mountains",
         "text": "Just north of Adam, you’ll find a flat desert landscape with greyish soil and mountains in the distance, notably one long ridge to the south followed by two smaller and rounder hills to the east and southeast. Other mountains are also visible to the north and west.",
         "images": [
           "https://www.plonkit.net/images/resize/600/80/oman/19.png"
@@ -33061,7 +33121,7 @@
           ]
         }
       ],
-      "Luzon": [
+      "Bicol": [
         {
           "text": "White guardrails with three recurring black stripes are unique to the region of Bicol in southern Luzon.",
           "images": [
@@ -33069,6 +33129,14 @@
           ],
           "type": "Infrastructure"
         },
+        {
+          "text": "White guardrails with three recurring black stripes are unique to the region of Bicol in southern Luzon.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/philippines/2_bicolguardrail.png"
+          ]
+        }
+      ],
+      "Luzon": [
         {
           "text": "This type of tractor, called a kuliglig, is mostly found on the plains around Cauayan on northern Luzon.",
           "images": [
@@ -33090,12 +33158,6 @@
             "https://learnablemeta.com/images/992/RvzG96PCFENGWf5MXeVw0tiAuf2S2graBP1h.avif"
           ],
           "type": "Vehicle"
-        },
-        {
-          "text": "White guardrails with three recurring black stripes are unique to the region of Bicol in southern Luzon.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/philippines/2_bicolguardrail.png"
-          ]
         },
         {
           "text": "Decorations made of neon-green Mountain Dew bottles are commonly found in the north, particularly on northern Luzon.",
@@ -34181,17 +34243,11 @@
           ]
         }
       ],
-      "Kostroma": [
+      "Vladimir": [
         {
           "text": "Blue-pod lupines appear very commonly in northern Vladimir Oblast, eastern Ivanovo Oblast, and southwestern Kostroma Oblast. It can also be found less commonly elsewhere in Kirov Oblast and towards the Baltics.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/russia/vladimirflowers.png"
-          ]
-        },
-        {
-          "text": "This unique bollard, with a grey rectangle and double red reflectors, is specific to the P100 in Kostroma Oblast.",
-          "images": [
-            "https://www.plonkit.net/images/resize/600/80/russia/45.png"
           ]
         }
       ],
@@ -34384,6 +34440,14 @@
           "text": "Some republics of Russia with minority languages use bilingual town entry and directional signs, such as in Bashkortostan and Tatarstan displaying Bashkir and Tatar respectively.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/russia/bilingual.png"
+          ]
+        }
+      ],
+      "Kostroma": [
+        {
+          "text": "This unique bollard, with a grey rectangle and double red reflectors, is specific to the P100 in Kostroma Oblast.",
+          "images": [
+            "https://www.plonkit.net/images/resize/600/80/russia/45.png"
           ]
         }
       ],
@@ -36196,15 +36260,13 @@
           ]
         }
       ],
-      "Busan": [
+      "Seoul": [
         {
           "text": "Generation 2 coverage is almost exclusively found in Seoul and Busan. It can also be found on a couple of highways outside the cities, however almost all of that coverage has been overwritten.",
           "images": [
             "https://www.plonkit.net/images/resize/600/80/south-korea/kr_gen2.png"
           ]
-        }
-      ],
-      "Seoul": [
+        },
         {
           "text": "A small camera can be seen mounted above the brake light on the Street View car on coverage northeast of Seoul and around Pohang.",
           "images": [
