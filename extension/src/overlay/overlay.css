@@ -1,8 +1,8 @@
 /* Plonker post-round overlay. Matches GG's dark theme. */
 .plonker-overlay {
   position: fixed;
-  right: 16px;
-  bottom: 16px;
+  left: 16px;
+  top: 16px;
   width: 480px;
   max-height: 88vh;
   overflow-y: auto;
@@ -18,7 +18,7 @@
   animation: plonker-fade-in .18s ease-out;
 }
 @keyframes plonker-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .plonker-overlay h3 {

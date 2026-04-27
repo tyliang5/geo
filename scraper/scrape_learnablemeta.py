@@ -139,9 +139,18 @@ def parse_metas(meta_list_text: str) -> list[dict]:
     return [m for m in metas if m]
 
 
+_JS_SHORT_ESC = {"n":"\n","t":"\t","r":"\r","b":"\b","f":"\f",
+                 "/":"/","\"":"\"","'":"'","\\":"\\"}
+
+
 def _decode_js_string(s: str) -> str:
-    """Unescape a JS string literal (the value between the surrounding quotes)."""
-    s = s.encode("utf-8").decode("unicode_escape")
+    """Unescape a JS string literal. We can't use codecs.decode(..., 'unicode_escape')
+    because that round-trips through Latin-1 and double-encodes any literal
+    Unicode characters present in the source (e.g. \u00b0 -> "Â°"). So decode
+    each escape kind explicitly, leaving Unicode chars untouched."""
+    s = re.sub(r"\\u([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), s)
+    s = re.sub(r"\\x([0-9a-fA-F]{2})", lambda m: chr(int(m.group(1), 16)), s)
+    s = re.sub(r"\\(.)", lambda m: _JS_SHORT_ESC.get(m.group(1), m.group(1)), s)
     return html.unescape(s)
 
 

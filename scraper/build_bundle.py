@@ -561,27 +561,117 @@ def build_country(iso2: str, slug: str, country_name: str,
     }
 
     # ---- Identify tab: learnablemeta atomic metas ----
-    # Dedupe by description text, since the same meta appears on multiple maps.
+    known_subdivisions = set(KNOWN_SUBDIVISIONS.get(iso2, []))
+
+    _TRAIL_BAD = re.compile(
+        r"\b(in|at|of|on|by|to|from|and|or|with|for|is|are|was|were|the|a|an)\.?$",
+        re.IGNORECASE,
+    )
+
+    def _is_junk(m: dict) -> bool:
+        desc = (m.get("description") or "").strip()
+        if len(desc) < 50:
+            return True
+        if desc.startswith(("---", "***", "===")):
+            return True
+        if re.match(r"^(NOTE|Note|Recognition|Tip|Hint)[:.]?\s*$", desc):
+            return True
+        # Mid-sentence truncations end with a preposition / conjunction.
+        # Strip trailing period for the check.
+        tail = desc.rstrip(".").strip()
+        if _TRAIL_BAD.search(tail):
+            return True
+        # Heuristic: very short descriptions that are basically just labels.
+        if len(desc.split()) < 7:
+            return True
+        return False
+
+    def _priority(m: dict) -> tuple:
+        """Lower sorts first. Prefer Basics > Beginner > country-specific
+        single-country map > World > themed (Architecture, City Names,
+        Stop Signs, etc.). Within those, prefer descriptions that DON'T
+        mention any of this country's sub-regions."""
+        title = (m.get("_map_title") or "").lower()
+        # 0: Basics, 1: Beginner/Novice, 2: country-specific (e.g. "A Learnable
+        # Mexico", "A Learnable Russia"), 3: World, 4: themed/other.
+        if "basics" in title:
+            tier = 0
+        elif "beginner" in title or "novice" in title:
+            tier = 1
+        elif iso2 == "US" and ("usa" in title or "united states" in title or "anglo-america" in title):
+            tier = 2
+        elif country_name.lower() in title and "world" not in title \
+                and "europe" not in title and "asia" not in title \
+                and "africa" not in title and "america" not in title:
+            tier = 2
+        elif "world" in title and "architecture" not in title \
+                and "stop signs" not in title:
+            tier = 3
+        elif title.startswith("a learnable ") and not any(
+            t in title for t in ("architecture", "city names", "stop signs",
+                                  "license plates", "license plate",
+                                  "regionguessing", "every country")
+        ):
+            tier = 3
+        else:
+            tier = 4
+
+        desc = (m.get("description") or "")
+        cmp_ = (m.get("comparison") or "")
+        text_for_check = desc + " " + cmp_
+        mentions_sub = any(
+            re.search(r"\b" + re.escape(sub) + r"\b", text_for_check, re.IGNORECASE)
+            for sub in known_subdivisions if len(sub) >= 3
+        )
+        return (tier, 1 if mentions_sub else 0, len(desc))
+
+    def _detect_region(text: str) -> str | None:
+        if not known_subdivisions:
+            return None
+        for sub in sorted(known_subdivisions, key=len, reverse=True):
+            if len(sub) < 3:
+                continue
+            if re.search(r"\b" + re.escape(sub) + r"\b", text, re.IGNORECASE):
+                return sub
+        return None
+
+    filtered = [m for m in lm_metas if not _is_junk(m)]
+    sorted_metas = sorted(filtered, key=_priority)
+
+    # Walk metas: each one goes to Identify (country-wide) OR Regional
+    # (sub-region-specific). For Regional, the bucket key is the first
+    # known sub-region mentioned in the description+comparison.
     seen_desc: dict[str, dict] = {}
-    for m in lm_metas:
-        desc = m.get("description", "").strip()
-        if not desc:
-            continue
+    for m in sorted_metas:
+        desc = m["description"].strip()
+        cmp_ = m.get("comparison", "").strip()
+        text_for_check = desc + " " + cmp_
+        region = _detect_region(text_for_check)
         key = desc[:80].lower()
         if key in seen_desc:
             seen_desc[key]["from_maps"].append(m.get("_map_title", ""))
             continue
-        seen_desc[key] = {
+        record = {
             "type": (m.get("meta_label") or "").split(" - ")[0].title() or "Meta",
             "title": m.get("meta_label") or "Meta",
             "description": desc,
-            "comparison": m.get("comparison", "").strip(),
+            "comparison": cmp_,
             "images": m.get("images", []),
             "from_maps": [m.get("_map_title", "")],
         }
-    out["metas"] = list(seen_desc.values())
+        seen_desc[key] = record
+        if region:
+            out["regions"].setdefault(region, []).append({
+                "text": desc + (("\n\n" + cmp_) if cmp_ else ""),
+                "images": m.get("images", []),
+                "type": record["type"],
+            })
+        else:
+            out["metas"].append(record)
+
     if out["metas"]:
-        out["key_meta"] = out["metas"][0]["description"].split(". ")[0].rstrip(".") + "."
+        first = out["metas"][0]["description"]
+        out["key_meta"] = first.split(". ")[0].rstrip(".") + "."
 
     # ---- Plonkit-derived: general / regional / spotlight ----
     if plonkit_data:
