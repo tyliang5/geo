@@ -27,30 +27,50 @@ import json
 import re
 from pathlib import Path
 
-# slug -> ISO-2. Mirror of extension/src/data/country-slugs.js.
+# slug -> ISO-2. Includes covered territories that GG returns as their parent
+# country code (e.g., Hawaii rounds come back as US, so hawaii also maps to US).
+# When two slugs map to the same ISO-2, last-write-wins — main country pages
+# come first to ensure they take precedence.
 SLUG_TO_ISO2 = {
+    # Main country pages
     "albania":"AL","andorra":"AD","argentina":"AR","armenia":"AM","aruba":"AW","australia":"AU",
     "austria":"AT","azerbaijan":"AZ","bangladesh":"BD","belarus":"BY","belgium":"BE","bermuda":"BM",
     "bhutan":"BT","bolivia":"BO","botswana":"BW","brazil":"BR","bulgaria":"BG","cambodia":"KH",
-    "canada":"CA","cayman-islands":"KY","chile":"CL","colombia":"CO","costa-rica":"CR","croatia":"HR",
-    "curacao":"CW","cyprus":"CY","czechia":"CZ","denmark":"DK","dominican-republic":"DO","ecuador":"EC",
-    "estonia":"EE","eswatini":"SZ","faroe-islands":"FO","finland":"FI","france":"FR","french-guiana":"GF",
-    "georgia":"GE","germany":"DE","ghana":"GH","gibraltar":"GI","greece":"GR","greenland":"GL",
-    "guadeloupe":"GP","guatemala":"GT","guernsey":"GG","hungary":"HU","iceland":"IS","india":"IN",
-    "indonesia":"ID","ireland":"IE","isle-of-man":"IM","israel":"IL","italy":"IT","japan":"JP",
-    "jersey":"JE","jordan":"JO","kazakhstan":"KZ","kenya":"KE","kyrgyzstan":"KG","laos":"LA",
-    "latvia":"LV","lebanon":"LB","lesotho":"LS","liechtenstein":"LI","lithuania":"LT","luxembourg":"LU",
-    "madagascar":"MG","malaysia":"MY","malta":"MT","martinique":"MQ","mayotte":"YT","mexico":"MX",
-    "monaco":"MC","mongolia":"MN","montenegro":"ME","netherlands":"NL","new-zealand":"NZ","nigeria":"NG",
-    "north-korea":"KP","north-macedonia":"MK","norway":"NO","oman":"OM","pakistan":"PK","palestine":"PS",
+    "canada":"CA","cayman-islands":"KY","chile":"CL","china":"CN","colombia":"CO","costa-rica":"CR",
+    "croatia":"HR","curacao":"CW","cyprus":"CY","czechia":"CZ","denmark":"DK","dominican-republic":"DO",
+    "ecuador":"EC","egypt":"EG","estonia":"EE","eswatini":"SZ","faroe-islands":"FO","finland":"FI",
+    "france":"FR","french-guiana":"GF","georgia":"GE","germany":"DE","ghana":"GH","gibraltar":"GI",
+    "greece":"GR","greenland":"GL","guadeloupe":"GP","guatemala":"GT","guernsey":"GG","hong-kong":"HK",
+    "hungary":"HU","iceland":"IS","india":"IN","indonesia":"ID","iraq":"IQ","ireland":"IE",
+    "isle-of-man":"IM","israel-west-bank":"IL","italy":"IT","japan":"JP","jersey":"JE","jordan":"JO",
+    "kazakhstan":"KZ","kenya":"KE","kyrgyzstan":"KG","laos":"LA","latvia":"LV","lebanon":"LB",
+    "lesotho":"LS","liechtenstein":"LI","lithuania":"LT","luxembourg":"LU","macau":"MO",
+    "madagascar":"MG","malaysia":"MY","mali":"ML","malta":"MT","martinique":"MQ","mexico":"MX",
+    "monaco":"MC","mongolia":"MN","montenegro":"ME","namibia":"NA","nepal":"NP","netherlands":"NL",
+    "new-zealand":"NZ","nigeria":"NG","north-macedonia":"MK","norway":"NO","oman":"OM","pakistan":"PK",
     "panama":"PA","peru":"PE","philippines":"PH","poland":"PL","portugal":"PT","puerto-rico":"PR",
-    "qatar":"QA","reunion":"RE","romania":"RO","russia":"RU","san-marino":"SM","saudi-arabia":"SA",
-    "senegal":"SN","serbia":"RS","singapore":"SG","slovakia":"SK","slovenia":"SI","south-africa":"ZA",
+    "qatar":"QA","reunion":"RE","romania":"RO","russia":"RU","rwanda":"RW",
+    "saint-pierre-and-miquelon":"PM","san-marino":"SM","sao-tome-and-principe":"ST","senegal":"SN",
+    "serbia":"RS","singapore":"SG","slovakia":"SK","slovenia":"SI","south-africa":"ZA",
     "south-korea":"KR","spain":"ES","sri-lanka":"LK","svalbard":"SJ","sweden":"SE","switzerland":"CH",
-    "taiwan":"TW","thailand":"TH","tunisia":"TN","turkey":"TR","uganda":"UG","ukraine":"UA",
-    "united-arab-emirates":"AE","united-kingdom":"GB","united-states":"US","uruguay":"UY","vietnam":"VN",
-    "zimbabwe":"ZW",
+    "taiwan":"TW","tanzania":"TZ","thailand":"TH","tunisia":"TN","turkey":"TR","uganda":"UG",
+    "ukraine":"UA","united-arab-emirates":"AE","united-kingdom":"GB","united-states":"US","uruguay":"UY",
+    "vanuatu":"VU","vietnam":"VN","zimbabwe":"ZW",
+    # GG returns parent country codes for these territories. Last-write-wins
+    # so a later collision overrides United States/etc., but we order so the
+    # mainland country guide stays the canonical entry.
+    "falkland-islands":"FK", "british-indian-ocean-territory":"IO",
+    "christmas-island":"CX", "cocos-islands":"CC", "pitcairn-islands":"PN",
+    "south-georgia-sandwich-islands":"GS",
+    "azores":"PT-AZ",     # store under sub-key so PT mainland wins
+    "madeira":"PT-MA",
+    "alaska":"US-AK", "hawaii":"US-HI",
+    "guam":"GU", "northern-mariana-islands":"MP", "american-samoa":"AS",
+    "us-minor-outlying-islands":"UM", "us-virgin-islands":"VI",
+    "antarctica":"AQ",
 }
+# Slugs that aren't real country guides (skip during distillation).
+SKIP_NON_COUNTRY = {"beginners-guide", "spillover-countries"}
 
 
 def first_sentences(text: str, n: int = 1) -> str:
@@ -132,6 +152,8 @@ def main() -> None:
     }
     misses = []
     for slug, raw in plonkit_raw.items():
+        if slug in SKIP_NON_COUNTRY:
+            continue
         iso2 = SLUG_TO_ISO2.get(slug)
         if not iso2:
             misses.append(slug)
