@@ -1,38 +1,38 @@
 """
 Distills plonkit_raw.json into the lean tips.json the extension bundles.
 
-Usage:
-    python scraper/build_bundle.py
-
-Output schema (per country, ISO-2 keyed):
+Per-country output schema (ISO-2 keyed):
 {
   "AU": {
     "name": "Australia",
     "plonkit_slug": "australia",
-    "identify": ["short bullet 1", ...],   # up to 8
-    "key_meta": ["short label 1", ...],    # up to 3
-    "images":   [{"src": "...", "caption": "..."}, ...],   # up to 6
-    "vs": { "NZ": "one-line distinguisher" }
+    "key_meta": "short one-liner that anchors the country",
+    "sections": [
+      {
+        "id": "identify",     # stable id used by overlay tabs
+        "title": "Identify",  # tab label
+        "bullets": ["...", "..."],
+        "images":  [{"src": "...", "caption": "..."}, ...]
+      },
+      ...
+    ]
   }, ...
 }
 
-Distillation heuristics:
-- "Identify" bullets come from the first text items under any "Step 1 / Identifying"
-  section, capped at sentence #1 if the paragraph is long.
-- "Key meta" labels come from "Step 3 / Spotlight" sub-headings.
-- Images: prefer those under "Step 1" + "Spotlight"; max 6 per country.
+Distillation logic:
+- Walk every plonkit section (H3/H4) in reading order.
+- Classify each section into one of: identify, regional, spotlight (others
+  dropped — Step 4 "Maps and resources" is just outbound links).
+- Within each, take up to 8 bullets (first ~2 sentences each) and up to 6
+  images.
+- key_meta is the very first bullet of "identify" — the elevator-pitch tip.
 """
 import argparse
 import json
 import re
 from pathlib import Path
 
-# slug -> ISO-2. Includes covered territories that GG returns as their parent
-# country code (e.g., Hawaii rounds come back as US, so hawaii also maps to US).
-# When two slugs map to the same ISO-2, last-write-wins — main country pages
-# come first to ensure they take precedence.
 SLUG_TO_ISO2 = {
-    # Main country pages
     "albania":"AL","andorra":"AD","argentina":"AR","armenia":"AM","aruba":"AW","australia":"AU",
     "austria":"AT","azerbaijan":"AZ","bangladesh":"BD","belarus":"BY","belgium":"BE","bermuda":"BM",
     "bhutan":"BT","bolivia":"BO","botswana":"BW","brazil":"BR","bulgaria":"BG","cambodia":"KH",
@@ -56,82 +56,87 @@ SLUG_TO_ISO2 = {
     "taiwan":"TW","tanzania":"TZ","thailand":"TH","tunisia":"TN","turkey":"TR","uganda":"UG",
     "ukraine":"UA","united-arab-emirates":"AE","united-kingdom":"GB","united-states":"US","uruguay":"UY",
     "vanuatu":"VU","vietnam":"VN","zimbabwe":"ZW",
-    # GG returns parent country codes for these territories. Last-write-wins
-    # so a later collision overrides United States/etc., but we order so the
-    # mainland country guide stays the canonical entry.
-    "falkland-islands":"FK", "british-indian-ocean-territory":"IO",
-    "christmas-island":"CX", "cocos-islands":"CC", "pitcairn-islands":"PN",
-    "south-georgia-sandwich-islands":"GS",
-    "azores":"PT-AZ",     # store under sub-key so PT mainland wins
-    "madeira":"PT-MA",
-    "alaska":"US-AK", "hawaii":"US-HI",
-    "guam":"GU", "northern-mariana-islands":"MP", "american-samoa":"AS",
-    "us-minor-outlying-islands":"UM", "us-virgin-islands":"VI",
-    "antarctica":"AQ",
+    "falkland-islands":"FK","british-indian-ocean-territory":"IO","christmas-island":"CX",
+    "cocos-islands":"CC","pitcairn-islands":"PN","south-georgia-sandwich-islands":"GS",
+    "azores":"PT-AZ","madeira":"PT-MA","alaska":"US-AK","hawaii":"US-HI",
+    "guam":"GU","northern-mariana-islands":"MP","american-samoa":"AS",
+    "us-minor-outlying-islands":"UM","us-virgin-islands":"VI","antarctica":"AQ",
 }
-# Slugs that aren't real country guides (skip during distillation).
 SKIP_NON_COUNTRY = {"beginners-guide", "spillover-countries"}
 
+SECTION_BUCKETS = [
+    ("identify", "Identify", ("identif", "step 1")),
+    ("regional", "Regional", ("regional", "step 2", "subdivision", "landscape",
+                              "infrastruct", "region-specific", "county-specific",
+                              "island specific", "island-specific")),
+    ("spotlight", "Spotlight", ("spotlight", "step 3", "very specific")),
+]
 
-def first_sentences(text: str, n: int = 1) -> str:
+
+def classify_section(name: str) -> str | None:
+    n = name.lower()
+    for sid, _label, needles in SECTION_BUCKETS:
+        if any(x in n for x in needles):
+            return sid
+    return None
+
+
+def first_sentences(text: str, n: int = 2) -> str:
     parts = re.split(r"(?<=[.!?])\s+", text.strip())
     return " ".join(parts[:n]).strip()
 
 
-def section_matches(name: str, *needles: str) -> bool:
-    n = name.lower()
-    return any(needle in n for needle in needles)
-
-
 def distill_country(slug: str, raw: dict) -> dict:
     name = raw["name"]
-    sections: dict[str, list[dict]] = raw.get("sections", {})
+    sections_raw: dict[str, list[dict]] = raw.get("sections", {})
 
-    identify_bullets: list[str] = []
-    spotlight_labels: list[str] = []
-    images: list[dict] = []
+    # Gather per-bucket bullets + images, preserving plonkit's reading order.
+    buckets: dict[str, dict] = {sid: {"bullets": [], "images": [], "seen": set()}
+                                 for sid, _, _ in SECTION_BUCKETS}
 
-    for sec_name, items in sections.items():
-        is_id = section_matches(sec_name, "identif", "step 1")
-        is_spot = section_matches(sec_name, "spotlight", "step 3")
-        is_landscape = section_matches(sec_name, "landscape", "infrastruct", "step 2")
-
+    for sec_name, items in sections_raw.items():
+        sid = classify_section(sec_name)
+        if not sid:
+            continue
+        b = buckets[sid]
         for item in items:
-            if item["type"] == "text":
-                if is_id and len(identify_bullets) < 8:
-                    s = first_sentences(item["text"], 2)
-                    if 25 < len(s) < 260:
-                        identify_bullets.append(s)
-                elif is_spot and len(spotlight_labels) < 3:
-                    s = first_sentences(item["text"], 1)
-                    if 8 < len(s) < 80:
-                        spotlight_labels.append(s)
-                elif is_landscape and len(identify_bullets) < 8:
-                    s = first_sentences(item["text"], 1)
-                    if 25 < len(s) < 220:
-                        identify_bullets.append(s)
-            elif item["type"] == "image" and (is_id or is_spot or is_landscape) and len(images) < 8:
-                images.append({
-                    "src": item["src"],
+            if item["type"] == "text" and len(b["bullets"]) < 8:
+                s = first_sentences(item["text"], 2)
+                if 25 < len(s) < 320 and s not in b["seen"]:
+                    b["bullets"].append(s)
+                    b["seen"].add(s)
+            elif item["type"] == "image" and len(b["images"]) < 6:
+                src = item["src"]
+                if src in b["seen"]:
+                    continue
+                b["seen"].add(src)
+                b["images"].append({
+                    "src": src,
                     "caption": item.get("caption") or item.get("alt") or "",
                 })
 
-    # Dedup images by URL.
-    seen = set()
-    images_unique = []
-    for img in images:
-        if img["src"] in seen:
-            continue
-        seen.add(img["src"])
-        images_unique.append(img)
+    sections_out = []
+    for sid, label, _ in SECTION_BUCKETS:
+        b = buckets[sid]
+        if b["bullets"] or b["images"]:
+            sections_out.append({
+                "id": sid,
+                "title": label,
+                "bullets": b["bullets"],
+                "images": b["images"],
+            })
+
+    key_meta = ""
+    for sec in sections_out:
+        if sec["id"] == "identify" and sec["bullets"]:
+            key_meta = first_sentences(sec["bullets"][0], 1)
+            break
 
     return {
         "name": name,
         "plonkit_slug": slug,
-        "identify": identify_bullets[:8],
-        "key_meta": spotlight_labels[:3] or (identify_bullets[:1] if identify_bullets else []),
-        "images": images_unique[:6],
-        "vs": {},
+        "key_meta": key_meta,
+        "sections": sections_out,
     }
 
 
@@ -148,7 +153,7 @@ def main() -> None:
     plonkit_raw = json.loads(plonkit_path.read_text(encoding="utf-8"))
 
     bundle: dict[str, dict] = {
-        "_meta": {"version": "0.2.0", "source": "plonkit + curated"}
+        "_meta": {"version": "0.3.0", "source": "plonkit (Playwright scrape)"}
     }
     misses = []
     for slug, raw in plonkit_raw.items():
@@ -160,10 +165,12 @@ def main() -> None:
             continue
         bundle[iso2] = distill_country(slug, raw)
 
-    Path(args.out).write_text(json.dumps(bundle, indent=2, ensure_ascii=False), encoding="utf-8")
+    Path(args.out).write_text(
+        json.dumps(bundle, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
     print(f"wrote {args.out} ({len(bundle) - 1} countries)")
     if misses:
-        print(f"unmapped slugs (add to SLUG_TO_ISO2): {misses}")
+        print(f"unmapped slugs: {misses}")
 
 
 if __name__ == "__main__":

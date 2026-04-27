@@ -3,7 +3,7 @@
   position: fixed;
   right: 16px;
   bottom: 16px;
-  width: 440px;
+  width: 460px;
   max-height: 88vh;
   overflow-y: auto;
   background: #1f2937;
@@ -30,11 +30,7 @@
   align-items: center;
   gap: 8px;
 }
-.plonker-h3-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+.plonker-h3-actions { display: inline-flex; align-items: center; gap: 8px; }
 .plonker-score {
   background: #064e3b;
   color: #6ee7b7;
@@ -56,6 +52,7 @@
 .plonker-flag { font-size: 22px; margin-right: 6px; }
 .plonker-spoiler-veil { filter: blur(6px); cursor: pointer; user-select: none; }
 .plonker-spoiler-veil:hover { opacity: .8; }
+
 .plonker-keymeta {
   background: #064e3b;
   border-left: 3px solid #10b981;
@@ -64,52 +61,21 @@
   margin-bottom: 8px;
   font-size: 13px;
   color: #d1fae5;
+  line-height: 1.4;
 }
 .plonker-keymeta strong { color: #6ee7b7; margin-right: 4px; }
-.plonker-tip-list {
-  margin: 8px 0;
-  padding-left: 18px;
-  line-height: 1.5;
-}
-.plonker-tip-list li { margin-bottom: 6px; }
-.plonker-tip-list code {
-  background: #111827;
-  padding: 1px 4px;
-  border-radius: 3px;
-  font-size: 12px;
-}
-.plonker-imgs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin: 10px 0;
-}
-.plonker-img {
-  display: block;
-  background: #111827;
-  border-radius: 6px;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  border: 1px solid #374151;
-  transition: transform .12s;
-}
-.plonker-img:hover { transform: scale(1.03); border-color: #fbbf24; }
-.plonker-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+
 .plonker-diag {
   background: #111827;
   border-left: 3px solid #f59e0b;
   padding: 8px 10px;
-  margin: 10px 0;
+  margin: 8px 0;
   border-radius: 4px;
   font-size: 13px;
   line-height: 1.45;
 }
-.plonker-links { display: flex; gap: 8px; margin: 10px 0; }
+
+.plonker-links { display: flex; gap: 8px; margin: 8px 0; }
 .plonker-links a {
   flex: 1;
   text-align: center;
@@ -121,17 +87,77 @@
   font-size: 12px;
 }
 .plonker-links a:hover { background: #4b5563; }
-.plonker-note {
-  margin-top: 10px;
-  border-top: 1px solid #374151;
-  padding-top: 10px;
+
+/* Tabs */
+.plonker-tab-strip {
+  display: flex;
+  gap: 2px;
+  margin: 10px -16px 0;
+  padding: 0 12px;
+  border-bottom: 1px solid #374151;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.plonker-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+.plonker-tab {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #9ca3af;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .12s, border-color .12s;
+}
+.plonker-tab:hover { color: #d1d5db; }
+.plonker-tab.active {
+  color: #fbbf24;
+  border-bottom-color: #fbbf24;
+}
+.plonker-tab-content {
+  padding-top: 12px;
+  min-height: 80px;
+}
+
+/* Tip bullets */
+.plonker-tip-list { margin: 0 0 10px; padding-left: 18px; line-height: 1.5; }
+.plonker-tip-list li { margin-bottom: 6px; }
+.plonker-empty {
+  color: #9ca3af;
+  font-style: italic;
+  padding: 14px 0;
+  text-align: center;
+}
+
+/* Image grid */
+.plonker-imgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: 10px 0;
+}
+.plonker-imgs-large { grid-template-columns: repeat(2, 1fr); }
+.plonker-img {
+  display: block;
+  background: #111827;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid #374151;
+  transition: transform .12s, border-color .12s;
+}
+.plonker-img:hover { transform: scale(1.03); border-color: #fbbf24; }
+.plonker-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Notes tab */
+.plonker-note { padding-top: 4px; }
+.plonker-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
 .plonker-tag {
   background: #374151;
   color: #d1d5db;
   border: 0;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
   cursor: pointer;
@@ -139,27 +165,28 @@
 .plonker-tag.active { background: #fbbf24; color: #111827; font-weight: 600; }
 .plonker-note textarea {
   width: 100%;
-  min-height: 50px;
+  min-height: 60px;
   resize: vertical;
   background: #111827;
   color: #f3f4f6;
   border: 1px solid #374151;
   border-radius: 4px;
-  padding: 6px 8px;
+  padding: 8px;
   font-family: inherit;
   font-size: 13px;
   box-sizing: border-box;
 }
 .plonker-save {
-  margin-top: 6px;
+  margin-top: 8px;
   background: #10b981;
   color: #064e3b;
   border: 0;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
 }
 .plonker-save:hover { background: #34d399; }
 .plonker-save:disabled { opacity: .5; cursor: default; }
+
 .plonker-meta { font-size: 11px; color: #9ca3af; margin-top: 8px; }

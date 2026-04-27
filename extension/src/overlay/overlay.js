@@ -1,6 +1,7 @@
 // Post-round overlay. Listens for the `plonker:round-end` CustomEvent
-// dispatched by content.js (after background returns the persisted row + tips),
-// renders a card in the bottom-right. Auto-dismisses on `plonker:round-start`.
+// dispatched by content.js (after background returns the persisted row + tips).
+// Tabbed UI: one tab per plonkit section + Images + Notes. Auto-dismisses on
+// `plonker:round-start` so the card doesn't sit on top of the next pano.
 
 const META_TAGS = ['bollard', 'language', 'plate', 'vegetation', 'other'];
 
@@ -22,8 +23,8 @@ const ensureContainer = () => {
 };
 
 const settings = async () => {
-  const got = await chrome.storage.local.get(['noSpoilers']);
-  return { noSpoilers: !!got.noSpoilers };
+  const got = await chrome.storage.local.get(['noSpoilers', 'lastTab']);
+  return { noSpoilers: !!got.noSpoilers, lastTab: got.lastTab || null };
 };
 
 const dismiss = () => {
@@ -31,68 +32,43 @@ const dismiss = () => {
   if (el) el.remove();
 };
 
-const render = async ({ round, server }) => {
-  const container = ensureContainer();
-  const cc2 = round.actual?.countryCode?.toUpperCase() ?? '??';
-  const tips = server?.tips;
-  const diag = server?.diagnostic;
-  const isLM = server?.isLearnableMetaMap;
-  const { noSpoilers } = await settings();
+const buildTabs = (tips) => {
+  const tabs = [];
+  if (tips?.sections?.length) {
+    for (const sec of tips.sections) {
+      tabs.push({ id: sec.id, label: sec.title, kind: 'section', section: sec });
+    }
+    const allImages = tips.sections.flatMap(s => s.images || []);
+    if (allImages.length > 0) {
+      tabs.push({ id: 'images', label: `Images (${allImages.length})`, kind: 'images', images: allImages });
+    }
+  }
+  tabs.push({ id: 'notes', label: 'Notes', kind: 'notes' });
+  return tabs;
+};
 
-  const veilCls = noSpoilers ? 'plonker-spoiler-veil' : '';
-  const country = tips?.name || cc2;
-  const haveTips = (tips?.identify?.length ?? 0) > 0;
-  const tipBullets = haveTips
-    ? tips.identify.slice(0, 8).map(t => `<li>${escape(t)}</li>`).join('')
-    : `<li><em>No bundled tips for ${escape(country)} yet \u2014 run <code>scraper/scrape_plonkit.py</code> to backfill, or click the plonkit link \u2192</em></li>`;
-
-  const keyMetaHtml = (tips?.key_meta?.length ?? 0) > 0
-    ? `<div class="plonker-keymeta"><strong>Key:</strong> ${tips.key_meta.slice(0, 3).map(escape).join(' \u00b7 ')}</div>`
-    : '';
-
-  const imagesHtml = (tips?.images?.length ?? 0) > 0
-    ? `<div class="plonker-imgs">
-        ${tips.images.slice(0, 6).map((img, i) => `
-          <a class="plonker-img" href="${escape(img.full || img.src)}" target="_blank" rel="noopener" title="${escape(img.caption || '')}">
+const renderTabContent = (tab, ctx) => {
+  if (tab.kind === 'section') {
+    const sec = tab.section;
+    const bullets = sec.bullets?.length
+      ? `<ul class="plonker-tip-list">${sec.bullets.map(b => `<li>${escape(b)}</li>`).join('')}</ul>`
+      : '<div class="plonker-empty">No content for this section.</div>';
+    const imgs = sec.images?.length
+      ? `<div class="plonker-imgs">${sec.images.slice(0, 6).map(img => `
+          <a class="plonker-img" href="${escape(img.src)}" target="_blank" rel="noopener" title="${escape(img.caption || '')}">
             <img src="${escape(img.src)}" loading="lazy" alt="">
-          </a>`).join('')}
-      </div>`
-    : '';
-
-  const diagHtml = diag ? `
-    <div class="plonker-diag">
-      <strong>Why ${escape(diag.correct.country)}, not ${escape(diag.yours.country)}?</strong><br>
-      ${escape(diag.distinguisher || diag.correct.key || '')}
-    </div>` : '';
-
-  const plonkitSlug = tips?.plonkit_slug || (country.toLowerCase().replace(/\s+/g, '-'));
-  const learnSlug = tips?.learnablemeta_slug;
-
-  const lat = round.actual?.lat;
-  const lng = round.actual?.lng;
-  const streetViewLink = (lat != null && lng != null)
-    ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}&heading=${round.actual?.heading ?? 0}&pitch=${round.actual?.pitch ?? 0}`
-    : null;
-
-  container.innerHTML = `
-    <div class="plonker-overlay" role="dialog" aria-label="Plonker round summary">
-      <h3>
-        <span><span class="plonker-flag ${veilCls}" data-reveal>${escape(flagEmoji(cc2))}</span><span class="${veilCls}" data-reveal>${escape(country)}</span></span>
-        <span class="plonker-h3-actions">
-          ${round.guess?.roundScore != null ? `<span class="plonker-score">${escape(round.guess.roundScore)} pts</span>` : ''}
-          <button class="plonker-close" title="Close">\u00d7</button>
-        </span>
-      </h3>
-      ${isLM ? '<div class="plonker-meta">Learnable-meta map \u2014 deliberate drill</div>' : ''}
-      ${keyMetaHtml}
-      <ul class="plonker-tip-list">${tipBullets}</ul>
-      ${imagesHtml}
-      ${diagHtml}
-      <div class="plonker-links">
-        ${plonkitSlug ? `<a href="https://www.plonkit.net/${plonkitSlug}" target="_blank" rel="noopener">plonkit</a>` : ''}
-        ${learnSlug ? `<a href="https://learnablemeta.com/maps/${learnSlug}" target="_blank" rel="noopener">learn meta</a>` : ''}
-        ${streetViewLink ? `<a href="${escape(streetViewLink)}" target="_blank" rel="noopener">street view</a>` : ''}
-      </div>
+          </a>`).join('')}</div>`
+      : '';
+    return `${bullets}${imgs}`;
+  }
+  if (tab.kind === 'images') {
+    return `<div class="plonker-imgs plonker-imgs-large">${tab.images.map(img => `
+      <a class="plonker-img" href="${escape(img.src)}" target="_blank" rel="noopener" title="${escape(img.caption || '')}">
+        <img src="${escape(img.src)}" loading="lazy" alt="">
+      </a>`).join('')}</div>`;
+  }
+  if (tab.kind === 'notes') {
+    return `
       <div class="plonker-note">
         <div class="plonker-tags">
           ${META_TAGS.map(t => `<button class="plonker-tag" data-tag="${t}">${t}</button>`).join('')}
@@ -100,15 +76,17 @@ const render = async ({ round, server }) => {
         <textarea placeholder="What did you miss? (e.g., red/white striped bollard)"></textarea>
         <button class="plonker-save" disabled>Save note</button>
         <div class="plonker-meta" data-status></div>
-      </div>
-    </div>
-  `;
+      </div>`;
+  }
+  return '';
+};
 
-  let chosenTag = null;
-  const overlay = container.querySelector('.plonker-overlay');
+const wireNotesTab = (overlay, ctx) => {
   const ta = overlay.querySelector('textarea');
   const save = overlay.querySelector('.plonker-save');
   const status = overlay.querySelector('[data-status]');
+  if (!ta || !save) return;
+  let chosenTag = null;
   const checkEnable = () => { save.disabled = !chosenTag && !ta.value.trim(); };
 
   overlay.querySelectorAll('.plonker-tag').forEach(b => {
@@ -121,19 +99,13 @@ const render = async ({ round, server }) => {
   });
   ta.addEventListener('input', checkEnable);
 
-  overlay.querySelectorAll('[data-reveal]').forEach(el => {
-    el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));
-  });
-
-  overlay.querySelector('.plonker-close').addEventListener('click', dismiss);
-
   save.addEventListener('click', () => {
     save.disabled = true;
     status.textContent = 'saving\u2026';
     chrome.runtime.sendMessage({
       type: 'save_note',
       payload: {
-        round_id: server?.row?.id,
+        round_id: ctx.roundId,
         meta_tag: chosenTag,
         comment: ta.value.trim() || null
       }
@@ -145,11 +117,99 @@ const render = async ({ round, server }) => {
   });
 };
 
+const render = async ({ round, server }) => {
+  const container = ensureContainer();
+  const cc2 = round.actual?.countryCode?.toUpperCase() ?? '??';
+  const tips = server?.tips;
+  const diag = server?.diagnostic;
+  const isLM = server?.isLearnableMetaMap;
+  const { noSpoilers, lastTab } = await settings();
+
+  const veilCls = noSpoilers ? 'plonker-spoiler-veil' : '';
+  const country = tips?.name || cc2;
+
+  const tabs = buildTabs(tips);
+  const activeId = (lastTab && tabs.some(t => t.id === lastTab)) ? lastTab : tabs[0].id;
+
+  const keyMetaHtml = tips?.key_meta
+    ? `<div class="plonker-keymeta"><strong>Key:</strong> ${escape(tips.key_meta)}</div>`
+    : '';
+
+  const diagHtml = diag ? `
+    <div class="plonker-diag">
+      <strong>Why ${escape(diag.correct.country)}, not ${escape(diag.yours.country)}?</strong><br>
+      ${escape(diag.distinguisher || diag.correct.key || '')}
+    </div>` : '';
+
+  const plonkitSlug = tips?.plonkit_slug || (country.toLowerCase().replace(/\s+/g, '-'));
+  const lat = round.actual?.lat;
+  const lng = round.actual?.lng;
+  const streetViewLink = (lat != null && lng != null)
+    ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}&heading=${round.actual?.heading ?? 0}&pitch=${round.actual?.pitch ?? 0}`
+    : null;
+
+  const tabsHtml = `
+    <div class="plonker-tab-strip" role="tablist">
+      ${tabs.map(t => `
+        <button class="plonker-tab ${t.id === activeId ? 'active' : ''}"
+                data-tab="${escape(t.id)}" role="tab" aria-selected="${t.id === activeId}">
+          ${escape(t.label)}
+        </button>`).join('')}
+    </div>`;
+
+  container.innerHTML = `
+    <div class="plonker-overlay" role="dialog" aria-label="Plonker round summary">
+      <h3>
+        <span><span class="plonker-flag ${veilCls}" data-reveal>${escape(flagEmoji(cc2))}</span><span class="${veilCls}" data-reveal>${escape(country)}</span></span>
+        <span class="plonker-h3-actions">
+          ${round.guess?.roundScore != null ? `<span class="plonker-score">${escape(round.guess.roundScore)} pts</span>` : ''}
+          <button class="plonker-close" title="Close">\u00d7</button>
+        </span>
+      </h3>
+      ${isLM ? '<div class="plonker-meta">Learnable-meta map \u2014 deliberate drill</div>' : ''}
+      ${keyMetaHtml}
+      ${diagHtml}
+      <div class="plonker-links">
+        ${plonkitSlug ? `<a href="https://www.plonkit.net/${plonkitSlug}" target="_blank" rel="noopener">plonkit</a>` : ''}
+        ${streetViewLink ? `<a href="${escape(streetViewLink)}" target="_blank" rel="noopener">street view</a>` : ''}
+        <a href="https://learnablemeta.com/maps" target="_blank" rel="noopener">learn meta</a>
+      </div>
+      ${tabsHtml}
+      <div class="plonker-tab-content" data-tab-content></div>
+    </div>
+  `;
+
+  const overlay = container.querySelector('.plonker-overlay');
+  const contentEl = overlay.querySelector('[data-tab-content]');
+  const ctx = { roundId: server?.row?.id };
+
+  const setTab = (id) => {
+    const tab = tabs.find(t => t.id === id) || tabs[0];
+    overlay.querySelectorAll('.plonker-tab').forEach(b => {
+      const on = b.dataset.tab === tab.id;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on);
+    });
+    contentEl.innerHTML = renderTabContent(tab, ctx);
+    if (tab.kind === 'notes') wireNotesTab(overlay, ctx);
+    chrome.storage.local.set({ lastTab: tab.id });
+  };
+
+  overlay.querySelectorAll('.plonker-tab').forEach(b => {
+    b.addEventListener('click', () => setTab(b.dataset.tab));
+  });
+  overlay.querySelectorAll('[data-reveal]').forEach(el => {
+    el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));
+  });
+  overlay.querySelector('.plonker-close').addEventListener('click', dismiss);
+
+  setTab(activeId);
+};
+
 window.addEventListener('plonker:round-end', (e) => {
   render(e.detail).catch(err => console.error('[plonker overlay]', err));
 });
 
-// Auto-dismiss when GG starts the next round so the card doesn't cover the pano.
 window.addEventListener('plonker:round-start', dismiss);
 
 console.log('[plonker overlay] ready');

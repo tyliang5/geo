@@ -74,15 +74,12 @@ const tipsForCountry = async (cc2) => {
   const u = cc2.toUpperCase();
   const bundled = tips[u] || tips[u.toLowerCase()] || null;
   const meta = COUNTRY_BY_ISO2[u] || null;
-  // Always return SOMETHING when we know the country, so the overlay can still
-  // render the plonkit/learnablemeta links even if we don't have curated tips.
   if (!bundled && !meta) return null;
   return {
     name: bundled?.name || meta?.name || u,
     plonkit_slug: bundled?.plonkit_slug || meta?.slug || null,
-    identify: bundled?.identify || [],
-    key_meta: bundled?.key_meta || [],
-    images: bundled?.images || [],
+    key_meta: bundled?.key_meta || '',
+    sections: bundled?.sections || [],
     vs: bundled?.vs || {}
   };
 };
@@ -94,8 +91,8 @@ const buildDiagnostic = async (actual2, guess2) => {
   const g = tips[guess2?.toUpperCase()];
   if (!a || !g) return null;
   return {
-    yours: { country: g.name, key: g.key_meta?.[0] },
-    correct: { country: a.name, key: a.key_meta?.[0] },
+    yours: { country: g.name, key: g.key_meta || '' },
+    correct: { country: a.name, key: a.key_meta || '' },
     distinguisher: a.vs?.[guess2?.toUpperCase()] || null
   };
 };
