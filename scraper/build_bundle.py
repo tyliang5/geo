@@ -86,29 +86,93 @@ def first_sentences(text: str, n: int = 2) -> str:
     return " ".join(parts[:n]).strip()
 
 
-# Words that look proper-noun-y but are not place names. Trimmed by hand from
-# inspecting the scraper output. Add as needed.
-PLACE_STOP = frozenset([
-    "The", "A", "An", "In", "On", "Of", "At", "And", "But", "For", "To", "With", "By",
-    "Note", "Notes", "Generation", "Google", "European", "American", "African",
-    "Asian", "EU", "US", "USA", "UK", "Street", "View", "License", "Plate", "Plates",
-    "GeoGuessr", "Spotlight", "Step", "Identify", "Identifying", "Country", "Countries",
-    "World", "Map", "Maps", "Coverage", "Cars", "Car", "Roads", "Road", "Highway",
-    "Interstate", "Bridge", "Bridges", "Style", "Some", "Most", "Many", "All", "These",
-    "Those", "Looking", "Note", "Generally", "However", "Therefore", "Northern",
-    "Southern", "Eastern", "Western", "North", "South", "East", "West", "Central",
-    "Latin", "Old", "New", "Big", "Small", "Long", "Short", "Top", "Front", "Back",
-    "Side", "Local", "Public", "Private", "Mass", "Pass", "Forest", "Forests",
-    "Mountain", "Mountains", "Valley", "Valleys", "River", "Rivers", "Lake", "Lakes",
-    "Sea", "Ocean", "Coast", "Island", "Islands", "Plate.", "Coverage.", "Map.",
-    "Hood", "Suv", "Suvs", "Truck", "Trucks", "Camera", "Government", "Official",
+# Words that get capitalized at sentence start (or as adjectives) but are not
+# place names. Stripped from the FRONT of multi-word matches:
+#   "Like Donegal" -> "Donegal"
+#   "If Donegal has..." -> "Donegal"
+# Excluded: "New", "Old", "Upper", "Lower" — these legit form compound place
+# names ("New York", "Lower Saxony"), so they go in PLACE_STOP_SOLO instead.
+SENTENCE_STARTERS = frozenset([
+    "The", "A", "An",
+    "This", "That", "These", "Those", "There", "Their", "They", "Them",
+    "You", "Your", "We", "Our", "Us", "He", "His", "Him", "She", "Her", "It", "Its",
+    "If", "When", "Where", "Why", "How", "What", "Who", "Whose", "Which", "While",
+    "Since", "Until", "Although", "Though", "Because", "Whenever", "Whereas",
+    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+    "First", "Second", "Third", "Fourth", "Fifth", "Last", "Both",
+    "Some", "Many", "Most", "All", "Each", "Every", "Other", "Another", "Several",
+    "Few", "Either", "Neither", "Any", "None", "Such", "Same",
+    "Note", "Notes", "Look", "Looking", "Like", "Even", "Only", "Just", "Always",
+    "Often", "Sometimes", "Generally", "However", "Therefore", "Also", "Still",
+    "Here", "Then", "Now", "Today", "Yesterday", "Once", "Twice",
+    "In", "On", "Of", "At", "And", "But", "For", "To", "With", "By", "From", "As",
+    "Or", "Nor", "So", "Yet", "Up", "Down", "Out", "Into", "Onto",
+])
+
+# Words that ARE NOT places when they appear alone, but might form part of a
+# compound place name. Drop only single-word matches; preserve the multi-word
+# match. So "South" alone -> drop, but "South Africa" -> keep.
+PLACE_STOP_SOLO = frozenset([
+    # Directional / positional
+    "Northern", "Southern", "Eastern", "Western", "North", "South", "East", "West",
+    "Central", "Northwest", "Northeast", "Southwest", "Southeast",
+    "Coastal", "Inland", "Upper", "Lower", "Outer", "Inner", "Old", "New",
+    "Big", "Small", "Long", "Short",
+    # Domain terms common in plonkit
+    "Generation", "Google", "European", "American", "African", "Asian", "Latin",
+    "EU", "US", "USA", "UK", "Street", "View", "License", "Licence", "Plate", "Plates",
+    "GeoGuessr", "Spotlight", "Step", "Identify", "Identifying",
+    "Country", "Countries", "World", "Map", "Maps", "Coverage", "Cars", "Car",
+    "Roads", "Road", "Highway", "Highways", "Interstate", "Bridge", "Bridges",
+    "Style", "Hood", "Suv", "Suvs", "Truck", "Trucks", "Camera", "Government",
+    "Official", "Federal", "Phone", "Phones", "Number", "Numbers", "Area", "Areas",
+    "Top", "Front", "Back", "Side", "Local", "Public", "Private", "Mass", "Pass",
+    "Forest", "Forests", "Mountain", "Mountains", "Valley", "Valleys",
+    "River", "Rivers", "Lake", "Lakes", "Sea", "Ocean", "Coast", "Island", "Islands",
+    "Steep", "Lush", "Dry", "Wet", "Cold", "Hot", "Warm", "Cool",
+    # Language and nationality adjectives — not places, never form compounds
+    # in plonkit text (e.g., "Irish phone numbers" => "Irish" alone).
     "British", "Spanish", "French", "German", "Italian", "English", "Russian",
-    "Chinese", "Japanese", "Korean", "Arabic", "Cyrillic", "Roman",
-    "Christian", "Catholic", "Buddhist", "Muslim", "Hindu",
-    "Federal", "State", "States", "City", "Cities", "Town", "Towns", "Village",
-    "Villages", "County", "Counties", "Province", "Provinces", "Region", "Regions",
+    "Chinese", "Japanese", "Korean", "Arabic", "Cyrillic", "Roman", "Greek",
+    "Hebrew", "Thai", "Vietnamese", "Hindi", "Bengali", "Urdu",
+    "Christian", "Catholic", "Buddhist", "Muslim", "Hindu", "Jewish", "Orthodox",
+    "Irish", "Welsh", "Scottish", "Dutch", "Belgian", "Swedish", "Norwegian",
+    "Danish", "Finnish", "Polish", "Czech", "Slovak", "Hungarian", "Romanian",
+    "Bulgarian", "Ukrainian", "Belarusian", "Estonian", "Latvian", "Lithuanian",
+    "Turkish", "Australian", "Canadian", "Mexican", "Brazilian", "Argentine",
+    "Argentinian", "Chilean", "Colombian", "Peruvian", "Bolivian", "Venezuelan",
+    "Ecuadorian", "Paraguayan", "Uruguayan", "Pakistani", "Indonesian", "Filipino",
+    "Malaysian", "Egyptian", "Saudi", "Iranian", "Iraqi", "Israeli", "Lebanese",
+    "Moroccan", "Tunisian", "Algerian", "Libyan", "Sudanese", "Ethiopian",
+    "Kenyan", "Nigerian", "Ghanaian", "Senegalese", "Tanzanian", "Ugandan",
+    "Austrian", "Swiss", "Slovenian", "Croatian", "Serbian", "Bosnian",
+    "Albanian", "Macedonian", "Cypriot", "Maltese", "Icelandic",
+    "State", "States", "City", "Cities", "Town", "Towns", "Village", "Villages",
+    "County", "Counties", "Province", "Provinces", "Region", "Regions",
     "Department", "District", "Districts", "Capital", "Border", "Borders",
 ])
+
+# If a tip's text matches any of these patterns, treat it as a country-wide
+# rule (set places=[] so it lands in General). These are tips that explain
+# how a system varies by region — phone area codes, road number prefixes,
+# postal codes, plate region letters — and should be visible regardless of
+# which specific region the round was in.
+GENERAL_RULE_PATTERNS = [
+    re.compile(p, re.IGNORECASE) for p in [
+        r"\b(area code|phone number|postal code|zip code|postcode|post code)s?\b",
+        r"\b(road number|first digit|starting with|begins? with|starts? with)s?\b",
+        r"\b(throughout the country|across the country|nationwide|country-?wide)\b",
+        r"\b(licen[cs]e plate|plate format|plate code|plate prefix)s?\b",
+        r"\bsee the (infographic|map|chart|graphic|diagram)\b",
+        r"\b(mnemonic|grouped geographically)\b",
+        r"\bregion within (the country)?\b",
+        r"\b(direction around|around the (island|country))\b",
+    ]
+]
+
+
+def is_general_rule(text: str) -> bool:
+    return any(p.search(text) for p in GENERAL_RULE_PATTERNS)
 
 
 def extract_places(text: str, country_name: str) -> list[str]:
@@ -133,18 +197,28 @@ def extract_places(text: str, country_name: str) -> list[str]:
     seen, out = set(), []
     cn = country_name.lower().strip()
     for m in matches:
-        first = m.split()[0]
-        if first in PLACE_STOP:
+        words = m.split()
+        # Strip leading sentence-start words: "Like Donegal" -> "Donegal".
+        while words and words[0] in SENTENCE_STARTERS:
+            words = words[1:]
+        if not words:
             continue
-        if m.lower().strip() == cn:
+        # Drop solo matches that are non-place adjectives or generic terms.
+        if len(words) == 1 and words[0] in PLACE_STOP_SOLO:
             continue
-        if m.isupper():
+        cleaned = " ".join(words)
+        if cleaned.lower().strip() == cn:
             continue
-        key = m.lower()
+        if cleaned.isupper():
+            continue
+        # If after cleaning every word is still a stop/solo-drop, skip.
+        if all(w in SENTENCE_STARTERS or w in PLACE_STOP_SOLO for w in words):
+            continue
+        key = cleaned.lower()
         if key in seen:
             continue
         seen.add(key)
-        out.append(m)
+        out.append(cleaned)
     return out
 
 
@@ -174,12 +248,15 @@ def distill_country(slug: str, raw: dict) -> dict:
                 s = first_sentences(item["text"], 2)
                 if 20 < len(s) < 400 and s not in b["seen_text"]:
                     rec = {"type": "text", "text": s}
-                    # Only tag places for region/spotlight; identify stays
-                    # unfiltered at runtime so no point computing places.
                     if sid in {"regional", "spotlight"}:
-                        places = extract_places(s, raw["name"])
-                        if places:
-                            rec["places"] = places
+                        # Country-wide rules (phone area codes, road number
+                        # prefixes, plate region letters) explain how a system
+                        # varies by region — keep them visible regardless of
+                        # the round's location by leaving places empty.
+                        if not is_general_rule(s):
+                            places = extract_places(s, raw["name"])
+                            if places:
+                                rec["places"] = places
                     b["items"].append(rec)
                     b["seen_text"].add(s)
                     b["n_text"] += 1
