@@ -1,7 +1,7 @@
-// Post-round overlay. Tabbed UI driven by per-country sections from tips.json.
-// Each section's items are rendered in plonkit's original order so an image
-// stays adjacent to the text that explains it. Click an image to pop the
-// lightbox; auto-dismiss on `plonker:round-start`.
+// Post-round overlay (v0.7). Consumes the merged learnablemeta + plonkit
+// bundle. Tabs: Identify (LM atomic metas) / General (country-wide rules) /
+// Regional (per-region tips, filtered by round location) / Spotlight (place-
+// specific) / Images / Notes. Auto-dismisses on `plonker:round-start`.
 
 const META_TAGS = ['bollard', 'language', 'plate', 'vegetation', 'other'];
 
@@ -10,7 +10,6 @@ const flagEmoji = (cc2) => {
   const A = 0x1F1E6;
   return String.fromCodePoint(...[...cc2.toUpperCase()].map(c => A + c.charCodeAt(0) - 65));
 };
-
 const escape = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 const ensureContainer = () => {
@@ -21,12 +20,10 @@ const ensureContainer = () => {
   document.body.appendChild(el);
   return el;
 };
-
 const settings = async () => {
   const got = await chrome.storage.local.get(['noSpoilers', 'lastTab']);
   return { noSpoilers: !!got.noSpoilers, lastTab: got.lastTab || null };
 };
-
 const dismiss = () => {
   const el = document.getElementById('plonker-overlay-root');
   if (el) el.remove();
@@ -57,116 +54,21 @@ const openLightbox = (src, caption) => {
   document.addEventListener('keydown', onLightboxKey);
 };
 
-// Plonkit's pattern: image first, then the text that describes it. So an
-// image's "owner" is the NEXT text item, not the previous one. This helper
-// returns, for each image index, the index of the text that describes it
-// (or null if the image has no following text).
-const buildImageOwnerMap = (items) => {
-  const map = new Map();
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].type !== 'image') continue;
-    for (let j = i + 1; j < items.length; j++) {
-      if (items[j].type === 'text') { map.set(i, j); break; }
-    }
-  }
-  return map;
-};
+// ---------- region matching ----------
+const norm = (s) => String(s).toLowerCase().normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 
-// ---------- tabs ----------
-// Walk Regional + Spotlight items. Untagged text (and the images it owns) is
-// country-wide-but-useful-for-regional-ID material — phone numbers, plate
-// region letters, postal patterns. Pull those out into a General tab so
-// Regional/Spotlight can be strictly location-matched.
-const partitionRegionItems = (tips) => {
-  const general = [];
-  const regional = { id: 'regional', title: 'Regional', items: [] };
-  const spotlight = { id: 'spotlight', title: 'Spotlight', items: [] };
-  for (const sec of tips?.sections || []) {
-    if (sec.id === 'identify') continue;
-    const target = sec.id === 'spotlight' ? spotlight : regional;
-    const ownerOf = buildImageOwnerMap(sec.items);
-    // Per text, decide its bucket; images follow their owner-text's bucket.
-    const isGeneralText = (it) => !it.places || it.places.length === 0;
-    sec.items.forEach((it, i) => {
-      if (it.type === 'text') {
-        if (isGeneralText(it)) general.push({ ...it, _from: sec.title });
-        else target.items.push(it);
-      } else if (it.type === 'image') {
-        const ownerIdx = ownerOf.get(i);
-        const owner = ownerIdx != null ? sec.items[ownerIdx] : null;
-        if (!owner || isGeneralText(owner)) general.push(it);
-        else target.items.push(it);
-      }
-    });
-  }
-  return { general, regional, spotlight };
-};
-
-const buildTabs = (tips) => {
-  const tabs = [];
-  if (tips?.sections?.length) {
-    const identify = tips.sections.find(s => s.id === 'identify');
-    if (identify) {
-      tabs.push({ id: 'identify', label: identify.title, kind: 'section', section: identify });
-    }
-    const { general, regional, spotlight } = partitionRegionItems(tips);
-    if (general.length) {
-      tabs.push({ id: 'general', label: 'General', kind: 'section',
-                  section: { id: 'general', title: 'General', items: general } });
-    }
-    if (regional.items.length) {
-      tabs.push({ id: 'regional', label: regional.title, kind: 'section', section: regional });
-    }
-    if (spotlight.items.length) {
-      tabs.push({ id: 'spotlight', label: spotlight.title, kind: 'section', section: spotlight });
-    }
-    const allImages = tips.sections.flatMap(s =>
-      (s.items || []).filter(i => i.type === 'image')
-    );
-    if (allImages.length > 0) {
-      tabs.push({ id: 'images', label: `Images (${allImages.length})`, kind: 'images', images: allImages });
-    }
-  }
-  tabs.push({ id: 'notes', label: 'Notes', kind: 'notes' });
-  return tabs;
-};
-
-// Filter section items by place match. A text item is kept if:
-//   * it has no `places` tags (general country-wide tip), OR
-//   * any of its `places` overlaps with the round's geocoded place names.
-// Adjacent images travel with the previous text decision so visual pairing
-// is preserved. Identify section is never filtered.
-//
-// `norm` decomposes Unicode (NFD) and strips combining marks so umlauts and
-// accents fold consistently — Nominatim returns "Oberösterreich", plonkit
-// often uses "Upper Austria"; both must match each other AND each other's
-// ASCII forms after stripping.
-const norm = (s) => String(s)
-  .toLowerCase()
-  .normalize('NFD')
-  .replace(/[\u0300-\u036f]/g, '')
-  .replace(/[^a-z0-9]/g, '');
-
-// Common English<->local name pairs we know plonkit uses on one side and
-// Nominatim returns on the other. Only the cases that genuinely break
-// substring matching belong here.
 const NAME_ALIASES = {
-  'upperaustria':       ['oberosterreich'],
-  'loweraustria':       ['niederosterreich'],
-  'styria':             ['steiermark'],
-  'carinthia':          ['karnten'],
-  'tyrol':              ['tirol'],
-  'vienna':             ['wien'],
-  'bavaria':            ['bayern'],
-  'saxony':             ['sachsen'],
-  'thuringia':          ['thuringen'],
-  'mecklenburgvorpommern': ['mecklenburgwesternpomerania'],
-  'newsouthwales':      ['nsw'],
-  'queensland':         ['qld'],
-  'victoria':           ['vic'],
-  'westernaustralia':   ['wa'],
-  'southaustralia':     ['sa'],
-  'tasmania':           ['tas'],
+  upperaustria: ['oberosterreich'], loweraustria: ['niederosterreich'],
+  styria: ['steiermark'], carinthia: ['karnten'], tyrol: ['tirol'], vienna: ['wien'],
+  bavaria: ['bayern'], saxony: ['sachsen'], thuringia: ['thuringen'],
+  newsouthwales: ['nsw'], queensland: ['qld'], victoria: ['vic'],
+  westernaustralia: ['wa'], southaustralia: ['sa'], tasmania: ['tas'],
+  northernterritory: ['nt'], australiancapitalterritory: ['act'],
+  britishcolumbia: ['bc'], ontario: ['on'], quebec: ['qc'], alberta: ['ab'],
+  bavaria_de: ['bayern'], lowersaxony: ['niedersachsen'],
+  northrhinewestphalia: ['nordrheinwestfalen', 'nrw'],
+  rhinelandpalatinate: ['rheinlandpfalz'],
 };
 const expand = (n) => {
   const out = new Set([n]);
@@ -176,83 +78,169 @@ const expand = (n) => {
   }
   return out;
 };
-const placeMatch = (tipPlaces, roundPlaces) => {
-  if (!tipPlaces || tipPlaces.length === 0) return null; // general
-  const rpExpanded = new Set();
-  roundPlaces.forEach(p => expand(norm(p)).forEach(x => rpExpanded.add(x)));
-  for (const tp of tipPlaces) {
-    const variants = expand(norm(tp));
-    for (const v of variants) {
+const placesMatch = (regionName, roundPlaces) => {
+  if (!roundPlaces?.length) return false;
+  const rn = norm(regionName);
+  const rnSet = expand(rn);
+  for (const rp of roundPlaces) {
+    const np = norm(rp);
+    if (np.length < 3) continue;
+    for (const v of rnSet) {
       if (v.length < 3) continue;
-      for (const r of rpExpanded) {
-        if (r.length < 3) continue;
-        if (r.includes(v) || v.includes(r)) return true;
-      }
+      if (np.includes(v) || v.includes(np)) return true;
     }
   }
   return false;
 };
 
-const filterSectionItems = (section, roundPlaces, showAll) => {
-  // Identify and General are country-wide; never filtered by location.
-  if (showAll || section.id === 'identify' || section.id === 'general' || !roundPlaces?.length) {
-    return section.items;
-  }
-  const items = section.items;
-  const ownerOf = buildImageOwnerMap(items);
-  // Decide each text's keep status first.
-  const textKeep = new Map();
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].type === 'text') {
-      textKeep.set(i, placeMatch(items[i].places, roundPlaces) === true);
-    }
-  }
-  // Image is kept iff its owner-text is kept.
-  const out = [];
-  for (let i = 0; i < items.length; i++) {
-    const it = items[i];
-    if (it.type === 'text') {
-      if (textKeep.get(i)) out.push(it);
-    } else if (it.type === 'image') {
-      const ownerIdx = ownerOf.get(i);
-      if (ownerIdx != null && textKeep.get(ownerIdx)) out.push(it);
-    }
-  }
-  return out;
+// ---------- card renderers ----------
+const imageThumb = (src, caption) => `
+  <button class="plonker-img-inline" data-src="${escape(src)}" data-caption="${escape(caption || '')}">
+    <img src="${escape(src)}" loading="lazy" alt="">
+  </button>`;
+
+const renderMetaCard = (meta) => `
+  <div class="plonker-card">
+    <div class="plonker-card-head">
+      <span class="plonker-card-type">${escape(meta.type || 'Meta')}</span>
+    </div>
+    ${meta.images?.length ? imageThumb(meta.images[0], meta.title) : ''}
+    <p class="plonker-card-desc">${escape(meta.description)}</p>
+    ${meta.comparison ? `<p class="plonker-card-compare"><strong>vs:</strong> ${escape(meta.comparison)}</p>` : ''}
+  </div>`;
+
+const renderRuleCard = (rule) => `
+  <div class="plonker-card">
+    <div class="plonker-card-head">
+      <span class="plonker-card-type">${escape(rule.topic || 'Rule')}</span>
+    </div>
+    ${(rule.images || []).slice(0, 1).map(src => imageThumb(src, rule.topic)).join('')}
+    <p class="plonker-card-desc">${escape(rule.text)}</p>
+  </div>`;
+
+const renderRegionGroup = (regionName, items) => `
+  <div class="plonker-region-group">
+    <h4 class="plonker-region-head">${escape(regionName)}</h4>
+    ${items.map(it => `
+      <div class="plonker-card">
+        ${(it.images || []).slice(0, 1).map(src => imageThumb(src, regionName)).join('')}
+        <p class="plonker-card-desc">${escape(it.text)}</p>
+      </div>
+    `).join('')}
+  </div>`;
+
+const renderSpotlight = (items) => items.map(it => `
+  <div class="plonker-card">
+    <div class="plonker-card-head">
+      <span class="plonker-card-type">${escape(it.place)}</span>
+    </div>
+    ${(it.images || []).slice(0, 1).map(src => imageThumb(src, it.place)).join('')}
+    <p class="plonker-card-desc">${escape(it.text)}</p>
+  </div>`).join('');
+
+const wireImageHandlers = (overlay) => {
+  overlay.querySelectorAll('.plonker-img-inline, .plonker-img-tile').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(btn.dataset.src, btn.dataset.caption));
+  });
 };
 
-const renderItem = (it) => {
-  if (it.type === 'text') return `<p class="plonker-tip">${escape(it.text)}</p>`;
-  if (it.type === 'image') {
-    return `<button class="plonker-img-inline" data-src="${escape(it.src)}" data-caption="${escape(it.caption || '')}">
-      <img src="${escape(it.src)}" loading="lazy" alt="">
-      ${it.caption ? `<span class="plonker-img-cap">${escape(it.caption)}</span>` : ''}
-    </button>`;
+// ---------- tabs ----------
+const buildTabs = (tips, ctx) => {
+  const tabs = [];
+  const t = tips || {};
+
+  if (t.metas?.length) {
+    tabs.push({ id: 'identify', label: 'Identify', kind: 'metas', items: t.metas });
   }
-  return '';
+  if (t.general_rules?.length) {
+    tabs.push({ id: 'general', label: 'General', kind: 'rules', items: t.general_rules });
+  }
+
+  // Regional: filter regions to those matching the round's geocoded places.
+  const allRegions = t.regions || {};
+  const regionEntries = Object.entries(allRegions);
+  const matchedRegions = ctx.roundPlaces?.length
+    ? regionEntries.filter(([name]) => placesMatch(name, ctx.roundPlaces))
+    : [];
+  if (regionEntries.length) {
+    tabs.push({
+      id: 'regional', label: 'Regional', kind: 'regions',
+      allRegions, matchedRegions,
+    });
+  }
+
+  // Spotlight: filter to places matching round.
+  const spotlight = t.spotlight || [];
+  const matchedSpot = ctx.roundPlaces?.length
+    ? spotlight.filter(it => placesMatch(it.place, ctx.roundPlaces))
+    : [];
+  if (spotlight.length) {
+    tabs.push({
+      id: 'spotlight', label: 'Spotlight', kind: 'spotlight',
+      all: spotlight, matched: matchedSpot,
+    });
+  }
+
+  // Images: aggregate from everywhere.
+  const allImages = [];
+  for (const m of (t.metas || [])) (m.images || []).forEach(s => allImages.push({ src: s, caption: m.title }));
+  for (const g of (t.general_rules || [])) (g.images || []).forEach(s => allImages.push({ src: s, caption: g.topic }));
+  for (const [name, items] of Object.entries(allRegions)) {
+    items.forEach(it => (it.images || []).forEach(s => allImages.push({ src: s, caption: name })));
+  }
+  for (const sp of spotlight) (sp.images || []).forEach(s => allImages.push({ src: s, caption: sp.place }));
+  if (allImages.length) {
+    tabs.push({ id: 'images', label: `Images (${allImages.length})`, kind: 'images', items: allImages });
+  }
+
+  tabs.push({ id: 'notes', label: 'Notes', kind: 'notes' });
+  return tabs;
 };
 
 const renderTabContent = (tab, ctx) => {
-  if (tab.kind === 'section') {
-    if (!tab.section.items?.length) return '<div class="plonker-empty">No content for this section.</div>';
-    const filtered = filterSectionItems(tab.section, ctx.roundPlaces, ctx.showAll);
-    if (filtered.length === 0) {
+  if (tab.kind === 'metas') {
+    return `<div class="plonker-cards">${tab.items.map(renderMetaCard).join('')}</div>`;
+  }
+  if (tab.kind === 'rules') {
+    return `<div class="plonker-cards">${tab.items.map(renderRuleCard).join('')}</div>`;
+  }
+  if (tab.kind === 'regions') {
+    const useFiltered = !ctx.showAll && ctx.roundPlaces?.length;
+    const entries = useFiltered ? tab.matchedRegions : Object.entries(tab.allRegions);
+    if (entries.length === 0) {
       return `<div class="plonker-empty">
-        No region-specific tips matched <strong>${escape(ctx.roundPlaces.slice(0, 2).join(', ') || 'this location')}</strong>.
-        <button class="plonker-show-all" style="margin-top:10px;display:inline-block">Show all anyway</button>
+        No region-specific tips matched <strong>${escape(ctx.roundPlaces?.slice(0, 2).join(', ') || 'this location')}</strong>.
+        <button class="plonker-show-all">Show all regions</button>
       </div>`;
     }
-    const filteredOut = tab.section.items.length - filtered.length;
-    const isFilterable = !['identify', 'general'].includes(tab.id);
-    const filterChip = (isFilterable && ctx.roundPlaces?.length && filteredOut > 0 && !ctx.showAll)
+    const totalRegions = Object.keys(tab.allRegions).length;
+    const filteredOut = totalRegions - entries.length;
+    const chip = (useFiltered && filteredOut > 0)
       ? `<div class="plonker-filter-chip">
-           <span>Filtered to <strong>${escape(ctx.roundPlaces.slice(0, 3).join(', '))}</strong> \u2014 hiding ${filteredOut} unrelated tip${filteredOut === 1 ? '' : 's'}.</span>
+           <span>Showing <strong>${entries.length}</strong> of ${totalRegions} regions matched to ${escape(ctx.roundPlaces.slice(0, 3).join(', '))}.</span>
            <button class="plonker-show-all">Show all</button>
          </div>` : '';
-    return `${filterChip}<div class="plonker-section">${filtered.map(renderItem).join('')}</div>`;
+    return chip + entries.map(([name, items]) => renderRegionGroup(name, items)).join('');
+  }
+  if (tab.kind === 'spotlight') {
+    const useFiltered = !ctx.showAll && ctx.roundPlaces?.length;
+    const items = useFiltered ? tab.matched : tab.all;
+    if (items.length === 0) {
+      return `<div class="plonker-empty">
+        No spotlight tips for <strong>${escape(ctx.roundPlaces?.slice(0, 2).join(', ') || 'this location')}</strong>.
+        <button class="plonker-show-all">Show all</button>
+      </div>`;
+    }
+    const filteredOut = tab.all.length - items.length;
+    const chip = (useFiltered && filteredOut > 0)
+      ? `<div class="plonker-filter-chip">
+           <span>Showing <strong>${items.length}</strong> of ${tab.all.length}, filtered to ${escape(ctx.roundPlaces.slice(0, 3).join(', '))}.</span>
+           <button class="plonker-show-all">Show all</button>
+         </div>` : '';
+    return chip + `<div class="plonker-cards">${renderSpotlight(items)}</div>`;
   }
   if (tab.kind === 'images') {
-    return `<div class="plonker-img-grid">${tab.images.map(img => `
+    return `<div class="plonker-img-grid">${tab.items.map(img => `
       <button class="plonker-img-tile" data-src="${escape(img.src)}" data-caption="${escape(img.caption || '')}">
         <img src="${escape(img.src)}" loading="lazy" alt="">
       </button>`).join('')}</div>`;
@@ -269,14 +257,6 @@ const renderTabContent = (tab, ctx) => {
       </div>`;
   }
   return '';
-};
-
-const wireImageHandlers = (overlay) => {
-  overlay.querySelectorAll('.plonker-img-inline, .plonker-img-tile').forEach(btn => {
-    btn.addEventListener('click', () => {
-      openLightbox(btn.dataset.src, btn.dataset.caption);
-    });
-  });
 };
 
 const wireNotesTab = (overlay, ctx) => {
@@ -300,11 +280,7 @@ const wireNotesTab = (overlay, ctx) => {
     status.textContent = 'saving\u2026';
     chrome.runtime.sendMessage({
       type: 'save_note',
-      payload: {
-        round_id: ctx.roundId,
-        meta_tag: chosenTag,
-        comment: ta.value.trim() || null
-      }
+      payload: { round_id: ctx.roundId, meta_tag: chosenTag, comment: ta.value.trim() || null }
     }, (resp) => {
       status.textContent = resp?.ok ? 'saved \u2713' : `error: ${resp?.error || 'unknown'}`;
       if (resp?.ok) setTimeout(dismiss, 700);
@@ -324,12 +300,16 @@ const render = async ({ round, server }) => {
   const veilCls = noSpoilers ? 'plonker-spoiler-veil' : '';
   const country = tips?.name || cc2;
 
-  const tabs = buildTabs(tips);
+  const ctx = {
+    roundId: server?.row?.id,
+    roundPlaces: server?.places || [],
+    showAll: false,
+  };
+  const tabs = buildTabs(tips, ctx);
   const activeId = (lastTab && tabs.some(t => t.id === lastTab)) ? lastTab : tabs[0].id;
 
   const keyMetaHtml = tips?.key_meta
-    ? `<div class="plonker-keymeta"><strong>Key:</strong> ${escape(tips.key_meta)}</div>`
-    : '';
+    ? `<div class="plonker-keymeta"><strong>Key:</strong> ${escape(tips.key_meta)}</div>` : '';
   const diagHtml = diag ? `
     <div class="plonker-diag">
       <strong>Why ${escape(diag.correct.country)}, not ${escape(diag.yours.country)}?</strong><br>
@@ -376,11 +356,6 @@ const render = async ({ round, server }) => {
 
   const overlay = container.querySelector('.plonker-overlay');
   const contentEl = overlay.querySelector('[data-tab-content]');
-  const ctx = {
-    roundId: server?.row?.id,
-    roundPlaces: server?.places || [],
-    showAll: false
-  };
 
   const setTab = (id) => {
     const tab = tabs.find(t => t.id === id) || tabs[0];
@@ -392,21 +367,14 @@ const render = async ({ round, server }) => {
     contentEl.innerHTML = renderTabContent(tab, ctx);
     if (tab.kind === 'notes') wireNotesTab(overlay, ctx);
     else wireImageHandlers(overlay);
-    const showAllBtn = overlay.querySelector('.plonker-show-all');
-    if (showAllBtn) {
-      showAllBtn.addEventListener('click', () => {
-        ctx.showAll = true;
-        setTab(tab.id);
-      });
-    }
+    overlay.querySelectorAll('.plonker-show-all').forEach(btn => {
+      btn.addEventListener('click', () => { ctx.showAll = true; setTab(tab.id); });
+    });
     chrome.storage.local.set({ lastTab: tab.id });
   };
 
   overlay.querySelectorAll('.plonker-tab').forEach(b => {
-    b.addEventListener('click', () => {
-      ctx.showAll = false; // reset filter when switching tabs
-      setTab(b.dataset.tab);
-    });
+    b.addEventListener('click', () => { ctx.showAll = false; setTab(b.dataset.tab); });
   });
   overlay.querySelectorAll('[data-reveal]').forEach(el => {
     el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));
@@ -420,5 +388,4 @@ window.addEventListener('plonker:round-end', (e) => {
   render(e.detail).catch(err => console.error('[plonker overlay]', err));
 });
 window.addEventListener('plonker:round-start', dismiss);
-
-console.log('[plonker overlay] ready');
+console.log('[plonker overlay v0.7] ready');

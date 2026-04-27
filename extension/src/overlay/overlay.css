@@ -156,6 +156,62 @@
   font-size: 14px;
 }
 
+/* Card components used by Identify / General / Spotlight */
+.plonker-cards { display: flex; flex-direction: column; gap: 12px; }
+.plonker-card {
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.plonker-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.plonker-card-type {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #fbbf24;
+}
+.plonker-card-desc {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #f3f4f6;
+}
+.plonker-card-compare {
+  margin: 0;
+  padding: 6px 8px;
+  background: rgba(96, 165, 250, .08);
+  border-left: 2px solid #60a5fa;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #cbd5e1;
+}
+.plonker-card-compare strong { color: #93c5fd; margin-right: 4px; }
+
+/* Region grouping inside Regional tab */
+.plonker-region-group { margin-bottom: 14px; }
+.plonker-region-head {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #93c5fd;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 4px;
+}
+.plonker-region-group .plonker-card { margin-bottom: 8px; }
+
 /* Inline image (button so we can click without opening a new tab) */
 .plonker-img-inline {
   display: block;
