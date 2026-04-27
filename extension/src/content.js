@@ -35,6 +35,8 @@ window.addEventListener('message', async (e) => {
       }));
     });
   } else if (msg.type === 'round_start') {
+    // Auto-dismiss the previous round's overlay so it doesn't sit on top of the new pano.
+    window.dispatchEvent(new CustomEvent('plonker:round-start', { detail: msg.payload }));
     chrome.runtime.sendMessage({ type: 'round_start', payload: msg.payload });
   }
 });

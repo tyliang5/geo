@@ -1,6 +1,6 @@
 // Post-round overlay. Listens for the `plonker:round-end` CustomEvent
 // dispatched by content.js (after background returns the persisted row + tips),
-// renders a card in the bottom-right.
+// renders a card in the bottom-right. Auto-dismisses on `plonker:round-start`.
 
 const META_TAGS = ['bollard', 'language', 'plate', 'vegetation', 'other'];
 
@@ -26,6 +26,11 @@ const settings = async () => {
   return { noSpoilers: !!got.noSpoilers };
 };
 
+const dismiss = () => {
+  const el = document.getElementById('plonker-overlay-root');
+  if (el) el.remove();
+};
+
 const render = async ({ round, server }) => {
   const container = ensureContainer();
   const cc2 = round.actual?.countryCode?.toUpperCase() ?? '??';
@@ -36,7 +41,23 @@ const render = async ({ round, server }) => {
 
   const veilCls = noSpoilers ? 'plonker-spoiler-veil' : '';
   const country = tips?.name || cc2;
-  const tipBullets = (tips?.identify || []).slice(0, 5).map(t => `<li>${escape(t)}</li>`).join('') || '<li><em>No bundled tips for this country yet — check the plonkit link.</em></li>';
+  const haveTips = (tips?.identify?.length ?? 0) > 0;
+  const tipBullets = haveTips
+    ? tips.identify.slice(0, 8).map(t => `<li>${escape(t)}</li>`).join('')
+    : `<li><em>No bundled tips for ${escape(country)} yet \u2014 run <code>scraper/scrape_plonkit.py</code> to backfill, or click the plonkit link \u2192</em></li>`;
+
+  const keyMetaHtml = (tips?.key_meta?.length ?? 0) > 0
+    ? `<div class="plonker-keymeta"><strong>Key:</strong> ${tips.key_meta.slice(0, 3).map(escape).join(' \u00b7 ')}</div>`
+    : '';
+
+  const imagesHtml = (tips?.images?.length ?? 0) > 0
+    ? `<div class="plonker-imgs">
+        ${tips.images.slice(0, 6).map((img, i) => `
+          <a class="plonker-img" href="${escape(img.full || img.src)}" target="_blank" rel="noopener" title="${escape(img.caption || '')}">
+            <img src="${escape(img.src)}" loading="lazy" alt="">
+          </a>`).join('')}
+      </div>`
+    : '';
 
   const diagHtml = diag ? `
     <div class="plonker-diag">
@@ -44,22 +65,33 @@ const render = async ({ round, server }) => {
       ${escape(diag.distinguisher || diag.correct.key || '')}
     </div>` : '';
 
-  const plonkitSlug = (tips?.plonkit_slug) || (country.toLowerCase().replace(/\s+/g, '-'));
+  const plonkitSlug = tips?.plonkit_slug || (country.toLowerCase().replace(/\s+/g, '-'));
   const learnSlug = tips?.learnablemeta_slug;
 
+  const lat = round.actual?.lat;
+  const lng = round.actual?.lng;
+  const streetViewLink = (lat != null && lng != null)
+    ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}&heading=${round.actual?.heading ?? 0}&pitch=${round.actual?.pitch ?? 0}`
+    : null;
+
   container.innerHTML = `
-    <div class="plonker-overlay">
+    <div class="plonker-overlay" role="dialog" aria-label="Plonker round summary">
       <h3>
         <span><span class="plonker-flag ${veilCls}" data-reveal>${escape(flagEmoji(cc2))}</span><span class="${veilCls}" data-reveal>${escape(country)}</span></span>
-        <button class="plonker-close" title="Close">\u00d7</button>
+        <span class="plonker-h3-actions">
+          ${round.guess?.roundScore != null ? `<span class="plonker-score">${escape(round.guess.roundScore)} pts</span>` : ''}
+          <button class="plonker-close" title="Close">\u00d7</button>
+        </span>
       </h3>
-      ${isLM ? '<div class="plonker-meta">Learnable-meta map — these are deliberate drills.</div>' : ''}
+      ${isLM ? '<div class="plonker-meta">Learnable-meta map \u2014 deliberate drill</div>' : ''}
+      ${keyMetaHtml}
       <ul class="plonker-tip-list">${tipBullets}</ul>
+      ${imagesHtml}
       ${diagHtml}
       <div class="plonker-links">
-        <a href="https://www.plonkit.net/${plonkitSlug}" target="_blank" rel="noopener">plonkit</a>
-        ${learnSlug ? `<a href="https://learnablemeta.com/maps/${learnSlug}" target="_blank" rel="noopener">learnable meta</a>` : ''}
-        ${round.actual?.lat != null ? `<a href="https://www.google.com/maps?q=${round.actual.lat},${round.actual.lng}" target="_blank" rel="noopener">street view</a>` : ''}
+        ${plonkitSlug ? `<a href="https://www.plonkit.net/${plonkitSlug}" target="_blank" rel="noopener">plonkit</a>` : ''}
+        ${learnSlug ? `<a href="https://learnablemeta.com/maps/${learnSlug}" target="_blank" rel="noopener">learn meta</a>` : ''}
+        ${streetViewLink ? `<a href="${escape(streetViewLink)}" target="_blank" rel="noopener">street view</a>` : ''}
       </div>
       <div class="plonker-note">
         <div class="plonker-tags">
@@ -93,7 +125,7 @@ const render = async ({ round, server }) => {
     el.addEventListener('click', () => el.classList.remove('plonker-spoiler-veil'));
   });
 
-  overlay.querySelector('.plonker-close').addEventListener('click', () => container.remove());
+  overlay.querySelector('.plonker-close').addEventListener('click', dismiss);
 
   save.addEventListener('click', () => {
     save.disabled = true;
@@ -107,7 +139,7 @@ const render = async ({ round, server }) => {
       }
     }, (resp) => {
       status.textContent = resp?.ok ? 'saved \u2713' : `error: ${resp?.error || 'unknown'}`;
-      if (resp?.ok) setTimeout(() => container.remove(), 900);
+      if (resp?.ok) setTimeout(dismiss, 700);
       else save.disabled = false;
     });
   });
@@ -116,5 +148,8 @@ const render = async ({ round, server }) => {
 window.addEventListener('plonker:round-end', (e) => {
   render(e.detail).catch(err => console.error('[plonker overlay]', err));
 });
+
+// Auto-dismiss when GG starts the next round so the card doesn't cover the pano.
+window.addEventListener('plonker:round-start', dismiss);
 
 console.log('[plonker overlay] ready');

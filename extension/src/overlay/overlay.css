@@ -3,8 +3,8 @@
   position: fixed;
   right: 16px;
   bottom: 16px;
-  width: 380px;
-  max-height: 80vh;
+  width: 440px;
+  max-height: 88vh;
   overflow-y: auto;
   background: #1f2937;
   color: #f3f4f6;
@@ -23,37 +23,83 @@
 }
 .plonker-overlay h3 {
   margin: 0 0 8px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
+}
+.plonker-h3-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.plonker-score {
+  background: #064e3b;
+  color: #6ee7b7;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
 }
 .plonker-overlay h3 .plonker-close {
   cursor: pointer;
   background: none;
   border: 0;
   color: #9ca3af;
-  font-size: 18px;
+  font-size: 20px;
   padding: 0 4px;
+  line-height: 1;
 }
 .plonker-overlay h3 .plonker-close:hover { color: #f3f4f6; }
-.plonker-flag {
-  font-size: 22px;
-  margin-right: 6px;
-}
-.plonker-spoiler-veil {
-  filter: blur(6px);
-  cursor: pointer;
-  user-select: none;
-}
+.plonker-flag { font-size: 22px; margin-right: 6px; }
+.plonker-spoiler-veil { filter: blur(6px); cursor: pointer; user-select: none; }
 .plonker-spoiler-veil:hover { opacity: .8; }
+.plonker-keymeta {
+  background: #064e3b;
+  border-left: 3px solid #10b981;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #d1fae5;
+}
+.plonker-keymeta strong { color: #6ee7b7; margin-right: 4px; }
 .plonker-tip-list {
   margin: 8px 0;
   padding-left: 18px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
-.plonker-tip-list li { margin-bottom: 4px; }
+.plonker-tip-list li { margin-bottom: 6px; }
+.plonker-tip-list code {
+  background: #111827;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.plonker-imgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: 10px 0;
+}
+.plonker-img {
+  display: block;
+  background: #111827;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid #374151;
+  transition: transform .12s;
+}
+.plonker-img:hover { transform: scale(1.03); border-color: #fbbf24; }
+.plonker-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .plonker-diag {
   background: #111827;
   border-left: 3px solid #f59e0b;
@@ -61,12 +107,9 @@
   margin: 10px 0;
   border-radius: 4px;
   font-size: 13px;
+  line-height: 1.45;
 }
-.plonker-links {
-  display: flex;
-  gap: 8px;
-  margin: 10px 0;
-}
+.plonker-links { display: flex; gap: 8px; margin: 10px 0; }
 .plonker-links a {
   flex: 1;
   text-align: center;
@@ -119,8 +162,4 @@
 }
 .plonker-save:hover { background: #34d399; }
 .plonker-save:disabled { opacity: .5; cursor: default; }
-.plonker-meta {
-  font-size: 11px;
-  color: #9ca3af;
-  margin-top: 8px;
-}
+.plonker-meta { font-size: 11px; color: #9ca3af; margin-top: 8px; }

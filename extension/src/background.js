@@ -3,6 +3,7 @@
 import { SUPABASE_URL, SUPABASE_KEY } from './config.js';
 import { CC2_TO_CC3, normalizeCountry } from './lib/country-codes.js';
 import { LEARNABLE_META_MAP_IDS } from './data/learnable-meta-map-ids.js';
+import { COUNTRY_BY_ISO2 } from './data/country-slugs.js';
 
 const REST = `${SUPABASE_URL}/rest/v1`;
 const baseHeaders = {
@@ -70,7 +71,20 @@ const persistRound = async (p) => {
 const tipsForCountry = async (cc2) => {
   if (!cc2) return null;
   const tips = await loadTips();
-  return tips[cc2.toUpperCase()] || tips[cc2.toLowerCase()] || null;
+  const u = cc2.toUpperCase();
+  const bundled = tips[u] || tips[u.toLowerCase()] || null;
+  const meta = COUNTRY_BY_ISO2[u] || null;
+  // Always return SOMETHING when we know the country, so the overlay can still
+  // render the plonkit/learnablemeta links even if we don't have curated tips.
+  if (!bundled && !meta) return null;
+  return {
+    name: bundled?.name || meta?.name || u,
+    plonkit_slug: bundled?.plonkit_slug || meta?.slug || null,
+    identify: bundled?.identify || [],
+    key_meta: bundled?.key_meta || [],
+    images: bundled?.images || [],
+    vs: bundled?.vs || {}
+  };
 };
 
 const buildDiagnostic = async (actual2, guess2) => {
