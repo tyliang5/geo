@@ -114,22 +114,23 @@ PLACE_STOP = frozenset([
 def extract_places(text: str, country_name: str) -> list[str]:
     """Pull proper-noun phrases that look like place names. Best-effort — the
     runtime filter is forgiving, and we always fall back to showing everything
-    when the filter eliminates all items in a section."""
+    when the filter eliminates all items in a section.
+
+    Subdivisions like 'Upper Austria' / 'New South Wales' are KEPT — only the
+    bare country name itself is dropped, since 'Austria' alone matches every
+    Austrian round and adds no signal."""
     matches = re.findall(r"\b[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}\b", text)
     seen, out = set(), []
-    cn = country_name.lower()
+    cn = country_name.lower().strip()
     for m in matches:
-        # Skip stop words and any phrase containing the country name.
         first = m.split()[0]
         if first in PLACE_STOP:
             continue
-        if cn in m.lower():
+        # Drop bare country name, not subdivisions that include it.
+        if m.lower().strip() == cn:
             continue
-        # Skip ALL-CAPS acronyms (e.g., NOTE, MPH).
         if m.isupper():
             continue
-        # Skip leading-of-sentence false positives — single capitalized word
-        # at sentence start that's also a common verb/adverb.
         key = m.lower()
         if key in seen:
             continue

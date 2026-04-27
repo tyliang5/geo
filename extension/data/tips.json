@@ -215,7 +215,8 @@
             "type": "text",
             "text": "Juneau, Alaska’s Capital city, is the largest settlement in the Alaskan panhandle. Therefore, it is much more ‘built up’ than other towns in this area.",
             "places": [
-              "Juneau"
+              "Juneau",
+              "Alaskan"
             ]
           },
           {
@@ -352,7 +353,8 @@
             "places": [
               "Nome",
               "Unalakleet",
-              "Galena"
+              "Galena",
+              "Alaskan"
             ]
           },
           {
@@ -1884,7 +1886,10 @@
           },
           {
             "type": "text",
-            "text": "Australian phone numbers are 8 digits with a 2-digit area code in front. A map of these by state can be seen here."
+            "text": "Australian phone numbers are 8 digits with a 2-digit area code in front. A map of these by state can be seen here.",
+            "places": [
+              "Australian"
+            ]
           },
           {
             "type": "image",
@@ -2375,7 +2380,10 @@
           },
           {
             "type": "text",
-            "text": "A map of Austrian A-roads can be seen here, following the general trend of increasing in number from east to west."
+            "text": "A map of Austrian A-roads can be seen here, following the general trend of increasing in number from east to west.",
+            "places": [
+              "Austrian"
+            ]
           },
           {
             "type": "text",
@@ -2391,7 +2399,10 @@
           },
           {
             "type": "text",
-            "text": "Austrian B-roads, indicated by white text inside of a blue rectangle, also follow the general trend of increasing in number from east to west."
+            "text": "Austrian B-roads, indicated by white text inside of a blue rectangle, also follow the general trend of increasing in number from east to west.",
+            "places": [
+              "Austrian"
+            ]
           },
           {
             "type": "text",
@@ -2407,7 +2418,10 @@
           },
           {
             "type": "text",
-            "text": "Each Austrian state has its own unique flag, shown in the image."
+            "text": "Each Austrian state has its own unique flag, shown in the image.",
+            "places": [
+              "Each Austrian"
+            ]
           },
           {
             "type": "image",
@@ -2416,7 +2430,10 @@
           },
           {
             "type": "text",
-            "text": "Each Austrian state has its own unique bus company, the logo of which can be seen on the side of buses."
+            "text": "Each Austrian state has its own unique bus company, the logo of which can be seen on the side of buses.",
+            "places": [
+              "Each Austrian"
+            ]
           },
           {
             "type": "image",
@@ -2491,7 +2508,8 @@
             "type": "text",
             "text": "White “Güterweg” signs with a black outline are mainly found in Upper Austria.",
             "places": [
-              "White"
+              "White",
+              "Upper Austria"
             ]
           },
           {
@@ -2590,6 +2608,7 @@
               "Poles",
               "Vienna",
               "Innsbruck",
+              "Austrian",
               "They"
             ]
           },
@@ -4000,7 +4019,10 @@
           },
           {
             "type": "text",
-            "text": "Most of the Bhutanese street view coverage was taken on the main roads and cities."
+            "text": "Most of the Bhutanese street view coverage was taken on the main roads and cities.",
+            "places": [
+              "Bhutanese"
+            ]
           },
           {
             "type": "image",
@@ -5075,7 +5097,10 @@
           },
           {
             "type": "text",
-            "text": "Each Brazilian state has a two-letter acronym. These show up most prominently in the numbers of state roads (found on kilometre markers)."
+            "text": "Each Brazilian state has a two-letter acronym. These show up most prominently in the numbers of state roads (found on kilometre markers).",
+            "places": [
+              "Each Brazilian"
+            ]
           },
           {
             "type": "text",
@@ -5115,6 +5140,7 @@
             "type": "text",
             "text": "Northeastern Brazil can be identified by its dry soil, shrubs and succulents (the Caatinga landscape). In rainy season coverage, the shrubs are still recognisable, but can be deceptively green.",
             "places": [
+              "Northeastern Brazil",
               "Caatinga"
             ]
           },
@@ -5936,7 +5962,8 @@
             "type": "text",
             "text": "The ridgeline closely corresponds with the border with Thailand. The drop-off to the Cambodian lowland to its south is abrupt.",
             "places": [
-              "Thailand"
+              "Thailand",
+              "Cambodian"
             ]
           },
           {
@@ -6349,7 +6376,8 @@
             "type": "text",
             "text": "The green Trans-Canada Highway shield, shown in the top right of the image, can be found in all 10 provinces.",
             "places": [
-              "Trans"
+              "Trans",
+              "Canada Highway"
             ]
           },
           {
@@ -6760,7 +6788,10 @@
           },
           {
             "type": "text",
-            "text": "Chilean phone codes will sometimes have a two digit area code in front, followed by seven digits. The patterns of the codes are easily memorable."
+            "text": "Chilean phone codes will sometimes have a two digit area code in front, followed by seven digits. The patterns of the codes are easily memorable.",
+            "places": [
+              "Chilean"
+            ]
           },
           {
             "type": "image",
@@ -7666,7 +7697,8 @@
             "places": [
               "As",
               "Pacific",
-              "Afro"
+              "Afro",
+              "Colombians"
             ]
           },
           {
@@ -8501,7 +8533,10 @@
           },
           {
             "type": "text",
-            "text": "Croatian landlines typically start with a zero followed by the area code."
+            "text": "Croatian landlines typically start with a zero followed by the area code.",
+            "places": [
+              "Croatian"
+            ]
           },
           {
             "type": "image",
@@ -8563,7 +8598,8 @@
             "places": [
               "Similar",
               "Italy",
-              "Additionally"
+              "Additionally",
+              "Croatian"
             ]
           },
           {
@@ -8589,6 +8625,7 @@
             "text": "Bilingual street name signs with Croatian and Italian are typically found in Istria, especially in the western cities.",
             "places": [
               "Bilingual",
+              "Croatian",
               "Istria"
             ]
           },
@@ -10531,7 +10568,10 @@
           },
           {
             "type": "text",
-            "text": "A brown pipe can be seen on the side of a few north-eastern Ecuadorian roads."
+            "text": "A brown pipe can be seen on the side of a few north-eastern Ecuadorian roads.",
+            "places": [
+              "Ecuadorian"
+            ]
           },
           {
             "type": "image",
@@ -10790,6 +10830,7 @@
             "type": "text",
             "text": "Plonk It Egypt (map link) - This map contains locations for practising each meta in the Plonk It Egypt guide from step 2.1 to 2.2",
             "places": [
+              "Plonk It Egypt",
               "This"
             ]
           },
@@ -10976,6 +11017,7 @@
             "type": "text",
             "text": "Note that the majority of signs will still be in Estonian. You may occasionally see Cyrillic in other places.",
             "places": [
+              "Estonian",
               "You"
             ]
           }
@@ -11268,7 +11310,10 @@
           },
           {
             "type": "text",
-            "text": "The MR8 in Southeastern Eswatini straddling the South African border is recognisable because of this distinct ridge to the east."
+            "text": "The MR8 in Southeastern Eswatini straddling the South African border is recognisable because of this distinct ridge to the east.",
+            "places": [
+              "Southeastern Eswatini"
+            ]
           },
           {
             "type": "image",
@@ -13950,7 +13995,8 @@
             "type": "text",
             "text": "Important note: not every single Greenlandic town and trekker is covered by a tip in the subsequent sections. All major towns are included however.",
             "places": [
-              "Important"
+              "Important",
+              "Greenlandic"
             ]
           },
           {
@@ -14776,6 +14822,7 @@
             "text": "It is worth mentioning that while there are other Guatemalan trekkers featuring Mayan ruins, this is by far the most prominent and contains the largest and most intact temple structures.",
             "places": [
               "It",
+              "Guatemalan",
               "Mayan"
             ]
           },
@@ -14786,7 +14833,10 @@
           },
           {
             "type": "text",
-            "text": "These white rectangular stickers that have the word ‘electricista’ written on them are unique to Guatemala City."
+            "text": "These white rectangular stickers that have the word ‘electricista’ written on them are unique to Guatemala City.",
+            "places": [
+              "Guatemala City"
+            ]
           }
         ]
       }
@@ -15112,6 +15162,7 @@
             "type": "text",
             "text": "The infamous “Hawaiian lattice” can be recognized by the volcanic soil and rocks that are abundant in the region. Volcanic vegetation can also be seen lining the roads.",
             "places": [
+              "Hawaiian",
               "Volcanic"
             ]
           },
@@ -15321,7 +15372,10 @@
           },
           {
             "type": "text",
-            "text": "A double-decker tram line runs along the north of Hong Kong Island. A full map of the route can be seen here."
+            "text": "A double-decker tram line runs along the north of Hong Kong Island. A full map of the route can be seen here.",
+            "places": [
+              "Hong Kong Island"
+            ]
           },
           {
             "type": "text",
@@ -15357,7 +15411,10 @@
           },
           {
             "type": "text",
-            "text": "NOTE: These buildings are usually older, which means there will be a lack of glass walls (as opposed to parts of Hong Kong Island which feature more glass)."
+            "text": "NOTE: These buildings are usually older, which means there will be a lack of glass walls (as opposed to parts of Hong Kong Island which feature more glass).",
+            "places": [
+              "Hong Kong Island"
+            ]
           },
           {
             "type": "image",
@@ -15390,7 +15447,8 @@
             "text": "You can use these two skyscrapers to determine whether you are on the Kowloon or Hong Kong Island side. The IFC is on the Hong Kong Island side and the ICC is on the Kowloon side.",
             "places": [
               "You",
-              "Kowloon"
+              "Kowloon",
+              "Hong Kong Island"
             ]
           },
           {
@@ -15503,6 +15561,7 @@
             "text": "Lung Wo Road can be recognized by the Hong Kong Island skyline to the south and the Kowloon skyline to the north. The road is also in good condition and the sidewalks are clean.",
             "places": [
               "Lung Wo Road",
+              "Hong Kong Island",
               "Kowloon"
             ]
           },
@@ -15593,6 +15652,7 @@
             "type": "text",
             "text": "Between Hong Kong Island and Lantau Island, there are three unique islands: Peng Chau, Cheung Chau and Lamma Island, with trekker coverage. These islands can be identified by the lack of cars, narrow streets, and rural architecture.",
             "places": [
+              "Between Hong Kong Island",
               "Lantau Island",
               "Peng Chau",
               "Cheung Chau",
@@ -16404,6 +16464,7 @@
             "text": "Yellow tuk tuks with black roofs are common in the southern Indian states of Telangana, Andhra Pradesh, and Tamil Nadu.",
             "places": [
               "Yellow",
+              "Indian",
               "Telangana",
               "Andhra Pradesh",
               "Tamil Nadu"
@@ -19456,7 +19517,10 @@
           },
           {
             "type": "text",
-            "text": "The roads surrounding Jersey Airport can be recognized thanks to the visible boundary fence."
+            "text": "The roads surrounding Jersey Airport can be recognized thanks to the visible boundary fence.",
+            "places": [
+              "Jersey Airport"
+            ]
           },
           {
             "type": "image",
@@ -19785,7 +19849,10 @@
           },
           {
             "type": "text",
-            "text": "NOTE: The colours of taxis can be useful to distinguish between Jordanian cities."
+            "text": "NOTE: The colours of taxis can be useful to distinguish between Jordanian cities.",
+            "places": [
+              "Jordanian"
+            ]
           },
           {
             "type": "image",
@@ -20685,7 +20752,8 @@
             "text": "Mara Triangle has no considerable mountains and most of it is either flat or hilly. It has a white car that can be found in other Kenyan National Parks.",
             "places": [
               "Mara Triangle",
-              "It"
+              "It",
+              "Kenyan National Parks"
             ]
           },
           {
@@ -22317,7 +22385,10 @@
           },
           {
             "type": "text",
-            "text": "For more information on Lithuanian pole stickers and car metas, please see this document."
+            "text": "For more information on Lithuanian pole stickers and car metas, please see this document.",
+            "places": [
+              "Lithuanian"
+            ]
           }
         ]
       },
@@ -22380,7 +22451,8 @@
             "type": "text",
             "text": "Note that this is by no means very common, but it can help with getting very close guesses if you do see bilingual Polish-Lithuanian signs in an otherwise obvious Lithuanian setting.",
             "places": [
-              "Polish"
+              "Polish",
+              "Lithuanian"
             ]
           }
         ]
@@ -22588,6 +22660,7 @@
             "type": "text",
             "text": "Some of Luxembourg City’s downtown area was covered by a Generation 3 urban trekker. Occasionally, the trekker’s sunglasses and greying hair can be seen.",
             "places": [
+              "Luxembourg City",
               "Occasionally"
             ]
           },
@@ -23530,7 +23603,10 @@
           },
           {
             "type": "text",
-            "text": "Each Malaysian state, excluding the three federal territories, has its own road numbering system with a unique letter at the start of the road number."
+            "text": "Each Malaysian state, excluding the three federal territories, has its own road numbering system with a unique letter at the start of the road number.",
+            "places": [
+              "Each Malaysian"
+            ]
           },
           {
             "type": "text",
@@ -23555,7 +23631,10 @@
           },
           {
             "type": "text",
-            "text": "Malaysian postal codes are useful to know, since they can be found on most street signs in the country."
+            "text": "Malaysian postal codes are useful to know, since they can be found on most street signs in the country.",
+            "places": [
+              "Malaysian"
+            ]
           },
           {
             "type": "image",
@@ -25471,7 +25550,10 @@
           },
           {
             "type": "text",
-            "text": "Namibian area codes are a simple way to get the right region or city on urban rounds."
+            "text": "Namibian area codes are a simple way to get the right region or city on urban rounds.",
+            "places": [
+              "Namibian"
+            ]
           },
           {
             "type": "image",
@@ -26628,7 +26710,10 @@
           },
           {
             "type": "text",
-            "text": "Several New Zealand cities have distinctive rubbish bins. The distinguishing feature of the bins are the council logos on the front."
+            "text": "Several New Zealand cities have distinctive rubbish bins. The distinguishing feature of the bins are the council logos on the front.",
+            "places": [
+              "Several New Zealand"
+            ]
           },
           {
             "type": "text",
@@ -28849,7 +28934,8 @@
             "text": "Kinnaird College for Women University is mainly made up of traditional Pakistani red brick buildings, often combined with red brick paths.",
             "places": [
               "Kinnaird College",
-              "Women University"
+              "Women University",
+              "Pakistani"
             ]
           },
           {
@@ -29042,7 +29128,11 @@
           },
           {
             "type": "text",
-            "text": "While Panama is quite well covered, there is barely any coverage on the north coast, or east of Panama City."
+            "text": "While Panama is quite well covered, there is barely any coverage on the north coast, or east of Panama City.",
+            "places": [
+              "While Panama",
+              "Panama City"
+            ]
           },
           {
             "type": "image",
@@ -29086,7 +29176,8 @@
             "type": "text",
             "text": "Green tropical landscapes with palm trees and very tall grass are common around Colón and Panama City.",
             "places": [
-              "Green"
+              "Green",
+              "Panama City"
             ]
           },
           {
@@ -29186,7 +29277,10 @@
           },
           {
             "type": "text",
-            "text": "Panama City can be recognised by the large number of white high-rise buildings."
+            "text": "Panama City can be recognised by the large number of white high-rise buildings.",
+            "places": [
+              "Panama City"
+            ]
           },
           {
             "type": "image",
@@ -29240,7 +29334,8 @@
             "type": "text",
             "text": "Yellow pole socks can be found near the Panama Canal, around the town of Gatún.",
             "places": [
-              "Yellow"
+              "Yellow",
+              "Panama Canal"
             ]
           }
         ]
@@ -29705,7 +29800,10 @@
           },
           {
             "type": "text",
-            "text": "NOTE: Within Peru, volcanoes are only found in the southeast in the highlighted area."
+            "text": "NOTE: Within Peru, volcanoes are only found in the southeast in the highlighted area.",
+            "places": [
+              "Within Peru"
+            ]
           },
           {
             "type": "image",
@@ -32227,6 +32325,7 @@
             "type": "text",
             "text": "Several Romanian cities and towns have unique street signs. This infographic covers all with a population above 100 000.",
             "places": [
+              "Several Romanian",
               "This"
             ]
           },
@@ -33096,6 +33195,7 @@
             "type": "text",
             "text": "Northeastern Rwanda has less extreme elevation compared to the rest of Rwanda. It more so consists of rolling hills and open agricultural land or undeveloped grassland.",
             "places": [
+              "Northeastern Rwanda",
               "It"
             ]
           },
@@ -34340,6 +34440,7 @@
             "text": "Bilingual signs with Serbian alongside Hungarian can be seen in northern Vojvodina, where there is a Hungarian majority.",
             "places": [
               "Bilingual",
+              "Serbian",
               "Hungarian",
               "Vojvodina"
             ]
@@ -36667,7 +36768,10 @@
           },
           {
             "type": "text",
-            "text": "Sri Lankan telephone numbers have 10 digits."
+            "text": "Sri Lankan telephone numbers have 10 digits.",
+            "places": [
+              "Sri Lankan"
+            ]
           },
           {
             "type": "text",
@@ -36762,7 +36866,10 @@
           },
           {
             "type": "text",
-            "text": "Native Sri Lankan Tamils, who predominantly live in the north and the east."
+            "text": "Native Sri Lankan Tamils, who predominantly live in the north and the east.",
+            "places": [
+              "Native Sri Lankan Tamils"
+            ]
           },
           {
             "type": "text",
@@ -36937,6 +37044,7 @@
             "type": "text",
             "text": "A trekker can be seen holding on to a red car heading up a winding road, south of the Svalbard Airport. If the car is not present, this distinct line of mountains to the northeast is a good indicator that you are there.",
             "places": [
+              "Svalbard Airport",
               "If"
             ]
           },
@@ -37958,7 +38066,8 @@
             "type": "text",
             "text": "Penghu in the middle of the Taiwan Strait.",
             "places": [
-              "Penghu"
+              "Penghu",
+              "Taiwan Strait"
             ]
           },
           {
@@ -39836,6 +39945,7 @@
             "type": "text",
             "text": "Most coverage in the Ugandan national parks was taken with this Street View car, which is similar to the one seen in Kampala, but with a black bar along the front of the car. The visibility of the car varies greatly, and it is somewhat common for it to not be visible at all.",
             "places": [
+              "Ugandan",
               "Kampala"
             ]
           }
@@ -40241,6 +40351,7 @@
             "type": "text",
             "text": "Within Ukraine, this visual glitch is unique to the city of Ivano-Frankivsk.",
             "places": [
+              "Within Ukraine",
               "Ivano",
               "Frankivsk"
             ]
@@ -41868,7 +41979,8 @@
             "text": "Montevideo is by far the largest city in Uruguay. More than half the Uruguayan population lives within its metropolitan area.",
             "places": [
               "Montevideo",
-              "More"
+              "More",
+              "Uruguayan"
             ]
           },
           {
@@ -42375,6 +42487,7 @@
             "type": "text",
             "text": "Although Vanuatu consists of 13 primary islands, only Ambrym Island has coverage. Look for the ‘Port Vato’ label on the map, north of Port Vila, to find the island.",
             "places": [
+              "Although Vanuatu",
               "Ambrym Island",
               "Look",
               "Port Vato",
@@ -42874,7 +42987,8 @@
             "text": "Near the beach resorts just east of Phan Thiết city, most signs will have Cyrillic text alongside Vietnamese, catering to Russian tourists.",
             "places": [
               "Near",
-              "Phan"
+              "Phan",
+              "Vietnamese"
             ]
           }
         ]

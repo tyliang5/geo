@@ -80,16 +80,58 @@ const buildTabs = (tips) => {
 //   * any of its `places` overlaps with the round's geocoded place names.
 // Adjacent images travel with the previous text decision so visual pairing
 // is preserved. Identify section is never filtered.
-const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+//
+// `norm` decomposes Unicode (NFD) and strips combining marks so umlauts and
+// accents fold consistently — Nominatim returns "Oberösterreich", plonkit
+// often uses "Upper Austria"; both must match each other AND each other's
+// ASCII forms after stripping.
+const norm = (s) => String(s)
+  .toLowerCase()
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-z0-9]/g, '');
+
+// Common English<->local name pairs we know plonkit uses on one side and
+// Nominatim returns on the other. Only the cases that genuinely break
+// substring matching belong here.
+const NAME_ALIASES = {
+  'upperaustria':       ['oberosterreich'],
+  'loweraustria':       ['niederosterreich'],
+  'styria':             ['steiermark'],
+  'carinthia':          ['karnten'],
+  'tyrol':              ['tirol'],
+  'vienna':             ['wien'],
+  'bavaria':            ['bayern'],
+  'saxony':             ['sachsen'],
+  'thuringia':          ['thuringen'],
+  'mecklenburgvorpommern': ['mecklenburgwesternpomerania'],
+  'newsouthwales':      ['nsw'],
+  'queensland':         ['qld'],
+  'victoria':           ['vic'],
+  'westernaustralia':   ['wa'],
+  'southaustralia':     ['sa'],
+  'tasmania':           ['tas'],
+};
+const expand = (n) => {
+  const out = new Set([n]);
+  if (NAME_ALIASES[n]) NAME_ALIASES[n].forEach(a => out.add(a));
+  for (const [k, vs] of Object.entries(NAME_ALIASES)) {
+    if (vs.includes(n)) out.add(k);
+  }
+  return out;
+};
 const placeMatch = (tipPlaces, roundPlaces) => {
   if (!tipPlaces || tipPlaces.length === 0) return null; // general
-  const rp = new Set(roundPlaces.map(norm));
+  const rpExpanded = new Set();
+  roundPlaces.forEach(p => expand(norm(p)).forEach(x => rpExpanded.add(x)));
   for (const tp of tipPlaces) {
-    const n = norm(tp);
-    if (n.length < 3) continue;
-    for (const r of rp) {
-      if (r.length < 3) continue;
-      if (r.includes(n) || n.includes(r)) return true;
+    const variants = expand(norm(tp));
+    for (const v of variants) {
+      if (v.length < 3) continue;
+      for (const r of rpExpanded) {
+        if (r.length < 3) continue;
+        if (r.includes(v) || v.includes(r)) return true;
+      }
     }
   }
   return false;
