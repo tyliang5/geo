@@ -87,12 +87,20 @@ def first_sentences(text: str, n: int = 2) -> str:
 
 
 def distill_country(slug: str, raw: dict) -> dict:
+    """Preserve plonkit's reading order so each image stays right after the
+    text that describes it. Each section becomes an ordered `items` array
+    of {type: 'text', text} or {type: 'image', src, caption} entries."""
     name = raw["name"]
     sections_raw: dict[str, list[dict]] = raw.get("sections", {})
 
-    # Gather per-bucket bullets + images, preserving plonkit's reading order.
-    buckets: dict[str, dict] = {sid: {"bullets": [], "images": [], "seen": set()}
+    buckets: dict[str, dict] = {sid: {"items": [], "seen_text": set(), "seen_img": set(),
+                                        "n_text": 0, "n_img": 0}
                                  for sid, _, _ in SECTION_BUCKETS}
+
+    # Caps per section to keep tips.json reasonable. We allow more than the
+    # old flat-bullets cap because images riding alongside the text don't add
+    # much weight (URLs only).
+    MAX_TEXT, MAX_IMG = 14, 14
 
     for sec_name, items in sections_raw.items():
         sid = classify_section(sec_name)
@@ -100,36 +108,41 @@ def distill_country(slug: str, raw: dict) -> dict:
             continue
         b = buckets[sid]
         for item in items:
-            if item["type"] == "text" and len(b["bullets"]) < 8:
+            if item["type"] == "text" and b["n_text"] < MAX_TEXT:
                 s = first_sentences(item["text"], 2)
-                if 25 < len(s) < 320 and s not in b["seen"]:
-                    b["bullets"].append(s)
-                    b["seen"].add(s)
-            elif item["type"] == "image" and len(b["images"]) < 6:
+                if 20 < len(s) < 400 and s not in b["seen_text"]:
+                    b["items"].append({"type": "text", "text": s})
+                    b["seen_text"].add(s)
+                    b["n_text"] += 1
+            elif item["type"] == "image" and b["n_img"] < MAX_IMG:
                 src = item["src"]
-                if src in b["seen"]:
+                if src in b["seen_img"]:
                     continue
-                b["seen"].add(src)
-                b["images"].append({
+                b["items"].append({
+                    "type": "image",
                     "src": src,
                     "caption": item.get("caption") or item.get("alt") or "",
                 })
+                b["seen_img"].add(src)
+                b["n_img"] += 1
 
     sections_out = []
     for sid, label, _ in SECTION_BUCKETS:
         b = buckets[sid]
-        if b["bullets"] or b["images"]:
+        if b["items"]:
             sections_out.append({
                 "id": sid,
                 "title": label,
-                "bullets": b["bullets"],
-                "images": b["images"],
+                "items": b["items"],
             })
 
     key_meta = ""
     for sec in sections_out:
-        if sec["id"] == "identify" and sec["bullets"]:
-            key_meta = first_sentences(sec["bullets"][0], 1)
+        if sec["id"] == "identify":
+            for it in sec["items"]:
+                if it["type"] == "text":
+                    key_meta = first_sentences(it["text"], 1)
+                    break
             break
 
     return {

@@ -1,7 +1,7 @@
-// Post-round overlay. Listens for the `plonker:round-end` CustomEvent
-// dispatched by content.js (after background returns the persisted row + tips).
-// Tabbed UI: one tab per plonkit section + Images + Notes. Auto-dismisses on
-// `plonker:round-start` so the card doesn't sit on top of the next pano.
+// Post-round overlay. Tabbed UI driven by per-country sections from tips.json.
+// Each section's items are rendered in plonkit's original order so an image
+// stays adjacent to the text that explains it. Click an image to pop the
+// lightbox; auto-dismiss on `plonker:round-start`.
 
 const META_TAGS = ['bollard', 'language', 'plate', 'vegetation', 'other'];
 
@@ -30,15 +30,43 @@ const settings = async () => {
 const dismiss = () => {
   const el = document.getElementById('plonker-overlay-root');
   if (el) el.remove();
+  closeLightbox();
 };
 
+// ---------- lightbox ----------
+const closeLightbox = () => {
+  const lb = document.getElementById('plonker-lightbox');
+  if (lb) lb.remove();
+  document.removeEventListener('keydown', onLightboxKey);
+};
+const onLightboxKey = (e) => { if (e.key === 'Escape') closeLightbox(); };
+const openLightbox = (src, caption) => {
+  closeLightbox();
+  const lb = document.createElement('div');
+  lb.id = 'plonker-lightbox';
+  lb.innerHTML = `
+    <div class="plonker-lb-bg"></div>
+    <figure class="plonker-lb-fig">
+      <img src="${escape(src)}" alt="">
+      ${caption ? `<figcaption>${escape(caption)}</figcaption>` : ''}
+      <button class="plonker-lb-close" aria-label="Close">\u00d7</button>
+    </figure>`;
+  document.body.appendChild(lb);
+  lb.querySelector('.plonker-lb-bg').addEventListener('click', closeLightbox);
+  lb.querySelector('.plonker-lb-close').addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', onLightboxKey);
+};
+
+// ---------- tabs ----------
 const buildTabs = (tips) => {
   const tabs = [];
   if (tips?.sections?.length) {
     for (const sec of tips.sections) {
       tabs.push({ id: sec.id, label: sec.title, kind: 'section', section: sec });
     }
-    const allImages = tips.sections.flatMap(s => s.images || []);
+    const allImages = tips.sections.flatMap(s =>
+      (s.items || []).filter(i => i.type === 'image')
+    );
     if (allImages.length > 0) {
       tabs.push({ id: 'images', label: `Images (${allImages.length})`, kind: 'images', images: allImages });
     }
@@ -47,25 +75,27 @@ const buildTabs = (tips) => {
   return tabs;
 };
 
-const renderTabContent = (tab, ctx) => {
+const renderItem = (it) => {
+  if (it.type === 'text') return `<p class="plonker-tip">${escape(it.text)}</p>`;
+  if (it.type === 'image') {
+    return `<button class="plonker-img-inline" data-src="${escape(it.src)}" data-caption="${escape(it.caption || '')}">
+      <img src="${escape(it.src)}" loading="lazy" alt="">
+      ${it.caption ? `<span class="plonker-img-cap">${escape(it.caption)}</span>` : ''}
+    </button>`;
+  }
+  return '';
+};
+
+const renderTabContent = (tab) => {
   if (tab.kind === 'section') {
-    const sec = tab.section;
-    const bullets = sec.bullets?.length
-      ? `<ul class="plonker-tip-list">${sec.bullets.map(b => `<li>${escape(b)}</li>`).join('')}</ul>`
-      : '<div class="plonker-empty">No content for this section.</div>';
-    const imgs = sec.images?.length
-      ? `<div class="plonker-imgs">${sec.images.slice(0, 6).map(img => `
-          <a class="plonker-img" href="${escape(img.src)}" target="_blank" rel="noopener" title="${escape(img.caption || '')}">
-            <img src="${escape(img.src)}" loading="lazy" alt="">
-          </a>`).join('')}</div>`
-      : '';
-    return `${bullets}${imgs}`;
+    if (!tab.section.items?.length) return '<div class="plonker-empty">No content for this section.</div>';
+    return `<div class="plonker-section">${tab.section.items.map(renderItem).join('')}</div>`;
   }
   if (tab.kind === 'images') {
-    return `<div class="plonker-imgs plonker-imgs-large">${tab.images.map(img => `
-      <a class="plonker-img" href="${escape(img.src)}" target="_blank" rel="noopener" title="${escape(img.caption || '')}">
+    return `<div class="plonker-img-grid">${tab.images.map(img => `
+      <button class="plonker-img-tile" data-src="${escape(img.src)}" data-caption="${escape(img.caption || '')}">
         <img src="${escape(img.src)}" loading="lazy" alt="">
-      </a>`).join('')}</div>`;
+      </button>`).join('')}</div>`;
   }
   if (tab.kind === 'notes') {
     return `
@@ -81,6 +111,14 @@ const renderTabContent = (tab, ctx) => {
   return '';
 };
 
+const wireImageHandlers = (overlay) => {
+  overlay.querySelectorAll('.plonker-img-inline, .plonker-img-tile').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openLightbox(btn.dataset.src, btn.dataset.caption);
+    });
+  });
+};
+
 const wireNotesTab = (overlay, ctx) => {
   const ta = overlay.querySelector('textarea');
   const save = overlay.querySelector('.plonker-save');
@@ -88,7 +126,6 @@ const wireNotesTab = (overlay, ctx) => {
   if (!ta || !save) return;
   let chosenTag = null;
   const checkEnable = () => { save.disabled = !chosenTag && !ta.value.trim(); };
-
   overlay.querySelectorAll('.plonker-tag').forEach(b => {
     b.addEventListener('click', () => {
       overlay.querySelectorAll('.plonker-tag').forEach(x => x.classList.remove('active'));
@@ -98,7 +135,6 @@ const wireNotesTab = (overlay, ctx) => {
     });
   });
   ta.addEventListener('input', checkEnable);
-
   save.addEventListener('click', () => {
     save.disabled = true;
     status.textContent = 'saving\u2026';
@@ -134,7 +170,6 @@ const render = async ({ round, server }) => {
   const keyMetaHtml = tips?.key_meta
     ? `<div class="plonker-keymeta"><strong>Key:</strong> ${escape(tips.key_meta)}</div>`
     : '';
-
   const diagHtml = diag ? `
     <div class="plonker-diag">
       <strong>Why ${escape(diag.correct.country)}, not ${escape(diag.yours.country)}?</strong><br>
@@ -190,8 +225,9 @@ const render = async ({ round, server }) => {
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on);
     });
-    contentEl.innerHTML = renderTabContent(tab, ctx);
+    contentEl.innerHTML = renderTabContent(tab);
     if (tab.kind === 'notes') wireNotesTab(overlay, ctx);
+    else wireImageHandlers(overlay);
     chrome.storage.local.set({ lastTab: tab.id });
   };
 
@@ -209,7 +245,6 @@ const render = async ({ round, server }) => {
 window.addEventListener('plonker:round-end', (e) => {
   render(e.detail).catch(err => console.error('[plonker overlay]', err));
 });
-
 window.addEventListener('plonker:round-start', dismiss);
 
 console.log('[plonker overlay] ready');
