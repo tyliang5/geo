@@ -12,6 +12,16 @@ const flagEmoji = (cc2) => {
 };
 const escape = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+// Bundled images live under assets/img/ inside the extension. tips.json
+// stores them as paths like 'assets/img/plonkit/ireland/foo.png'. Anything
+// that already starts with http(s) is left as-is (legacy fallback).
+const resolveImg = (path) => {
+  if (!path) return path;
+  if (/^https?:\/\//.test(path)) return path;
+  try { return chrome.runtime.getURL(path); }
+  catch (e) { return path; }
+};
+
 const ensureContainer = () => {
   let el = document.getElementById('plonker-overlay-root');
   if (el) el.remove();
@@ -94,10 +104,13 @@ const placesMatch = (regionName, roundPlaces) => {
 };
 
 // ---------- card renderers ----------
-const imageThumb = (src, caption) => `
-  <button class="plonker-img-inline" data-src="${escape(src)}" data-caption="${escape(caption || '')}">
-    <img src="${escape(src)}" loading="lazy" alt="">
+const imageThumb = (src, caption) => {
+  const url = resolveImg(src);
+  return `
+  <button class="plonker-img-inline" data-src="${escape(url)}" data-caption="${escape(caption || '')}">
+    <img src="${escape(url)}" loading="lazy" alt="">
   </button>`;
+};
 
 const renderMetaCard = (meta) => `
   <div class="plonker-card">
@@ -240,10 +253,13 @@ const renderTabContent = (tab, ctx) => {
     return chip + `<div class="plonker-cards">${renderSpotlight(items)}</div>`;
   }
   if (tab.kind === 'images') {
-    return `<div class="plonker-img-grid">${tab.items.map(img => `
-      <button class="plonker-img-tile" data-src="${escape(img.src)}" data-caption="${escape(img.caption || '')}">
-        <img src="${escape(img.src)}" loading="lazy" alt="">
-      </button>`).join('')}</div>`;
+    return `<div class="plonker-img-grid">${tab.items.map(img => {
+      const url = resolveImg(img.src);
+      return `
+      <button class="plonker-img-tile" data-src="${escape(url)}" data-caption="${escape(img.caption || '')}">
+        <img src="${escape(url)}" loading="lazy" alt="">
+      </button>`;
+    }).join('')}</div>`;
   }
   if (tab.kind === 'notes') {
     return `

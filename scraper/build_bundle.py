@@ -485,14 +485,29 @@ def region_for_text(text: str, known_regions: set[str]) -> str | None:
     """Find the first known sub-region name mentioned in the text."""
     if not known_regions or not text:
         return None
-    # Sort by length descending so multi-word matches win over single-word.
     for region in sorted(known_regions, key=len, reverse=True):
         if len(region) < 3:
             continue
-        # Word-boundary match, case-insensitive.
         if re.search(r"\b" + re.escape(region) + r"\b", text, re.IGNORECASE):
             return region
     return None
+
+
+def all_regions_for_text(text: str, known_regions: set[str]) -> list[str]:
+    """Find ALL known sub-region names mentioned in the text. For tips like
+    'found in NSW, Victoria, and Queensland' we want every tag so the tip
+    surfaces under each region's group."""
+    if not known_regions or not text:
+        return []
+    out = []
+    seen = set()
+    for region in sorted(known_regions, key=len, reverse=True):
+        if len(region) < 3 or region in seen:
+            continue
+        if re.search(r"\b" + re.escape(region) + r"\b", text, re.IGNORECASE):
+            out.append(region)
+            seen.add(region)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -540,7 +555,20 @@ def _block_text(block: dict) -> str:
 
 
 def _block_images(block: dict) -> list[str]:
-    return [block["image"]["src"]] if block.get("image") else []
+    """Return image URLs, preferring local_path (chrome-extension://) when
+    the image was downloaded into the bundle."""
+    img = block.get("image")
+    if not img:
+        return []
+    return [img.get("local_path") or img.get("src")]
+
+
+def _block_image_meta(block: dict) -> dict:
+    """OCR-derived region tags for the block's image (if any)."""
+    img = block.get("image") or {}
+    return {
+        "ocr_regions": img.get("ocr_regions", []),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -718,21 +746,32 @@ def build_country(iso2: str, slug: str, country_name: str,
                     })
                     continue
 
-                # Pull a region tag from filename, fall back to text scan.
-                region = None
-                if block.get("image"):
-                    region = region_for_image(block["image"]["src"], slug, known_regions)
-                if not region:
-                    region = region_for_text(text, known_regions)
+                # Region tag priority: OCR (most reliable when present) >
+                # filename token > text scan. Each can produce MULTIPLE region
+                # tags — we want the tip to appear under each matched region.
+                regions: list[str] = []
+                img_meta = _block_image_meta(block)
+                if img_meta["ocr_regions"]:
+                    regions.extend(img_meta["ocr_regions"])
+                if not regions and block.get("image"):
+                    r = region_for_image(block["image"]["src"], slug, known_regions)
+                    if r:
+                        regions.append(r)
+                if not regions:
+                    # Text scan can return MULTIPLE matches (sorted by length)
+                    # for tips like "found in NSW, Victoria, and Queensland".
+                    regions.extend(all_regions_for_text(text, known_regions))
+                # Dedupe while preserving order.
+                seen_r = set()
+                regions = [r for r in regions if not (r in seen_r or seen_r.add(r))]
 
                 if sid == "regional":
-                    if region:
+                    for region in regions:
                         out["regions"].setdefault(region, []).append({
                             "text": text, "images": images,
                         })
-                    # else: drop (no reliable region tag).
                 elif sid == "spotlight":
-                    if region:
+                    for region in regions:
                         out["spotlight"].append({
                             "place": region, "text": text, "images": images,
                         })
