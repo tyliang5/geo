@@ -308,7 +308,9 @@ const wireNotesTab = (overlay, ctx) => {
 const render = async ({ round, server }) => {
   const container = ensureContainer();
   const actualCc = round.actual?.countryCode?.toUpperCase() ?? '??';
-  const guessCc = round.guess?.countryCode?.toUpperCase() ?? null;
+  // Server fills guessCountryCode either from GG (rare in classic mode) or
+  // from a Nominatim reverse-geocode of the guess coords (common).
+  const guessCc = (server?.guessCountryCode || round.guess?.countryCode || '').toUpperCase() || null;
   const diag = server?.diagnostic;
   const isLM = server?.isLearnableMetaMap;
   const { noSpoilers, lastTab } = await settings();

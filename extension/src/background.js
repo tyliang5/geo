@@ -40,20 +40,24 @@ const loadTips = async () => {
   return TIPS_CACHE;
 };
 
-// Reverse-geocode lat/lng -> [city, county, state, region, ...]. Cached in
-// chrome.storage.local keyed by rounded coords (avoid Nominatim's 1 req/sec
-// rate limit when the same approximate location is hit repeatedly).
+// Reverse-geocode lat/lng. Returns { places: [...], cc: 'XX' | null }. Cached
+// in chrome.storage.local keyed by rounded coords (~1 km) to avoid spamming
+// Nominatim (1 req/sec).
 const reverseGeocode = async (lat, lng) => {
-  if (lat == null || lng == null) return [];
+  if (lat == null || lng == null) return { places: [], cc: null };
   const key = `geo:${lat.toFixed(2)},${lng.toFixed(2)}`;
   const cached = (await chrome.storage.local.get(key))[key];
-  if (cached) return cached;
+  if (cached) {
+    // Migrate from old cache format (bare array) to {places, cc}.
+    if (Array.isArray(cached)) return { places: cached, cc: null };
+    return cached;
+  }
   try {
     const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}&zoom=10&addressdetails=1`;
     const res = await fetch(url, {
       headers: { 'Accept': 'application/json', 'Accept-Language': 'en' }
     });
-    if (!res.ok) return [];
+    if (!res.ok) return { places: [], cc: null };
     const data = await res.json();
     const a = data.address || {};
     const places = [
@@ -63,11 +67,13 @@ const reverseGeocode = async (lat, lng) => {
       a.state, a.region, a.state_district,
       a['ISO3166-2-lvl4']?.split('-')[1],
     ].filter(Boolean);
-    await chrome.storage.local.set({ [key]: places });
-    return places;
+    const cc = (a.country_code || '').toUpperCase() || null;
+    const out = { places, cc };
+    await chrome.storage.local.set({ [key]: out });
+    return out;
   } catch (e) {
     console.warn('[plonker] reverse-geocode failed', e);
-    return [];
+    return { places: [], cc: null };
   }
 };
 
@@ -140,18 +146,24 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
       if (msg.type === 'round_end') {
         const inserted = await persistRound(msg.payload).catch(e => ({ error: String(e) }));
         const cc2 = normalizeCountry(msg.payload.actual?.countryCode);
-        const guess2 = normalizeCountry(msg.payload.guess?.countryCode);
         const { lat, lng } = msg.payload.actual || {};
         const guessLatLng = msg.payload.guess || {};
-        // Fire reverse-geocodes (actual + guess) in parallel.
-        const [tips, guessTips, diagnostic, places, guessPlaces] = await Promise.all([
+
+        // Reverse-geocode actual + guess in parallel. Use the geocode result
+        // to fill in the guess country code if GG didn't supply
+        // streakLocationCode for the guess (it usually doesn't in classic
+        // mode — only Country Streak fills it).
+        const [actualGeo, guessGeo] = await Promise.all([
+          reverseGeocode(lat, lng),
+          reverseGeocode(guessLatLng.lat, guessLatLng.lng),
+        ]);
+        const guessRaw = msg.payload.guess?.countryCode || guessGeo.cc;
+        const guess2 = normalizeCountry(guessRaw);
+
+        const [tips, guessTips, diagnostic] = await Promise.all([
           tipsForCountry(cc2),
           guess2 && guess2 !== cc2 ? tipsForCountry(guess2) : Promise.resolve(null),
           buildDiagnostic(cc2, guess2),
-          reverseGeocode(lat, lng),
-          guess2 && guess2 !== cc2
-            ? reverseGeocode(guessLatLng.lat, guessLatLng.lng)
-            : Promise.resolve([]),
         ]);
         send({
           ok: !inserted.error,
@@ -159,8 +171,9 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
           tips,
           guessTips,
           diagnostic,
-          places,
-          guessPlaces,
+          places: actualGeo.places,
+          guessPlaces: guessGeo.places,
+          guessCountryCode: guess2,
           isLearnableMetaMap: LEARNABLE_META_MAP_IDS.has(msg.payload.mapId)
         });
       } else if (msg.type === 'save_note') {
