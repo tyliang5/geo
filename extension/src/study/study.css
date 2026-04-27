@@ -1,0 +1,180 @@
+:root {
+  --bg: #1f2937;
+  --bg-elev: #111827;
+  --fg: #f3f4f6;
+  --muted: #9ca3af;
+  --accent: #fbbf24;
+  --good: #10b981;
+  --bad: #ef4444;
+  --border: #374151;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Neo Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(17, 24, 39, .8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { font-weight: 700; font-size: 16px; }
+.controls { display: flex; align-items: center; gap: 14px; font-size: 13px; }
+.lives { color: #ef4444; font-size: 16px; letter-spacing: 2px; }
+.streak { background: var(--bg-elev); padding: 3px 10px; border-radius: 999px; font-weight: 600; }
+.acc { color: var(--muted); }
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.icon-btn:hover { background: var(--bg-elev); }
+
+.stage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.welcome {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px;
+}
+.welcome h1 { margin: 0 0 6px; }
+.welcome .sub { color: var(--muted); margin: 0 0 20px; }
+.filters .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+.filters label { color: var(--muted); font-size: 13px; }
+.filters select, .filters input {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 13px;
+}
+.primary {
+  margin-top: 20px;
+  background: var(--accent);
+  color: #111;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+}
+.primary:hover { background: #fcd34d; }
+.primary:disabled { opacity: .5; cursor: default; }
+
+/* Question card */
+.qcard {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.qcard .qmeta {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.qcard .qprompt {
+  font-size: 18px;
+  font-weight: 600;
+}
+.qcard .qimg {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 8px;
+}
+.qchoices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+.qchoice {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background .12s, border-color .12s;
+}
+.qchoice:hover { background: #2a374a; border-color: var(--accent); }
+.qchoice.correct { background: rgba(16, 185, 129, .2); border-color: var(--good); color: #6ee7b7; }
+.qchoice.wrong { background: rgba(239, 68, 68, .2); border-color: var(--bad); color: #fca5a5; }
+.qchoice .flag { margin-right: 8px; font-size: 18px; }
+.qchoice:disabled { cursor: default; }
+
+.feedback {
+  background: var(--bg);
+  border-left: 3px solid var(--accent);
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  display: none;
+}
+.feedback.shown { display: block; }
+.feedback.correct { border-left-color: var(--good); }
+.feedback.wrong { border-left-color: var(--bad); }
+
+.next-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+.kbd {
+  background: var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+}
+
+.gameover {
+  text-align: center;
+  padding: 30px;
+}
+.gameover h1 { margin: 0 0 10px; font-size: 28px; }
+.gameover .stats { color: var(--muted); margin: 14px 0; }
+.gameover .stats span { color: var(--fg); font-weight: 600; }
+.gameover .actions { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }

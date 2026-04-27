@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plonker — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Plonker · Dashboard</div>
+    <div class="controls">
+      <span id="totals">\u2014 rounds</span>
+      <button id="reload" class="icon-btn" title="Reload from Supabase">\u21bb</button>
+    </div>
+  </div>
+
+  <main class="layout">
+    <section class="map-pane">
+      <h2>Country accuracy <span class="hint">(red = weak, green = mastered)</span></h2>
+      <div id="map" class="map-frame">Loading map\u2026</div>
+      <div class="legend">
+        <span class="sw" style="background:#ef4444"></span>0%
+        <span class="sw" style="background:#f59e0b"></span>33%
+        <span class="sw" style="background:#facc15"></span>50%
+        <span class="sw" style="background:#84cc16"></span>67%
+        <span class="sw" style="background:#10b981"></span>100%
+        <span class="sw" style="background:#1f2937;border:1px solid #374151"></span>untouched
+      </div>
+    </section>
+
+    <aside class="side-pane">
+      <h2>Worst countries</h2>
+      <table id="worst" class="ranked"><tbody></tbody></table>
+
+      <h2>Best countries</h2>
+      <table id="best" class="ranked"><tbody></tbody></table>
+
+      <h2>Recent rounds</h2>
+      <table id="recent" class="ranked"><tbody></tbody></table>
+    </aside>
+  </main>
+
+  <section id="drilldown" class="drilldown" style="display:none">
+    <div class="dh">
+      <h2 id="dhCountry">Country</h2>
+      <button id="dhClose" class="icon-btn">\u00d7</button>
+    </div>
+    <div class="dbody" id="dbody"></div>
+  </section>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

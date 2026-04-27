@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plonker — Study</title>
+  <link rel="stylesheet" href="study.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Plonker · Study</div>
+    <div class="controls">
+      <span class="lives" id="lives" title="Lives">\u2764\u2764\u2764</span>
+      <span class="streak" id="streak" title="Current streak">0</span>
+      <span class="acc" id="acc" title="Session accuracy">\u2014</span>
+      <button id="settingsBtn" class="icon-btn" title="Filters &amp; settings">\u2699</button>
+      <button id="quitBtn" class="icon-btn" title="Quit session">\u00d7</button>
+    </div>
+  </div>
+
+  <main class="stage" id="stage">
+    <div class="welcome">
+      <h1>Country identification</h1>
+      <p class="sub">Image \u2192 pick the country. Wrong answers cost a life. Adjacent countries are used as hard distractors.</p>
+      <div class="filters">
+        <div class="row">
+          <label>Focus</label>
+          <select id="focus">
+            <option value="all">All covered countries</option>
+            <option value="EU">Europe</option>
+            <option value="AS">Asia</option>
+            <option value="AF">Africa</option>
+            <option value="NA">North America</option>
+            <option value="SA">South America</option>
+            <option value="OC">Oceania</option>
+            <option value="baltic">Baltics (LV, LT, EE)</option>
+            <option value="nordic">Nordics (SE, NO, DK, FI, IS)</option>
+            <option value="balkan">Balkans</option>
+            <option value="se-asia">SE Asia</option>
+            <option value="latam">Latin America</option>
+            <option value="confused-eu-east">Easy-confused: BY/RU/UA</option>
+            <option value="confused-cz-sk">Easy-confused: CZ/SK</option>
+            <option value="confused-ar-uy">Easy-confused: AR/UY</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Lives</label>
+          <input type="number" id="livesInput" min="1" max="10" value="3">
+        </div>
+        <div class="row">
+          <label>MC options</label>
+          <input type="number" id="mcInput" min="3" max="8" value="4">
+        </div>
+        <div class="row">
+          <label>Distractors</label>
+          <select id="distInput">
+            <option value="hard" selected>Hard (regional neighbors)</option>
+            <option value="random">Random</option>
+            <option value="mixed">Mixed (1 hard + rest random)</option>
+          </select>
+        </div>
+      </div>
+      <button id="startBtn" class="primary">Start</button>
+    </div>
+  </main>
+
+  <script type="module" src="study.js"></script>
+</body>
+</html>

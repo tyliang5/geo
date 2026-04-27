@@ -45,5 +45,12 @@ const refreshStats = async () => {
   });
 };
 
+const openTab = (path) => {
+  chrome.tabs.create({ url: chrome.runtime.getURL(path) });
+  window.close();
+};
+$('study').addEventListener('click', () => openTab('src/study/study.html'));
+$('dashboard').addEventListener('click', () => openTab('src/dashboard/dashboard.html'));
+
 loadSettings();
 refreshStats();

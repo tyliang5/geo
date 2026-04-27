@@ -1524,6 +1524,14 @@
           "type": "Language"
         },
         {
+          "text": "Sabal palmetto is native to the subtropical coastal regions of the American states of Florida, Georgia, South Carolina, southeastern North Carolina, and extreme southern Texas.",
+          "images": [
+            "https://learnablemeta.com/images/1119/1766099796818-UNi.avif",
+            "https://learnablemeta.com/images/1119/1766099800012-zbI.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
           "text": "Buildings with red metal rooftops are most commonly found in the Mid-South and Southern Appalachia states of Virginia, West Virginia, Ohio, Kentucky, Tennessee, Arkansas, and North Carolina.\n\nNOTE: These types of rooftops can be found in other areas, so use other clues before guessing.",
           "images": [
             "https://learnablemeta.com/images/1119/wctKuhfTK3kAladeqDMUfcfd7EY1gcZaaJ8d.avif"
@@ -1536,6 +1544,13 @@
             "https://learnablemeta.com/images/1119/1766534959987-zzm.avif"
           ],
           "type": "Car Meta"
+        },
+        {
+          "text": "You’ll find red soil everywhere in the South. The area where red soil can be found stretches all the way from some parts of Louisiana and Arkansas all the way to southern Virginia through Mississippi, southern Tennessee, Alabama, Georgia, South Carolina, and North Carolina.\n\nThe Oklahoma City region in Oklahoma is also notable for its red soil.",
+          "images": [
+            "https://learnablemeta.com/images/1119/JRq9BNxfA53Q0Wh0Cnv4ZfxWoTAjQQquXAs4.avif"
+          ],
+          "type": "Landscape"
         },
         {
           "text": "You may already know Ohio’s nickname, the Buckeye State, but despite the name, buckeyes grow in other states too. They’re most commonly seen in the east from Ohio down through West Virginia, Virginia, and Kentucky to Tennessee and North Carolina. Some can be found in Missouri too.\n\nCalifornia is the only state in the west where you can see buckeyes.",
@@ -1739,21 +1754,6 @@
           "type": "Infrastructure"
         },
         {
-          "text": "Sabal palmetto is native to the subtropical coastal regions of the American states of Florida, Georgia, South Carolina, southeastern North Carolina, and extreme southern Texas.",
-          "images": [
-            "https://learnablemeta.com/images/1119/1766099796818-UNi.avif",
-            "https://learnablemeta.com/images/1119/1766099800012-zbI.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
-          "text": "You’ll find red soil everywhere in the South. The area where red soil can be found stretches all the way from some parts of Louisiana and Arkansas all the way to southern Virginia through Mississippi, southern Tennessee, Alabama, Georgia, South Carolina, and North Carolina.\n\nThe Oklahoma City region in Oklahoma is also notable for its red soil.",
-          "images": [
-            "https://learnablemeta.com/images/1119/JRq9BNxfA53Q0Wh0Cnv4ZfxWoTAjQQquXAs4.avif"
-          ],
-          "type": "Landscape"
-        },
-        {
           "text": "Many parts of the Deep South, stretching from Oklahoma to South Carolina, have reddish soil. The exact tint of the soil can range from yellow to deep red.",
           "images": [
             "assets/img/plonkit/united-states/Red_soil2.png"
@@ -1815,6 +1815,13 @@
             "https://learnablemeta.com/images/1191/T89AloUABQpGMQe8QWREOR5J4Z1xXUhBv1CU.avif"
           ],
           "type": "Hanging Lights"
+        },
+        {
+          "text": "Delaware license plates has gold text on dark blue background, it shows up as a dark blue blur with gold in the middle, and is easy to spot. Front plates are NOT required. Note: A similar plate can be found in Michigan.",
+          "images": [
+            "https://learnablemeta.com/images/55/klhhPIphBnKM3SfMtCcn7Ix9SyIXgB1hETTN.avif"
+          ],
+          "type": "Delaware License Plates"
         },
         {
           "text": "Properties in rural and exurban Ohio, Lower Michigan, and Indiana commonly feature a vertically-oriented metal sign with white numbers, indicating the house number of the adjacent building. These signs are most commonly blue or green, and are commonly attached to mailboxes.\n\nNOTE: These may be rarely found in other states.",
@@ -2467,6 +2474,14 @@
           "type": "Landscape"
         },
         {
+          "text": "Saw Palmetto grows in clumps or dense thickets in sandy coastal areas, and as undergrowth in pine woods or hardwood hammocks. You can find it in coastal areas of Florida and Georgia.",
+          "images": [
+            "https://learnablemeta.com/images/1119/1766099833111-ZwY.avif",
+            "https://learnablemeta.com/images/1119/1766099836639-IHD.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
           "text": "This tree can commonly be found in Florida and along the southern coast as shown by the range map. A southern live oak will often have Spanish moss hanging from the branches, giving the tree a pendulous appearance.",
           "images": [
             "https://learnablemeta.com/images/1119/1768243926803-CdG.avif",
@@ -2967,15 +2982,6 @@
           ]
         }
       ],
-      "Delaware": [
-        {
-          "text": "Delaware license plates has gold text on dark blue background, it shows up as a dark blue blur with gold in the middle, and is easy to spot. Front plates are NOT required. Note: A similar plate can be found in Michigan.",
-          "images": [
-            "https://learnablemeta.com/images/55/klhhPIphBnKM3SfMtCcn7Ix9SyIXgB1hETTN.avif"
-          ],
-          "type": "Delaware License Plates"
-        }
-      ],
       "Southwest": [
         {
           "text": "In the Appalachian area stretching from southern New York to southern Virginia, there are a lot of forest-covered rolling hills, with flat valleys dividing them. A majority of the ridges are oriented Southwest to Northeast.",
@@ -3100,14 +3106,6 @@
             "https://learnablemeta.com/images/1119/1770502314061-7gH.avif"
           ],
           "type": "Infrastructure"
-        },
-        {
-          "text": "Saw Palmetto grows in clumps or dense thickets in sandy coastal areas, and as undergrowth in pine woods or hardwood hammocks. You can find it in coastal areas of Florida and Georgia.",
-          "images": [
-            "https://learnablemeta.com/images/1119/1766099833111-ZwY.avif",
-            "https://learnablemeta.com/images/1119/1766099836639-IHD.avif"
-          ],
-          "type": "Vegetation"
         },
         {
           "text": "‘Tim Hortons’ is known for being the most popular restaurant chain in Canada. However, there are also many locations in the United States. They are primarily located in states adjacent to the Canadian Provinces of Ontario and Quebec, with a few locations also in Texas and Georgia.",
@@ -4561,6 +4559,20 @@
           "type": "Landscape"
         },
         {
+          "text": "Wild sunflowers (Verbesina encelioides) are often found in Salta, Jujuy and Tucumán.",
+          "images": [
+            "https://learnablemeta.com/images/100/AyiyXamPfPyDyAtpQARRJrH7p5ie6FXaUpbH.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
+          "text": "Sugarcane plantations are most common in Tucumán, with hotspots appearing in Salta and Jujuy.",
+          "images": [
+            "https://learnablemeta.com/images/100/xCyeeIf9hDTg2dDL1egd4hJrc5OArIodnsQa.avif"
+          ],
+          "type": "Agriculture"
+        },
+        {
           "text": "The Pink Trumpet Tree (Handroanthus impetiginosus) can be found in cities in northern Salta such as Orán, Tartagal and General Mosconi.",
           "images": [
             "https://learnablemeta.com/images/100/bibuG4ZK2fsUKkqG0x4Fp59bQHfXoFQchFBP.avif"
@@ -4605,20 +4617,6 @@
             "https://learnablemeta.com/images/100/0bkcJRft7L599nFNI3qCCiiWmyieJWhTapAz.avif"
           ],
           "type": "Landscape"
-        },
-        {
-          "text": "Wild sunflowers (Verbesina encelioides) are often found in Salta, Jujuy and Tucumán.",
-          "images": [
-            "https://learnablemeta.com/images/100/AyiyXamPfPyDyAtpQARRJrH7p5ie6FXaUpbH.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
-          "text": "Sugarcane plantations are most common in Tucumán, with hotspots appearing in Salta and Jujuy.",
-          "images": [
-            "https://learnablemeta.com/images/100/xCyeeIf9hDTg2dDL1egd4hJrc5OArIodnsQa.avif"
-          ],
-          "type": "Agriculture"
         },
         {
           "text": "Red bricks, similar to what is common in Bolivia, can be found in the northwest of the country, especially in western Jujuy.",
@@ -4714,6 +4712,13 @@
           "text": "These all green or all yellow taxis with an oval shape beneath the driver door are unique to Cordoba.",
           "images": [
             "https://learnablemeta.com/images/100/pxsl4eFeig5XqnjYwB56vSoMl3y9DMUPzxQw.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
+          "text": "Taxis in Neuquen are all yellow. What distinguishes them from Cordoba taxis is that their doors have no logos or paintings on them.",
+          "images": [
+            "https://learnablemeta.com/images/100/jL6uOUEuVmFqlPaL2euYd3sHigvzPiq1cjHZ.avif"
           ],
           "type": "Infrastructure"
         },
@@ -5091,44 +5096,6 @@
           ]
         }
       ],
-      "Neuquen": [
-        {
-          "text": "Taxis in Neuquen are all yellow. What distinguishes them from Cordoba taxis is that their doors have no logos or paintings on them.",
-          "images": [
-            "https://learnablemeta.com/images/100/jL6uOUEuVmFqlPaL2euYd3sHigvzPiq1cjHZ.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
-          "text": "The monkey puzzle tree can be found in western Neuquen. The most specimens are seen on provincial road 23 + offroads, between Caviahue and Atreuco.",
-          "images": [
-            "https://learnablemeta.com/images/100/1765046537261-uvq.avif",
-            "https://learnablemeta.com/images/100/1765046541944-2bZ.avif",
-            "https://learnablemeta.com/images/100/1765046546631-TZ7.avif",
-            "https://learnablemeta.com/images/100/1765046552795-QnZ.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
-          "text": "The RP1 in Neuquen has dark, cloudy coverage. It is a dark red dirt road and thus resembles Mars. There is some spill onto the RP7 in the North and the RP10 in the South.",
-          "images": [
-            "https://learnablemeta.com/images/100/SlbDpFymtQDSdsF6EMoXXIiwjeuRHNccy4qk.avif"
-          ],
-          "type": "Landscape"
-        },
-        {
-          "text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it.",
-          "images": [
-            "assets/img/plonkit/argentina/Argentina_Taxi_Map_v5.png"
-          ]
-        },
-        {
-          "text": "Single rows of poplar trees, characterised by their thin and tall appearance, are very common around Neuquén. The area is also very flat.",
-          "images": [
-            "assets/img/plonkit/argentina/neuquen_plantations.png"
-          ]
-        }
-      ],
       "Catamarca": [
         {
           "text": "These volcanic rocks in Generation 4 coverage can only be found on the RP43 south of Antofagasta de la Sierra in northwestern Catamarca.",
@@ -5183,6 +5150,37 @@
           "text": "Prosopis caldenia, known as the caldén, is a decently large deciduous tree with small leaves and sinuous branches. It is mainly found in La Pampa. NOTE: This tree can sometimes be confused with other trees such as the White Carob.",
           "images": [
             "assets/img/plonkit/argentina/calden.png"
+          ]
+        }
+      ],
+      "Neuquen": [
+        {
+          "text": "The monkey puzzle tree can be found in western Neuquen. The most specimens are seen on provincial road 23 + offroads, between Caviahue and Atreuco.",
+          "images": [
+            "https://learnablemeta.com/images/100/1765046537261-uvq.avif",
+            "https://learnablemeta.com/images/100/1765046541944-2bZ.avif",
+            "https://learnablemeta.com/images/100/1765046546631-TZ7.avif",
+            "https://learnablemeta.com/images/100/1765046552795-QnZ.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
+          "text": "The RP1 in Neuquen has dark, cloudy coverage. It is a dark red dirt road and thus resembles Mars. There is some spill onto the RP7 in the North and the RP10 in the South.",
+          "images": [
+            "https://learnablemeta.com/images/100/SlbDpFymtQDSdsF6EMoXXIiwjeuRHNccy4qk.avif"
+          ],
+          "type": "Landscape"
+        },
+        {
+          "text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/argentina/Argentina_Taxi_Map_v5.png"
+          ]
+        },
+        {
+          "text": "Single rows of poplar trees, characterised by their thin and tall appearance, are very common around Neuquén. The area is also very flat.",
+          "images": [
+            "assets/img/plonkit/argentina/neuquen_plantations.png"
           ]
         }
       ],
@@ -5902,6 +5900,13 @@
           "type": "Infrastructure"
         },
         {
+          "text": "The ∀-Poletop is found in South Australia and New South Wales. In SA, the pole will be a stobie pole, while in NSW it will be round.",
+          "images": [
+            "https://learnablemeta.com/images/109/1771885323413-pRA.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "New South Wales uses these two designs for bus stops. One is blue and has a white B in a circle with it, the other has the signpost bending over the actual sign.",
           "images": [
             "https://learnablemeta.com/images/109/HtRoZRpmpaJ0C5n5zOLXNx0RN24Vj7xSGwJF.avif"
@@ -5969,13 +5974,6 @@
           "text": "Reflectors that are shorter than the regular ones are most common in Queensland and South Australia.",
           "images": [
             "https://learnablemeta.com/images/109/yKSfqPRSpJgf46Z7P4RIvQjTeClWf9gvaGce.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
-          "text": "The ∀-Poletop is found in South Australia and New South Wales. In SA, the pole will be a stobie pole, while in NSW it will be round.",
-          "images": [
-            "https://learnablemeta.com/images/109/1771885323413-pRA.avif"
           ],
           "type": "Infrastructure"
         },
@@ -6087,6 +6085,13 @@
           "text": "The Sturt Highway from Wentworth to Wagga Wagga can have triple broken centre lines. They can also be found on other major roads in NSW, such as the Gwydir Highway.",
           "images": [
             "https://learnablemeta.com/images/109/UwzuLXUvtqHgd6z3QIDfe8YLmeqLrRSMssLW.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
+          "text": "Traffic lights with a white outline around the frame are found in the eastern and western states of WA, QLD, NSW, ACT and Tas. Traffic lights without a border are found in the remaining, central states.",
+          "images": [
+            "https://learnablemeta.com/images/109/OzggKlWVJlJNOgbDmuOQWILUHAMvmmWBUswx.avif"
           ],
           "type": "Infrastructure"
         },
@@ -6465,13 +6470,6 @@
           "type": "Landscape"
         },
         {
-          "text": "Traffic lights with a white outline around the frame are found in the eastern and western states of WA, QLD, NSW, ACT and Tas. Traffic lights without a border are found in the remaining, central states.",
-          "images": [
-            "https://learnablemeta.com/images/109/OzggKlWVJlJNOgbDmuOQWILUHAMvmmWBUswx.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
           "text": "Queensland features these unique pole tops with coils that are angled upwards on the sides.",
           "images": [
             "assets/img/plonkit/australia/qld_coils.png"
@@ -6811,6 +6809,22 @@
           "text": "Vineyards are limited to the far eastern part of the country. You can find a very precise map here. Notably, there are a lot of vineyards close to Vienna and around Lake Neusiedl.",
           "images": [
             "assets/img/plonkit/austria/Wine_production.png"
+          ]
+        }
+      ],
+      "Karnten": [
+        {
+          "text": "Each Austrian state has its own unique bus company, the logo of which can be seen on the side of buses. You can click the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/austria/Bus_companies.png"
+          ]
+        }
+      ],
+      "Steiermark": [
+        {
+          "text": "Each Austrian state has its own unique bus company, the logo of which can be seen on the side of buses. You can click the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/austria/Bus_companies.png"
           ]
         }
       ],
@@ -7800,6 +7814,42 @@
           "images": [
             "assets/img/plonkit/belgium/striped_posts_v2.png"
           ]
+        },
+        {
+          "text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street name. The map shows a selection of recognizable street signs in the bigger cities. NOTE: Of the big cities, Bruges (Brugge) is an exception to the rule of signs usually mentioning the municipality name. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/belgium/straatbordenbelgie-resized.png"
+          ]
+        }
+      ],
+      "Antwerp": [
+        {
+          "text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street name. The map shows a selection of recognizable street signs in the bigger cities. NOTE: Of the big cities, Bruges (Brugge) is an exception to the rule of signs usually mentioning the municipality name. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/belgium/straatbordenbelgie-resized.png"
+          ]
+        },
+        {
+          "text": "The coastal plain is extremely flat and consists of so-called polders, which are man-made fields at or below sea level, surrounded by many waterways. This landscape is situated near the North Sea coast, as well as near the western part of the border with the Netherlands, particularly around Antwerp. NOTE: This part of Belgium is especially often confused with the Netherlands. Carefully look around for clues to distinguish the two countries if you find yourself in this landscape.",
+          "images": [
+            "assets/img/plonkit/belgium/Polder_landscape.png"
+          ]
+        }
+      ],
+      "Liege": [
+        {
+          "text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street name. The map shows a selection of recognizable street signs in the bigger cities. NOTE: Of the big cities, Bruges (Brugge) is an exception to the rule of signs usually mentioning the municipality name. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/belgium/straatbordenbelgie-resized.png"
+          ]
+        }
+      ],
+      "Namur": [
+        {
+          "text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street name. The map shows a selection of recognizable street signs in the bigger cities. NOTE: Of the big cities, Bruges (Brugge) is an exception to the rule of signs usually mentioning the municipality name. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/belgium/straatbordenbelgie-resized.png"
+          ]
         }
       ],
       "Luxembourg": [
@@ -7807,14 +7857,6 @@
           "text": "The Ardennes, located in the southeast part of Belgium, have a very distinct landscape. You can see a lot of steep hills, dense forests, and valleys. NOTE: The Ardennes extend partially into France, Luxembourg, and Germany.",
           "images": [
             "assets/img/plonkit/belgium/ardennenmap.png"
-          ]
-        }
-      ],
-      "Antwerp": [
-        {
-          "text": "The coastal plain is extremely flat and consists of so-called polders, which are man-made fields at or below sea level, surrounded by many waterways. This landscape is situated near the North Sea coast, as well as near the western part of the border with the Netherlands, particularly around Antwerp. NOTE: This part of Belgium is especially often confused with the Netherlands. Carefully look around for clues to distinguish the two countries if you find yourself in this landscape.",
-          "images": [
-            "assets/img/plonkit/belgium/Polder_landscape.png"
           ]
         }
       ]
@@ -11560,6 +11602,12 @@
           ]
         },
         {
+          "text": "Ontario uses distinct orange and black striped traffic cones. Québec, on the other hand, has unique orange and white striped traffic cones.",
+          "images": [
+            "assets/img/plonkit/canada/traffic-cones2_extra_whitespace.png"
+          ]
+        },
+        {
           "text": "The region around Rouyn-Noranda in northwestern Québec can mainly be characterised by the north-south grid, along with the slightly hilly landscape featuring many agricultural fields nestled between the forests, which have many shorter trees as well as thin birches.",
           "images": [
             "assets/img/plonkit/canada/Quebec_North.png"
@@ -14915,6 +14963,14 @@
           ]
         }
       ],
+      "Aarhus": [
+        {
+          "text": "Ring roads are special highways near bigger cities, labelled from O1 up to O4. The number increases from the centre, and each fully or partially encircles the city. These cities have ring roads: Copenhagen, Odense, Aarhus, Aalborg, Hillerød, Kolding, and Velje.",
+          "images": [
+            "assets/img/plonkit/denmark/Ring_Roads.png"
+          ]
+        }
+      ],
       "Odense": [
         {
           "text": "Ring roads are special highways near bigger cities, labelled from O1 up to O4. The number increases from the centre, and each fully or partially encircles the city. These cities have ring roads: Copenhagen, Odense, Aarhus, Aalborg, Hillerød, Kolding, and Velje.",
@@ -14923,11 +14979,11 @@
           ]
         }
       ],
-      "Aarhus": [
+      "Bornholm": [
         {
-          "text": "Ring roads are special highways near bigger cities, labelled from O1 up to O4. The number increases from the centre, and each fully or partially encircles the city. These cities have ring roads: Copenhagen, Odense, Aarhus, Aalborg, Hillerød, Kolding, and Velje.",
+          "text": "There are six regions in Denmark that each use a different bus transportation company. Each bus will have the brand written on the front, and have a unique colour scheme. You can click on the image to enlarge it.",
           "images": [
-            "assets/img/plonkit/denmark/Ring_Roads.png"
+            "assets/img/plonkit/denmark/Denmark_Bus_Companies.png"
           ]
         }
       ]
@@ -16622,13 +16678,6 @@
           "type": "Brittany"
         },
         {
-          "text": "It is not so rare to see cows, horses, or sheep in France in Geoguessr. If that ever happens, you should consider the West of the country (Brittany, Normandy), as well as the mountainous regions (Pyrenees and Alps). This is where you have the most chances to find animals in France in Google Street View.",
-          "images": [
-            "https://learnablemeta.com/images/1068/1754741448331-tcp.avif"
-          ],
-          "type": "Agriculture"
-        },
-        {
           "text": "Dark green road signposts and backs are most commonly found in Brittany and around Paris, but also various southern regions in the country. NOTE: Beware that this, and the following coloured infrastructure can rarely be found in other parts of the country.",
           "images": [
             "assets/img/plonkit/france/2_darkgreenposts.png"
@@ -16655,6 +16704,13 @@
             "https://learnablemeta.com/images/1068/iFkx1g406L16K3hnprE4n086csybvYr2BoMp.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "It is not so rare to see cows, horses, or sheep in France in Geoguessr. If that ever happens, you should consider the West of the country (Brittany, Normandy), as well as the mountainous regions (Pyrenees and Alps). This is where you have the most chances to find animals in France in Google Street View.",
+          "images": [
+            "https://learnablemeta.com/images/1068/1754741448331-tcp.avif"
+          ],
+          "type": "Agriculture"
         },
         {
           "text": "Roads with a significant red, purple or burgundy tint are most commonly found in an area between Paris and Dijon, with Normandy being a notable exception. The historical region of Burgundy, which gave the name to the shade of red, roughly corresponds to the highlighted area. NOTE: Normal roads may deceptively look reddish under some lighting, so use this with caution.",
@@ -16704,6 +16760,12 @@
             "https://learnablemeta.com/images/1072/gdHDsrifMzQfuPwMASLVN9h7HZkzhdSdfJAS.avif"
           ],
           "type": "Northwest"
+        },
+        {
+          "text": "This guide will mainly operate with two types of administrative divisions: regions, totalling at 13 in European France, and 96 departments, which appear on google maps as the primary administrative divisions. Other rarer divisions you may come across include pre 2016 regions, historical provinces, and regions based on cardinal directions. Departments are often named after physical geographical features and their logos may show up on various infrastructure, shown in the next tip. You can practise them with this quiz.",
+          "images": [
+            "assets/img/plonkit/france/2_divisions.png"
+          ]
         }
       ],
       "Champagne": [
@@ -16720,6 +16782,38 @@
           "text": "France is the second largest wine producer in the world, with many famed wine regions. The most common include the area around Bordeaux, southern coast and Champagne, East of Paris. Other regions include, but are not limited to, Loire Valley, Alsace and Corsica. NOTE: This map is highly simplified, see this map for more detailed and extensive description.",
           "images": [
             "assets/img/plonkit/france/2_vineyards2.png"
+          ]
+        }
+      ],
+      "Auvergne": [
+        {
+          "text": "This guide will mainly operate with two types of administrative divisions: regions, totalling at 13 in European France, and 96 departments, which appear on google maps as the primary administrative divisions. Other rarer divisions you may come across include pre 2016 regions, historical provinces, and regions based on cardinal directions. Departments are often named after physical geographical features and their logos may show up on various infrastructure, shown in the next tip. You can practise them with this quiz.",
+          "images": [
+            "assets/img/plonkit/france/2_divisions.png"
+          ]
+        }
+      ],
+      "Bourgogne": [
+        {
+          "text": "This guide will mainly operate with two types of administrative divisions: regions, totalling at 13 in European France, and 96 departments, which appear on google maps as the primary administrative divisions. Other rarer divisions you may come across include pre 2016 regions, historical provinces, and regions based on cardinal directions. Departments are often named after physical geographical features and their logos may show up on various infrastructure, shown in the next tip. You can practise them with this quiz.",
+          "images": [
+            "assets/img/plonkit/france/2_divisions.png"
+          ]
+        }
+      ],
+      "Bretagne": [
+        {
+          "text": "This guide will mainly operate with two types of administrative divisions: regions, totalling at 13 in European France, and 96 departments, which appear on google maps as the primary administrative divisions. Other rarer divisions you may come across include pre 2016 regions, historical provinces, and regions based on cardinal directions. Departments are often named after physical geographical features and their logos may show up on various infrastructure, shown in the next tip. You can practise them with this quiz.",
+          "images": [
+            "assets/img/plonkit/france/2_divisions.png"
+          ]
+        }
+      ],
+      "Corse": [
+        {
+          "text": "This guide will mainly operate with two types of administrative divisions: regions, totalling at 13 in European France, and 96 departments, which appear on google maps as the primary administrative divisions. Other rarer divisions you may come across include pre 2016 regions, historical provinces, and regions based on cardinal directions. Departments are often named after physical geographical features and their logos may show up on various infrastructure, shown in the next tip. You can practise them with this quiz.",
+          "images": [
+            "assets/img/plonkit/france/2_divisions.png"
           ]
         }
       ],
@@ -17265,6 +17359,12 @@
           "type": "Infrastructure"
         },
         {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        },
+        {
           "text": "Bicycle direction signs typically feature a white background with green lettering. In Hamburg, North Rhine-Westphalia and a neighbouring part of Lower Saxony, you will instead find red lettering. The Saarland has its own distinctive design, with white text on a dark green background.",
           "images": [
             "assets/img/plonkit/germany/Germany_bicycle_signs_map.png"
@@ -17292,6 +17392,12 @@
             "https://learnablemeta.com/images/1346/Kao1LYDqKeblgnVV68w9UjYb2iDp3APTKYlm.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
         }
       ],
       "Hamburg": [
@@ -17325,6 +17431,12 @@
           "type": "Car Meta"
         },
         {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        },
+        {
           "text": "Bicycle direction signs typically feature a white background with green lettering. In Hamburg, North Rhine-Westphalia and a neighbouring part of Lower Saxony, you will instead find red lettering. The Saarland has its own distinctive design, with white text on a dark green background.",
           "images": [
             "assets/img/plonkit/germany/Germany_bicycle_signs_map.png"
@@ -17344,6 +17456,12 @@
             "https://learnablemeta.com/images/1346/6Pl0BrublTjCkGfpqQoPu9r9UvTM6xSEV1k2.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
         },
         {
           "text": "Many trees in Brandenburg and Mecklenburg-Vorpommern have these tiny green markers on them. You can very rarely find them in Lower Saxony.",
@@ -17385,6 +17503,12 @@
             "https://learnablemeta.com/images/1346/89leNCvc1hX1xHVxOHIp9vbcmEfbJxT785Ck.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
         }
       ],
       "Saxony-Anhalt": [
@@ -17545,6 +17669,12 @@
             "https://learnablemeta.com/images/1072/ngaxTK8TlqRASjWEZCIjcki9emqMyONRsJcK.avif"
           ],
           "type": "Schleswig-Holstein"
+        },
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
         },
         {
           "text": "Many trees in Brandenburg and Mecklenburg-Vorpommern have these tiny green markers on them. You can very rarely find them in Lower Saxony.",
@@ -17714,6 +17844,12 @@
           ]
         },
         {
+          "text": "These markers with a metallic border around the marker itself are found in Schleswig-Holstein and Lower Saxony. NOTE: The numbers after the comma are usually smaller on the markers in Lower Saxony.",
+          "images": [
+            "assets/img/plonkit/germany/Lower_Saxony_and_Schleswig-Holstein_markers_Hint.png"
+          ]
+        },
+        {
           "text": "These white posts with a red cap are found in all of former East Germany, but most commonly in the state of Saxony-Anhalt.",
           "images": [
             "assets/img/plonkit/germany/RedTop.png"
@@ -17764,6 +17900,12 @@
             "https://learnablemeta.com/images/1346/GgAHbgdbGS8n9fs3tbjsffOwAX2DXRX6ObKz.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
         }
       ],
       "Nordrhein-Westfalen": [
@@ -17773,6 +17915,54 @@
             "https://learnablemeta.com/images/1346/IOupN8SDYrXDY1l7gtE7vDPmPVoj1n3kv8iR.avif"
           ],
           "type": "Infrastructure"
+        }
+      ],
+      "Hessen": [
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        }
+      ],
+      "Niedersachsen": [
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        }
+      ],
+      "Rheinland-Pfalz": [
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        }
+      ],
+      "Sachsen": [
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        }
+      ],
+      "Sachsen-Anhalt": [
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
+        }
+      ],
+      "Thuringen": [
+        {
+          "text": "Each German state has their own flag. Many of them are rare to find, though.",
+          "images": [
+            "assets/img/plonkit/germany/German_flags.jpg"
+          ]
         }
       ],
       "NRW": [
@@ -17786,7 +17976,7 @@
     },
     "spotlight": [
       {
-        "place": "Hamburg",
+        "place": "Berlin",
         "text": "Every city state has recognisable rubbish bins all around the city. Berlin uses bright orange bins that have white text on them. Berlin uses bright orange bins that have white text on them. Hamburg uses bright red bins, with white speech bubbles. Hamburg uses bright red bins, with white speech bubbles. Bremen has green and grey bins, with orange speech bubbles. Bremen has green and grey bins, with orange speech bubbles. Bremerhaven uses a more generic green design, with a black logo.",
         "images": [
           "assets/img/plonkit/germany/Germany_Stadtstaaten_Rubbish_Bins.png"
@@ -17800,7 +17990,7 @@
         ]
       },
       {
-        "place": "Berlin",
+        "place": "Hamburg",
         "text": "Every city state has recognisable rubbish bins all around the city. Berlin uses bright orange bins that have white text on them. Berlin uses bright orange bins that have white text on them. Hamburg uses bright red bins, with white speech bubbles. Hamburg uses bright red bins, with white speech bubbles. Bremen has green and grey bins, with orange speech bubbles. Bremen has green and grey bins, with orange speech bubbles. Bremerhaven uses a more generic green design, with a black logo.",
         "images": [
           "assets/img/plonkit/germany/Germany_Stadtstaaten_Rubbish_Bins.png"
@@ -19259,6 +19449,22 @@
       }
     ],
     "regions": {
+      "Bekes": [
+        {
+          "text": "Many Hungarian town names use local prefixes, the most common of which are shown in this infographic. Note that some rare exceptions exist. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/hungary/hu_townnameprefixes.png"
+          ]
+        }
+      ],
+      "Somogy": [
+        {
+          "text": "Many Hungarian town names use local prefixes, the most common of which are shown in this infographic. Note that some rare exceptions exist. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/hungary/hu_townnameprefixes.png"
+          ]
+        }
+      ],
       "Budapest": [
         {
           "text": "If you see a blue or green street sign shaped like an arrow, attached to a utility pole or street light, you are likely to be in the county of Szabolcs-Szatmár-Bereg. NOTE: Blue arrow-shaped street signs can also be found in Dunakeszi, north of Budapest. However, those are attached to blue sign posts.",
@@ -19268,7 +19474,15 @@
         }
       ]
     },
-    "spotlight": []
+    "spotlight": [
+      {
+        "place": "Budapest",
+        "text": "This infographic showcases ten of the largest towns and cities with unique street signs, and explains what makes them unique. You can click on the image to enlarge it.",
+        "images": [
+          "assets/img/plonkit/hungary/hu_streetsigns.png"
+        ]
+      }
+    ]
   },
   "IS": {
     "name": "Iceland",
@@ -20663,25 +20877,10 @@
           "type": "Architecture"
         },
         {
-          "text": "A connector on the pole which looks like an upside down trapezoid.\n\n80% Chhattisgarh\n10% Maharashtra\n3% Karnataka\n2% Odisha\n1% each: Andhra Pradesh, Madhya Pradesh, Assam NOTE: They can also be paired with Holey Poles in Gujarat and Ladder Poles in Andhra Pradesh, thus only use the trapezoid when no other pole meta is present. Northeast India also has some trapezoid poletops that look a bit different.",
-          "images": [
-            "https://learnablemeta.com/images/937/ntbSCH7d1Gp76co5vRnVRPgbiSe3O10w15kr.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
           "text": "Found in Gujarat, Rajasthan, Madhya Pradesh and Chattisgarh, sometimes in Odisha.\n\nDon't confuse with Duraton Cement.",
           "images": [
             "https://learnablemeta.com/images/937/1762288765489-dKZ.avif",
             "https://learnablemeta.com/images/937/1762288768003-qPJ.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
-          "text": "32% Maharashtra\n32% Madhya Pradesh\n32% Chattisgarh\n1% Andhra Pradesh\n1% Telangana",
-          "images": [
-            "https://learnablemeta.com/images/937/1758282928314-TH5.avif",
-            "https://learnablemeta.com/images/937/1758282932020-vtF.avif"
           ],
           "type": "Infrastructure"
         },
@@ -20987,14 +21186,6 @@
           "type": "Landscape"
         },
         {
-          "text": "Found in Central and East India, in Haryana and Delhi, and sometimes in Gujarat.",
-          "images": [
-            "https://learnablemeta.com/images/937/1762288727838-F5M.avif",
-            "https://learnablemeta.com/images/937/1762288731033-tmL.avif"
-          ],
-          "type": "Infrastructure"
-        },
-        {
           "text": "Electricity counters in Punjab are usually mint green with small window-like squares. They can rarely be seen in Haryana.",
           "images": [
             "https://learnablemeta.com/images/937/R80vcHzzv2ZAtoghcbamZLnyC0TN5bAODt2x.avif"
@@ -21160,6 +21351,14 @@
             "https://learnablemeta.com/images/937/1755557243142-vEH.avif"
           ],
           "type": "Vegetation"
+        },
+        {
+          "text": "Found in Central and East India, in Haryana and Delhi, and sometimes in Gujarat.",
+          "images": [
+            "https://learnablemeta.com/images/937/1762288727838-F5M.avif",
+            "https://learnablemeta.com/images/937/1762288731033-tmL.avif"
+          ],
+          "type": "Infrastructure"
         },
         {
           "text": "Almost all poles in Gujarat are holey poles. Generic poles are only found sometimes in very far west Gujarat, near the border with Pakistan",
@@ -21509,6 +21708,13 @@
           "type": "Infrastructure"
         },
         {
+          "text": "A connector on the pole which looks like an upside down trapezoid.\n\n80% Chhattisgarh\n10% Maharashtra\n3% Karnataka\n2% Odisha\n1% each: Andhra Pradesh, Madhya Pradesh, Assam NOTE: They can also be paired with Holey Poles in Gujarat and Ladder Poles in Andhra Pradesh, thus only use the trapezoid when no other pole meta is present. Northeast India also has some trapezoid poletops that look a bit different.",
+          "images": [
+            "https://learnablemeta.com/images/937/ntbSCH7d1Gp76co5vRnVRPgbiSe3O10w15kr.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "This black sticker usually just has few characters, often just a number.\n\n35% Tamil Nadu\n35% Andhra Pradesh\n20% Telangana Note that it's a weak meta for Andhra over Telangana. Do not confuse for Andaman & Nicobar Islands.",
           "images": [
             "https://learnablemeta.com/images/937/1758282624992-Q9B.avif",
@@ -21529,6 +21735,14 @@
           "text": "3 insulators in a horizontal line, or middle insulator slightly above others\n\n88% Tamil Nadu\n5% Bihar\n3% Haryana\n2% Uttar Pradesh\n1.5% Andhra Pradesh",
           "images": [
             "https://learnablemeta.com/images/937/1755557221887-RH7.avif"
+          ],
+          "type": "Infrastructure"
+        },
+        {
+          "text": "32% Maharashtra\n32% Madhya Pradesh\n32% Chattisgarh\n1% Andhra Pradesh\n1% Telangana",
+          "images": [
+            "https://learnablemeta.com/images/937/1758282928314-TH5.avif",
+            "https://learnablemeta.com/images/937/1758282932020-vtF.avif"
           ],
           "type": "Infrastructure"
         },
@@ -24695,6 +24909,13 @@
           "type": "Agriculture"
         },
         {
+          "text": "Trident style pole tops are most commonly found in Central Java and Yogyakarta, and rarely in South and West Kalimantan, and North Sumatra and Riau.",
+          "images": [
+            "https://www.plonkit.net/images/resize/800/80/indonesia/id_trident.png"
+          ],
+          "type": "Infrastructure"
+        },
+        {
           "text": "In the regions of Sumatra and Kalimantan that lie opposite Malaysia, many buildings have metal canopies with curved ends. These canopies are often blue or red.",
           "images": [
             "https://learnablemeta.com/images/5554/1770893629491-BLT.avif",
@@ -25012,24 +25233,15 @@
           "type": "Infrastructure"
         },
         {
+          "text": "You can find the cardinal directions written on many addresses. They are as follows: North = Utara North = Utara East = Timur East = Timur South = Selatan South = Selatan West = Barat West = Barat Central = Tengah Central = Tengah",
+          "images": [
+            "assets/img/plonkit/indonesia/Cardinal_Directions_1.png"
+          ]
+        },
+        {
           "text": "Poles with an indent on both sides are found in West Java, Jakarta, and Banten.",
           "images": [
             "assets/img/plonkit/indonesia/West_20Chiva_20Poles.png"
-          ]
-        }
-      ],
-      "Yogyakarta": [
-        {
-          "text": "Trident style pole tops are most commonly found in Central Java and Yogyakarta, and rarely in South and West Kalimantan, and North Sumatra and Riau.",
-          "images": [
-            "https://www.plonkit.net/images/resize/800/80/indonesia/id_trident.png"
-          ],
-          "type": "Infrastructure"
-        },
-        {
-          "text": "Trident style pole tops are most commonly found in Central Java and Yogyakarta, and rarely in South and West Kalimantan, and North Sumatra and Riau.",
-          "images": [
-            "assets/img/plonkit/indonesia/id_trident.png"
           ]
         }
       ],
@@ -25046,6 +25258,14 @@
           "text": "Coverage in Indonesia is fairly limited. Notably, there is no coverage on Papua or adjacent islands, and coverage is sparse in areas such as Kalimantan, Aceh, Central Sulawesi and North Maluku.",
           "images": [
             "assets/img/plonkit/indonesia/id_coveragemap.png"
+          ]
+        }
+      ],
+      "Yogyakarta": [
+        {
+          "text": "Trident style pole tops are most commonly found in Central Java and Yogyakarta, and rarely in South and West Kalimantan, and North Sumatra and Riau.",
+          "images": [
+            "assets/img/plonkit/indonesia/id_trident.png"
           ]
         }
       ]
@@ -25963,6 +26183,20 @@
           "type": "Northeast"
         }
       ],
+      "Calabria": [
+        {
+          "text": "Each Italian region has its own unique flag.",
+          "images": [
+            "assets/img/plonkit/italy/it_regionalflags.png"
+          ]
+        },
+        {
+          "text": "Citrus plantations are primarily found on eastern Sicily and the southern tip of Calabria.",
+          "images": [
+            "assets/img/plonkit/italy/it_citrus.png"
+          ]
+        }
+      ],
       "Sicily": [
         {
           "text": "The landscape on the southeastern peninsula surrounding Bari has many olive plantations, which are often seen together with bright rock walls. The dirt in the region typically has a noticeably red colour. Beware that a similar landscape can also be found in southeastern Sicily.",
@@ -26014,14 +26248,6 @@
           "text": "Cacti in Italy are most common in the south, particularly in Sicily, southern Sardinia and the south of Apulia.",
           "images": [
             "assets/img/plonkit/italy/it_cacti.png"
-          ]
-        }
-      ],
-      "Calabria": [
-        {
-          "text": "Citrus plantations are primarily found on eastern Sicily and the southern tip of Calabria.",
-          "images": [
-            "assets/img/plonkit/italy/it_citrus.png"
           ]
         }
       ]
@@ -26904,6 +27130,12 @@
           "type": "Coverage Meta"
         },
         {
+          "text": "Every region in Japan features a distinct plate on their utility poles.",
+          "images": [
+            "assets/img/plonkit/japan/21.png"
+          ]
+        },
+        {
           "text": "The electrical poles in Hokkaido either have this plus-shaped bar attached to the side of the pole, or one transformer mounted on two bars. However, if there is more than one transformer, they will often be mounted on the sides of a square. NOTE: While the Kanto transformer may also be mounted on two bars, Hokkaido will never have a wooden plate.",
           "images": [
             "assets/img/plonkit/japan/26.png"
@@ -27078,6 +27310,18 @@
             "https://learnablemeta.com/images/5940/1771440857867-3OG.avif"
           ],
           "type": "Agriculture"
+        },
+        {
+          "text": "The pole reflector pads vary by region in Japan.",
+          "images": [
+            "assets/img/plonkit/japan/38.png"
+          ]
+        },
+        {
+          "text": "You can narrow down the prefecture you are in based on the style of road diamond.",
+          "images": [
+            "assets/img/plonkit/japan/39.png"
+          ]
         },
         {
           "text": "Transformers in Okinawa, which have a T-shaped bar attached on the side of the pole, will have transformers mounted on opposite sides of the pole.",
@@ -29640,6 +29884,12 @@
           "type": "Johor Yellow Street Signs"
         },
         {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
+        {
           "text": "Black stickers with the text ‘TEL TNB’ at the bottom, are only found in Johor.",
           "images": [
             "assets/img/plonkit/malaysia/TEL_TNB_Johor_Black_Sticker.png"
@@ -29674,6 +29924,12 @@
           "type": "Isolated Rock Formations"
         },
         {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
+        {
           "text": "Trash bins with a logo resembling leaves are found in Perlis and Kedah.",
           "images": [
             "assets/img/plonkit/malaysia/my_kedahbins.png"
@@ -29693,6 +29949,12 @@
             "https://learnablemeta.com/images/1/DomJ52GIx3NHkH1jgbc6wGfeecenMtysZ7ZG.avif"
           ],
           "type": "Sabah Pole"
+        },
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
         },
         {
           "text": "Thin metal poles with two parallel pole tops are exclusive to the Sabah region of Borneo.",
@@ -29729,6 +29991,12 @@
           "type": "Sarawak Pole"
         },
         {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
+        {
           "text": "White pole stickers are only found on electricity poles on the island of Borneo, in Sarawak.",
           "images": [
             "assets/img/plonkit/malaysia/White_Sticker.png"
@@ -29756,6 +30024,12 @@
           "type": "S Logo Bins"
         },
         {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
+        {
           "text": "Trash bins with a logo resembling an ‘S’ are found in the states of Negeri Sembilan, Malacca and Johor.",
           "images": [
             "assets/img/plonkit/malaysia/my_malaccabins.png"
@@ -29771,21 +30045,41 @@
           "type": "Alam Flora Bins"
         },
         {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
+        {
           "text": "Trash bins with this logo featuring a sunny landscape, saying ‘Alam Flora’ are found in Pahang, Kuala Lumpur and Putrajaya. The logo will occasionally be absent, and it will just say ‘Alam Flora’.",
           "images": [
             "assets/img/plonkit/malaysia/my_kualalumpurbins.png"
           ]
         }
       ],
-      "Malacca": [
+      "Selangor": [
         {
-          "text": "Trash bins with a logo resembling an ‘S’ are found in the states of Negeri Sembilan, Malacca and Johor.",
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
           "images": [
-            "assets/img/plonkit/malaysia/my_malaccabins.png"
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        }
+      ],
+      "Perak": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
           ]
         }
       ],
       "Kedah": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
         {
           "text": "Trash bins with a logo resembling leaves are found in Perlis and Kedah.",
           "images": [
@@ -29793,7 +30087,29 @@
           ]
         }
       ],
-      "Putrajaya": [
+      "Kelantan": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        }
+      ],
+      "Terengganu": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        }
+      ],
+      "Pahang": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
         {
           "text": "Trash bins with this logo featuring a sunny landscape, saying ‘Alam Flora’ are found in Pahang, Kuala Lumpur and Putrajaya. The logo will occasionally be absent, and it will just say ‘Alam Flora’.",
           "images": [
@@ -29801,7 +30117,29 @@
           ]
         }
       ],
-      "Pahang": [
+      "Penang": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        }
+      ],
+      "Malacca": [
+        {
+          "text": "State flags can be seen with some regularity, so it is worth learning them.",
+          "images": [
+            "assets/img/plonkit/malaysia/malaysia_state_flags.png"
+          ]
+        },
+        {
+          "text": "Trash bins with a logo resembling an ‘S’ are found in the states of Negeri Sembilan, Malacca and Johor.",
+          "images": [
+            "assets/img/plonkit/malaysia/my_malaccabins.png"
+          ]
+        }
+      ],
+      "Putrajaya": [
         {
           "text": "Trash bins with this logo featuring a sunny landscape, saying ‘Alam Flora’ are found in Pahang, Kuala Lumpur and Putrajaya. The logo will occasionally be absent, and it will just say ‘Alam Flora’.",
           "images": [
@@ -30616,15 +30954,6 @@
           "type": "Nayarit Bollard"
         },
         {
-          "text": "Sabal Rosei is native to the Pacific coast of Mexico, from Sinaloa to Jalisco but mostly concentrated in the state of Nayarit. The key difference between this one and the other Sabal palms is the shape and arrangement of the leaves.\n\nSabal Rosei tends to have visible gaps between the leaves, and they are a brighter green color. Sabal Yapa has droopy, hanging leaves that almost look shredded at the tips. Sabal Mexicana has large, stiff, pointy leaves and densely packed.",
-          "images": [
-            "https://learnablemeta.com/images/219/bkvvxuWGha2fMITHGu8DWMmm0v6ITFSxEcOg.avif",
-            "https://learnablemeta.com/images/219/uDJeL6ng74xys5ZRKCImO44I1OodnvZPhDUz.avif",
-            "https://learnablemeta.com/images/219/yY3s5w5IEYfvilfYq8SLoAZa6v9wrfT6y9NL.avif"
-          ],
-          "type": "Vegetation"
-        },
-        {
           "text": "Bollards with a red band near the top are unique to Nayarit, apart from one exception being Federal Highway 190 on the Oaxaca-Chiapas border.",
           "images": [
             "assets/img/plonkit/mexico/mx_nayaritbollard.png"
@@ -30853,6 +31182,22 @@
           "type": "Car Meta"
         },
         {
+          "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
+          "images": [
+            "https://learnablemeta.com/images/1039/tDlTZdHe2LwvAYeWk6ZWXN1K1bIfYgP0ITn8.avif"
+          ],
+          "type": "Landscape"
+        },
+        {
+          "text": "Sabal Rosei is native to the Pacific coast of Mexico, from Sinaloa to Jalisco but mostly concentrated in the state of Nayarit. The key difference between this one and the other Sabal palms is the shape and arrangement of the leaves.\n\nSabal Rosei tends to have visible gaps between the leaves, and they are a brighter green color. Sabal Yapa has droopy, hanging leaves that almost look shredded at the tips. Sabal Mexicana has large, stiff, pointy leaves and densely packed.",
+          "images": [
+            "https://learnablemeta.com/images/219/bkvvxuWGha2fMITHGu8DWMmm0v6ITFSxEcOg.avif",
+            "https://learnablemeta.com/images/219/uDJeL6ng74xys5ZRKCImO44I1OodnvZPhDUz.avif",
+            "https://learnablemeta.com/images/219/yY3s5w5IEYfvilfYq8SLoAZa6v9wrfT6y9NL.avif"
+          ],
+          "type": "Vegetation"
+        },
+        {
           "text": "The Indian Comb (Pachycereus pecten-aboriginum), is a common cactus that always implies Sinaloa, or south Sonora near Sinaloa, although technically its habitat extends elsewhere. Its densely packed branches emerge from a single stem, but most recognisable is its inflorescence - the brightly coloured flowers which usually adorn the tip of its arms.",
           "images": [
             "https://learnablemeta.com/images/1039/1762978799151-4Js.avif"
@@ -30905,12 +31250,6 @@
           "text": "Poles with an asymmetric crossbar and double-stacked insulators are exclusive to Mexico City, State of Mexico, Hidalgo, and Morelos.",
           "images": [
             "assets/img/plonkit/mexico/mx_asymmetricpoles.png"
-          ]
-        },
-        {
-          "text": "Taxis in and around Mexico City have a white lower half with a pink upper half.",
-          "images": [
-            "assets/img/plonkit/mexico/mx_cdmxtaxi.png"
           ]
         }
       ],
@@ -31083,13 +31422,6 @@
             "https://learnablemeta.com/images/1072/VQtkrvtVVcuPNYmwnaLQxtESBY28aneJJs8d.avif"
           ],
           "type": "Durango"
-        },
-        {
-          "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
-          "images": [
-            "https://learnablemeta.com/images/1039/tDlTZdHe2LwvAYeWk6ZWXN1K1bIfYgP0ITn8.avif"
-          ],
-          "type": "Landscape"
         },
         {
           "text": "Red agricultural fields are commonly seen in Zacatecas and occasionally southern Durango.",
@@ -31281,6 +31613,14 @@
             "assets/img/plonkit/mexico/mx_northeastpavement.png"
           ]
         }
+      ],
+      "CDMX": [
+        {
+          "text": "Taxis in and around Mexico City have a white lower half with a pink upper half.",
+          "images": [
+            "assets/img/plonkit/mexico/mx_cdmxtaxi.png"
+          ]
+        }
       ]
     },
     "spotlight": [
@@ -31334,14 +31674,14 @@
         ]
       },
       {
-        "place": "Durango",
+        "place": "Sinaloa",
         "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
         "images": [
           "assets/img/plonkit/mexico/mx_40d.png"
         ]
       },
       {
-        "place": "Sinaloa",
+        "place": "Durango",
         "text": "The 40D that crosses the Sinaloa-Durango state line is recognizable by the stunning lush cliffs and mountains along the road. The highway commonly passes through tunnels and the road itself features double yellow middle roadlines.",
         "images": [
           "assets/img/plonkit/mexico/mx_40d.png"
@@ -32024,22 +32364,6 @@
       }
     ],
     "regions": {
-      "Noord-Brabant": [
-        {
-          "text": "All Dutch provinces have their own flag. However, most of these are very rarely seen in the wild. The major exceptions to this are the flags of Friesland and Noord-Brabant. In addition, you can sometimes see the unofficial but very popular flag of the Achterhoek cultural region in the east of Gelderland. For a full list of all provincial flags, you can view this Wikipedia page.",
-          "images": [
-            "assets/img/plonkit/netherlands/Regional_flags_darkmode.png"
-          ]
-        }
-      ],
-      "Gelderland": [
-        {
-          "text": "All Dutch provinces have their own flag. However, most of these are very rarely seen in the wild. The major exceptions to this are the flags of Friesland and Noord-Brabant. In addition, you can sometimes see the unofficial but very popular flag of the Achterhoek cultural region in the east of Gelderland. For a full list of all provincial flags, you can view this Wikipedia page.",
-          "images": [
-            "assets/img/plonkit/netherlands/Regional_flags_darkmode.png"
-          ]
-        }
-      ],
       "Friesland": [
         {
           "text": "All Dutch provinces have their own flag. However, most of these are very rarely seen in the wild. The major exceptions to this are the flags of Friesland and Noord-Brabant. In addition, you can sometimes see the unofficial but very popular flag of the Achterhoek cultural region in the east of Gelderland. For a full list of all provincial flags, you can view this Wikipedia page.",
@@ -32051,6 +32375,14 @@
           "text": "In the province of Friesland, the Frisian language is commonly spoken. While Dutch language is still most prevalent on signs, a lot of town entry signs will feature bilingual town names. Some street names in Friesland uniquely end in -wei or -strjitte. NOTE: Frisian has vowels with circumflex diacritics (“little hats”): Â, Ê, Ô and Û. Dutch does not have these letters, except in loanwords. In addition, the Y is significantly more common compared to Dutch.",
           "images": [
             "assets/img/plonkit/netherlands/Frisian_language.png"
+          ]
+        }
+      ],
+      "Noord-Brabant": [
+        {
+          "text": "All Dutch provinces have their own flag. However, most of these are very rarely seen in the wild. The major exceptions to this are the flags of Friesland and Noord-Brabant. In addition, you can sometimes see the unofficial but very popular flag of the Achterhoek cultural region in the east of Gelderland. For a full list of all provincial flags, you can view this Wikipedia page.",
+          "images": [
+            "assets/img/plonkit/netherlands/Regional_flags_darkmode.png"
           ]
         }
       ],
@@ -32256,7 +32588,7 @@
           ]
         }
       ],
-      "Christchurch": [
+      "Auckland": [
         {
           "text": "The cities of Auckland, Wellington and Christchurch all have unique bus stop signs. You can click on the image to enlarge it.",
           "images": [
@@ -32264,9 +32596,15 @@
           ]
         },
         {
-          "text": "Several New Zealand cities have distinctive rubbish bins. The distinguishing feature of the bins are the council logos on the front. The colour of the bin lid varies within cities. NOTE: It is rare to find bins with green lids outside of Christchurch. You can click on the image to enlarge it.",
+          "text": "Holey poles are found most commonly in Southland and around Auckland.",
           "images": [
-            "assets/img/plonkit/new-zealand/rubbish_bins_darkmode.png"
+            "assets/img/plonkit/new-zealand/nz_holeypole.png"
+          ]
+        },
+        {
+          "text": "A warning sticker attached to poles, which has a yellow danger triangle between two white rectangles, is found in Hawke’s Bay, from lake Taupo to lake Rotorua, in northern Waikato and south of Auckland city.",
+          "images": [
+            "assets/img/plonkit/new-zealand/nz_warningsticker.png"
           ]
         }
       ],
@@ -32302,27 +32640,13 @@
           ]
         }
       ],
-      "Auckland": [
-        {
-          "text": "The cities of Auckland, Wellington and Christchurch all have unique bus stop signs. You can click on the image to enlarge it.",
-          "images": [
-            "assets/img/plonkit/new-zealand/bus_stops_darkmode.png"
-          ]
-        },
-        {
-          "text": "Holey poles are found most commonly in Southland and around Auckland.",
-          "images": [
-            "assets/img/plonkit/new-zealand/nz_holeypole.png"
-          ]
-        },
-        {
-          "text": "A warning sticker attached to poles, which has a yellow danger triangle between two white rectangles, is found in Hawke’s Bay, from lake Taupo to lake Rotorua, in northern Waikato and south of Auckland city.",
-          "images": [
-            "assets/img/plonkit/new-zealand/nz_warningsticker.png"
-          ]
-        }
-      ],
       "North Island": [
+        {
+          "text": "Several New Zealand cities have distinctive rubbish bins. The distinguishing feature of the bins are the council logos on the front. The colour of the bin lid varies within cities. NOTE: It is rare to find bins with green lids outside of Christchurch. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/new-zealand/rubbish_bins_darkmode.png"
+          ]
+        },
         {
           "text": "The Waikato and Northland regions are characterised by their drier climate and rolling hills. In particular, the Northland region is quite hilly. NOTE: This type of landscape can be found in other parts of the North Island, but is more common in the mentioned regions.",
           "images": [
@@ -32652,6 +32976,27 @@
       ]
     },
     "spotlight": [
+      {
+        "place": "Dunedin",
+        "text": "There are many town and city specific street signs in southern New Zealand, which can be seen in this graphic. You can click on the image to enlarge it.",
+        "images": [
+          "assets/img/plonkit/new-zealand/street_signs_south_island_darkmode.png"
+        ]
+      },
+      {
+        "place": "South Island",
+        "text": "There are many town and city specific street signs in southern New Zealand, which can be seen in this graphic. You can click on the image to enlarge it.",
+        "images": [
+          "assets/img/plonkit/new-zealand/street_signs_south_island_darkmode.png"
+        ]
+      },
+      {
+        "place": "West Coast",
+        "text": "There are many town and city specific street signs in southern New Zealand, which can be seen in this graphic. You can click on the image to enlarge it.",
+        "images": [
+          "assets/img/plonkit/new-zealand/street_signs_south_island_darkmode.png"
+        ]
+      },
       {
         "place": "Wellington",
         "text": "An easy way to recognize the city of Wellington is by how hilly it is.",
@@ -34508,6 +34853,12 @@
           "type": "Landscape"
         },
         {
+          "text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert near Piura in the northwest. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/peru/Peru_terrain.png"
+          ]
+        },
+        {
           "text": "Areas near the cities of Ica, Arequipa, and Tacna feature barren and mostly flat desert landscapes that can resemble areas of northern Chile. You can typically see mountains in the distance, primarily while looking to the east.",
           "images": [
             "assets/img/plonkit/peru/2.flatsoutherndesert.png"
@@ -34535,6 +34886,12 @@
             "https://learnablemeta.com/images/739/1749508057984-PNF.avif"
           ],
           "type": "Tacna Bollard"
+        },
+        {
+          "text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert near Piura in the northwest. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/peru/Peru_terrain.png"
+          ]
         },
         {
           "text": "Olive tree plantations can be found in the far southern region of Tacna.",
@@ -34621,6 +34978,12 @@
           "type": "Vegetation"
         },
         {
+          "text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert near Piura in the northwest. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/peru/Peru_terrain.png"
+          ]
+        },
+        {
           "text": "Coconut palms (and other species of tall palms) can sometimes be seen in coastal areas of Peru, mainly north of Lima. They are mainly found in the agricultural areas which are typically found around the major coastal cities.",
           "images": [
             "assets/img/plonkit/peru/2.northernpalms.png"
@@ -34668,6 +35031,12 @@
           "images": [
             "assets/img/plonkit/peru/Peru_Coverage_Map1.png"
           ]
+        },
+        {
+          "text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert near Piura in the northwest. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/peru/Peru_terrain.png"
+          ]
         }
       ],
       "Tumbes": [
@@ -34699,12 +35068,6 @@
             "https://learnablemeta.com/images/921/JTTB7WC0dKMMt4FObXnGYLURrUnHZmBJiDEp.avif"
           ],
           "type": "Landscape"
-        },
-        {
-          "text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert near Piura in the northwest. You can click on the image to enlarge it.",
-          "images": [
-            "assets/img/plonkit/peru/Peru_terrain.png"
-          ]
         },
         {
           "text": "The southwestern landscape of Piura is generally dry, featuring a low amount of vegetation with a few shrubs and bushes. The landscape is mostly flat, but you will sometimes see rolling hills.",
@@ -34780,7 +35143,7 @@
           ]
         }
       ],
-      "Chiclayo": [
+      "Trujillo": [
         {
           "text": "Most of the sugar cane production is found in the northern coastal regions of Peru near the cities of Chiclayo and Trujillo. Typically you see large fields of sugar cane in these areas. Smaller areas of sugar cane can be found further south in other valleys close to the Pacific coast.",
           "images": [
@@ -34795,7 +35158,7 @@
           ]
         }
       ],
-      "Trujillo": [
+      "Chiclayo": [
         {
           "text": "Most of the sugar cane production is found in the northern coastal regions of Peru near the cities of Chiclayo and Trujillo. Typically you see large fields of sugar cane in these areas. Smaller areas of sugar cane can be found further south in other valleys close to the Pacific coast.",
           "images": [
@@ -34825,6 +35188,13 @@
         "text": "The 1N near the Piura and Lambayeque border has a distinct looking landscape. It features a semidesert landscape and has overcast coverage in Generation 3. The new Generation 4 is drier but still looks somewhat similar.",
         "images": [
           "assets/img/plonkit/peru/3.1npiura.png"
+        ]
+      },
+      {
+        "place": "Chiclayo",
+        "text": "Highway 1N/S is divided in the highlighted area on the map. NOTE: It is the only divided highway outside of cities.",
+        "images": [
+          "assets/img/plonkit/peru/3.1n1sdivided.png"
         ]
       },
       {
@@ -35400,6 +35770,12 @@
             "https://learnablemeta.com/images/992/oHS0VJG4oGesQ0ajbvbGd9VuKu5jmM3nnJNJ.avif"
           ],
           "type": "Infrastructure"
+        },
+        {
+          "text": "The Philippines have several different tuk-tuk and tricycle designs, roughly distributed as shown in this infographic. This image was provided by AeroGelo. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/philippines/2_tuktukmap.jpeg"
+          ]
         }
       ],
       "Cordillera": [
@@ -36298,6 +36674,13 @@
     "general_rules": [],
     "regions": {},
     "spotlight": [
+      {
+        "place": "Bucharest",
+        "text": "Several Romanian cities and towns have unique street signs. This infographic covers all with a population above 100 000.",
+        "images": [
+          "assets/img/plonkit/romania/ro_streetsigns.png"
+        ]
+      },
       {
         "place": "Sibiu",
         "text": "The 7C is recognisable as going through some of the most dramatic mountains in Romania. The highest point on the road is right by the border between Sibiu and Argeș.",
@@ -38744,20 +39127,6 @@
     },
     "spotlight": [
       {
-        "place": "Port Elizabeth",
-        "text": "Metropolitan Routes are major roads around cities. They are designated with the letter M. These distinct and unique M route signs are commonly found in Port Elizabeth (Gqeberha) and Durban, respectively.",
-        "images": [
-          "assets/img/plonkit/south-africa/Infrastructure_-_Unique_Metro_Route_Signs2.png"
-        ]
-      },
-      {
-        "place": "Gqeberha",
-        "text": "Metropolitan Routes are major roads around cities. They are designated with the letter M. These distinct and unique M route signs are commonly found in Port Elizabeth (Gqeberha) and Durban, respectively.",
-        "images": [
-          "assets/img/plonkit/south-africa/Infrastructure_-_Unique_Metro_Route_Signs2.png"
-        ]
-      },
-      {
         "place": "Durban",
         "text": "Metropolitan Routes are major roads around cities. They are designated with the letter M. These distinct and unique M route signs are commonly found in Port Elizabeth (Gqeberha) and Durban, respectively.",
         "images": [
@@ -38938,14 +39307,6 @@
           ]
         }
       ],
-      "Busan": [
-        {
-          "text": "Generation 2 coverage is almost exclusively found in Seoul and Busan. It can also be found on a couple of highways outside the cities, however almost all of that coverage has been overwritten.",
-          "images": [
-            "assets/img/plonkit/south-korea/kr_gen2.png"
-          ]
-        }
-      ],
       "Seoul": [
         {
           "text": "Generation 2 coverage is almost exclusively found in Seoul and Busan. It can also be found on a couple of highways outside the cities, however almost all of that coverage has been overwritten.",
@@ -38957,6 +39318,14 @@
           "text": "A small camera can be seen mounted above the brake light on the Street View car on coverage northeast of Seoul and around Pohang.",
           "images": [
             "assets/img/plonkit/south-korea/kr_carmeta.png"
+          ]
+        }
+      ],
+      "Busan": [
+        {
+          "text": "Generation 2 coverage is almost exclusively found in Seoul and Busan. It can also be found on a couple of highways outside the cities, however almost all of that coverage has been overwritten.",
+          "images": [
+            "assets/img/plonkit/south-korea/kr_gen2.png"
           ]
         }
       ]
@@ -39174,12 +39543,6 @@
           "type": "Asturias"
         },
         {
-          "text": "Spain has several regional languages. The ones that are most useful to GeoGuessr are Catalan, Basque and Galician. Some other regions, such as Asturias, also have their own regional languages. But there, non-Spanish signage is much more rare.",
-          "images": [
-            "assets/img/plonkit/spain/Spain_languages4.png"
-          ]
-        },
-        {
           "text": "Most bus stops in Asturias have a red post with the CTA logo at the top. NOTE: These may be confused with Madrid bus stops, which can also have a red post. The company in charge of Madrid public transport goes by EMT.",
           "images": [
             "assets/img/plonkit/spain/Asturias_bus_stop.png"
@@ -39314,6 +39677,12 @@
           "type": "Galicia"
         },
         {
+          "text": "Spain has several regional languages. The ones that are most useful to GeoGuessr are Catalan, Basque and Galician. Some other regions, such as Asturias, also have their own regional languages. But there, non-Spanish signage is much more rare.",
+          "images": [
+            "assets/img/plonkit/spain/Spain_languages4.png"
+          ]
+        },
+        {
           "text": "Galician is a Romance language that is closely related to Portuguese. It is (unsurprisingly) spoken in Galicia. Compared to Catalan, it is less dominant, meaning you will still find a lot of Spanish-only signs in this region. Galician can look very similar to Portuguese. Some ways to tell them apart is the use of ñ and the lack of ç in Galician.",
           "images": [
             "assets/img/plonkit/spain/es_galician_language.png"
@@ -39380,6 +39749,20 @@
           "text": "Big square chevrons with a single arrow are commonly found in Catalonia.",
           "images": [
             "assets/img/plonkit/spain/Catalan_chevron.png"
+          ]
+        }
+      ],
+      "Canary Islands": [
+        {
+          "text": "Spain has several regional languages. The ones that are most useful to GeoGuessr are Catalan, Basque and Galician. Some other regions, such as Asturias, also have their own regional languages. But there, non-Spanish signage is much more rare.",
+          "images": [
+            "assets/img/plonkit/spain/Spain_languages4.png"
+          ]
+        },
+        {
+          "text": "Within mainland Spain, this bollard is almost exclusive to the provinces of Lleida and Tarragona in Catalonia. It features a more square and orange reflector on the front, compared to the standard Spanish bollard design. There is a white reflector on the back, instead of the two dots of standard bollards. Some toll highways like the AP-6 also use this design. NOTE: This bollard can also be found on the eastern half of the Canary Islands.",
+          "images": [
+            "assets/img/plonkit/spain/Lleida_Tarragona_bollard.png"
           ]
         }
       ],
@@ -39478,14 +39861,6 @@
           "text": "The surrounding region of Madrid has round topped red bus stops, and green buses. Some bus stops are just a red post. In the city centre, you can find urban blue buses.",
           "images": [
             "assets/img/plonkit/spain/Buses_Madrid.png"
-          ]
-        }
-      ],
-      "Canary Islands": [
-        {
-          "text": "Within mainland Spain, this bollard is almost exclusive to the provinces of Lleida and Tarragona in Catalonia. It features a more square and orange reflector on the front, compared to the standard Spanish bollard design. There is a white reflector on the back, instead of the two dots of standard bollards. Some toll highways like the AP-6 also use this design. NOTE: This bollard can also be found on the eastern half of the Canary Islands.",
-          "images": [
-            "assets/img/plonkit/spain/Lleida_Tarragona_bollard.png"
           ]
         }
       ]
@@ -40070,6 +40445,58 @@
           "text": "Red dirt roads are mainly found in Dalarna, but can also be found in and around Kalmar county, the border between inland Norrbotten and Västerbotten, and rarely between lakes Vänern and Vättern.",
           "images": [
             "assets/img/plonkit/sweden/r_C3_B6djord.png"
+          ]
+        }
+      ],
+      "Jonkoping": [
+        {
+          "text": "Each administrative region in Sweden has at least one, and in many cases several, bus stop signs which are unique to that region. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busstopp3.png"
+          ]
+        },
+        {
+          "text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region (as shown in the infographic in section 2). NOTE: The Växjö sign can also occasionally be found in Älmhult. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busskylt_lokal.png"
+          ]
+        }
+      ],
+      "Uppsala": [
+        {
+          "text": "Many regions have their own distinct type of bus shelters, which may either replace or complement the bus stop signs. This image contains the ones which are most common and easily recognizable. NOTE: Every region has multiple types of bus shelters, these are simply the most common. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busskurer.png"
+          ]
+        },
+        {
+          "text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region (as shown in the infographic in section 2). NOTE: The Växjö sign can also occasionally be found in Älmhult. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busskylt_lokal.png"
+          ]
+        }
+      ],
+      "Vastra Gotaland": [
+        {
+          "text": "Many regions have their own distinct type of bus shelters, which may either replace or complement the bus stop signs. This image contains the ones which are most common and easily recognizable. NOTE: Every region has multiple types of bus shelters, these are simply the most common. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busskurer.png"
+          ]
+        }
+      ],
+      "Vasterbotten": [
+        {
+          "text": "Many regions have their own distinct type of bus shelters, which may either replace or complement the bus stop signs. This image contains the ones which are most common and easily recognizable. NOTE: Every region has multiple types of bus shelters, these are simply the most common. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busskurer.png"
+          ]
+        }
+      ],
+      "Orebro": [
+        {
+          "text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region (as shown in the infographic in section 2). NOTE: The Växjö sign can also occasionally be found in Älmhult. You can click on the image to enlarge it.",
+          "images": [
+            "assets/img/plonkit/sweden/busskylt_lokal.png"
           ]
         }
       ]
@@ -42475,6 +42902,12 @@
           "type": "Scotland Bollard"
         },
         {
+          "text": "Occasionally, you can find one of the 4 country flags, which will tell you where in the UK you are.",
+          "images": [
+            "assets/img/plonkit/united-kingdom/England.png"
+          ]
+        },
+        {
           "text": "In Scotland, you can often find these red and white bollards. They are round, bulky, and have a red-and-grey reflector that wraps all the way around. They are sometimes found in other parts of the UK. NOTE: The bollard looks similar to the French one. However, there are some small differences. For example, the Scottish bollard is round on the top, while the French one is more spiked.",
           "images": [
             "assets/img/plonkit/united-kingdom/Indicator-template-UK1.png"
@@ -42528,6 +42961,40 @@
           ]
         }
       ],
+      "Wales": [
+        {
+          "text": "Occasionally, you can find one of the 4 country flags, which will tell you where in the UK you are.",
+          "images": [
+            "assets/img/plonkit/united-kingdom/England.png"
+          ]
+        },
+        {
+          "text": "Welsh is a Celtic language that is spoken throughout Wales. Road signs in Wales are usually bilingual English and Welsh. Towns often have Welsh names too. Welsh uses the letters D, W, and Y much more commonly than English. The double LL is also very distinct. NOTE: Scottish Gaelic and Irish are both also Celtic languages. They can look somewhat similar to Welsh.",
+          "images": [
+            "assets/img/plonkit/united-kingdom/Welsh.png"
+          ]
+        },
+        {
+          "text": "In Wales, markings on the road are in both English and Welsh. One of the best examples of this is ‘Araf’, which means ‘Slow’. This marking is only found in Wales. NOTE: Araf is not the only Welsh language marking you can find, it is just the most common. Whenever you see an obviously non-English marking next to an English one, consider guessing in Wales.",
+          "images": [
+            "assets/img/plonkit/united-kingdom/Araf2.png"
+          ]
+        }
+      ],
+      "Northern Ireland": [
+        {
+          "text": "Occasionally, you can find one of the 4 country flags, which will tell you where in the UK you are.",
+          "images": [
+            "assets/img/plonkit/united-kingdom/England.png"
+          ]
+        },
+        {
+          "text": "These black stickers with yellow text sometimes appear on lampposts in Northern Ireland.",
+          "images": [
+            "assets/img/plonkit/united-kingdom/Northern_Ireland_sticker.png"
+          ]
+        }
+      ],
       "Highlands": [
         {
           "text": "The Scottish Highlands can be distinguished by the semi-barren, very mountainous landscape. NOTE: A lot of Generation 4 coverage in the Highlands is from (early) spring, meaning that the vegetation often looks brown and yellow. In addition, some of the most mountainous parts of Wales and Northern England can look similar.",
@@ -42542,20 +43009,6 @@
           ]
         }
       ],
-      "Wales": [
-        {
-          "text": "Welsh is a Celtic language that is spoken throughout Wales. Road signs in Wales are usually bilingual English and Welsh. Towns often have Welsh names too. Welsh uses the letters D, W, and Y much more commonly than English. The double LL is also very distinct. NOTE: Scottish Gaelic and Irish are both also Celtic languages. They can look somewhat similar to Welsh.",
-          "images": [
-            "assets/img/plonkit/united-kingdom/Welsh.png"
-          ]
-        },
-        {
-          "text": "In Wales, markings on the road are in both English and Welsh. One of the best examples of this is ‘Araf’, which means ‘Slow’. This marking is only found in Wales. NOTE: Araf is not the only Welsh language marking you can find, it is just the most common. Whenever you see an obviously non-English marking next to an English one, consider guessing in Wales.",
-          "images": [
-            "assets/img/plonkit/united-kingdom/Araf2.png"
-          ]
-        }
-      ],
       "Glasgow": [
         {
           "text": "Scottish Gaelic is a Celtic language that is closely related to Irish. They have a very similar look and use accent marks commonly. Common and recognizable letter clusters include bh, dh, fh, mh, ai, ea, eo, and ui. Scottish Gaelic on road signs is found most commonly in the Scottish Highlands, and is almost always found north of Glasgow. NOTE: Scottish Gaelic on road signs will often be in green or yellow text. This will not happen with Welsh or Irish on road signs.",
@@ -42567,14 +43020,6 @@
           "text": "It is common to see houses made of large blocks of sandstone or granite in Scotland. Granite buildings are common in Aberdeen, red sandstone is common in Glasgow and Dumfries, and yellow sandstone is common in Edinburgh.",
           "images": [
             "assets/img/plonkit/united-kingdom/Scottish_Buildings.png"
-          ]
-        }
-      ],
-      "Northern Ireland": [
-        {
-          "text": "These black stickers with yellow text sometimes appear on lampposts in Northern Ireland.",
-          "images": [
-            "assets/img/plonkit/united-kingdom/Northern_Ireland_sticker.png"
           ]
         }
       ]
