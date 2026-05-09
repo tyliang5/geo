@@ -1,0 +1,2217 @@
+{
+  "_meta": {
+    "source": "ISO 3166-1, ISO 4217, ITU-T E.164 + Wikipedia infoboxes",
+    "fields": [
+      "iso3",
+      "calling_code",
+      "tld",
+      "currency_code",
+      "currency_symbol",
+      "capital",
+      "primary_language",
+      "scripts",
+      "official_languages"
+    ]
+  },
+  "AD": {
+    "iso3": "AND",
+    "calling_code": "+376",
+    "tld": ".ad",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Andorra la Vella",
+    "primary_language": "Catalan",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Catalan"
+    ]
+  },
+  "AE": {
+    "iso3": "ARE",
+    "calling_code": "+971",
+    "tld": ".ae",
+    "currency_code": "AED",
+    "currency_symbol": "د.إ",
+    "capital": "Abu Dhabi",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "AL": {
+    "iso3": "ALB",
+    "calling_code": "+355",
+    "tld": ".al",
+    "currency_code": "ALL",
+    "currency_symbol": "L",
+    "capital": "Tirana",
+    "primary_language": "Albanian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Albanian"
+    ]
+  },
+  "AM": {
+    "iso3": "ARM",
+    "calling_code": "+374",
+    "tld": ".am",
+    "currency_code": "AMD",
+    "currency_symbol": "֏",
+    "capital": "Yerevan",
+    "primary_language": "Armenian",
+    "scripts": [
+      "Armenian"
+    ],
+    "official_languages": [
+      "Armenian"
+    ]
+  },
+  "AR": {
+    "iso3": "ARG",
+    "calling_code": "+54",
+    "tld": ".ar",
+    "currency_code": "ARS",
+    "currency_symbol": "$",
+    "capital": "Buenos Aires",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "AS": {
+    "iso3": "ASM",
+    "calling_code": "+1-684",
+    "tld": ".as",
+    "currency_code": "USD",
+    "currency_symbol": "$",
+    "capital": "Pago Pago",
+    "primary_language": "Samoan",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Samoan"
+    ]
+  },
+  "AT": {
+    "iso3": "AUT",
+    "calling_code": "+43",
+    "tld": ".at",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Vienna",
+    "primary_language": "German",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "German"
+    ]
+  },
+  "AU": {
+    "iso3": "AUS",
+    "calling_code": "+61",
+    "tld": ".au",
+    "currency_code": "AUD",
+    "currency_symbol": "$",
+    "capital": "Canberra",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "AW": {
+    "iso3": "ABW",
+    "calling_code": "+297",
+    "tld": ".aw",
+    "currency_code": "AWG",
+    "currency_symbol": "ƒ",
+    "capital": "Oranjestad",
+    "primary_language": "Dutch",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Dutch",
+      "Papiamento"
+    ]
+  },
+  "AZ": {
+    "iso3": "AZE",
+    "calling_code": "+994",
+    "tld": ".az",
+    "currency_code": "AZN",
+    "currency_symbol": "₼",
+    "capital": "Baku",
+    "primary_language": "Azerbaijani",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Azerbaijani"
+    ]
+  },
+  "BD": {
+    "iso3": "BGD",
+    "calling_code": "+880",
+    "tld": ".bd",
+    "currency_code": "BDT",
+    "currency_symbol": "৳",
+    "capital": "Dhaka",
+    "primary_language": "Bengali",
+    "scripts": [
+      "Bengali"
+    ],
+    "official_languages": [
+      "Bengali"
+    ]
+  },
+  "BE": {
+    "iso3": "BEL",
+    "calling_code": "+32",
+    "tld": ".be",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Brussels",
+    "primary_language": "Dutch",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Dutch",
+      "French",
+      "German"
+    ]
+  },
+  "BG": {
+    "iso3": "BGR",
+    "calling_code": "+359",
+    "tld": ".bg",
+    "currency_code": "BGN",
+    "currency_symbol": "лв",
+    "capital": "Sofia",
+    "primary_language": "Bulgarian",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Bulgarian"
+    ]
+  },
+  "BM": {
+    "iso3": "BMU",
+    "calling_code": "+1-441",
+    "tld": ".bm",
+    "currency_code": "BMD",
+    "currency_symbol": "$",
+    "capital": "Hamilton",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "BO": {
+    "iso3": "BOL",
+    "calling_code": "+591",
+    "tld": ".bo",
+    "currency_code": "BOB",
+    "currency_symbol": "Bs",
+    "capital": "Sucre",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish",
+      "Quechua",
+      "Aymara"
+    ]
+  },
+  "BR": {
+    "iso3": "BRA",
+    "calling_code": "+55",
+    "tld": ".br",
+    "currency_code": "BRL",
+    "currency_symbol": "R$",
+    "capital": "Brasília",
+    "primary_language": "Portuguese",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Portuguese"
+    ]
+  },
+  "BT": {
+    "iso3": "BTN",
+    "calling_code": "+975",
+    "tld": ".bt",
+    "currency_code": "BTN",
+    "currency_symbol": "Nu",
+    "capital": "Thimphu",
+    "primary_language": "Dzongkha",
+    "scripts": [
+      "Tibetan"
+    ],
+    "official_languages": [
+      "Dzongkha"
+    ]
+  },
+  "BW": {
+    "iso3": "BWA",
+    "calling_code": "+267",
+    "tld": ".bw",
+    "currency_code": "BWP",
+    "currency_symbol": "P",
+    "capital": "Gaborone",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Tswana"
+    ]
+  },
+  "BY": {
+    "iso3": "BLR",
+    "calling_code": "+375",
+    "tld": ".by",
+    "currency_code": "BYN",
+    "currency_symbol": "Br",
+    "capital": "Minsk",
+    "primary_language": "Belarusian",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Belarusian",
+      "Russian"
+    ]
+  },
+  "CA": {
+    "iso3": "CAN",
+    "calling_code": "+1",
+    "tld": ".ca",
+    "currency_code": "CAD",
+    "currency_symbol": "$",
+    "capital": "Ottawa",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "French"
+    ]
+  },
+  "CH": {
+    "iso3": "CHE",
+    "calling_code": "+41",
+    "tld": ".ch",
+    "currency_code": "CHF",
+    "currency_symbol": "CHF",
+    "capital": "Bern",
+    "primary_language": "German",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "German",
+      "French",
+      "Italian",
+      "Romansh"
+    ]
+  },
+  "CL": {
+    "iso3": "CHL",
+    "calling_code": "+56",
+    "tld": ".cl",
+    "currency_code": "CLP",
+    "currency_symbol": "$",
+    "capital": "Santiago",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "CO": {
+    "iso3": "COL",
+    "calling_code": "+57",
+    "tld": ".co",
+    "currency_code": "COP",
+    "currency_symbol": "$",
+    "capital": "Bogotá",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "CR": {
+    "iso3": "CRI",
+    "calling_code": "+506",
+    "tld": ".cr",
+    "currency_code": "CRC",
+    "currency_symbol": "₡",
+    "capital": "San José",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "CW": {
+    "iso3": "CUW",
+    "calling_code": "+599",
+    "tld": ".cw",
+    "currency_code": "ANG",
+    "currency_symbol": "ƒ",
+    "capital": "Willemstad",
+    "primary_language": "Dutch",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Dutch",
+      "English",
+      "Papiamento"
+    ]
+  },
+  "CY": {
+    "iso3": "CYP",
+    "calling_code": "+357",
+    "tld": ".cy",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Nicosia",
+    "primary_language": "Greek",
+    "scripts": [
+      "Greek",
+      "Latin"
+    ],
+    "official_languages": [
+      "Greek",
+      "Turkish"
+    ]
+  },
+  "CZ": {
+    "iso3": "CZE",
+    "calling_code": "+420",
+    "tld": ".cz",
+    "currency_code": "CZK",
+    "currency_symbol": "Kč",
+    "capital": "Prague",
+    "primary_language": "Czech",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Czech"
+    ]
+  },
+  "DE": {
+    "iso3": "DEU",
+    "calling_code": "+49",
+    "tld": ".de",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Berlin",
+    "primary_language": "German",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "German"
+    ]
+  },
+  "DK": {
+    "iso3": "DNK",
+    "calling_code": "+45",
+    "tld": ".dk",
+    "currency_code": "DKK",
+    "currency_symbol": "kr",
+    "capital": "Copenhagen",
+    "primary_language": "Danish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Danish"
+    ]
+  },
+  "DO": {
+    "iso3": "DOM",
+    "calling_code": "+1-809",
+    "tld": ".do",
+    "currency_code": "DOP",
+    "currency_symbol": "RD$",
+    "capital": "Santo Domingo",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "EC": {
+    "iso3": "ECU",
+    "calling_code": "+593",
+    "tld": ".ec",
+    "currency_code": "USD",
+    "currency_symbol": "$",
+    "capital": "Quito",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "EE": {
+    "iso3": "EST",
+    "calling_code": "+372",
+    "tld": ".ee",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Tallinn",
+    "primary_language": "Estonian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Estonian"
+    ]
+  },
+  "ES": {
+    "iso3": "ESP",
+    "calling_code": "+34",
+    "tld": ".es",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Madrid",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish",
+      "Catalan",
+      "Basque",
+      "Galician"
+    ]
+  },
+  "FI": {
+    "iso3": "FIN",
+    "calling_code": "+358",
+    "tld": ".fi",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Helsinki",
+    "primary_language": "Finnish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Finnish",
+      "Swedish"
+    ]
+  },
+  "FK": {
+    "iso3": "FLK",
+    "calling_code": "+500",
+    "tld": ".fk",
+    "currency_code": "FKP",
+    "currency_symbol": "£",
+    "capital": "Stanley",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "FO": {
+    "iso3": "FRO",
+    "calling_code": "+298",
+    "tld": ".fo",
+    "currency_code": "DKK",
+    "currency_symbol": "kr",
+    "capital": "Tórshavn",
+    "primary_language": "Faroese",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Faroese",
+      "Danish"
+    ]
+  },
+  "FR": {
+    "iso3": "FRA",
+    "calling_code": "+33",
+    "tld": ".fr",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Paris",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "GB": {
+    "iso3": "GBR",
+    "calling_code": "+44",
+    "tld": ".uk",
+    "currency_code": "GBP",
+    "currency_symbol": "£",
+    "capital": "London",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "GE": {
+    "iso3": "GEO",
+    "calling_code": "+995",
+    "tld": ".ge",
+    "currency_code": "GEL",
+    "currency_symbol": "₾",
+    "capital": "Tbilisi",
+    "primary_language": "Georgian",
+    "scripts": [
+      "Georgian"
+    ],
+    "official_languages": [
+      "Georgian"
+    ]
+  },
+  "GF": {
+    "iso3": "GUF",
+    "calling_code": "+594",
+    "tld": ".gf",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Cayenne",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "GG": {
+    "iso3": "GGY",
+    "calling_code": "+44-1481",
+    "tld": ".gg",
+    "currency_code": "GBP",
+    "currency_symbol": "£",
+    "capital": "St Peter Port",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "GH": {
+    "iso3": "GHA",
+    "calling_code": "+233",
+    "tld": ".gh",
+    "currency_code": "GHS",
+    "currency_symbol": "₵",
+    "capital": "Accra",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "GI": {
+    "iso3": "GIB",
+    "calling_code": "+350",
+    "tld": ".gi",
+    "currency_code": "GIP",
+    "currency_symbol": "£",
+    "capital": "Gibraltar",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "GL": {
+    "iso3": "GRL",
+    "calling_code": "+299",
+    "tld": ".gl",
+    "currency_code": "DKK",
+    "currency_symbol": "kr",
+    "capital": "Nuuk",
+    "primary_language": "Greenlandic",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Greenlandic"
+    ]
+  },
+  "GP": {
+    "iso3": "GLP",
+    "calling_code": "+590",
+    "tld": ".gp",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Basse-Terre",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "GR": {
+    "iso3": "GRC",
+    "calling_code": "+30",
+    "tld": ".gr",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Athens",
+    "primary_language": "Greek",
+    "scripts": [
+      "Greek"
+    ],
+    "official_languages": [
+      "Greek"
+    ]
+  },
+  "GT": {
+    "iso3": "GTM",
+    "calling_code": "+502",
+    "tld": ".gt",
+    "currency_code": "GTQ",
+    "currency_symbol": "Q",
+    "capital": "Guatemala City",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "HR": {
+    "iso3": "HRV",
+    "calling_code": "+385",
+    "tld": ".hr",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Zagreb",
+    "primary_language": "Croatian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Croatian"
+    ]
+  },
+  "HU": {
+    "iso3": "HUN",
+    "calling_code": "+36",
+    "tld": ".hu",
+    "currency_code": "HUF",
+    "currency_symbol": "Ft",
+    "capital": "Budapest",
+    "primary_language": "Hungarian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Hungarian"
+    ]
+  },
+  "ID": {
+    "iso3": "IDN",
+    "calling_code": "+62",
+    "tld": ".id",
+    "currency_code": "IDR",
+    "currency_symbol": "Rp",
+    "capital": "Jakarta",
+    "primary_language": "Indonesian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Indonesian"
+    ]
+  },
+  "IE": {
+    "iso3": "IRL",
+    "calling_code": "+353",
+    "tld": ".ie",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Dublin",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Irish"
+    ]
+  },
+  "IL": {
+    "iso3": "ISR",
+    "calling_code": "+972",
+    "tld": ".il",
+    "currency_code": "ILS",
+    "currency_symbol": "₪",
+    "capital": "Jerusalem",
+    "primary_language": "Hebrew",
+    "scripts": [
+      "Hebrew"
+    ],
+    "official_languages": [
+      "Hebrew",
+      "Arabic"
+    ]
+  },
+  "IM": {
+    "iso3": "IMN",
+    "calling_code": "+44-1624",
+    "tld": ".im",
+    "currency_code": "GBP",
+    "currency_symbol": "£",
+    "capital": "Douglas",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Manx"
+    ]
+  },
+  "IN": {
+    "iso3": "IND",
+    "calling_code": "+91",
+    "tld": ".in",
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "capital": "New Delhi",
+    "primary_language": "Hindi",
+    "scripts": [
+      "Devanagari",
+      "Latin"
+    ],
+    "official_languages": [
+      "Hindi",
+      "English"
+    ]
+  },
+  "IS": {
+    "iso3": "ISL",
+    "calling_code": "+354",
+    "tld": ".is",
+    "currency_code": "ISK",
+    "currency_symbol": "kr",
+    "capital": "Reykjavík",
+    "primary_language": "Icelandic",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Icelandic"
+    ]
+  },
+  "IT": {
+    "iso3": "ITA",
+    "calling_code": "+39",
+    "tld": ".it",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Rome",
+    "primary_language": "Italian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Italian"
+    ]
+  },
+  "JE": {
+    "iso3": "JEY",
+    "calling_code": "+44-1534",
+    "tld": ".je",
+    "currency_code": "GBP",
+    "currency_symbol": "£",
+    "capital": "Saint Helier",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "JO": {
+    "iso3": "JOR",
+    "calling_code": "+962",
+    "tld": ".jo",
+    "currency_code": "JOD",
+    "currency_symbol": "د.أ",
+    "capital": "Amman",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "JP": {
+    "iso3": "JPN",
+    "calling_code": "+81",
+    "tld": ".jp",
+    "currency_code": "JPY",
+    "currency_symbol": "¥",
+    "capital": "Tokyo",
+    "primary_language": "Japanese",
+    "scripts": [
+      "Kana",
+      "Han"
+    ],
+    "official_languages": [
+      "Japanese"
+    ]
+  },
+  "KE": {
+    "iso3": "KEN",
+    "calling_code": "+254",
+    "tld": ".ke",
+    "currency_code": "KES",
+    "currency_symbol": "KSh",
+    "capital": "Nairobi",
+    "primary_language": "Swahili",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Swahili",
+      "English"
+    ]
+  },
+  "KG": {
+    "iso3": "KGZ",
+    "calling_code": "+996",
+    "tld": ".kg",
+    "currency_code": "KGS",
+    "currency_symbol": "с",
+    "capital": "Bishkek",
+    "primary_language": "Kyrgyz",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Kyrgyz",
+      "Russian"
+    ]
+  },
+  "KH": {
+    "iso3": "KHM",
+    "calling_code": "+855",
+    "tld": ".kh",
+    "currency_code": "KHR",
+    "currency_symbol": "៛",
+    "capital": "Phnom Penh",
+    "primary_language": "Khmer",
+    "scripts": [
+      "Khmer"
+    ],
+    "official_languages": [
+      "Khmer"
+    ]
+  },
+  "KP": {
+    "iso3": "PRK",
+    "calling_code": "+850",
+    "tld": ".kp",
+    "currency_code": "KPW",
+    "currency_symbol": "₩",
+    "capital": "Pyongyang",
+    "primary_language": "Korean",
+    "scripts": [
+      "Hangul"
+    ],
+    "official_languages": [
+      "Korean"
+    ]
+  },
+  "KR": {
+    "iso3": "KOR",
+    "calling_code": "+82",
+    "tld": ".kr",
+    "currency_code": "KRW",
+    "currency_symbol": "₩",
+    "capital": "Seoul",
+    "primary_language": "Korean",
+    "scripts": [
+      "Hangul"
+    ],
+    "official_languages": [
+      "Korean"
+    ]
+  },
+  "KY": {
+    "iso3": "CYM",
+    "calling_code": "+1-345",
+    "tld": ".ky",
+    "currency_code": "KYD",
+    "currency_symbol": "$",
+    "capital": "George Town",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "KZ": {
+    "iso3": "KAZ",
+    "calling_code": "+7",
+    "tld": ".kz",
+    "currency_code": "KZT",
+    "currency_symbol": "₸",
+    "capital": "Astana",
+    "primary_language": "Kazakh",
+    "scripts": [
+      "Cyrillic",
+      "Latin"
+    ],
+    "official_languages": [
+      "Kazakh",
+      "Russian"
+    ]
+  },
+  "LA": {
+    "iso3": "LAO",
+    "calling_code": "+856",
+    "tld": ".la",
+    "currency_code": "LAK",
+    "currency_symbol": "₭",
+    "capital": "Vientiane",
+    "primary_language": "Lao",
+    "scripts": [
+      "Lao"
+    ],
+    "official_languages": [
+      "Lao"
+    ]
+  },
+  "LB": {
+    "iso3": "LBN",
+    "calling_code": "+961",
+    "tld": ".lb",
+    "currency_code": "LBP",
+    "currency_symbol": "ل.ل",
+    "capital": "Beirut",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "LI": {
+    "iso3": "LIE",
+    "calling_code": "+423",
+    "tld": ".li",
+    "currency_code": "CHF",
+    "currency_symbol": "CHF",
+    "capital": "Vaduz",
+    "primary_language": "German",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "German"
+    ]
+  },
+  "LK": {
+    "iso3": "LKA",
+    "calling_code": "+94",
+    "tld": ".lk",
+    "currency_code": "LKR",
+    "currency_symbol": "Rs",
+    "capital": "Colombo",
+    "primary_language": "Sinhala",
+    "scripts": [
+      "Sinhala",
+      "Tamil"
+    ],
+    "official_languages": [
+      "Sinhala",
+      "Tamil"
+    ]
+  },
+  "LS": {
+    "iso3": "LSO",
+    "calling_code": "+266",
+    "tld": ".ls",
+    "currency_code": "LSL",
+    "currency_symbol": "L",
+    "capital": "Maseru",
+    "primary_language": "Sesotho",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Sesotho",
+      "English"
+    ]
+  },
+  "LT": {
+    "iso3": "LTU",
+    "calling_code": "+370",
+    "tld": ".lt",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Vilnius",
+    "primary_language": "Lithuanian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Lithuanian"
+    ]
+  },
+  "LU": {
+    "iso3": "LUX",
+    "calling_code": "+352",
+    "tld": ".lu",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Luxembourg City",
+    "primary_language": "Luxembourgish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Luxembourgish",
+      "French",
+      "German"
+    ]
+  },
+  "LV": {
+    "iso3": "LVA",
+    "calling_code": "+371",
+    "tld": ".lv",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Riga",
+    "primary_language": "Latvian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Latvian"
+    ]
+  },
+  "MA": {
+    "iso3": "MAR",
+    "calling_code": "+212",
+    "tld": ".ma",
+    "currency_code": "MAD",
+    "currency_symbol": "د.م.",
+    "capital": "Rabat",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic",
+      "Berber"
+    ]
+  },
+  "MC": {
+    "iso3": "MCO",
+    "calling_code": "+377",
+    "tld": ".mc",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Monaco",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "ME": {
+    "iso3": "MNE",
+    "calling_code": "+382",
+    "tld": ".me",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Podgorica",
+    "primary_language": "Montenegrin",
+    "scripts": [
+      "Latin",
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Montenegrin"
+    ]
+  },
+  "MG": {
+    "iso3": "MDG",
+    "calling_code": "+261",
+    "tld": ".mg",
+    "currency_code": "MGA",
+    "currency_symbol": "Ar",
+    "capital": "Antananarivo",
+    "primary_language": "Malagasy",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Malagasy",
+      "French"
+    ]
+  },
+  "MK": {
+    "iso3": "MKD",
+    "calling_code": "+389",
+    "tld": ".mk",
+    "currency_code": "MKD",
+    "currency_symbol": "ден",
+    "capital": "Skopje",
+    "primary_language": "Macedonian",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Macedonian"
+    ]
+  },
+  "MN": {
+    "iso3": "MNG",
+    "calling_code": "+976",
+    "tld": ".mn",
+    "currency_code": "MNT",
+    "currency_symbol": "₮",
+    "capital": "Ulaanbaatar",
+    "primary_language": "Mongolian",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Mongolian"
+    ]
+  },
+  "MQ": {
+    "iso3": "MTQ",
+    "calling_code": "+596",
+    "tld": ".mq",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Fort-de-France",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "MT": {
+    "iso3": "MLT",
+    "calling_code": "+356",
+    "tld": ".mt",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Valletta",
+    "primary_language": "Maltese",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Maltese",
+      "English"
+    ]
+  },
+  "MX": {
+    "iso3": "MEX",
+    "calling_code": "+52",
+    "tld": ".mx",
+    "currency_code": "MXN",
+    "currency_symbol": "$",
+    "capital": "Mexico City",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "MY": {
+    "iso3": "MYS",
+    "calling_code": "+60",
+    "tld": ".my",
+    "currency_code": "MYR",
+    "currency_symbol": "RM",
+    "capital": "Kuala Lumpur",
+    "primary_language": "Malay",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Malay"
+    ]
+  },
+  "NG": {
+    "iso3": "NGA",
+    "calling_code": "+234",
+    "tld": ".ng",
+    "currency_code": "NGN",
+    "currency_symbol": "₦",
+    "capital": "Abuja",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "NL": {
+    "iso3": "NLD",
+    "calling_code": "+31",
+    "tld": ".nl",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Amsterdam",
+    "primary_language": "Dutch",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Dutch"
+    ]
+  },
+  "NO": {
+    "iso3": "NOR",
+    "calling_code": "+47",
+    "tld": ".no",
+    "currency_code": "NOK",
+    "currency_symbol": "kr",
+    "capital": "Oslo",
+    "primary_language": "Norwegian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Norwegian"
+    ]
+  },
+  "NZ": {
+    "iso3": "NZL",
+    "calling_code": "+64",
+    "tld": ".nz",
+    "currency_code": "NZD",
+    "currency_symbol": "$",
+    "capital": "Wellington",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Maori"
+    ]
+  },
+  "OM": {
+    "iso3": "OMN",
+    "calling_code": "+968",
+    "tld": ".om",
+    "currency_code": "OMR",
+    "currency_symbol": "ر.ع.",
+    "capital": "Muscat",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "PA": {
+    "iso3": "PAN",
+    "calling_code": "+507",
+    "tld": ".pa",
+    "currency_code": "PAB",
+    "currency_symbol": "B/.",
+    "capital": "Panama City",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "PE": {
+    "iso3": "PER",
+    "calling_code": "+51",
+    "tld": ".pe",
+    "currency_code": "PEN",
+    "currency_symbol": "S/",
+    "capital": "Lima",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish",
+      "Quechua",
+      "Aymara"
+    ]
+  },
+  "PH": {
+    "iso3": "PHL",
+    "calling_code": "+63",
+    "tld": ".ph",
+    "currency_code": "PHP",
+    "currency_symbol": "₱",
+    "capital": "Manila",
+    "primary_language": "Filipino",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Filipino",
+      "English"
+    ]
+  },
+  "PK": {
+    "iso3": "PAK",
+    "calling_code": "+92",
+    "tld": ".pk",
+    "currency_code": "PKR",
+    "currency_symbol": "Rs",
+    "capital": "Islamabad",
+    "primary_language": "Urdu",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Urdu",
+      "English"
+    ]
+  },
+  "PL": {
+    "iso3": "POL",
+    "calling_code": "+48",
+    "tld": ".pl",
+    "currency_code": "PLN",
+    "currency_symbol": "zł",
+    "capital": "Warsaw",
+    "primary_language": "Polish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Polish"
+    ]
+  },
+  "PR": {
+    "iso3": "PRI",
+    "calling_code": "+1-787",
+    "tld": ".pr",
+    "currency_code": "USD",
+    "currency_symbol": "$",
+    "capital": "San Juan",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish",
+      "English"
+    ]
+  },
+  "PS": {
+    "iso3": "PSE",
+    "calling_code": "+970",
+    "tld": ".ps",
+    "currency_code": "ILS",
+    "currency_symbol": "₪",
+    "capital": "Ramallah",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "PT": {
+    "iso3": "PRT",
+    "calling_code": "+351",
+    "tld": ".pt",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Lisbon",
+    "primary_language": "Portuguese",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Portuguese"
+    ]
+  },
+  "QA": {
+    "iso3": "QAT",
+    "calling_code": "+974",
+    "tld": ".qa",
+    "currency_code": "QAR",
+    "currency_symbol": "ر.ق",
+    "capital": "Doha",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "RE": {
+    "iso3": "REU",
+    "calling_code": "+262",
+    "tld": ".re",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Saint-Denis",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "RO": {
+    "iso3": "ROU",
+    "calling_code": "+40",
+    "tld": ".ro",
+    "currency_code": "RON",
+    "currency_symbol": "lei",
+    "capital": "Bucharest",
+    "primary_language": "Romanian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Romanian"
+    ]
+  },
+  "RS": {
+    "iso3": "SRB",
+    "calling_code": "+381",
+    "tld": ".rs",
+    "currency_code": "RSD",
+    "currency_symbol": "дин",
+    "capital": "Belgrade",
+    "primary_language": "Serbian",
+    "scripts": [
+      "Cyrillic",
+      "Latin"
+    ],
+    "official_languages": [
+      "Serbian"
+    ]
+  },
+  "RU": {
+    "iso3": "RUS",
+    "calling_code": "+7",
+    "tld": ".ru",
+    "currency_code": "RUB",
+    "currency_symbol": "₽",
+    "capital": "Moscow",
+    "primary_language": "Russian",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Russian"
+    ]
+  },
+  "SA": {
+    "iso3": "SAU",
+    "calling_code": "+966",
+    "tld": ".sa",
+    "currency_code": "SAR",
+    "currency_symbol": "ر.س",
+    "capital": "Riyadh",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "SE": {
+    "iso3": "SWE",
+    "calling_code": "+46",
+    "tld": ".se",
+    "currency_code": "SEK",
+    "currency_symbol": "kr",
+    "capital": "Stockholm",
+    "primary_language": "Swedish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Swedish"
+    ]
+  },
+  "SG": {
+    "iso3": "SGP",
+    "calling_code": "+65",
+    "tld": ".sg",
+    "currency_code": "SGD",
+    "currency_symbol": "$",
+    "capital": "Singapore",
+    "primary_language": "English",
+    "scripts": [
+      "Latin",
+      "Han",
+      "Tamil"
+    ],
+    "official_languages": [
+      "English",
+      "Mandarin",
+      "Malay",
+      "Tamil"
+    ]
+  },
+  "SI": {
+    "iso3": "SVN",
+    "calling_code": "+386",
+    "tld": ".si",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Ljubljana",
+    "primary_language": "Slovenian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Slovenian"
+    ]
+  },
+  "SJ": {
+    "iso3": "SJM",
+    "calling_code": "+47",
+    "tld": ".sj",
+    "currency_code": "NOK",
+    "currency_symbol": "kr",
+    "capital": "Longyearbyen",
+    "primary_language": "Norwegian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Norwegian"
+    ]
+  },
+  "SK": {
+    "iso3": "SVK",
+    "calling_code": "+421",
+    "tld": ".sk",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Bratislava",
+    "primary_language": "Slovak",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Slovak"
+    ]
+  },
+  "SM": {
+    "iso3": "SMR",
+    "calling_code": "+378",
+    "tld": ".sm",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "San Marino",
+    "primary_language": "Italian",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Italian"
+    ]
+  },
+  "SN": {
+    "iso3": "SEN",
+    "calling_code": "+221",
+    "tld": ".sn",
+    "currency_code": "XOF",
+    "currency_symbol": "CFA",
+    "capital": "Dakar",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French",
+      "Wolof"
+    ]
+  },
+  "SZ": {
+    "iso3": "SWZ",
+    "calling_code": "+268",
+    "tld": ".sz",
+    "currency_code": "SZL",
+    "currency_symbol": "L",
+    "capital": "Mbabane",
+    "primary_language": "Swazi",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Swazi",
+      "English"
+    ]
+  },
+  "TH": {
+    "iso3": "THA",
+    "calling_code": "+66",
+    "tld": ".th",
+    "currency_code": "THB",
+    "currency_symbol": "฿",
+    "capital": "Bangkok",
+    "primary_language": "Thai",
+    "scripts": [
+      "Thai"
+    ],
+    "official_languages": [
+      "Thai"
+    ]
+  },
+  "TN": {
+    "iso3": "TUN",
+    "calling_code": "+216",
+    "tld": ".tn",
+    "currency_code": "TND",
+    "currency_symbol": "د.ت",
+    "capital": "Tunis",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "TR": {
+    "iso3": "TUR",
+    "calling_code": "+90",
+    "tld": ".tr",
+    "currency_code": "TRY",
+    "currency_symbol": "₺",
+    "capital": "Ankara",
+    "primary_language": "Turkish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Turkish"
+    ]
+  },
+  "TW": {
+    "iso3": "TWN",
+    "calling_code": "+886",
+    "tld": ".tw",
+    "currency_code": "TWD",
+    "currency_symbol": "NT$",
+    "capital": "Taipei",
+    "primary_language": "Mandarin",
+    "scripts": [
+      "Han"
+    ],
+    "official_languages": [
+      "Mandarin"
+    ]
+  },
+  "UA": {
+    "iso3": "UKR",
+    "calling_code": "+380",
+    "tld": ".ua",
+    "currency_code": "UAH",
+    "currency_symbol": "₴",
+    "capital": "Kyiv",
+    "primary_language": "Ukrainian",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "official_languages": [
+      "Ukrainian"
+    ]
+  },
+  "UG": {
+    "iso3": "UGA",
+    "calling_code": "+256",
+    "tld": ".ug",
+    "currency_code": "UGX",
+    "currency_symbol": "USh",
+    "capital": "Kampala",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Swahili"
+    ]
+  },
+  "US": {
+    "iso3": "USA",
+    "calling_code": "+1",
+    "tld": ".us",
+    "currency_code": "USD",
+    "currency_symbol": "$",
+    "capital": "Washington",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "UY": {
+    "iso3": "URY",
+    "calling_code": "+598",
+    "tld": ".uy",
+    "currency_code": "UYU",
+    "currency_symbol": "$U",
+    "capital": "Montevideo",
+    "primary_language": "Spanish",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Spanish"
+    ]
+  },
+  "VN": {
+    "iso3": "VNM",
+    "calling_code": "+84",
+    "tld": ".vn",
+    "currency_code": "VND",
+    "currency_symbol": "₫",
+    "capital": "Hanoi",
+    "primary_language": "Vietnamese",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Vietnamese"
+    ]
+  },
+  "YT": {
+    "iso3": "MYT",
+    "calling_code": "+262",
+    "tld": ".yt",
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "capital": "Mamoudzou",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "ZA": {
+    "iso3": "ZAF",
+    "calling_code": "+27",
+    "tld": ".za",
+    "currency_code": "ZAR",
+    "currency_symbol": "R",
+    "capital": "Pretoria",
+    "primary_language": "Afrikaans",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Afrikaans",
+      "English",
+      "Zulu",
+      "Xhosa"
+    ]
+  },
+  "ZW": {
+    "iso3": "ZWE",
+    "calling_code": "+263",
+    "tld": ".zw",
+    "currency_code": "ZWL",
+    "currency_symbol": "$",
+    "capital": "Harare",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "Shona",
+      "Ndebele"
+    ]
+  },
+  "BB": {
+    "iso3": "BRB",
+    "calling_code": "+1-246",
+    "tld": ".bb",
+    "currency_code": "BBD",
+    "currency_symbol": "$",
+    "capital": "Bridgetown",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "BS": {
+    "iso3": "BHS",
+    "calling_code": "+1-242",
+    "tld": ".bs",
+    "currency_code": "BSD",
+    "currency_symbol": "$",
+    "capital": "Nassau",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "BZ": {
+    "iso3": "BLZ",
+    "calling_code": "+501",
+    "tld": ".bz",
+    "currency_code": "BZD",
+    "currency_symbol": "$",
+    "capital": "Belmopan",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "JM": {
+    "iso3": "JAM",
+    "calling_code": "+1-876",
+    "tld": ".jm",
+    "currency_code": "JMD",
+    "currency_symbol": "$",
+    "capital": "Kingston",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "TT": {
+    "iso3": "TTO",
+    "calling_code": "+1-868",
+    "tld": ".tt",
+    "currency_code": "TTD",
+    "currency_symbol": "$",
+    "capital": "Port of Spain",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "GY": {
+    "iso3": "GUY",
+    "calling_code": "+592",
+    "tld": ".gy",
+    "currency_code": "GYD",
+    "currency_symbol": "$",
+    "capital": "Georgetown",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "SR": {
+    "iso3": "SUR",
+    "calling_code": "+597",
+    "tld": ".sr",
+    "currency_code": "SRD",
+    "currency_symbol": "$",
+    "capital": "Paramaribo",
+    "primary_language": "Dutch",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Dutch"
+    ]
+  },
+  "CN": {
+    "iso3": "CHN",
+    "calling_code": "+86",
+    "tld": ".cn",
+    "currency_code": "CNY",
+    "currency_symbol": "¥",
+    "capital": "Beijing",
+    "primary_language": "Mandarin",
+    "scripts": [
+      "Han"
+    ],
+    "official_languages": [
+      "Mandarin"
+    ]
+  },
+  "HK": {
+    "iso3": "HKG",
+    "calling_code": "+852",
+    "tld": ".hk",
+    "currency_code": "HKD",
+    "currency_symbol": "$",
+    "capital": "Hong Kong",
+    "primary_language": "Cantonese",
+    "scripts": [
+      "Han",
+      "Latin"
+    ],
+    "official_languages": [
+      "Cantonese",
+      "English"
+    ]
+  },
+  "MO": {
+    "iso3": "MAC",
+    "calling_code": "+853",
+    "tld": ".mo",
+    "currency_code": "MOP",
+    "currency_symbol": "$",
+    "capital": "Macau",
+    "primary_language": "Cantonese",
+    "scripts": [
+      "Han",
+      "Latin"
+    ],
+    "official_languages": [
+      "Cantonese",
+      "Portuguese"
+    ]
+  },
+  "IQ": {
+    "iso3": "IRQ",
+    "calling_code": "+964",
+    "tld": ".iq",
+    "currency_code": "IQD",
+    "currency_symbol": "ع.د",
+    "capital": "Baghdad",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic",
+      "Kurdish"
+    ]
+  },
+  "NP": {
+    "iso3": "NPL",
+    "calling_code": "+977",
+    "tld": ".np",
+    "currency_code": "NPR",
+    "currency_symbol": "Rs",
+    "capital": "Kathmandu",
+    "primary_language": "Nepali",
+    "scripts": [
+      "Devanagari"
+    ],
+    "official_languages": [
+      "Nepali"
+    ]
+  },
+  "EG": {
+    "iso3": "EGY",
+    "calling_code": "+20",
+    "tld": ".eg",
+    "currency_code": "EGP",
+    "currency_symbol": "£",
+    "capital": "Cairo",
+    "primary_language": "Arabic",
+    "scripts": [
+      "Arabic"
+    ],
+    "official_languages": [
+      "Arabic"
+    ]
+  },
+  "ML": {
+    "iso3": "MLI",
+    "calling_code": "+223",
+    "tld": ".ml",
+    "currency_code": "XOF",
+    "currency_symbol": "CFA",
+    "capital": "Bamako",
+    "primary_language": "French",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "French"
+    ]
+  },
+  "NA": {
+    "iso3": "NAM",
+    "calling_code": "+264",
+    "tld": ".na",
+    "currency_code": "NAD",
+    "currency_symbol": "$",
+    "capital": "Windhoek",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English"
+    ]
+  },
+  "RW": {
+    "iso3": "RWA",
+    "calling_code": "+250",
+    "tld": ".rw",
+    "currency_code": "RWF",
+    "currency_symbol": "FRw",
+    "capital": "Kigali",
+    "primary_language": "Kinyarwanda",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Kinyarwanda",
+      "English",
+      "French"
+    ]
+  },
+  "TZ": {
+    "iso3": "TZA",
+    "calling_code": "+255",
+    "tld": ".tz",
+    "currency_code": "TZS",
+    "currency_symbol": "TSh",
+    "capital": "Dodoma",
+    "primary_language": "Swahili",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Swahili",
+      "English"
+    ]
+  },
+  "MU": {
+    "iso3": "MUS",
+    "calling_code": "+230",
+    "tld": ".mu",
+    "currency_code": "MUR",
+    "currency_symbol": "Rs",
+    "capital": "Port Louis",
+    "primary_language": "English",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "English",
+      "French"
+    ]
+  },
+  "VU": {
+    "iso3": "VUT",
+    "calling_code": "+678",
+    "tld": ".vu",
+    "currency_code": "VUV",
+    "currency_symbol": "Vt",
+    "capital": "Port Vila",
+    "primary_language": "Bislama",
+    "scripts": [
+      "Latin"
+    ],
+    "official_languages": [
+      "Bislama",
+      "English",
+      "French"
+    ]
+  }
+}

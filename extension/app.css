@@ -1,0 +1,848 @@
+:root {
+  --bg: #0f172a;
+  --bg-elev: #1e293b;
+  --bg-elev-2: #334155;
+  --fg: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #fbbf24;
+  --accent-hot: #fcd34d;
+  --good: #10b981;
+  --bad: #ef4444;
+  --border: #334155;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  /* iOS: stop the rubber-band overscroll bouncing the whole page */
+  overscroll-behavior-y: none;
+  /* iOS Safari hides the address bar on scroll; prevent any text from
+     getting auto-zoomed when the keyboard appears */
+  -webkit-text-size-adjust: 100%;
+  /* Disable iOS double-tap-to-zoom — every tap on the map should register
+     as a single click, never a zoom gesture */
+  touch-action: manipulation;
+}
+/* iPhone notch / home indicator safe-area padding for the topbar and
+   bottom buttons so they don't sit underneath the system UI. */
+.topbar {
+  padding-top: env(safe-area-inset-top);
+}
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+/* On touch devices the hover-magnify lens is unreachable (no cursor).
+   We hide the cursor: zoom-in hint and rely on a separate tap handler
+   that's wired up in app.js. */
+@media (hover: none) {
+  .qimg-wrap, .tip-card img, .fs-meta-card img { cursor: default; }
+}
+
+/* ============ Topbar ============ */
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 23, 42, .9);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 24px;
+}
+.brand {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.tabs { display: flex; gap: 4px; }
+.tab {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+.tab:hover { background: var(--bg-elev); color: var(--fg); }
+.tab.active { background: var(--bg-elev); color: var(--fg); }
+.tab:disabled { opacity: .4; cursor: not-allowed; }
+.status { color: var(--muted); font-size: 13px; }
+
+/* ============ Views ============ */
+.view {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+[hidden] { display: none !important; }
+
+/* ============ Home ============ */
+.welcome { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+.welcome h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.02em; }
+.welcome .sub { color: var(--muted); margin: 0 0 20px; }
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.focus-card {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color .15s, transform .15s;
+}
+.focus-card:hover { border-color: var(--accent); }
+.focus-card.selected {
+  border-color: var(--accent);
+  background: rgba(251, 191, 36, .08);
+}
+.focus-card .ftype {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.focus-card .fname {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 6px 0;
+  min-height: 30px;
+}
+.focus-card .fmeta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* selects look consistent with the dark theme */
+.focus-card select,
+.settings-row select,
+.settings-row input {
+  background: var(--bg-elev);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+}
+.settings-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.settings-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.settings-row label input,
+.settings-row label select { width: 200px; }
+
+button.primary {
+  background: var(--accent);
+  color: #111;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+button.primary:hover { background: var(--accent-hot); }
+button.primary:disabled { opacity: .5; cursor: default; }
+button.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+button.ghost:hover { background: var(--bg-elev); color: var(--fg); }
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.icon-btn:hover { background: var(--bg-elev); }
+
+/* ============ Region tips section ============ */
+.region-tips {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.region-tips h3 {
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+}
+.tip-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+.tip-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+}
+.tip-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #000;
+  flex-shrink: 0;
+  position: relative;
+  cursor: zoom-in;
+}
+/* Hover-magnify lens for home-page tip cards. Same pattern as the quiz
+ * image — circular div absolutely positioned over the thumbnail follows
+ * the cursor and magnifies the patch underneath. The lens is appended to
+ * the tip-card (relative-positioned), not the img, because <img> can't
+ * have child elements. */
+.tip-card { position: relative; }
+.tip-card .tip-lens,
+.fs-meta-card .tip-lens {
+  position: absolute;
+  pointer-events: none;
+  width: 220px;
+  height: 220px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.6);
+  background-repeat: no-repeat;
+  z-index: 50;
+}
+.tip-card .tcontent { flex: 1; min-width: 0; }
+.tip-card .ttype {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.tip-card .ttitle { font-weight: 600; margin-top: 2px; font-size: 14px; }
+.tip-card .tdesc { color: var(--muted); font-size: 12px; line-height: 1.45; margin-top: 4px; }
+
+/* ============ Quiz ============ */
+.quiz-stage {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.quiz-prompt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.qmeta {
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.qstats {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  align-items: center;
+}
+.lives { color: var(--bad); font-size: 16px; letter-spacing: 2px; }
+.streak {
+  background: var(--bg);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.acc { color: var(--muted); }
+
+.qimg-wrap {
+  position: relative;
+  width: 100%;
+  cursor: zoom-in;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.qimg {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 8px;
+  display: block;
+}
+/* Hover-magnify lens — same pattern as the extension overlay. A circular div
+ * follows the cursor and shows the same image scaled up, so the patch under
+ * the cursor appears centered and magnified. */
+.qimg-lens {
+  position: absolute;
+  pointer-events: none;
+  width: 180px;
+  height: 180px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.55);
+  background-repeat: no-repeat;
+  z-index: 4;
+}
+/* Mask that covers the bottom-right corner of the image — learnablemeta
+ * routinely embeds a country-shape inset there which gives away the answer
+ * for country-ID quizzes. Click to toggle off if you need to see it.
+ * Hidden in non-country modes (text-card / sub-region / MC). */
+.qimg-mask {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 36%;
+  height: 70%;
+  max-width: 320px;
+  max-height: 300px;
+  /* Fully opaque — must completely block the inset map underneath. The
+   * earlier 0.97 alpha let a faint outline through, and the hover-magnify
+   * lens treated the mask as just another DOM element so users could peek
+   * the answer by hovering over it. */
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity .15s;
+  display: none;
+}
+.qimg-mask::after {
+  content: '🗺️ inset hidden — click to show';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 0 8px;
+}
+.qimg-wrap.show-mask .qimg-mask { display: block; }
+.qimg-mask.disabled { opacity: 0; pointer-events: none; }
+.qimg-mask.no-inset { display: none !important; }
+.qtext-card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 50px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+.qtext-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.qtext-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Phone keypad shown alongside area-code prompts. The 3 (or 2) digits of
+ * the current code are highlighted with the accent colour so the user can
+ * see the spatial pattern + build T9-letter mnemonics. */
+.qkeypad {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  grid-auto-rows: 56px;
+  gap: 6px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.qkeypad-key {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0b1424;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+  position: relative;
+}
+.qkeypad-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e5e7eb;
+  line-height: 1;
+}
+.qkeypad-letters {
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-top: 2px;
+  height: 11px;
+}
+.qkeypad-key.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, .35);
+}
+.qkeypad-key.active .qkeypad-num,
+.qkeypad-key.active .qkeypad-letters { color: #0f172a; }
+.qkeypad-key .qkeypad-order {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #0f172a;
+  background: #fff;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.qtext-main {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1;
+  word-break: break-word;
+  max-width: 100%;
+}
+.qtext-sub {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* ===== MC button grid (region MC topics) ===== */
+.qmc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.qmc-btn {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color .12s, background .12s, transform .08s;
+}
+.qmc-btn:hover:not(:disabled) { border-color: var(--accent); background: #2a374a; transform: translateY(-1px); }
+.qmc-btn:disabled { cursor: default; opacity: .55; }
+.qmc-btn.correct { background: rgba(16, 185, 129, .25); border-color: var(--good); color: #6ee7b7; opacity: 1; }
+.qmc-btn.wrong   { background: rgba(239, 68, 68, .25); border-color: var(--bad);  color: #fca5a5; opacity: 1; }
+.qprompt {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 6px 0 0;
+}
+.quiz-map-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.leaflet-map {
+  width: 100%;
+  height: 480px;
+  background: #0a1421;
+}
+.dash-map { height: 540px; }
+
+.quiz-feedback {
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.quiz-feedback.correct { border-left-color: var(--good); }
+.quiz-feedback.wrong { border-left-color: var(--bad); }
+.quiz-feedback strong { font-size: 15px; }
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.quiz-actions .primary { margin-left: auto; }
+
+/* ============ Leaflet country styling ============
+ * !important is required because Leaflet sets inline stroke/fill via SVG
+ * attributes (e.g. stroke="#3388ff"), which would otherwise win over CSS.
+ */
+.leaflet-container { background: #0a1421; outline: none; }
+.country-poly {
+  fill: #1e293b !important;
+  stroke: #334155 !important;
+  stroke-width: 0.5 !important;
+  fill-opacity: 1 !important;
+  stroke-opacity: 1 !important;
+}
+.country-poly.disabled { fill: #0a1421 !important; stroke: #1e293b !important; pointer-events: none; }
+.country-poly.eligible { fill: #334155 !important; cursor: pointer; }
+.country-poly.eligible:hover { fill: #475569 !important; }
+.country-poly.correct-answer { fill: #10b981 !important; stroke: #34d399 !important; stroke-width: 1.5 !important; }
+.country-poly.wrong-pick { fill: #ef4444 !important; stroke: #f87171 !important; stroke-width: 1.5 !important; }
+.country-poly.heat-0 { fill: #ef4444 !important; }
+.country-poly.heat-1 { fill: #f59e0b !important; }
+.country-poly.heat-2 { fill: #facc15 !important; }
+.country-poly.heat-3 { fill: #84cc16 !important; }
+.country-poly.heat-4 { fill: #10b981 !important; }
+
+/* ============ Dashboard ============ */
+.dash-stage { display: flex; flex-direction: column; gap: 14px; }
+.dash-header { display: flex; justify-content: space-between; align-items: center; }
+.dash-header h2 { margin: 0; font-size: 20px; }
+.dash-controls { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 13px; }
+
+.dash-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+}
+.dash-map-pane { position: relative; }
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+.legend .sw {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+.legend .sw.untouched { background: #1e293b; border: 1px solid #334155; }
+.legend .lbl { font-weight: 700; color: var(--fg); }
+
+.dash-side h3 {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+}
+.dash-side h3:not(:first-child) { margin-top: 18px; }
+.ranked {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.ranked tr { border-bottom: 1px solid var(--border); }
+.ranked td { padding: 6px 4px; }
+.ranked td.flag { font-size: 18px; width: 28px; }
+.ranked td.cc { color: var(--muted); width: 32px; font-weight: 700; }
+.ranked td.acc { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ranked tr.empty td { color: var(--muted); padding: 10px; }
+
+@media (max-width: 900px) {
+  .dash-layout { grid-template-columns: 1fr; }
+  .dash-map { height: 360px; }
+}
+
+/* ============ Per-topic dashboard tiles ============ */
+.dash-topics {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+.dash-topics-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.dash-topics-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  text-transform: none;
+}
+.dash-topics-head .hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+.topic-group {
+  margin-bottom: 18px;
+}
+.topic-group:last-child { margin-bottom: 0; }
+.topic-group-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.topic-tile-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.topic-tile {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--fg);
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color .12s, transform .12s;
+  position: relative;
+  overflow: hidden;
+}
+.topic-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.topic-tile.untouched { opacity: .55; }
+.topic-tile.untouched:hover { opacity: 1; }
+.topic-tile.weak { border-color: rgba(239, 68, 68, .35); }
+.topic-tile.mid  { border-color: rgba(250, 204, 21, .35); }
+.topic-tile.strong { border-color: rgba(16, 185, 129, .35); }
+
+.ttile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.ttile-name {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ttile-acc {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.topic-tile.weak .ttile-acc { color: var(--bad); }
+.topic-tile.mid  .ttile-acc { color: #facc15; }
+.topic-tile.strong .ttile-acc { color: var(--good); }
+.ttile-sub {
+  font-size: 11px;
+  color: var(--muted);
+}
+.ttile-bar {
+  margin-top: 6px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ttile-bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width .25s;
+}
+.topic-tile.weak .ttile-bar span { background: var(--bad); }
+.topic-tile.mid  .ttile-bar span { background: #facc15; }
+.topic-tile.strong .ttile-bar span { background: var(--good); }
+
+/* ===== Factsheet / Compare overlay ===== */
+.factsheet {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .65);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+.factsheet-inner {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 1100px;
+  padding: 24px;
+}
+.factsheet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+.factsheet header h2 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+.fs-actions { display: flex; gap: 8px; align-items: center; }
+
+.fs-section {
+  margin-bottom: 24px;
+}
+.fs-section h3 {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px;
+}
+.fs-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+.fs-fact {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.fs-fact-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.fs-fact-value {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+  word-break: break-word;
+}
+.fs-meta-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+.fs-meta-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+.fs-meta-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #000;
+  flex-shrink: 0;
+  cursor: zoom-in;
+}
+.fs-meta-content { flex: 1; min-width: 0; }
+.fs-meta-type {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.fs-meta-title { font-weight: 600; font-size: 14px; margin-top: 2px; }
+.fs-meta-desc { color: var(--muted); font-size: 12px; line-height: 1.45; margin-top: 4px; }
+.fs-meta-acc {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.fs-meta-acc.weak { background: rgba(239,68,68,.2); color: var(--bad); }
+.fs-meta-acc.mid  { background: rgba(250,204,21,.2); color: #facc15; }
+.fs-meta-acc.strong { background: rgba(16,185,129,.2); color: var(--good); }
+.fs-meta-acc.untouched { background: var(--border); color: var(--muted); }
+
+/* Compare side-by-side grid */
+.cs-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.cs-col h3 {
+  font-size: 18px;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}

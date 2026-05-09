@@ -1,0 +1,839 @@
+{
+  "_meta": {
+    "source": "Wikipedia \"International vehicle registration code\" + GeoGuessr meta lists",
+    "fields": [
+      "vehicle_oval",
+      "mailbox_color",
+      "police_color",
+      "phone_format"
+    ]
+  },
+  "AD": {
+    "vehicle_oval": "AND",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "AE": {
+    "vehicle_oval": "UAE",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "AL": {
+    "vehicle_oval": "AL",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "AM": {
+    "vehicle_oval": "AM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "AR": {
+    "vehicle_oval": "RA",
+    "mailbox_color": "blue",
+    "police_color": "white_blue",
+    "phone_format": "+54 9 XX XXXX XXXX"
+  },
+  "AT": {
+    "vehicle_oval": "A",
+    "mailbox_color": "yellow",
+    "police_color": "silver_red",
+    "phone_format": "0XXX XXX XXXX"
+  },
+  "AU": {
+    "vehicle_oval": "AUS",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": "04XX XXX XXX"
+  },
+  "AZ": {
+    "vehicle_oval": "AZ",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BA": {
+    "vehicle_oval": "BIH",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BB": {
+    "vehicle_oval": "BDS",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BD": {
+    "vehicle_oval": "BD",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "BE": {
+    "vehicle_oval": "B",
+    "mailbox_color": "red",
+    "police_color": "blue_yellow",
+    "phone_format": "04XX XX XX XX"
+  },
+  "BG": {
+    "vehicle_oval": "BG",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": "+359 XX XXX XXXX"
+  },
+  "BO": {
+    "vehicle_oval": "BOL",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BR": {
+    "vehicle_oval": "BR",
+    "mailbox_color": "yellow",
+    "police_color": "white_blue",
+    "phone_format": "(XX) XXXXX-XXXX"
+  },
+  "BS": {
+    "vehicle_oval": "BS",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BT": {
+    "vehicle_oval": "BHT",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BW": {
+    "vehicle_oval": "BW",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "BY": {
+    "vehicle_oval": "BY",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "BZ": {
+    "vehicle_oval": "BH",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "CA": {
+    "vehicle_oval": "CDN",
+    "mailbox_color": "red",
+    "police_color": "white",
+    "phone_format": "(XXX) XXX-XXXX"
+  },
+  "CH": {
+    "vehicle_oval": "CH",
+    "mailbox_color": "yellow",
+    "police_color": "silver",
+    "phone_format": "0XX XXX XX XX"
+  },
+  "CL": {
+    "vehicle_oval": "RCH",
+    "mailbox_color": "orange",
+    "police_color": "green_white",
+    "phone_format": null
+  },
+  "CN": {
+    "vehicle_oval": "RC",
+    "mailbox_color": "green",
+    "police_color": "white_blue",
+    "phone_format": "+86 XXX XXXX XXXX"
+  },
+  "CO": {
+    "vehicle_oval": "CO",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "CR": {
+    "vehicle_oval": "CR",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "CU": {
+    "vehicle_oval": "CU",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "CY": {
+    "vehicle_oval": "CY",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "CZ": {
+    "vehicle_oval": "CZ",
+    "mailbox_color": "orange",
+    "police_color": "silver_yellow_blue",
+    "phone_format": "XXX XXX XXX"
+  },
+  "DE": {
+    "vehicle_oval": "D",
+    "mailbox_color": "yellow",
+    "police_color": "blue_silver",
+    "phone_format": "+49 XXXX XXXXX"
+  },
+  "DK": {
+    "vehicle_oval": "DK",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": null
+  },
+  "DO": {
+    "vehicle_oval": "DOM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "DZ": {
+    "vehicle_oval": null,
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "EC": {
+    "vehicle_oval": "EC",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "EE": {
+    "vehicle_oval": "EST",
+    "mailbox_color": "orange",
+    "police_color": "blue_white",
+    "phone_format": null
+  },
+  "EG": {
+    "vehicle_oval": "ET",
+    "mailbox_color": "red",
+    "police_color": "black_white",
+    "phone_format": "+20 XXX XXX XXXX"
+  },
+  "ES": {
+    "vehicle_oval": "E",
+    "mailbox_color": "yellow",
+    "police_color": "blue_white",
+    "phone_format": "XXX XX XX XX"
+  },
+  "FI": {
+    "vehicle_oval": "FIN",
+    "mailbox_color": "orange",
+    "police_color": "blue_white",
+    "phone_format": null
+  },
+  "FJ": {
+    "vehicle_oval": null,
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "FK": {
+    "vehicle_oval": "FK",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "FO": {
+    "vehicle_oval": "FO",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "FR": {
+    "vehicle_oval": "F",
+    "mailbox_color": "yellow",
+    "police_color": "blue_white",
+    "phone_format": "XX XX XX XX XX"
+  },
+  "GB": {
+    "vehicle_oval": "UK",
+    "mailbox_color": "red",
+    "police_color": "silver_yellow",
+    "phone_format": "0XXXX XXXXXX"
+  },
+  "GE": {
+    "vehicle_oval": "GE",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "GG": {
+    "vehicle_oval": null,
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "GH": {
+    "vehicle_oval": "GH",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "GI": {
+    "vehicle_oval": "GBZ",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "GR": {
+    "vehicle_oval": "GR",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": "210 XXX XXXX"
+  },
+  "GT": {
+    "vehicle_oval": "GCA",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "GY": {
+    "vehicle_oval": "GUY",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "HK": {
+    "vehicle_oval": "HK",
+    "mailbox_color": "green",
+    "police_color": "silver_blue",
+    "phone_format": null
+  },
+  "HR": {
+    "vehicle_oval": "HR",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "HU": {
+    "vehicle_oval": "H",
+    "mailbox_color": "red",
+    "police_color": "blue_silver",
+    "phone_format": "+36 XX XXX XXXX"
+  },
+  "ID": {
+    "vehicle_oval": "RI",
+    "mailbox_color": "orange",
+    "police_color": null,
+    "phone_format": null
+  },
+  "IE": {
+    "vehicle_oval": "IRL",
+    "mailbox_color": "green",
+    "police_color": "blue_yellow",
+    "phone_format": null
+  },
+  "IL": {
+    "vehicle_oval": "IL",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": null
+  },
+  "IM": {
+    "vehicle_oval": "GBM",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "IN": {
+    "vehicle_oval": "IND",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": "+91 XXXXX XXXXX"
+  },
+  "IQ": {
+    "vehicle_oval": "IRQ",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "IR": {
+    "vehicle_oval": "IR",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "IS": {
+    "vehicle_oval": "IS",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": null
+  },
+  "IT": {
+    "vehicle_oval": "I",
+    "mailbox_color": "red",
+    "police_color": "blue_white",
+    "phone_format": "XXX XXX XXXX"
+  },
+  "JE": {
+    "vehicle_oval": "GBJ",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "JM": {
+    "vehicle_oval": "JA",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "JO": {
+    "vehicle_oval": "JOR",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "JP": {
+    "vehicle_oval": "J",
+    "mailbox_color": "red",
+    "police_color": "black_white",
+    "phone_format": "0X-XXXX-XXXX"
+  },
+  "KE": {
+    "vehicle_oval": "EAK",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "KG": {
+    "vehicle_oval": "KS",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "KH": {
+    "vehicle_oval": "K",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "KP": {
+    "vehicle_oval": "KP",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "KR": {
+    "vehicle_oval": "ROK",
+    "mailbox_color": "red",
+    "police_color": "silver_blue",
+    "phone_format": "0XX-XXXX-XXXX"
+  },
+  "KW": {
+    "vehicle_oval": "KWT",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "KZ": {
+    "vehicle_oval": "KZ",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "LA": {
+    "vehicle_oval": "LAO",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "LB": {
+    "vehicle_oval": "RL",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "LI": {
+    "vehicle_oval": "FL",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "LK": {
+    "vehicle_oval": "CL",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "LT": {
+    "vehicle_oval": "LT",
+    "mailbox_color": "yellow",
+    "police_color": "silver_blue",
+    "phone_format": null
+  },
+  "LU": {
+    "vehicle_oval": "L",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "LV": {
+    "vehicle_oval": "LV",
+    "mailbox_color": "yellow",
+    "police_color": "silver_blue",
+    "phone_format": null
+  },
+  "MA": {
+    "vehicle_oval": "MA",
+    "mailbox_color": "yellow",
+    "police_color": "white_blue",
+    "phone_format": null
+  },
+  "MC": {
+    "vehicle_oval": "MC",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MD": {
+    "vehicle_oval": "MD",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "ME": {
+    "vehicle_oval": "MNE",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MG": {
+    "vehicle_oval": "RM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MK": {
+    "vehicle_oval": "NMK",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "ML": {
+    "vehicle_oval": "RMM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MN": {
+    "vehicle_oval": "MGL",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MO": {
+    "vehicle_oval": "MO",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MQ": {
+    "vehicle_oval": "F",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MT": {
+    "vehicle_oval": "M",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "MU": {
+    "vehicle_oval": "MS",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "MX": {
+    "vehicle_oval": "MEX",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": "+52 XXX XXX XXXX"
+  },
+  "MY": {
+    "vehicle_oval": "MAL",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "NA": {
+    "vehicle_oval": "NAM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "NG": {
+    "vehicle_oval": "WAN",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "NL": {
+    "vehicle_oval": "NL",
+    "mailbox_color": "orange",
+    "police_color": "red_blue_yellow",
+    "phone_format": "0XX XXX XX XX"
+  },
+  "NO": {
+    "vehicle_oval": "N",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": null
+  },
+  "NP": {
+    "vehicle_oval": "NEP",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "NZ": {
+    "vehicle_oval": "NZ",
+    "mailbox_color": "red",
+    "police_color": "white",
+    "phone_format": "02X XXX XXXX"
+  },
+  "OM": {
+    "vehicle_oval": "OM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "PA": {
+    "vehicle_oval": "PA",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "PE": {
+    "vehicle_oval": "PE",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "PG": {
+    "vehicle_oval": null,
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "PH": {
+    "vehicle_oval": "RP",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "PK": {
+    "vehicle_oval": "PK",
+    "mailbox_color": "red",
+    "police_color": "white_red",
+    "phone_format": "+92 XXX XXXXXXX"
+  },
+  "PL": {
+    "vehicle_oval": "PL",
+    "mailbox_color": "red",
+    "police_color": "silver_blue",
+    "phone_format": "XXX XXX XXX"
+  },
+  "PT": {
+    "vehicle_oval": "P",
+    "mailbox_color": "red",
+    "police_color": "blue_white",
+    "phone_format": "XXX XXX XXX"
+  },
+  "PY": {
+    "vehicle_oval": "PY",
+    "mailbox_color": "orange",
+    "police_color": null,
+    "phone_format": null
+  },
+  "QA": {
+    "vehicle_oval": "Q",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "RO": {
+    "vehicle_oval": "RO",
+    "mailbox_color": "yellow",
+    "police_color": "silver_yellow",
+    "phone_format": "07XX XXX XXX"
+  },
+  "RS": {
+    "vehicle_oval": "SRB",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "RU": {
+    "vehicle_oval": "RUS",
+    "mailbox_color": "blue",
+    "police_color": "white_blue",
+    "phone_format": "+7 XXX XXX-XX-XX"
+  },
+  "RW": {
+    "vehicle_oval": "RWA",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "SA": {
+    "vehicle_oval": "KSA",
+    "mailbox_color": "green",
+    "police_color": null,
+    "phone_format": null
+  },
+  "SE": {
+    "vehicle_oval": "S",
+    "mailbox_color": "yellow",
+    "police_color": "blue_yellow",
+    "phone_format": null
+  },
+  "SG": {
+    "vehicle_oval": "SGP",
+    "mailbox_color": "red",
+    "police_color": null,
+    "phone_format": null
+  },
+  "SI": {
+    "vehicle_oval": "SLO",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "SK": {
+    "vehicle_oval": "SK",
+    "mailbox_color": "orange",
+    "police_color": "silver",
+    "phone_format": "0XXX XXX XXX"
+  },
+  "SM": {
+    "vehicle_oval": "RSM",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "SN": {
+    "vehicle_oval": "SN",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "SR": {
+    "vehicle_oval": "SME",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "SZ": {
+    "vehicle_oval": "SD",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "TH": {
+    "vehicle_oval": "T",
+    "mailbox_color": "red",
+    "police_color": "red_white",
+    "phone_format": null
+  },
+  "TN": {
+    "vehicle_oval": "TN",
+    "mailbox_color": "yellow",
+    "police_color": null,
+    "phone_format": null
+  },
+  "TR": {
+    "vehicle_oval": "TR",
+    "mailbox_color": "yellow",
+    "police_color": "blue_white",
+    "phone_format": "+90 XXX XXX XX XX"
+  },
+  "TT": {
+    "vehicle_oval": "TT",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "TW": {
+    "vehicle_oval": "RC",
+    "mailbox_color": "green",
+    "police_color": "white",
+    "phone_format": "0X XXXX XXXX"
+  },
+  "TZ": {
+    "vehicle_oval": "EAT",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "UA": {
+    "vehicle_oval": "UA",
+    "mailbox_color": "yellow",
+    "police_color": "blue_yellow",
+    "phone_format": "+380 XX XXX XX XX"
+  },
+  "UG": {
+    "vehicle_oval": "EAU",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "US": {
+    "vehicle_oval": "USA",
+    "mailbox_color": "blue",
+    "police_color": "black_white",
+    "phone_format": "(XXX) XXX-XXXX"
+  },
+  "UY": {
+    "vehicle_oval": "ROU",
+    "mailbox_color": "orange",
+    "police_color": null,
+    "phone_format": null
+  },
+  "VN": {
+    "vehicle_oval": "VN",
+    "mailbox_color": "yellow",
+    "police_color": "white_blue",
+    "phone_format": null
+  },
+  "VU": {
+    "vehicle_oval": "VAN",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "YT": {
+    "vehicle_oval": "F",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  },
+  "ZA": {
+    "vehicle_oval": "ZA",
+    "mailbox_color": "red",
+    "police_color": "white_blue",
+    "phone_format": "0XX XXX XXXX"
+  },
+  "ZW": {
+    "vehicle_oval": "ZW",
+    "mailbox_color": null,
+    "police_color": null,
+    "phone_format": null
+  }
+}

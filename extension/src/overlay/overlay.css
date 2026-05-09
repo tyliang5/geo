@@ -1,9 +1,7 @@
-/* Plonker post-round overlay. Matches GG's dark theme. */
+/* Plonker post-round overlay. Matches GG's dark theme. Position + size are
+   set by overlay.js (persisted in chrome.storage.local). */
 .plonker-overlay {
   position: fixed;
-  left: 16px;
-  top: 16px;
-  width: 480px;
   max-height: 88vh;
   overflow-y: auto;
   background: #1f2937;
@@ -17,6 +15,84 @@
   z-index: 2147483647;
   animation: plonker-fade-in .18s ease-out;
 }
+.plonker-overlay h3 {
+  cursor: move;
+  user-select: none;
+  -webkit-user-select: none;
+  /* Same touch-action reasoning as the resize handles — host pages with
+     pan gesture handlers (Google Maps) would otherwise hijack drag. */
+  touch-action: none;
+}
+.plonker-overlay h3 button,
+.plonker-overlay h3 [data-reveal] {
+  cursor: pointer;
+}
+/* 8-direction resize handles. Edge handles are thin transparent strips
+   along each side; corner handles sit on top of the edges with the right
+   diagonal cursor. The bottom-right corner gets a visible triangle grip
+   for discoverability — the others are invisible but functional.
+
+   touch-action: none is critical when this overlay sits on top of pages
+   that install touch/pointer pan handlers (e.g. Google Maps). Without it,
+   the browser hijacks vertical drags for page panning and our pointer
+   listener never sees the move events. */
+.plonker-resize-handle {
+  position: absolute;
+  z-index: 2;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Edges — 8px thick, leave 16px clear at each end for the corner handles. */
+.plonker-resize-n  { top: 0;    left: 16px; right: 16px; height: 8px; cursor: ns-resize; }
+.plonker-resize-s  { bottom: 0; left: 16px; right: 16px; height: 8px; cursor: ns-resize; }
+.plonker-resize-e  { right: 0;  top: 16px; bottom: 16px; width: 8px;  cursor: ew-resize; }
+.plonker-resize-w  { left: 0;   top: 16px; bottom: 16px; width: 8px;  cursor: ew-resize; }
+/* Corners — 18×18 hit area, on top of the edges. */
+.plonker-resize-nw { top: 0;    left: 0;  width: 18px; height: 18px; cursor: nwse-resize; }
+.plonker-resize-ne { top: 0;    right: 0; width: 18px; height: 18px; cursor: nesw-resize; }
+.plonker-resize-sw { bottom: 0; left: 0;  width: 18px; height: 18px; cursor: nesw-resize; }
+.plonker-resize-se { bottom: 0; right: 0; width: 18px; height: 18px; cursor: nwse-resize; }
+/* Visible grip in the SE corner so users discover the resize affordance. */
+.plonker-resize-grip {
+  position: absolute;
+  inset: 0;
+  border-bottom-right-radius: 12px;
+  opacity: 0.6;
+  background:
+    linear-gradient(135deg, transparent 50%, #6b7280 50%, #6b7280 60%, transparent 60%, transparent 70%, #6b7280 70%, #6b7280 80%, transparent 80%);
+}
+.plonker-resize-se:hover .plonker-resize-grip { opacity: 1; }
+
+/* Re-open chip — appears after the user dismisses the overlay so they can
+   call it back while exploring the post-round street view. */
+#plonker-reopen-chip {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 2147483647;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  border-radius: 999px;
+  font-family: 'Neo Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.45);
+  animation: plonker-fade-in .18s ease-out;
+}
+#plonker-reopen-chip:hover {
+  background: #374151;
+  color: #fbbf24;
+}
+.plonker-reopen-flag { font-size: 18px; line-height: 1; }
+.plonker-reopen-label { letter-spacing: .02em; }
 @keyframes plonker-fade-in {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -93,6 +169,149 @@
   line-height: 1.4;
 }
 .plonker-keymeta strong { color: #6ee7b7; margin-right: 4px; }
+
+/* Quick Compare strip — categorical country facts (drives on, sign style,
+   stop sign text, plate format, top speed, etc.). In "your guess" mode this
+   filters to facts that DIFFER, side-by-side. */
+.plonker-facts {
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+.plonker-facts-head {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+.plonker-facts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+.plonker-fact {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+.plonker-fact-label {
+  color: #9ca3af;
+  font-weight: 500;
+}
+.plonker-fact-value {
+  color: #f3f4f6;
+  font-weight: 600;
+}
+.plonker-fact-diff { width: 100%; }
+.plonker-fact-diff .plonker-fact-label {
+  min-width: 110px;
+  flex: 0 0 auto;
+}
+.plonker-fact-pair {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.plonker-fact-actual {
+  color: #6ee7b7;
+  font-weight: 600;
+}
+.plonker-fact-guess {
+  color: #fca5a5;
+  font-weight: 600;
+}
+.plonker-fact-arrow {
+  color: #6b7280;
+  font-size: 11px;
+}
+.plonker-facts-hint {
+  color: #6b7280;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-style: italic;
+}
+/* Buttons inside the facts strip — keep the inline-text feel but make it
+   obvious the value is clickable. */
+button.plonker-fact-clickable {
+  background: transparent;
+  border: 0;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(156, 163, 175, .55);
+  transition: background .12s, color .12s;
+}
+button.plonker-fact-clickable:hover {
+  background: #374151;
+  text-decoration-color: currentColor;
+}
+
+/* Hover-magnify lens for thumbnail images. Pattern from learnablemeta's
+   geometa userscript — a circular div absolutely positioned over the image
+   follows the cursor and shows a 2.4× zoom of the patch under it. */
+.plonker-img-inline,
+.plonker-img-tile {
+  position: relative;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.plonker-img-lens {
+  position: absolute;
+  pointer-events: none;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.55);
+  background-repeat: no-repeat;
+  z-index: 5;
+}
+
+/* Map lightbox — slide image with a pulsing marker on the country. */
+.plonker-lb-map .plonker-map-frame {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.6);
+}
+.plonker-lb-map .plonker-map-frame img {
+  display: block;
+  max-width: 92vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+.plonker-map-marker {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  margin-top: -9px;
+  background: #fbbf24;
+  border: 3px solid #1f2937;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px rgba(251, 191, 36, .55),
+    0 0 12px rgba(0,0,0,.55);
+  pointer-events: none;
+  animation: plonker-marker-pulse 1.4s ease-out infinite;
+}
+@keyframes plonker-marker-pulse {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(251, 191, 36, .85), 0 0 12px rgba(0,0,0,.55); }
+  70%  { transform: scale(1.08); box-shadow: 0 0 0 14px rgba(251, 191, 36, 0),  0 0 12px rgba(0,0,0,.55); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(251, 191, 36, 0),  0 0 12px rgba(0,0,0,.55); }
+}
 
 .plonker-diag {
   background: #111827;
@@ -255,7 +474,8 @@
   transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 .plonker-img-inline:hover {
-  transform: scale(1.02);
+  /* No transform: scale here — it would post-transform getBoundingClientRect
+     and break the magnify-lens math (lens uses pre-transform coords). */
   border-color: #fbbf24;
   box-shadow: 0 6px 18px rgba(0,0,0,.4);
 }
@@ -290,7 +510,7 @@
   cursor: zoom-in;
   transition: transform .12s, border-color .12s;
 }
-.plonker-img-tile:hover { transform: scale(1.04); border-color: #fbbf24; }
+.plonker-img-tile:hover { border-color: #fbbf24; }
 .plonker-img-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* Notes tab */

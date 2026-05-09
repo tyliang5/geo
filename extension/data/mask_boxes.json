@@ -1,0 +1,1108 @@
+{
+  "country:US:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.505,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:US:33": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5272,
+    "anchor": "tl"
+  },
+  "country:US:region:California:12": {
+    "x": 0.485,
+    "y": 0.4828,
+    "w": 0.515,
+    "h": 0.5172,
+    "anchor": "br"
+  },
+  "country:US:region:Alaska:2": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.4631,
+    "anchor": "tl"
+  },
+  "country:US:region:Hawaii:18": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.38,
+    "h": 0.4313,
+    "anchor": "tl"
+  },
+  "country:US:region:Midwest:3": {
+    "x": 0.485,
+    "y": 0.4828,
+    "w": 0.515,
+    "h": 0.5172,
+    "anchor": "br"
+  },
+  "country:US:region:Arkansas:2": {
+    "x": 0.485,
+    "y": 0.4828,
+    "w": 0.515,
+    "h": 0.5172,
+    "anchor": "br"
+  },
+  "country:US:region:Missouri:0": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:US:region:Missouri:1": {
+    "x": 0.485,
+    "y": 0.4828,
+    "w": 0.515,
+    "h": 0.5172,
+    "anchor": "br"
+  },
+  "country:US:region:Local areas:1": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5269,
+    "anchor": "tr"
+  },
+  "country:AL:2": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:AQ:8": {
+    "x": 0.485,
+    "y": 0.7072,
+    "w": 0.515,
+    "h": 0.2928,
+    "anchor": "br"
+  },
+  "country:AQ:region:Local areas:7": {
+    "x": 0.485,
+    "y": 0.5739,
+    "w": 0.515,
+    "h": 0.4261,
+    "anchor": "br"
+  },
+  "country:AR:14": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5269,
+    "anchor": "tr"
+  },
+  "country:AR:region:Misiones:3": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:AR:region:Formosa:2": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:AR:region:Chaco:2": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:AU:3": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5292,
+    "anchor": "tr"
+  },
+  "country:AU:5": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:AU:13": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:AT:3": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:AT:region:Vienna:0": {
+    "x": 0.485,
+    "y": 0.0028,
+    "w": 0.515,
+    "h": 0.5093,
+    "anchor": "tr"
+  },
+  "country:AT:region:Steiermark:0": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:PT:21": {
+    "x": 0.5413,
+    "y": 0.485,
+    "w": 0.4587,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:BO:2": {
+    "x": 0.6944,
+    "y": 0.4818,
+    "w": 0.3056,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:BO:3": {
+    "x": 0.6944,
+    "y": 0.4818,
+    "w": 0.3056,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:BO:region:Local areas:0": {
+    "x": 0.6944,
+    "y": 0.4818,
+    "w": 0.3056,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:BO:region:Local areas:3": {
+    "x": 0.6944,
+    "y": 0.4818,
+    "w": 0.3056,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:BO:region:Local areas:4": {
+    "x": 0.6944,
+    "y": 0.4818,
+    "w": 0.3056,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:BR:9": {
+    "x": 0.485,
+    "y": 0.5061,
+    "w": 0.515,
+    "h": 0.4939,
+    "anchor": "br"
+  },
+  "country:BR:39": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.2081,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:BR:47": {
+    "x": 0.0,
+    "y": 0.5439,
+    "w": 0.5175,
+    "h": 0.4561,
+    "anchor": "bl"
+  },
+  "country:BR:71": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:BR:80": {
+    "x": 0.8069,
+    "y": 0.485,
+    "w": 0.1931,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:BR:84": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:BR:region:Rio Grande do Sul:13": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:BR:region:Roraima:8": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.4644,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:CA:3": {
+    "x": 0.0,
+    "y": 0.4818,
+    "w": 0.53,
+    "h": 0.5182,
+    "anchor": "bl"
+  },
+  "country:CA:6": {
+    "x": 0.6131,
+    "y": 0.485,
+    "w": 0.3869,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:CA:region:Quebec:5": {
+    "x": 0.0,
+    "y": 0.4818,
+    "w": 0.53,
+    "h": 0.5182,
+    "anchor": "bl"
+  },
+  "country:CL:10": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:CL:13": {
+    "x": 0.7819,
+    "y": 0.0,
+    "w": 0.2181,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:CL:17": {
+    "x": 0.8538,
+    "y": 0.4819,
+    "w": 0.1462,
+    "h": 0.5181,
+    "anchor": "br"
+  },
+  "country:CO:1": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:CO:27": {
+    "x": 0.6412,
+    "y": 0.4818,
+    "w": 0.3588,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:CY:region:Local areas:3": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:EG:6": {
+    "x": 0.7787,
+    "y": 0.6092,
+    "w": 0.2213,
+    "h": 0.3908,
+    "anchor": "br"
+  },
+  "country:EE:region:Local areas:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.5269,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:SZ:1": {
+    "x": 0.7944,
+    "y": 0.4818,
+    "w": 0.205,
+    "h": 0.5077,
+    "anchor": "br"
+  },
+  "country:SZ:4": {
+    "x": 0.7662,
+    "y": 0.4818,
+    "w": 0.2331,
+    "h": 0.5077,
+    "anchor": "br"
+  },
+  "country:SZ:5": {
+    "x": 0.735,
+    "y": 0.4818,
+    "w": 0.2644,
+    "h": 0.5077,
+    "anchor": "br"
+  },
+  "country:FR:9": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:FR:44": {
+    "x": 0.8381,
+    "y": 0.0,
+    "w": 0.1619,
+    "h": 0.5269,
+    "anchor": "tr"
+  },
+  "country:FR:45": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:FR:region:Alsace:3": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.1383,
+    "anchor": "tl"
+  },
+  "country:FR:region:Corsica:3": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.1383,
+    "anchor": "tl"
+  },
+  "country:FR:region:Local areas:3": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.1383,
+    "anchor": "tl"
+  },
+  "country:DE:13": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5269,
+    "anchor": "tl"
+  },
+  "country:DE:17": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.4988,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:DE:20": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Saarland:3": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Berlin:3": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Hamburg:4": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Hamburg:5": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5288,
+    "anchor": "tr"
+  },
+  "country:DE:region:Hamburg:7": {
+    "x": 0.7225,
+    "y": 0.4818,
+    "w": 0.2775,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:Brandenburg:1": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Brandenburg:3": {
+    "x": 0.7256,
+    "y": 0.4818,
+    "w": 0.2744,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:Brandenburg:4": {
+    "x": 0.7225,
+    "y": 0.4818,
+    "w": 0.2775,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:Bremen:3": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Saxony-Anhalt:6": {
+    "x": 0.7225,
+    "y": 0.4818,
+    "w": 0.2775,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:Mecklenburg-Vorpommern:4": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Lower Saxony:4": {
+    "x": 0.7225,
+    "y": 0.4818,
+    "w": 0.2775,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:North Rhine-Westphalia:4": {
+    "x": 0.7256,
+    "y": 0.4818,
+    "w": 0.2744,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:DE:region:Saxony:3": {
+    "x": 0.7225,
+    "y": 0.4818,
+    "w": 0.2775,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:Saxony:7": {
+    "x": 0.7225,
+    "y": 0.4818,
+    "w": 0.2775,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:DE:region:Schleswig-Holstein:3": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Hessen:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Niedersachsen:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Rheinland-Pfalz:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Sachsen:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:DE:region:Sachsen:1": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5288,
+    "anchor": "tr"
+  },
+  "country:DE:region:Sachsen-Anhalt:0": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:GR:0": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5272,
+    "anchor": "tr"
+  },
+  "country:GR:region:Local areas:1": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:GL:2": {
+    "x": 0.7913,
+    "y": 0.0,
+    "w": 0.2087,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:GL:3": {
+    "x": 0.7913,
+    "y": 0.0,
+    "w": 0.2087,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:GL:4": {
+    "x": 0.7913,
+    "y": 0.0,
+    "w": 0.2087,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:GL:5": {
+    "x": 0.7256,
+    "y": 0.0,
+    "w": 0.2744,
+    "h": 0.5141,
+    "anchor": "tr"
+  },
+  "country:GL:region:Local areas:4": {
+    "x": 0.7913,
+    "y": 0.0,
+    "w": 0.2087,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:GL:region:Local areas:5": {
+    "x": 0.7913,
+    "y": 0.0,
+    "w": 0.2087,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:HU:8": {
+    "x": 0.6381,
+    "y": 0.0129,
+    "w": 0.3619,
+    "h": 0.4993,
+    "anchor": "tr"
+  },
+  "country:IS:4": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:IS:11": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5267,
+    "anchor": "tl"
+  },
+  "country:IN:0": {
+    "x": 0.485,
+    "y": 0.4836,
+    "w": 0.515,
+    "h": 0.5164,
+    "anchor": "br"
+  },
+  "country:IN:10": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5269,
+    "anchor": "tr"
+  },
+  "country:IN:12": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.4744,
+    "anchor": "tl"
+  },
+  "country:IN:16": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:IN:20": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:IN:23": {
+    "x": 0.485,
+    "y": 0.482,
+    "w": 0.515,
+    "h": 0.518,
+    "anchor": "br"
+  },
+  "country:IN:31": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.4752,
+    "anchor": "tl"
+  },
+  "country:IN:36": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:IN:region:Madhya Pradesh:26": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:IN:region:Assam:13": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:IN:region:West Bengal:20": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.4675,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:IN:region:West Bengal:21": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:IN:region:Meghalaya:11": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:IN:region:Meghalaya:13": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.3867,
+    "anchor": "tl"
+  },
+  "country:IN:region:Mizoram:5": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:IN:region:Mizoram:6": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.3867,
+    "anchor": "tl"
+  },
+  "country:IN:region:Local areas:1": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.4798,
+    "anchor": "tl"
+  },
+  "country:IN:region:Local areas:8": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:ID:17": {
+    "x": 0.8131,
+    "y": 0.0,
+    "w": 0.1869,
+    "h": 0.5271,
+    "anchor": "tr"
+  },
+  "country:ID:29": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.4175,
+    "anchor": "tl"
+  },
+  "country:ID:33": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:ID:region:Local areas:1": {
+    "x": 0.8475,
+    "y": 0.0,
+    "w": 0.1525,
+    "h": 0.5266,
+    "anchor": "tr"
+  },
+  "country:IL:region:Local areas:2": {
+    "x": 0.0,
+    "y": 0.4844,
+    "w": 0.5175,
+    "h": 0.5156,
+    "anchor": "bl"
+  },
+  "country:JP:11": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.2706,
+    "h": 0.4262,
+    "anchor": "tl"
+  },
+  "country:JP:15": {
+    "x": 0.485,
+    "y": 0.4829,
+    "w": 0.515,
+    "h": 0.5171,
+    "anchor": "br"
+  },
+  "country:KZ:6": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:MG:17": {
+    "x": 0.0,
+    "y": 0.0168,
+    "w": 0.2581,
+    "h": 0.4886,
+    "anchor": "tl"
+  },
+  "country:NG:7": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.3175,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:NG:region:Local areas:1": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:MK:3": {
+    "x": 0.6506,
+    "y": 0.4818,
+    "w": 0.3494,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:MK:region:Skopje:0": {
+    "x": 0.6506,
+    "y": 0.4818,
+    "w": 0.3494,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:MK:region:Veles:0": {
+    "x": 0.6506,
+    "y": 0.4818,
+    "w": 0.3494,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:MK:region:Veles:1": {
+    "x": 0.6506,
+    "y": 0.4818,
+    "w": 0.3494,
+    "h": 0.5182,
+    "anchor": "br"
+  },
+  "country:NO:4": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5268,
+    "anchor": "tr"
+  },
+  "country:NO:region:Svalbard:0": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:PE:5": {
+    "x": 0.7288,
+    "y": 0.485,
+    "w": 0.2712,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:PH:11": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.5269,
+    "anchor": "tr"
+  },
+  "country:PH:region:Cebu:2": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.5175,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:PN:0": {
+    "x": 0.7756,
+    "y": 0.4818,
+    "w": 0.2244,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:PR:0": {
+    "x": 0.6288,
+    "y": 0.7175,
+    "w": 0.3712,
+    "h": 0.2825,
+    "anchor": "br"
+  },
+  "country:QA:7": {
+    "x": 0.7725,
+    "y": 0.4818,
+    "w": 0.2275,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:QA:region:Local areas:2": {
+    "x": 0.7756,
+    "y": 0.4818,
+    "w": 0.2244,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:RU:5": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.4081,
+    "h": 0.516,
+    "anchor": "tl"
+  },
+  "country:RU:region:Amur:0": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.528,
+    "anchor": "tl"
+  },
+  "country:RU:region:Krasnodar:0": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.528,
+    "anchor": "tl"
+  },
+  "country:SN:region:Diourbel:0": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.2831,
+    "h": 0.4631,
+    "anchor": "tl"
+  },
+  "country:SK:9": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5141,
+    "anchor": "tl"
+  },
+  "country:KR:0": {
+    "x": 0.485,
+    "y": 0.0,
+    "w": 0.515,
+    "h": 0.53,
+    "anchor": "tr"
+  },
+  "country:KR:region:Jeju:2": {
+    "x": 0.7319,
+    "y": 0.0105,
+    "w": 0.2681,
+    "h": 0.5013,
+    "anchor": "tr"
+  },
+  "country:KR:region:Jeju:3": {
+    "x": 0.7319,
+    "y": 0.0105,
+    "w": 0.2681,
+    "h": 0.5013,
+    "anchor": "tr"
+  },
+  "country:KR:region:Seoul:2": {
+    "x": 0.7319,
+    "y": 0.0041,
+    "w": 0.2681,
+    "h": 0.5077,
+    "anchor": "tr"
+  },
+  "country:ES:region:Basque Country:1": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.5268,
+    "anchor": "tl"
+  },
+  "country:ES:region:Galicia:3": {
+    "x": 0.0,
+    "y": 0.4818,
+    "w": 0.53,
+    "h": 0.5182,
+    "anchor": "bl"
+  },
+  "country:CH:7": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:TW:8": {
+    "x": 0.5756,
+    "y": 0.485,
+    "w": 0.4244,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:TH:region:Bangkok:0": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:UA:5": {
+    "x": 0.485,
+    "y": 0.485,
+    "w": 0.515,
+    "h": 0.515,
+    "anchor": "br"
+  },
+  "country:GB:0": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.5112,
+    "h": 0.491,
+    "anchor": "tl"
+  },
+  "country:GB:2": {
+    "x": 0.0,
+    "y": 0.0,
+    "w": 0.53,
+    "h": 0.53,
+    "anchor": "tl"
+  },
+  "country:UY:4": {
+    "x": 0.7037,
+    "y": 0.4818,
+    "w": 0.2963,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:UY:region:Rocha:0": {
+    "x": 0.7037,
+    "y": 0.4818,
+    "w": 0.2963,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:UY:region:Local areas:2": {
+    "x": 0.7037,
+    "y": 0.4818,
+    "w": 0.2963,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:UY:region:Local areas:3": {
+    "x": 0.7037,
+    "y": 0.4818,
+    "w": 0.2963,
+    "h": 0.5141,
+    "anchor": "br"
+  },
+  "country:VN:1": {
+    "x": 0.0,
+    "y": 0.485,
+    "w": 0.53,
+    "h": 0.515,
+    "anchor": "bl"
+  },
+  "country:VN:4": {
+    "x": 0.0,
+    "y": 0.8687,
+    "w": 0.53,
+    "h": 0.1313,
+    "anchor": "bl"
+  }
+}

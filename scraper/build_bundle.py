@@ -493,14 +493,102 @@ def region_for_text(text: str, known_regions: set[str]) -> str | None:
     return None
 
 
+# Phrases that mark the tail of a sentence as a SECONDARY mention (a
+# comparison or counter-example), so any region named after such a marker
+# in the same sentence is dropped. Without this filter, a tip like
+# "...around signposts in Texas. Similar reflectors can sometimes be seen
+# in other states, such as Hawaii." would tag both TX and HI, and a Hawaii
+# user would see the Texas image under their region group.
+_SECONDARY_MARKERS = re.compile(
+    r"\b(such as|compared (?:to|with)|in contrast (?:to|with)|"
+    r"rather than|but not (?:in)?|except (?:in|for)|other than|"
+    r"vs\.?\s|versus\s|like in\b|e\.g\.,?)",
+    re.IGNORECASE,
+)
+
+
+# Directional / clustered region patterns for tips that don't name specific
+# states/provinces but are geographically scoped ("interior western United
+# States", "eastern states"). Without these, such LM tips fall into Identify
+# even though they're regional facts. Each entry maps a regex to a synthetic
+# region label that the overlay's Regional tab can group under.
+DIRECTIONAL_REGION_PATTERNS = {
+    "US": [
+        (re.compile(r"\bnortheastern (?:united )?states?\b", re.IGNORECASE), "Northeastern US"),
+        (re.compile(r"\bnorthwestern (?:united )?states?\b", re.IGNORECASE), "Northwestern US"),
+        (re.compile(r"\bsoutheastern (?:united )?states?\b", re.IGNORECASE), "Southeastern US"),
+        (re.compile(r"\bsouthwestern (?:united )?states?\b", re.IGNORECASE), "Southwestern US"),
+        (re.compile(r"\bmidwestern (?:united )?states?\b", re.IGNORECASE), "Midwest"),
+        (re.compile(r"\bcentral (?:united )?states?\b", re.IGNORECASE), "Central US"),
+        (re.compile(r"\b(?:interior |inland |mountain )?western (?:united )?states?\b", re.IGNORECASE), "Western US"),
+        (re.compile(r"\beastern (?:united )?states?\b", re.IGNORECASE), "Eastern US"),
+        (re.compile(r"\bnorthern (?:united )?states?\b", re.IGNORECASE), "Northern US"),
+        (re.compile(r"\bsouthern (?:united )?states?\b", re.IGNORECASE), "Southern US"),
+        (re.compile(r"\binterior west\b", re.IGNORECASE), "Western US"),
+        (re.compile(r"\bpacific (?:northwest|coast)\b", re.IGNORECASE), "Pacific Northwest"),
+        (re.compile(r"\batlantic coast\b", re.IGNORECASE), "Eastern US"),
+        (re.compile(r"\bgulf coast\b", re.IGNORECASE), "Southern US"),
+        (re.compile(r"\bdeep south\b", re.IGNORECASE), "Deep South"),
+        (re.compile(r"\bnew england\b", re.IGNORECASE), "New England"),
+        (re.compile(r"\bgreat plains\b", re.IGNORECASE), "Great Plains"),
+        (re.compile(r"\bappalachian?\b", re.IGNORECASE), "Appalachia"),
+        (re.compile(r"\brocky mountains?\b", re.IGNORECASE), "Rocky Mountains"),
+    ],
+    "CA": [
+        (re.compile(r"\b(?:eastern|atlantic) canada\b", re.IGNORECASE), "Eastern Canada"),
+        (re.compile(r"\b(?:western|pacific) canada\b", re.IGNORECASE), "Western Canada"),
+        (re.compile(r"\bnorthern canada\b", re.IGNORECASE), "Northern Canada"),
+        (re.compile(r"\bthe maritimes\b", re.IGNORECASE), "Maritimes"),
+        (re.compile(r"\bthe prairies\b", re.IGNORECASE), "Prairies"),
+    ],
+    "AU": [
+        (re.compile(r"\bouter outback\b|\boutback\b", re.IGNORECASE), "Outback"),
+        (re.compile(r"\beast coast\b", re.IGNORECASE), "East Coast"),
+        (re.compile(r"\bwest coast\b", re.IGNORECASE), "West Coast"),
+    ],
+}
+
+
+def directional_region_for(text: str, iso2: str) -> str | None:
+    """Match descriptive geographical phrases (e.g. 'interior western United
+    States') and return a synthetic region label, so tips without specific
+    state mentions still route to the Regional tab instead of Identify."""
+    for pat, label in DIRECTIONAL_REGION_PATTERNS.get(iso2, []):
+        if pat.search(text):
+            return label
+    return None
+
+
 def all_regions_for_text(text: str, known_regions: set[str]) -> list[str]:
-    """Find ALL known sub-region names mentioned in the text. For tips like
-    'found in NSW, Victoria, and Queensland' we want every tag so the tip
-    surfaces under each region's group."""
+    """Find PRIMARY sub-region mentions in the text. For tips like
+    'found in NSW, Victoria, and Queensland' we want every tag. For tips
+    like 'in Texas. Similar reflectors can be seen in other states, such
+    as Hawaii.' we only want Texas — Hawaii sits after a 'such as' marker
+    and is a comparison, not the subject."""
     if not known_regions or not text:
         return []
-    out = []
-    seen = set()
+    # Rough sentence split — punctuation followed by whitespace.
+    sentences: list[tuple[int, str]] = []
+    pos = 0
+    for chunk in re.split(r"(?<=[.!?])\s+", text):
+        sentences.append((pos, chunk))
+        pos += len(chunk) + 1
+    out: list[str] = []
+    seen: set[str] = set()
+    for _, sent in sentences:
+        marker = _SECONDARY_MARKERS.search(sent)
+        cutoff = marker.start() if marker else len(sent)
+        for region in sorted(known_regions, key=len, reverse=True):
+            if len(region) < 3 or region in seen:
+                continue
+            m = re.search(r"\b" + re.escape(region) + r"\b", sent, re.IGNORECASE)
+            if m and m.start() < cutoff:
+                out.append(region)
+                seen.add(region)
+    if out:
+        return out
+    # Fallback: nothing was "primary" (the entire text was a comparison),
+    # behave like the old logic so we still tag something.
     for region in sorted(known_regions, key=len, reverse=True):
         if len(region) < 3 or region in seen:
             continue
@@ -663,14 +751,17 @@ def build_country(iso2: str, slug: str, country_name: str,
         return (tier, 1 if mentions_sub else 0, len(desc))
 
     def _detect_region(text: str) -> str | None:
-        if not known_subdivisions:
-            return None
-        for sub in sorted(known_subdivisions, key=len, reverse=True):
-            if len(sub) < 3:
-                continue
-            if re.search(r"\b" + re.escape(sub) + r"\b", text, re.IGNORECASE):
-                return sub
-        return None
+        # Reuse the primary-mention-only scanner so a comparison clause like
+        # "...in Texas. Similar reflectors can be seen in other states, such
+        # as Hawaii." doesn't tag the tip under Hawaii.
+        if known_subdivisions:
+            primary = all_regions_for_text(text, known_subdivisions)
+            if primary:
+                return primary[0]
+        # Fall back to directional patterns for tips like "interior western
+        # United States" / "eastern states" — they're regional facts even
+        # though they don't name specific states.
+        return directional_region_for(text, iso2)
 
     filtered = [m for m in lm_metas if not _is_junk(m)]
     sorted_metas = sorted(filtered, key=_priority)
@@ -733,19 +824,6 @@ def build_country(iso2: str, slug: str, country_name: str,
                     continue
                 images = _block_images(block)
 
-                # General rule wins regardless of section.
-                if is_general_rule(text):
-                    topic = ""
-                    if block.get("image"):
-                        toks = _filename_tokens(block["image"]["src"], slug)
-                        topic = " ".join(toks).title()[:40]
-                    out["general_rules"].append({
-                        "topic": topic or "General rule",
-                        "text": text,
-                        "images": images,
-                    })
-                    continue
-
                 # Region tag priority: OCR (most reliable when present) >
                 # filename token > text scan. Each can produce MULTIPLE region
                 # tags — we want the tip to appear under each matched region.
@@ -761,20 +839,46 @@ def build_country(iso2: str, slug: str, country_name: str,
                     # Text scan can return MULTIPLE matches (sorted by length)
                     # for tips like "found in NSW, Victoria, and Queensland".
                     regions.extend(all_regions_for_text(text, known_regions))
+                if not regions:
+                    # Last-resort: descriptive directional regions ("interior
+                    # western United States", "eastern states", etc.).
+                    dir_region = directional_region_for(text, iso2)
+                    if dir_region:
+                        regions.append(dir_region)
                 # Dedupe while preserving order.
                 seen_r = set()
                 regions = [r for r in regions if not (r in seen_r or seen_r.add(r))]
 
-                if sid == "regional":
-                    for region in regions:
-                        out["regions"].setdefault(region, []).append({
-                            "text": text, "images": images,
-                        })
-                elif sid == "spotlight":
-                    for region in regions:
-                        out["spotlight"].append({
-                            "place": region, "text": text, "images": images,
-                        })
+                # Regional/spotlight wins over general_rule. Phrases like
+                # "first digit", "license plate", "around the island", "road
+                # number" frequently appear in region-specific text (Vermont
+                # stop signs, Hawaii highway numbering, etc.) — we only fall
+                # through to general_rules when NO region is detectable for
+                # the block.
+                if regions:
+                    if sid == "regional":
+                        for region in regions:
+                            out["regions"].setdefault(region, []).append({
+                                "text": text, "images": images,
+                            })
+                    elif sid == "spotlight":
+                        for region in regions:
+                            out["spotlight"].append({
+                                "place": region, "text": text, "images": images,
+                            })
+                    continue
+
+                # No region detected — try general_rule classification.
+                if is_general_rule(text):
+                    topic = ""
+                    if block.get("image"):
+                        toks = _filename_tokens(block["image"]["src"], slug)
+                        topic = " ".join(toks).title()[:40]
+                    out["general_rules"].append({
+                        "topic": topic or "General rule",
+                        "text": text,
+                        "images": images,
+                    })
 
     # If we don't have an identify-tab key_meta, fall back to the first
     # general rule, then to the most-common region. Last resort: leave empty.

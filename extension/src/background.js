@@ -40,6 +40,38 @@ const loadTips = async () => {
   return TIPS_CACHE;
 };
 
+let FACTS_CACHE = null;
+const loadFacts = async () => {
+  if (FACTS_CACHE) return FACTS_CACHE;
+  const url = chrome.runtime.getURL('data/country_facts.json');
+  FACTS_CACHE = await fetch(url).then(r => r.json()).catch(() => ({}));
+  return FACTS_CACHE;
+};
+
+// Categorical country facts (driving side, sign style, stop sign text, plate
+// format, etc.). For US/CA we additionally resolve plate format to the
+// state/province if the round's reverse-geocoded `places` includes a known
+// subdivision name.
+const factsForCountry = async (cc2, places = []) => {
+  if (!cc2) return null;
+  const all = await loadFacts();
+  const f = all[cc2.toUpperCase()];
+  if (!f) return null;
+  const out = { ...f };
+  if (out.plate_subnational && places?.length) {
+    const lookup = out.plate_subnational;
+    for (const p of places) {
+      if (lookup[p]) {
+        out.plate_format = lookup[p];
+        out.plate_subdivision = p;
+        break;
+      }
+    }
+  }
+  delete out.plate_subnational;
+  return out;
+};
+
 // Reverse-geocode lat/lng. Returns { places: [...], cc: 'XX' | null }. Cached
 // in chrome.storage.local keyed by rounded coords (~1 km) to avoid spamming
 // Nominatim (1 req/sec).
@@ -144,15 +176,13 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
   (async () => {
     try {
       if (msg.type === 'round_end') {
-        const inserted = await persistRound(msg.payload).catch(e => ({ error: String(e) }));
         const cc2 = normalizeCountry(msg.payload.actual?.countryCode);
         const { lat, lng } = msg.payload.actual || {};
         const guessLatLng = msg.payload.guess || {};
 
-        // Reverse-geocode actual + guess in parallel. Use the geocode result
-        // to fill in the guess country code if GG didn't supply
-        // streakLocationCode for the guess (it usually doesn't in classic
-        // mode — only Country Streak fills it).
+        // Reverse-geocode actual + guess in parallel BEFORE persisting. GG
+        // doesn't fill streakLocationCode for guesses in classic mode, so the
+        // round row would otherwise have a null guess_country_iso2 forever.
         const [actualGeo, guessGeo] = await Promise.all([
           reverseGeocode(lat, lng),
           reverseGeocode(guessLatLng.lat, guessLatLng.lng),
@@ -160,10 +190,19 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
         const guessRaw = msg.payload.guess?.countryCode || guessGeo.cc;
         const guess2 = normalizeCountry(guessRaw);
 
-        const [tips, guessTips, diagnostic] = await Promise.all([
+        // Persist with the resolved guess country code merged in so
+        // dashboards can compute hit/miss accuracy.
+        const persistPayload = msg.payload.guess
+          ? { ...msg.payload, guess: { ...msg.payload.guess, countryCode: guessRaw } }
+          : msg.payload;
+        const inserted = await persistRound(persistPayload).catch(e => ({ error: String(e) }));
+
+        const [tips, guessTips, diagnostic, actualFacts, guessFacts] = await Promise.all([
           tipsForCountry(cc2),
           guess2 && guess2 !== cc2 ? tipsForCountry(guess2) : Promise.resolve(null),
           buildDiagnostic(cc2, guess2),
+          factsForCountry(cc2, actualGeo.places),
+          guess2 && guess2 !== cc2 ? factsForCountry(guess2, guessGeo.places) : Promise.resolve(null),
         ]);
         send({
           ok: !inserted.error,
@@ -171,6 +210,8 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
           tips,
           guessTips,
           diagnostic,
+          actualFacts,
+          guessFacts,
           places: actualGeo.places,
           guessPlaces: guessGeo.places,
           guessCountryCode: guess2,

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plonker</title>
+
+  <!-- Mobile / PWA viewport. viewport-fit=cover lets us extend under the
+       iPhone notch / home indicator; safe-area-inset CSS handles padding. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="app.webmanifest">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- iOS-specific PWA hooks: lets the app install to the home screen,
+       run full-screen without Safari chrome, and use the right status-bar
+       style + icon. -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Plonker">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="app.css">
+
+  <script>
+    // Register the service worker for offline + auto-update. Skip if we're
+    // running on file:// (won't work) or in the Chrome-extension context
+    // (which has its own background.js manifest_v3 SW).
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="brand">Plonker</div>
+    <div class="tabs">
+      <button class="tab active" data-tab="home">Home</button>
+      <button class="tab" data-tab="quiz" disabled>Quiz</button>
+      <button class="tab" data-tab="dash">Dashboard</button>
+    </div>
+    <div class="status" id="status"></div>
+  </nav>
+
+  <!-- HOME -->
+  <section class="view view-home" id="view-home">
+    <div class="welcome">
+      <h1>What do you want to study?</h1>
+      <p class="sub">Pick a focus, then start a click-on-map quiz. The map zooms to your selection.</p>
+
+      <div class="focus-grid">
+        <div class="focus-card" data-focus-type="global">
+          <div class="ftype">Global</div>
+          <div class="fname">All covered countries</div>
+          <div class="fmeta" id="meta-global">&mdash;</div>
+        </div>
+
+        <div class="focus-card" data-focus-type="continent">
+          <div class="ftype">Continent</div>
+          <div class="fname">
+            <select id="continent-select">
+              <option value="EU">Europe</option>
+              <option value="AS">Asia</option>
+              <option value="AF">Africa</option>
+              <option value="NA">North America</option>
+              <option value="SA">South America</option>
+              <option value="OC">Oceania</option>
+            </select>
+          </div>
+          <div class="fmeta" id="meta-continent">&mdash;</div>
+        </div>
+
+        <div class="focus-card" data-focus-type="region">
+          <div class="ftype">Region</div>
+          <div class="fname">
+            <select id="region-select"></select>
+          </div>
+          <div class="fmeta" id="meta-region">&mdash;</div>
+        </div>
+
+        <div class="focus-card" data-focus-type="country">
+          <div class="ftype">Country</div>
+          <div class="fname">
+            <select id="country-select"></select>
+          </div>
+          <div class="fmeta" id="meta-country">&mdash;</div>
+        </div>
+
+        <div class="focus-card focus-topic" data-focus-type="topic">
+          <div class="ftype">Topic</div>
+          <div class="fname">
+            <select id="topic-select"></select>
+          </div>
+          <div class="fmeta" id="meta-topic">&mdash;</div>
+        </div>
+
+        <div class="focus-card focus-personal" data-focus-type="personal">
+          <div class="ftype">Personal</div>
+          <div class="fname">
+            <select id="personal-select">
+              <option value="weak-spots">Your weakest countries</option>
+              <option value="confused-pairs">Your confused pairs</option>
+              <option value="recent-misses">Recent misses (last 50)</option>
+            </select>
+          </div>
+          <div class="fmeta" id="meta-personal">computed from GG history</div>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <label>
+          Scoring
+          <select id="scoring-select">
+            <option value="binary">Binary (right country = correct)</option>
+            <option value="distance">Distance (GG-style, 0&ndash;5000 pts)</option>
+          </select>
+        </label>
+        <button class="primary" id="start-btn">Start quiz &rarr;</button>
+        <button class="ghost" id="random-quiz-btn" title="Pick a random focused topic and start it">&#127922; Random focused quiz</button>
+      </div>
+
+      <div class="region-tips" id="region-tips"></div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="view view-quiz" id="view-quiz" hidden>
+    <div class="quiz-stage">
+      <div class="quiz-prompt-row">
+        <div class="qmeta" id="quiz-meta">&mdash;</div>
+        <div class="qstats">
+          <span class="streak" id="quiz-streak">0</span>
+          <span class="acc" id="quiz-acc">&mdash;</span>
+        </div>
+      </div>
+      <div class="qimg-wrap">
+        <img class="qimg" id="quiz-img" alt="">
+        <div class="qimg-mask" id="quiz-img-mask" title="Click to reveal/hide the corner — learnablemeta often embeds a giveaway map here"></div>
+      </div>
+      <div class="qtext-card" id="quiz-text-card" hidden>
+        <div class="qtext-card-row">
+          <div class="qtext-card-left">
+            <div class="qtext-main"></div>
+            <div class="qtext-sub"></div>
+          </div>
+          <div class="qkeypad" id="quiz-keypad" hidden></div>
+        </div>
+      </div>
+      <div class="qprompt" id="quiz-prompt">Click the country on the map &darr;</div>
+      <div class="qmc-grid" id="quiz-mc" hidden></div>
+      <div class="quiz-map-wrap" id="quiz-map-wrap">
+        <div id="quiz-map" class="leaflet-map"></div>
+      </div>
+      <div class="quiz-feedback" id="quiz-feedback" hidden></div>
+      <div class="quiz-actions">
+        <button class="ghost" id="quiz-skip">Skip</button>
+        <button class="ghost" id="quiz-blacklist" title="Hide this exact card from future quizzes (e.g. answer is in the image)">Hide forever</button>
+        <button class="primary" id="quiz-next" hidden>Next round &rarr;</button>
+        <button class="ghost" id="quiz-quit">Quit to home</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="view view-dash" id="view-dash" hidden>
+    <div class="dash-stage">
+      <div class="dash-header">
+        <h2>Your GeoGuessr stats</h2>
+        <div class="dash-controls">
+          <span id="dash-totals">&mdash; rounds</span>
+          <button class="icon-btn" id="dash-reload" title="Reload from Supabase">&#x21bb;</button>
+        </div>
+      </div>
+      <div class="dash-layout">
+        <div class="dash-map-pane">
+          <div id="dash-map" class="leaflet-map dash-map"></div>
+          <div class="legend">
+            <span class="lbl">Avg score</span>
+            <span class="sw" style="background:#ef4444"></span>0
+            <span class="sw" style="background:#f59e0b"></span>1500
+            <span class="sw" style="background:#facc15"></span>2500
+            <span class="sw" style="background:#84cc16"></span>3500
+            <span class="sw" style="background:#10b981"></span>5000
+            <span class="sw untouched"></span>untouched
+          </div>
+        </div>
+        <aside class="dash-side">
+          <h3>Weakest countries</h3>
+          <table id="tbl-worst" class="ranked"><tbody></tbody></table>
+          <h3>Strongest countries</h3>
+          <table id="tbl-best" class="ranked"><tbody></tbody></table>
+          <h3>Recent rounds</h3>
+          <table id="tbl-recent" class="ranked"><tbody></tbody></table>
+        </aside>
+      </div>
+
+      <section class="dash-topics">
+        <div class="dash-topics-head">
+          <h3>By topic</h3>
+          <span class="hint" id="dash-topics-totals">&mdash;</span>
+        </div>
+        <div class="dash-topics-grid" id="dash-topics-grid"></div>
+      </section>
+    </div>
+
+    <!-- Country fact-sheet drilldown (overlay) -->
+    <div class="factsheet" id="factsheet" hidden>
+      <div class="factsheet-inner">
+        <header>
+          <h2 id="fs-title">&mdash;</h2>
+          <div class="fs-actions">
+            <button class="ghost" id="fs-compare-btn">Compare with...</button>
+            <button class="ghost" id="fs-quiz-btn">Quiz this country</button>
+            <button class="icon-btn" id="fs-close">&times;</button>
+          </div>
+        </header>
+        <div class="fs-body" id="fs-body"></div>
+      </div>
+    </div>
+
+    <!-- Side-by-side compare overlay -->
+    <div class="factsheet" id="comparesheet" hidden>
+      <div class="factsheet-inner">
+        <header>
+          <h2 id="cs-title">Compare</h2>
+          <div class="fs-actions">
+            <select id="cs-other-select" class="ghost"></select>
+            <button class="icon-btn" id="cs-close">&times;</button>
+          </div>
+        </header>
+        <div class="cs-body" id="cs-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // Cache-bust app.js so dev edits show without a hard refresh.
+    const appScript = document.createElement('script');
+    appScript.type = 'module';
+    appScript.src = 'app.js?v=' + Date.now();
+    document.body.appendChild(appScript);
+  </script>
+</body>
+</html>

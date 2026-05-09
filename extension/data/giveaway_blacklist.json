@@ -1,0 +1,2627 @@
+{
+  "country:AR:2": {
+    "cc": "AR",
+    "reason": "country_name_in_image",
+    "detected_text": "ARGENTINA / REPUBLICA ARGENTINA / DHN / OBBTAA 828 JL"
+  },
+  "country:AU:0": {
+    "cc": "AU",
+    "reason": "country_name_in_image",
+    "detected_text": "F / B / F / B / B / F / AUS / TURKEY / NZ"
+  },
+  "country:PT:7": {
+    "cc": "PT",
+    "reason": "country_name_in_image",
+    "detected_text": "Cf8ata / Portugal"
+  },
+  "country:BR:52": {
+    "cc": "BR",
+    "reason": "country_name_in_image",
+    "detected_text": "Roraima / Ma / Jus / StatE 0f / \"State 05 / CEARA / Vatal / Amazom / Tate Of PaRA / Manha / S / State Op / PA / Piaui / Bra / TE 0F / StatF OF / ~state 0n / IGOAS / IRondoniA / SocamtiNS / STat 0F / S"
+  },
+  "country:BR:59": {
+    "cc": "BR",
+    "reason": "country_name_in_image",
+    "detected_text": "ja / Suriname / Gtteof / Rdrain / Ms / Jus / Stateor / 'SaTe 0f / cEARL / Uatal / 4uaone / Tateoprara / a / Nha / 6a / e0 > / Piali / Bra / il / Etateof / STatro; / Rondona / Joclying / STatel0e / Sta"
+  },
+  "country:BR:60": {
+    "cc": "BR",
+    "reason": "country_name_in_image",
+    "detected_text": "elem / Capitao / pio / Maracacume / ALTO Rio / 'GUAMA / Pinheiro / Sao Luis / 316 / Sao Jose de / Barreirie / Ribamar / Paragominas / ALto TURIACU / Ze Doca / Itapecuru / 0ioj / Mirm / Santa Ines / Ch"
+  },
+  "country:BR:61": {
+    "cc": "BR",
+    "reason": "country_name_in_image",
+    "detected_text": "dique / 6' ATE Ur / Mitu / ~Estadual Serra / RORAIMA / do Araca / Rorainopolis / RiO / ANEG ROS / 'TROMBETAS/ / Santa Isabel / MAPUERA / ao Rio Negro / MEDIO Rio / NEGRO / Barcelos / WAIMIRI;ATROARI /"
+  },
+  "country:BR:62": {
+    "cc": "BR",
+    "reason": "country_name_in_image",
+    "detected_text": "RoraiMA / 'MaPA / Ma / us / Te 06 / ISTATE 0e / CEARA / Vatal / ZoNA / Tate OF PARA / Madnha / 50 / S, / 0f / STATE Ofa / UBA / Piaui / Bra / C 0f / STATE 0f / Statc Oe / GOAS / ondonia / HOCANTiNS / "
+  },
+  "country:CL:0": {
+    "cc": "CL",
+    "reason": "country_name_in_image",
+    "detected_text": "CHILE"
+  },
+  "country:HR:0": {
+    "cc": "HR",
+    "reason": "country_name_in_image",
+    "detected_text": "3 / 5 / CROATIA / HUNGARY"
+  },
+  "country:DK:0": {
+    "cc": "DK",
+    "reason": "country_name_in_image",
+    "detected_text": "DENMARK"
+  },
+  "country:EE:1": {
+    "cc": "EE",
+    "reason": "country_name_in_image",
+    "detected_text": "ESTONIA"
+  },
+  "country:FR:9": {
+    "cc": "FR",
+    "reason": "country_name_in_image",
+    "detected_text": "France / Main dialects of the / Occilan language / Limousin / Auvergnat / Italy / Cariteira / Vivaro Alpine / Gascon / Carrera / Languedocien / Carriera / Carriero / Provencal / Andorra % / Spain / No"
+  },
+  "country:FR:11": {
+    "cc": "FR",
+    "reason": "country_name_in_image",
+    "detected_text": "France minor toponyms infographic / plonkit net/guide / caux / en-brie / beauce / ~anjou / ~touraine / bresse / ~quercy / bearn"
+  },
+  "country:FR:19": {
+    "cc": "FR",
+    "reason": "country_name_in_image / reference_map",
+    "detected_text": "Rare France Antennas infographic / plonkit net/guide"
+  },
+  "country:FR:23": {
+    "cc": "FR",
+    "reason": "country_name_in_image",
+    "detected_text": "Ville / Orly / AU: / Allee / DELA CrOU E / des / Bleuets / Wt / CHAMPIGAANuR / FRAMCASE | / ROUGF"
+  },
+  "country:GR:1": {
+    "cc": "GR",
+    "reason": "country_name_in_image",
+    "detected_text": "GREECE"
+  },
+  "country:HU:0": {
+    "cc": "HU",
+    "reason": "country_name_in_image",
+    "detected_text": "HUNGARY / FOLAND / ROMANIA"
+  },
+  "country:HU:2": {
+    "cc": "HU",
+    "reason": "country_name_in_image",
+    "detected_text": "3 / 5 / CROATIA / HUNGARY"
+  },
+  "country:HU:5": {
+    "cc": "HU",
+    "reason": "country_name_in_image",
+    "detected_text": "Genmnany / Hungary"
+  },
+  "country:IN:32": {
+    "cc": "IN",
+    "reason": "country_name_in_image / narrow_locale",
+    "detected_text": "Kirandul / Palnar / YcH-IR / Chhindgar / Gadiras / Igde / 71<4 / Su / na / Kerl / Malkangiri' / [uIc / Balimel / Potteru / Doritapal / Mlct / Chitra / Cherla / Kalimela / agudem / Sileru / {fpzo / 36 "
+  },
+  "country:ID:0": {
+    "cc": "ID",
+    "reason": "country_name_in_image",
+    "detected_text": "Indonesia / Malaysia / XX 1234 ABC / PFQ 5217 / 0 7 .1 3 / Standard"
+  },
+  "country:LV:0": {
+    "cc": "LV",
+    "reason": "country_name_in_image",
+    "detected_text": "LATVIA"
+  },
+  "country:MY:0": {
+    "cc": "MY",
+    "reason": "country_name_in_image",
+    "detected_text": "Indonesia / Malaysia / XX 1234 ABC / PFQ 5217 / 0 7 .1 3 / Standard"
+  },
+  "country:MX:0": {
+    "cc": "MX",
+    "reason": "country_name_in_image",
+    "detected_text": "MEXICO / OTHIERS / )"
+  },
+  "country:NO:12": {
+    "cc": "NO",
+    "reason": "country_name_in_image",
+    "detected_text": "Hommer / 50a / Hnnud / Aovaniemi / Oulu / Tcordhalm / Swveden / Kkaund / Norway / Finland / 4 / Tampere / Bergen / TTurku / Helsinki / St Petersburg / Oslo / Uposala] / Carkt-nercpoyp / Stockholm / Ta"
+  },
+  "country:NO:15": {
+    "cc": "NO",
+    "reason": "country_name_in_image",
+    "detected_text": "Horad / Rotaniemni / Oulu / Trarahclm / Swcden / Aunj / Norway / 8 / Finland / Tampere / ergcn / Turku / Holsinki / St / Petersburg / Oslo / Uposula / Cankt-nerepoypr / Stockholm / Tallinn / Stavonc /"
+  },
+  "country:PE:2": {
+    "cc": "PE",
+    "reason": "country_name_in_image",
+    "detected_text": "Sullana / Piura / Chiclayo / PERU / PERU / Ica / 52 / Ca / Majes / IN / 1S"
+  },
+  "country:PE:4": {
+    "cc": "PE",
+    "reason": "country_name_in_image",
+    "detected_text": "PERU / SN"
+  },
+  "country:PE:9": {
+    "cc": "PE",
+    "reason": "country_name_in_image",
+    "detected_text": "PERU / CUscO / 28B"
+  },
+  "country:PH:15": {
+    "cc": "PH",
+    "reason": "country_name_in_image",
+    "detected_text": "Luro\" / Manlla / Philippines / u / C bu / icolod / Brocees Folit / Dunozutte Cagayan / Lnau_ / de Oro / Bsd / 0044n0 / Peqoflo / Meldnm / Davao / dalan / #ham / Moradt"
+  },
+  "country:RO:0": {
+    "cc": "RO",
+    "reason": "country_name_in_image",
+    "detected_text": "HUNGARY / FOLAND / ROMANIA"
+  },
+  "country:RO:1": {
+    "cc": "RO",
+    "reason": "country_name_in_image",
+    "detected_text": "Ttaly / Romania / Serbia / Slovenia"
+  },
+  "country:SK:5": {
+    "cc": "SK",
+    "reason": "country_name_in_image",
+    "detected_text": "Gzechia / SloVakia"
+  },
+  "country:SI:3": {
+    "cc": "SI",
+    "reason": "country_name_in_image",
+    "detected_text": "Ttaly / Romania / Serbia / Slovenia"
+  },
+  "country:TR:1": {
+    "cc": "TR",
+    "reason": "country_name_in_image",
+    "detected_text": "F / B / F / B / B / F / AUS / TURKEY / NZ"
+  },
+  "country:TR:8": {
+    "cc": "TR",
+    "reason": "country_name_in_image",
+    "detected_text": "CAHit SITKI / SOKAK / KULTUR MAHALLESI TN 52"
+  },
+  "country:US:34": {
+    "cc": "US",
+    "reason": "reference_map",
+    "detected_text": "Corn fields Corn fields can most commonly be found in these regions. For a detailed overview, see this map."
+  },
+  "country:BW:3": {
+    "cc": "BW",
+    "reason": "reference_map",
+    "detected_text": "This map shows which covered roads are paved, and which ones are unpaved. It is slightly simplified for ease of reading"
+  },
+  "country:BG:8": {
+    "cc": "BG",
+    "reason": "reference_map / compendium (compendium_url)",
+    "detected_text": "The Balkan mountains cut across Bulgaria and divide the country in two distinct halves. North of them, you will find a"
+  },
+  "country:CA:13": {
+    "cc": "CA",
+    "reason": "reference_map / compendium (compendium_desc)",
+    "detected_text": "The Balsam Fir is a very common species of tree found in Newfoundland. It has a Christmas tree-like appearance. NOTE: W"
+  },
+  "country:EC:5": {
+    "cc": "EC",
+    "reason": "reference_map",
+    "detected_text": "This is an elevation map of Ecuador. The imposing Andes mountains run through the middle of the country. The east and w"
+  },
+  "country:FR:30": {
+    "cc": "FR",
+    "reason": "reference_map",
+    "detected_text": "France is the second largest wine producer in the world, with many famed wine regions. The most common include the area"
+  },
+  "country:DE:3": {
+    "cc": "DE",
+    "reason": "reference_map",
+    "detected_text": "Landscape - Flat Landscape The North and especially Northwest of Germany is very flat."
+  },
+  "country:GH:2": {
+    "cc": "GH",
+    "reason": "reference_map / compendium (compendium_desc / compendium_url)",
+    "detected_text": "This map shows the distribution of paved and unpaved roads across the country. You can click on the image to enlarge it"
+  },
+  "country:GH:3": {
+    "cc": "GH",
+    "reason": "reference_map / compendium (compendium_desc / compendium_url)",
+    "detected_text": "This map shows the distribution of paved and unpaved roads across the country. You can click on the image to enlarge it"
+  },
+  "country:GT:3": {
+    "cc": "GT",
+    "reason": "reference_map",
+    "detected_text": "This is a topographic map of Guatemala. Generally speaking, the middle of the country is mountainous, while the south a"
+  },
+  "country:GT:9": {
+    "cc": "GT",
+    "reason": "reference_map",
+    "detected_text": "Most green utility poles contain a white pole plate, for which the top two characters will determine which road you are"
+  },
+  "country:HU:7": {
+    "cc": "HU",
+    "reason": "reference_map / compendium (compendium_desc)",
+    "detected_text": "Many Hungarian town names use local prefixes, the most common of which are shown in this infographic. Note that some ra"
+  },
+  "country:KZ:7": {
+    "cc": "KZ",
+    "reason": "reference_map",
+    "detected_text": "Kazakhstan is a generally flat country, so getting locations that are hilly or mountainous are useful for narrowing the"
+  },
+  "country:LT:7": {
+    "cc": "LT",
+    "reason": "reference_map",
+    "detected_text": "Lithuania is overall a fairly flat country, with no hills over 300 metres. However, you can sometimes distinguish the h"
+  },
+  "country:MX:25": {
+    "cc": "MX",
+    "reason": "reference_map",
+    "detected_text": "Every state in Mexico has one or several unique licence plate designs. In this infographic you can find the most common"
+  },
+  "country:ME:2": {
+    "cc": "ME",
+    "reason": "reference_map",
+    "detected_text": "This map shows the distribution of where rifts are found. Although rifts are common in Montenegro, coastal rounds will"
+  },
+  "country:NG:3": {
+    "cc": "NG",
+    "reason": "reference_map / compendium (compendium_desc)",
+    "detected_text": "Shown is a Köppen climate map of Nigeria. The climate ranges from tropical rainforest in the far south, where you can f"
+  },
+  "country:QA:8": {
+    "cc": "QA",
+    "reason": "reference_map",
+    "detected_text": "Qatar is divided into municipalities, further divided into numbered zones, which can be seen on street signs. This info"
+  },
+  "country:RW:4": {
+    "cc": "RW",
+    "reason": "reference_map",
+    "detected_text": "Lamps are fairly consistent on National Roads in Rwanda, but other designs can be sometimes found on some sections. Roa"
+  },
+  "country:SK:8": {
+    "cc": "SK",
+    "reason": "reference_map / compendium (compendium_url)",
+    "detected_text": "The tallest mountains in Slovakia are found in the central and northern parts of the country, while the flattest areas"
+  },
+  "country:LK:4": {
+    "cc": "LK",
+    "reason": "reference_map / compendium (compendium_desc)",
+    "detected_text": "The presence of the Tamil script is strongly correlated with the distribution of Hinduism (though not all Tamils are Hi"
+  },
+  "country:LK:5": {
+    "cc": "LK",
+    "reason": "reference_map / compendium (compendium_desc)",
+    "detected_text": "This map shows Sri Lanka’s topography. Hills and mountains are strongly concentrated in the central-southern part of th"
+  },
+  "country:SE:12": {
+    "cc": "SE",
+    "reason": "reference_map / compendium (compendium_desc)",
+    "detected_text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region"
+  },
+  "country:UY:4": {
+    "cc": "UY",
+    "reason": "reference_map / compendium (compendium_url)",
+    "detected_text": "Subtle differences in elevation can help when trying to region-guess Uruguay. The highest hills are mostly concentrated"
+  },
+  "country:JP:46": {
+    "cc": "JP",
+    "reason": "country_outline_overlay",
+    "detected_text": "Architecture - Northern Roofs: image has Japan country outline + Northern/Southern directional labels"
+  },
+  "country:US:33": {
+    "cc": "US",
+    "reason": "country_shape_map",
+    "detected_text": "Infrastructure - National Parks: image is a US-shaped map showing park locations"
+  },
+  "country:AR:25": {
+    "cc": "AR",
+    "reason": "country_outline_overlay",
+    "detected_text": "Landscape - Mountains: Argentina country outline inset exceeds the corner mask"
+  },
+  "country:AT:3": {
+    "cc": "AT",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each Austrian state has its own unique bus company, the logo of which can be seen on the side of buses. You can click th"
+  },
+  "country:AT:region:Steiermark:0": {
+    "cc": "AT",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each Austrian state has its own unique bus company, the logo of which can be seen on the side of buses. You can click th"
+  },
+  "country:AT:region:Vorarlberg:0": {
+    "cc": "AT",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Bus stops consisting of neon-yellow poles are found in Vorarlberg."
+  },
+  "country:BE:10": {
+    "cc": "BE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Bus stop signs in Flanders (and Brussels) have a white rectangle at the top. In Wallonia they will have a yellow top."
+  },
+  "country:BE:7": {
+    "cc": "BE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Bus stop signs in Flanders (and Brussels) have a white rectangle at the top. In Wallonia they will have a yellow top."
+  },
+  "country:BE:region:Brussels:1": {
+    "cc": "BE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Bus stop signs in Flanders (and Brussels) have a white rectangle at the top. In Wallonia they will have a yellow top."
+  },
+  "country:BW:1": {
+    "cc": "BW",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "This map shows which covered roads are paved, and which ones are unpaved. It is slightly simplified for ease of reading."
+  },
+  "country:CA:10": {
+    "cc": "CA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each province has its own unique licence plates, some recognizable from afar even when blurred. Multiple provinces do no"
+  },
+  "country:CA:region:New Brunswick:4": {
+    "cc": "CA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each province has its own unique licence plates, some recognizable from afar even when blurred. Multiple provinces do no"
+  },
+  "country:CA:region:Ontario:7": {
+    "cc": "CA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each province has its own unique kilometre markers that vary slightly. Notably, Ontario KM markers have a white square a"
+  },
+  "country:ES:region:Asturias:4": {
+    "cc": "ES",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Most bus stops in Asturias have a red post with the CTA logo at the top. NOTE: These may be confused with Madrid bus sto"
+  },
+  "country:IL:region:Local areas:2": {
+    "cc": "IL",
+    "reason": "compendium (compendium_desc) / area_code_reference_map",
+    "detected_text": "Here is a map of area codes in Israel and the West Bank. Note that only the phone codes featured on the map are regional"
+  },
+  "country:IT:12": {
+    "cc": "IT",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each Italian region has its own unique flag."
+  },
+  "country:LI:region:Balzers:1": {
+    "cc": "LI",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Unlike the rest of Liechtenstein, Balzers sometimes uses black bus stop signs. NOTE:  Regular bus stops are also present"
+  },
+  "country:LI:region:Vaduz:0": {
+    "cc": "LI",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Unlike the rest of Liechtenstein, Vaduz sometimes uses red bus stop signs. NOTE:  Regular bus stops are also present."
+  },
+  "country:ME:0": {
+    "cc": "ME",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "This map shows the distribution of where rifts are found. Although rifts are common in Montenegro, coastal rounds will a"
+  },
+  "country:MT:11": {
+    "cc": "MT",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Uniquely, all bus routes on Gozo Island are in the 300s. These can be quite hard to see, meaning they are most useful in"
+  },
+  "country:NZ:region:Auckland:0": {
+    "cc": "NZ",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "The cities of Auckland, Wellington and Christchurch all have unique bus stop signs. You can click on the image to enlarg"
+  },
+  "country:NZ:region:Wellington:0": {
+    "cc": "NZ",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "The cities of Auckland, Wellington and Christchurch all have unique bus stop signs. You can click on the image to enlarg"
+  },
+  "country:RU:10": {
+    "cc": "RU",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "These are the bus stops unique to specific federal subjects in Russia. Notably common and memorable ones include Krasnoy"
+  },
+  "country:RU:9": {
+    "cc": "RU",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "These are the bus stops unique to specific federal subjects in Russia. Notably common and memorable ones include Krasnoy"
+  },
+  "country:RU:region:Krasnoyarsk:0": {
+    "cc": "RU",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "These are the bus stops unique to specific federal subjects in Russia. Notably common and memorable ones include Krasnoy"
+  },
+  "country:RU:region:Moscow:2": {
+    "cc": "RU",
+    "reason": "compendium (compendium_desc) / area_code_reference_map",
+    "detected_text": "This is a map of Russian area codes. Notably, area codes starting with 8 are in the west, codes starting with 3 are fair"
+  },
+  "country:RU:region:Tatarstan:1": {
+    "cc": "RU",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "These are the bus stops unique to specific federal subjects in Russia. Notably common and memorable ones include Krasnoy"
+  },
+  "country:RW:3": {
+    "cc": "RW",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Lamps are fairly consistent on National Roads in Rwanda, but other designs can be sometimes found on some sections. Road"
+  },
+  "country:SE:9": {
+    "cc": "SE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Each administrative region in Sweden has at least one, and in many cases several, bus stop signs which are unique to tha"
+  },
+  "country:SE:region:Halland:2": {
+    "cc": "SE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "If you see Västra Götaland bus stops combined with three blue stripes as shown in the picture, you are in Kungsbacka mun"
+  },
+  "country:UA:region:Local areas:0": {
+    "cc": "UA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "This is a map of street view coverage in Ukraine. Most coverage between cities is on yellow roads. Notably, there is alm"
+  },
+  "country:US:region:Arkansas:2": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc / multi_region_reuse)",
+    "detected_text": "Shown here is a topographic map of the US. Most significant elevation is in the west: here you will find large mountain"
+  },
+  "country:US:region:California:12": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc / multi_region_reuse)",
+    "detected_text": "Shown here is a topographic map of the US. Most significant elevation is in the west: here you will find large mountain"
+  },
+  "country:US:region:Midwest:3": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc / multi_region_reuse)",
+    "detected_text": "Shown here is a topographic map of the US. Most significant elevation is in the west: here you will find large mountain"
+  },
+  "country:US:region:Missouri:0": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Shown here is the population density of the United States. In General, areas east of the Missouri river are more densely"
+  },
+  "country:US:region:Missouri:1": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc / multi_region_reuse)",
+    "detected_text": "Shown here is a topographic map of the US. Most significant elevation is in the west: here you will find large mountain"
+  },
+  "country:VN:1": {
+    "cc": "VN",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These are the main bollards that are found in Vietnam. They can occasionally include yellow reflectors."
+  },
+  "country:US:26": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "This island to the south of Los Angeles has a unique Google car."
+  },
+  "country:US:27": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "This car can be found to the north of the Golden Gate Bridge in San Francisco."
+  },
+  "country:US:region:North Carolina:5": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "As part of a promotional campaign, the TransAmerica Trail from Oregon to North Carolina was covered by a Ford Bronco. Th"
+  },
+  "country:US:region:New England:3": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "Winter/fall coverage such as this is commonplace in New England, particularly in Massachusetts, Connecticut, and Rhode I"
+  },
+  "country:US:region:West Virginia:2": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "Within the Appalachians, Winter Coverage is most common in West Virginia."
+  },
+  "country:US:region:Local areas:10": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "The main island of Dry Tortugas National Park, west of Key West, can be identified by the hexagonal brick structure and"
+  },
+  "country:US:region:Local areas:11": {
+    "cc": "US",
+    "reason": "narrow_locale",
+    "detected_text": "This section of road in Daniel Boone National Forest near Beattyville, KY has a unique Google car."
+  },
+  "country:AS:2": {
+    "cc": "AS",
+    "reason": "narrow_locale",
+    "detected_text": "A slightly rusted black truck bed can be seen on the main island of Tutuila."
+  },
+  "country:AS:region:Local areas:1": {
+    "cc": "AS",
+    "reason": "narrow_locale",
+    "detected_text": "Ofu Beach is easy to recognize, with the coast to the Southeast and three distinct peaks in the Northeast."
+  },
+  "country:AQ:7": {
+    "cc": "AQ",
+    "reason": "narrow_locale",
+    "detected_text": "Southeast of McMurdo station, the trekker can be seen walking on a layer of ice around various machinery."
+  },
+  "country:AQ:region:Local areas:5": {
+    "cc": "AQ",
+    "reason": "narrow_locale",
+    "detected_text": "The trekker can be seen walking through a fantastical landscape consisting of many desolate valleys on mainland Antarcti"
+  },
+  "country:AR:7": {
+    "cc": "AR",
+    "reason": "narrow_locale",
+    "detected_text": "The “sawdust” car is found in centre-south Argentina and has a unique sandy dust on its visible black back."
+  },
+  "country:AR:30": {
+    "cc": "AR",
+    "reason": "narrow_locale",
+    "detected_text": "Sunrise coverage with bad image quality and multiple blurs is found on a short part of the RN251 and RN22, west of Río C"
+  },
+  "country:AR:region:Mendoza:1": {
+    "cc": "AR",
+    "reason": "narrow_locale",
+    "detected_text": "Sunset coverage with degraded image quality is found on the RN40 just south of the Mendoza border with Neuquén."
+  },
+  "country:AU:region:Western Australia:9": {
+    "cc": "AU",
+    "reason": "narrow_locale",
+    "detected_text": "A sun with \"splodges\" around it can be observed on the 95 in Western Australia, between Newman and Ex Doolgunna."
+  },
+  "country:AU:region:Western Australia:12": {
+    "cc": "AU",
+    "reason": "narrow_locale",
+    "detected_text": "The town of Gascoyne Junction in Western Australia is distinct, as the driver left the car boot open while covering this"
+  },
+  "country:AU:region:Northern Territory:3": {
+    "cc": "AU",
+    "reason": "narrow_locale",
+    "detected_text": "Around the Devils Marbles, north of Davenport in the Northern Territory, smoke from a bushfire is visible."
+  },
+  "country:AU:region:South Australia:6": {
+    "cc": "AU",
+    "reason": "narrow_locale",
+    "detected_text": "The upper half of a leaf can sometimes be seen on the Generation 2 halo in southeastern South Australia. If it's an enti"
+  },
+  "country:AU:region:Victoria:8": {
+    "cc": "AU",
+    "reason": "narrow_locale",
+    "detected_text": "In a lot of Generation 2 around the towns of Morwell and Traralgon in Eastern Victoria, an entire leaf is visible in the"
+  },
+  "country:AU:region:Australian Capital Territory:0": {
+    "cc": "AU",
+    "reason": "narrow_locale",
+    "detected_text": "Australia is home to dozens of rare Google cars, which can usually be found in natural reserves.\n\nMost rare Google cars"
+  },
+  "country:PT:10": {
+    "cc": "PT",
+    "reason": "narrow_locale",
+    "detected_text": "The only island with Generation 4 coverage is Ilha de São Miguel."
+  },
+  "country:BD:11": {
+    "cc": "BD",
+    "reason": "narrow_locale",
+    "detected_text": "Blossoming trees are tied to coverage and seasonal metas in Bangladesh, and are only found in the states where coverage"
+  },
+  "country:BD:region:Local areas:1": {
+    "cc": "BD",
+    "reason": "narrow_locale",
+    "detected_text": "Rice is the main agricultural crop in Bangladesh and is planted twice a year. The different rice seasons can be told apa"
+  },
+  "country:BD:region:Local areas:9": {
+    "cc": "BD",
+    "reason": "narrow_locale",
+    "detected_text": "Generation 3 coverage with the striped Street View car can be found mostly on yellow roads west of Dhaka."
+  },
+  "country:BR:43": {
+    "cc": "BR",
+    "reason": "narrow_locale",
+    "detected_text": "Ilha de Fernando de Noronha is covered by a white buggy which sometimes has a visible front."
+  },
+  "country:BR:67": {
+    "cc": "BR",
+    "reason": "narrow_locale",
+    "detected_text": "The beautiful National Park of Northeast Maranhão, known for its sand dunes with pools of water, has walking trekker and"
+  },
+  "country:BR:87": {
+    "cc": "BR",
+    "reason": "narrow_locale",
+    "detected_text": "This road is characterized by the Amapa Blur (slight blur at the front of a blue-striped car), the red, and the road ang"
+  },
+  "country:BR:98": {
+    "cc": "BR",
+    "reason": "narrow_locale",
+    "detected_text": "This Amazonian trekker combines boat and walking coverage on and near the Madeira and Aripuana rivers, south of the 319."
+  },
+  "country:BR:region:Rio Grande do Sul:2": {
+    "cc": "BR",
+    "reason": "narrow_locale",
+    "detected_text": "Northwest Rio Grande do Sul has coverage with this camera glitch in Generation 3."
+  },
+  "country:BR:region:Local areas:4": {
+    "cc": "BR",
+    "reason": "narrow_locale",
+    "detected_text": "There is boat coverage around the island of Ilha de Fernando de Noronha."
+  },
+  "country:BG:13": {
+    "cc": "BG",
+    "reason": "narrow_locale",
+    "detected_text": "Locations with an invisible Generation 4 Street View car can be found along the North and West borders of Bulgaria, as w"
+  },
+  "country:BG:14": {
+    "cc": "BG",
+    "reason": "narrow_locale",
+    "detected_text": "A red Generation 4 Street View car is mostly found in central and southeastern Bulgaria. This car can be found with and"
+  },
+  "country:BG:15": {
+    "cc": "BG",
+    "reason": "narrow_locale",
+    "detected_text": "A red Generation 4 Street View car is mostly found in central and southeastern Bulgaria. This car can be found with and"
+  },
+  "country:CL:3": {
+    "cc": "CL",
+    "reason": "narrow_locale",
+    "detected_text": "This horse trekker can be seen to the northwest of San Filipe."
+  },
+  "country:CL:9": {
+    "cc": "CL",
+    "reason": "narrow_locale",
+    "detected_text": "A grey Toyota Hilux, with various gear loaded and a snorkel on the front right, can be seen from around Baños Morales."
+  },
+  "country:CL:region:Santiago:1": {
+    "cc": "CL",
+    "reason": "narrow_locale",
+    "detected_text": "The Google car can be seen towing a white and silver trailer with the word ‘Outback’ north of the Chilean National Zoo i"
+  },
+  "country:CL:region:Local areas:13": {
+    "cc": "CL",
+    "reason": "narrow_locale",
+    "detected_text": "Puerto Williams, the southernmost town covered by street view, can be recognized by this white pickup truck with visible"
+  },
+  "country:CX:region:Local areas:0": {
+    "cc": "CX",
+    "reason": "narrow_locale",
+    "detected_text": "There is a boat trekker near the north coast of the island. Some of the boat’s white-coloured deck pokes through the blu"
+  },
+  "country:CC:0": {
+    "cc": "CC",
+    "reason": "narrow_locale",
+    "detected_text": "This unique car with a snorkel at the front right and the edges of the bed visible is found on West Island."
+  },
+  "country:CO:4": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "This trekker can be recognized by the unique pavement and houses."
+  },
+  "country:CO:9": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "Rainy coverage with very orange-brown soil can be found on this road to La Florida."
+  },
+  "country:CO:12": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "On this road, you can see a sunset through the clouds. It's not always easy to recognize, however."
+  },
+  "country:CO:13": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "On this road, you can see a slight sunset through the clouds. It is pretty flat, with mountains in the Northwest."
+  },
+  "country:CO:31": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "The island of Providencia, located roughly 90 kilometres North of San Andrés, is home to this unique grey truck."
+  },
+  "country:CO:region:Cauca:1": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "A Second Google Car is visible in many random spots. The most prominent spots are the 26 in Cauca, Vda. Chontaduro (near"
+  },
+  "country:CO:region:Cundinamarca:0": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "This stick on the camera can be found between El Guio and El Boral (near the Cundinamarca-Meta border near Villavicencio"
+  },
+  "country:CO:region:Arauca:0": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "On the road in Arauca and in the city of Arauca in northeastern Colombia, there is virtually only cloudy, bad weather co"
+  },
+  "country:CO:region:Local areas:4": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "Gen 4 with the white car has no coverage south of Cali, very little around Medellín, and forms a curved pattern around M"
+  },
+  "country:CO:region:Local areas:5": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "Gen 3 with the white-blue car follows a straight line between Cartagena and Medellín, has partial coverage along Route 8"
+  },
+  "country:CO:region:Local areas:6": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "Gen 4 coverage with the grey car is not found north of Montería, has a gap between Bucaramanga and Bogotá, forms a 'stai"
+  },
+  "country:CO:region:Local areas:7": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "If you see a lake, paired with an overexposed Gen 4 camera, you're probably on this lake south of Sogamoso."
+  },
+  "country:CO:region:Local areas:8": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "This instance of a second google car can be seen on the east-west road, directly south of Guayuriba River, which is sout"
+  },
+  "country:CO:region:Local areas:9": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "This unique vehicle can be found in and around Leticia, the Southernmost town in Colombia."
+  },
+  "country:CO:region:Local areas:10": {
+    "cc": "CO",
+    "reason": "narrow_locale",
+    "detected_text": "This instance of a second google car can be seen on Carrera 4, an offroad of the 45 near Aguachica."
+  },
+  "country:EC:1": {
+    "cc": "EC",
+    "reason": "narrow_locale / compendium (compendium_url)",
+    "detected_text": "Most of the coverage in Ecuador is centred around the western part of the country. A large part of the Amazon rainforest"
+  },
+  "country:EC:2": {
+    "cc": "EC",
+    "reason": "narrow_locale",
+    "detected_text": "Generation 4 coverage is found in most of Ecuador, with notable gaps in the northwest and southeast."
+  },
+  "country:EG:region:Local areas:1": {
+    "cc": "EG",
+    "reason": "narrow_locale",
+    "detected_text": "The Cairo Citadel is an enormous fortification with a trekker walking through and around it. It can be recognized by its"
+  },
+  "country:EG:region:Local areas:2": {
+    "cc": "EG",
+    "reason": "narrow_locale",
+    "detected_text": "The trekker in and around the Hanging Church consists of two parts that look fairly different from each other. Outside t"
+  },
+  "country:FK:1": {
+    "cc": "FK",
+    "reason": "narrow_locale",
+    "detected_text": "Open plains with slightly yellow grass can be seen on West Point Island. The ocean will not be clearly visible on this t"
+  },
+  "country:FK:region:Local areas:0": {
+    "cc": "FK",
+    "reason": "narrow_locale",
+    "detected_text": "This boat trekker can be seen in the West Point Bay, with yellow hills in the distance with the MS National Geographic E"
+  },
+  "country:DE:5": {
+    "cc": "DE",
+    "reason": "narrow_locale",
+    "detected_text": "You can find a Generation 3 black car in this safari park southeast of Bielefeld."
+  },
+  "country:DE:region:Hamburg:1": {
+    "cc": "DE",
+    "reason": "narrow_locale",
+    "detected_text": "You can find this rare white and black Generation 4 car in Hamburg and around Frankfurt.\n\nNOTE: You can also find the sa"
+  },
+  "country:GH:region:Local areas:0": {
+    "cc": "GH",
+    "reason": "narrow_locale",
+    "detected_text": "Ghana features 3 distinct types of tape on the google car: In the southwest, you can find the ‘unpeeled tape’, which is"
+  },
+  "country:IN:11": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car has an antenna with some kind of a spring. It basically goes from Salem to Chennai."
+  },
+  "country:IN:27": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car with the subtle black blur at the front is found in Kalpeni. The blur can be very subtle sometimes, and is conf"
+  },
+  "country:IN:28": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car with an exposed white front is found of Kadmat. This car can be confused with others: It's not the Kadmat car i"
+  },
+  "country:IN:29": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "A big circular blur (either full blurred or transparently blurred) is very common in Retrocam. On Lakshadweep, however,"
+  },
+  "country:IN:30": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car is the most likely to encounter if you get Lakshadweep. It has a white front and always a bit of mirror visible"
+  },
+  "country:IN:37": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car with an exposed black front is unique to Kiltan. Note that the front is always exposed on Kiltan, if it's blurr"
+  },
+  "country:IN:region:Assam:4": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "If you see a back antenna in Assam, you're in the far east of the state."
+  },
+  "country:IN:region:Punjab:4": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Within Punjab, this car is is unique to Dasuya Forest. Beware that this car is not unique to Punjab though."
+  },
+  "country:IN:region:Punjab:6": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Within Punjab, the red boxy car can be found in Ludhiana, Chandigarh, and a bit north between them. The coverage forms a"
+  },
+  "country:IN:region:Jharkhand:1": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "A car with an orange flag can be found in the Jharkhand north-east panhandle."
+  },
+  "country:IN:region:Uttar Pradesh:8": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Large visible, square shaped cars can be found in all states northwest of Maharashtra and Uttar Pradesh, except for Madh"
+  },
+  "country:IN:region:Odisha:3": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "A boxy car with 6 indents is found near Malkangiri, Odisha."
+  },
+  "country:IN:region:Odisha:12": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "A boxy car with 5 indents can be found near the river mouth of the Subarnarekha river near the Odisha/WB border."
+  },
+  "country:IN:region:Karnataka:1": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Boxy car in Karnataka is only found in and around Bengaluru."
+  },
+  "country:IN:region:Arunachal Pradesh:5": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Within Arunachal Pradesh, a back antenna can be found around Chowkam and East of Namsai."
+  },
+  "country:IN:region:Arunachal Pradesh:6": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Within Arunachal Pradesh, a white car with mirrors can be found on the road west of Itanagar."
+  },
+  "country:IN:region:Arunachal Pradesh:16": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Within Arunachal Pradesh, both this black and this red car are exclusively found in Roing.\nThe black car appears mainly"
+  },
+  "country:IN:region:Himachal Pradesh:6": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "Shimla is  the only city in Himachal Pradesh to have a boxy car, which is this car with the top right corner visible wit"
+  },
+  "country:IN:region:Goa:0": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car (note the antenna!) can be found in Goa, and in the Union Territory of Daman."
+  },
+  "country:IN:region:Goa:1": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This black car, uniquely characterized through the black bars on each the side, is only found in Goa."
+  },
+  "country:IN:region:Goa:2": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This white car, uniquely characterized through the bar on the side, which is black and grey, is only found in Goa."
+  },
+  "country:IN:region:Mizoram:0": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "In Mizoram, a grey car with double mirrors appears in the southernmost coverage, near the NH502."
+  },
+  "country:IN:region:Mizoram:1": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "A car with a black front and a stubby antenna within Mizoram can be found on the roads west of Aizawi."
+  },
+  "country:IN:region:Mizoram:2": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "If you see a long antenna, combined with a black car front in Mizoram, you're on the NH6 north of Serkhan.\n\nKeep in mind"
+  },
+  "country:IN:region:Local areas:10": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car is mostly blurred and has subtle white edges at the front. It's found on the island of Agatti.\nSometimes the ed"
+  },
+  "country:IN:region:Local areas:18": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car has a back curving bar, but is mostly blurred. It can be found east of Kuno National Park"
+  },
+  "country:IN:region:Local areas:23": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "A car with flowers on the front can be found around Keonjhar, on the 49 and the 20."
+  },
+  "country:IN:region:Local areas:24": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This cool car with a spoiler at the back can be found in Max-North Andaman, near Daglipur."
+  },
+  "country:IN:region:Local areas:26": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car has a back curving bar at the front and white bars on the side. It's found mostly around Rewa, but also around"
+  },
+  "country:IN:region:Local areas:27": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "This car has a back-curving bar and a singular black bar. It's found mainly east of Satpura National Park, and sometimes"
+  },
+  "country:IN:region:Local areas:28": {
+    "cc": "IN",
+    "reason": "narrow_locale",
+    "detected_text": "In the eastern parts of Ajmer, RJ, you can sometimes see an open trunk in Smallcam.\nIt can be found north of Shrinagar/w"
+  },
+  "country:ID:region:Bali:9": {
+    "cc": "ID",
+    "reason": "narrow_locale",
+    "detected_text": "A black cab with men sitting in the truck bed can be seen near Jagasatru on Bali."
+  },
+  "country:ID:region:Sumatra:21": {
+    "cc": "ID",
+    "reason": "narrow_locale",
+    "detected_text": "In some of the Generation 4 coverage in the city of Batam, a purple tint and a black blurred object can be seen. Althoug"
+  },
+  "country:IL:12": {
+    "cc": "IL",
+    "reason": "narrow_locale",
+    "detected_text": "Generation 4 coverage with a clean front camera is mostly found in and around Tel Aviv."
+  },
+  "country:IL:15": {
+    "cc": "IL",
+    "reason": "narrow_locale",
+    "detected_text": "A significant portion of the coverage in the West Bank has a visible security follow car. The most extensive of these is"
+  },
+  "country:IL:17": {
+    "cc": "IL",
+    "reason": "narrow_locale",
+    "detected_text": "This larger white Citroën follow car with a West Bank licence plate can be found in a region surrounding Jerusalem. It i"
+  },
+  "country:KE:region:Local areas:2": {
+    "cc": "KE",
+    "reason": "narrow_locale",
+    "detected_text": "This Generation 3 grey car with a large snorkel is mostly found in the west, but can also be found in the Mombasa and Na"
+  },
+  "country:KE:region:Local areas:3": {
+    "cc": "KE",
+    "reason": "narrow_locale",
+    "detected_text": "This Generation 3 black car with a small snorkel is mostly found in the east of the country. You can also see it north a"
+  },
+  "country:KE:region:Local areas:7": {
+    "cc": "KE",
+    "reason": "narrow_locale",
+    "detected_text": "You can see pieces of white tape on the roof of the Google car in a lot of the coverage north and south of Nairobi."
+  },
+  "country:KE:region:Local areas:8": {
+    "cc": "KE",
+    "reason": "narrow_locale",
+    "detected_text": "The A109 between Mombasa and Nairobi has light orange dirt and many hills around the road and in the distance. You will"
+  },
+  "country:KE:region:Local areas:12": {
+    "cc": "KE",
+    "reason": "narrow_locale",
+    "detected_text": "Kenya has many unique Google cars in and around its National Parks and Reserves. These are still identifiable by the sno"
+  },
+  "country:LA:0": {
+    "cc": "LA",
+    "reason": "narrow_locale",
+    "detected_text": "If you are in South East Asia with this roof-rack car you gonna be in one of 4 cities in Laos: Vang Vieng, Luang Prabang"
+  },
+  "country:LB:region:Local areas:4": {
+    "cc": "LB",
+    "reason": "narrow_locale",
+    "detected_text": "A visible black car can be found in and around Zahle."
+  },
+  "country:MG:0": {
+    "cc": "MG",
+    "reason": "narrow_locale / compendium (compendium_url)",
+    "detected_text": "Street View in Madagascar is very limited, with a mixture of land and boat coverage, most of which is on or near the wes"
+  },
+  "country:MG:11": {
+    "cc": "MG",
+    "reason": "narrow_locale",
+    "detected_text": "A second Trekker, going to the northeast of Andavadoaka can be recognized by a person with a light blue T-shirt."
+  },
+  "country:MG:12": {
+    "cc": "MG",
+    "reason": "narrow_locale",
+    "detected_text": "Coverage on a somewhat rocky ground with no people following the trekker can be found southwest of the bay."
+  },
+  "country:MG:13": {
+    "cc": "MG",
+    "reason": "narrow_locale",
+    "detected_text": "Coverage with multiple different people walking near and around the trekker, and with a small village to the west, can b"
+  },
+  "country:MT:4": {
+    "cc": "MT",
+    "reason": "narrow_locale",
+    "detected_text": "This trekker on a ship that is painted white and blue can be seen between the main island and Gozo Island."
+  },
+  "country:MQ:0": {
+    "cc": "MQ",
+    "reason": "narrow_locale",
+    "detected_text": "Habitation Clément is a rum distillery covered by a trekker. Due to it being pinpointable, some locations are on maps su"
+  },
+  "country:MQ:1": {
+    "cc": "MQ",
+    "reason": "narrow_locale",
+    "detected_text": "The coastal southern trekker can be recognized by a few unique things: In the north, the trekker starts off walking on a"
+  },
+  "country:MX:region:Tlaxcala:2": {
+    "cc": "MX",
+    "reason": "narrow_locale",
+    "detected_text": "This Street View car with a yellow hood can be found by the La Malinche volcano in Tlaxcala."
+  },
+  "country:MC:0": {
+    "cc": "MC",
+    "reason": "narrow_locale",
+    "detected_text": "In the harbour, there is an extensive Generation 3 trekker on a boat. The Google employee’s brown hair and sunglasses ar"
+  },
+  "country:MN:region:Local areas:4": {
+    "cc": "MN",
+    "reason": "narrow_locale",
+    "detected_text": "The Gobi Gurvan Saikhan National Park, in the far south of Mongolia, features bright orange sand and sand dunes. There a"
+  },
+  "country:MN:region:Local areas:7": {
+    "cc": "MN",
+    "reason": "narrow_locale",
+    "detected_text": "Mongolia has four main areas of nighttime coverage. Those areas are: Northwest of Murun Northwest of Murun West of Dashb"
+  },
+  "country:NG:2": {
+    "cc": "NG",
+    "reason": "narrow_locale / compendium (compendium_desc)",
+    "detected_text": "Generation 4 is not found in the northwest or far south. Shitcam is now found in most of Nigeria. You can click on the i"
+  },
+  "country:NG:region:Local areas:3": {
+    "cc": "NG",
+    "reason": "narrow_locale / compendium (compendium_desc)",
+    "detected_text": "Knowing where you can find each generation is very useful. Notably, Generation 3 is not found north of Abuja. You can cl"
+  },
+  "country:NO:region:Local areas:6": {
+    "cc": "NO",
+    "reason": "narrow_locale",
+    "detected_text": "This road between Aadneram and Nomeland in Agder features a thick 1m high snow along the skinny road. You will not find"
+  },
+  "country:OM:0": {
+    "cc": "OM",
+    "reason": "narrow_locale",
+    "detected_text": "If you have a vibe that you are in Middle East and you see big white pickup truck with antenna in the middle you gonna b"
+  },
+  "country:PK:7": {
+    "cc": "PK",
+    "reason": "narrow_locale",
+    "detected_text": "West of Sahiwal, just northwest of Harappa, you can find a trekker starting in the south at Harappa Museum. This trekker"
+  },
+  "country:PK:region:Local areas:1": {
+    "cc": "PK",
+    "reason": "narrow_locale",
+    "detected_text": "Just south of Lahore Fort you can find a trekker walking around some narrow urban streets that are typically very busy."
+  },
+  "country:PE:region:Cusco:0": {
+    "cc": "PE",
+    "reason": "narrow_locale",
+    "detected_text": "A train track covered by a trekker is located between Aguas Calientes and Cusco."
+  },
+  "country:PH:5": {
+    "cc": "PH",
+    "reason": "narrow_locale",
+    "detected_text": "In northwestern Bohol you can find this Street View car with tape on the back."
+  },
+  "country:PH:20": {
+    "cc": "PH",
+    "reason": "narrow_locale",
+    "detected_text": "This vehicle with several thick black bars can be found just south of the Mayon Volcano."
+  },
+  "country:PH:region:Local areas:4": {
+    "cc": "PH",
+    "reason": "narrow_locale",
+    "detected_text": "You may find this black Street View car with a visible roof rack in and around the city of General Santos."
+  },
+  "country:RU:8": {
+    "cc": "RU",
+    "reason": "narrow_locale",
+    "detected_text": "The main road of Altai Republic has a black car long antenna driving north through the Altai Mountains, often with foggy"
+  },
+  "country:RW:7": {
+    "cc": "RW",
+    "reason": "narrow_locale",
+    "detected_text": "The Akagera national park features a very vegetated yet dry landscape with wide unpaved roads that are reddish-brown in"
+  },
+  "country:PM:1": {
+    "cc": "PM",
+    "reason": "narrow_locale",
+    "detected_text": "Saint-Pierre is the capital and largest town. The coverage in this town is made with a sidewalk trekker. Larger building"
+  },
+  "country:SN:region:Local areas:3": {
+    "cc": "SN",
+    "reason": "narrow_locale",
+    "detected_text": "The regular Generation 4 white car is most commonly found south of The Gambia, but can also be found on the northeastern"
+  },
+  "country:GS:0": {
+    "cc": "GS",
+    "reason": "narrow_locale",
+    "detected_text": "Abandoned, rusted machinery can be seen in Grytviken. Grytviken is the only pinpointable trekker in South Georgia. There"
+  },
+  "country:ES:10": {
+    "cc": "ES",
+    "reason": "narrow_locale",
+    "detected_text": "Around Córdoba and Jaén, you can find massive olive tree plantations growing over rolling hills and going as far as the"
+  },
+  "country:TR:22": {
+    "cc": "TR",
+    "reason": "narrow_locale",
+    "detected_text": "Road D525 south of Söke is a completely straight road going south-south-west to north-north-east with winter Generation"
+  },
+  "country:TR:23": {
+    "cc": "TR",
+    "reason": "narrow_locale",
+    "detected_text": "Road E99 south of Şanlıurfa is a divided highway which can be recognised by the slightly hazy Generation 4 sunrise cover"
+  },
+  "country:TR:region:Kastamonu:0": {
+    "cc": "TR",
+    "reason": "narrow_locale",
+    "detected_text": "Generation 4 truck coverage is mainly found in the far east of the country and along the southern coast, with smaller po"
+  },
+  "country:PT:14": {
+    "cc": "PT",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "The first three digits of Portuguese landlines make up the area codes, which are distributed as seen on the map. Phone"
+  },
+  "country:BE:region:Brussels:4": {
+    "cc": "BE",
+    "reason": "area_code_reference_map / compendium (compendium_desc / compendium_url)",
+    "detected_text": "Phone codes in Belgium are very useful to determine the region you are in. They are 9 digits long. The 1 or 2 number(s)"
+  },
+  "country:BE:region:Antwerp:0": {
+    "cc": "BE",
+    "reason": "area_code_reference_map / compendium (compendium_desc / compendium_url)",
+    "detected_text": "Phone codes in Belgium are very useful to determine the region you are in. They are 9 digits long. The 1 or 2 number(s)"
+  },
+  "country:BE:region:Liege:0": {
+    "cc": "BE",
+    "reason": "area_code_reference_map / compendium (compendium_desc / compendium_url)",
+    "detected_text": "Phone codes in Belgium are very useful to determine the region you are in. They are 9 digits long. The 1 or 2 number(s)"
+  },
+  "country:BG:9": {
+    "cc": "BG",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in Bulgaria are one of the best clues to regionguess urban rounds. Conveniently, they are ordered by first d"
+  },
+  "country:HR:3": {
+    "cc": "HR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Croatian landlines typically start with a zero followed by the area code."
+  },
+  "country:CY:1": {
+    "cc": "CY",
+    "reason": "area_code_reference_map",
+    "detected_text": "Each of the 5 provinces uses a two-digit area code, starting with a 2."
+  },
+  "country:GR:10": {
+    "cc": "GR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Greek area codes will always begin with a 2, followed by 1-3 digits determining the area. NOTE: If the third digit is 1"
+  },
+  "country:HU:region:Budapest:0": {
+    "cc": "HU",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Hungarian phone numbers consist of either 8 or 10 digits. If the number has 8 digits, the first and second digit is the"
+  },
+  "country:IE:2": {
+    "cc": "IE",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Irish phone numbers start with a two digit area code. The area codes are grouped geographically by first digit, and are"
+  },
+  "country:KZ:5": {
+    "cc": "KZ",
+    "reason": "area_code_reference_map",
+    "detected_text": "Kazakh area codes are useful to learn, and they generally follow an east to west pattern along three horizontal lines."
+  },
+  "country:RS:1": {
+    "cc": "RS",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Serbia uses 2 digit area codes, with the first digit between 1 and 3. Area codes starting with 2 are found in the north"
+  },
+  "country:SK:6": {
+    "cc": "SK",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Slovak phone numbers typically consist of 10 digits, of which the first 2-3 digits are the area code. NOTE: Czech phone"
+  },
+  "country:KR:region:Jeju:1": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Seoul:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Busan:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Incheon:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Daegu:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Daejeon:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Gwangju:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Ulsan:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Sejong:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Gyeonggi:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:KR:region:Gangwon:0": {
+    "cc": "KR",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Area codes in South Korea increase to the south, from 02 in the north, to 064 on Jeju. It is also notable that Seoul ha"
+  },
+  "country:LK:3": {
+    "cc": "LK",
+    "reason": "area_code_reference_map / compendium (compendium_desc / compendium_url)",
+    "detected_text": "Sri Lankan telephone numbers have 10 digits. The first three digits of landline phone numbers are the area code. The fi"
+  },
+  "country:SE:region:Stockholm:4": {
+    "cc": "SE",
+    "reason": "area_code_reference_map",
+    "detected_text": "These small yellow signs advertising tree felling are commonly found on utility poles and lamp posts in the suburbs of"
+  },
+  "country:TW:6": {
+    "cc": "TW",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Taiwan telephone numbers are 10 digits, with the first two digits indicating the area code. Area codes range from 02 to"
+  },
+  "country:TH:region:Bangkok:0": {
+    "cc": "TH",
+    "reason": "area_code_reference_map",
+    "detected_text": "Thai landline phone numbers have 9 digits. The first digits of phone numbers are the area code. The Bangkok area code i"
+  },
+  "country:UA:5": {
+    "cc": "UA",
+    "reason": "area_code_reference_map / compendium (compendium_url)",
+    "detected_text": "Ukrainian landline phone numbers start with a two-digit area code. Each oblast has its own area code. If the third digi"
+  },
+  "country:GB:region:Manchester:0": {
+    "cc": "GB",
+    "reason": "area_code_reference_map / compendium (compendium_desc)",
+    "detected_text": "Landline phone numbers in the UK always have nine or ten digits after the 0 trunk code. The first two to four digits af"
+  },
+  "country:GB:region:Glasgow:0": {
+    "cc": "GB",
+    "reason": "area_code_reference_map / compendium (compendium_desc)",
+    "detected_text": "Landline phone numbers in the UK always have nine or ten digits after the 0 trunk code. The first two to four digits af"
+  },
+  "country:AE:5": {
+    "cc": "AE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in the UAE is mostly limited to the Northeastern part of the country. NOTE: The only car coverage outside of th"
+  },
+  "country:AL:1": {
+    "cc": "AL",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Coverage in Albania is limited. Generally only the larger towns have extensive side-road coverage. Note that while the c"
+  },
+  "country:AL:2": {
+    "cc": "AL",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "There are two types of car and camera meta in Albania: Coverage where the Google car has a long antenna and you can see"
+  },
+  "country:AR:12": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:19": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:22": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:Buenos Aires:6": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:Jujuy:5": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:Mendoza:4": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:Salta:3": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:San Juan:2": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:San Luis:3": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AR:region:Santiago del Estero:2": {
+    "cc": "AR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These Argentinian cities have unique and recognisable taxis. You can click on the image to enlarge it."
+  },
+  "country:AU:region:Qld:8": {
+    "cc": "AU",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Sugarcane plantations are very common in Northern Queensland, due to its tropical climate. NOTE: Sugarcane plantations c"
+  },
+  "country:BE:region:Antwerp:1": {
+    "cc": "BE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street nam"
+  },
+  "country:BE:region:Brussels:5": {
+    "cc": "BE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street nam"
+  },
+  "country:BE:region:Liege:1": {
+    "cc": "BE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street nam"
+  },
+  "country:BE:region:Namur:0": {
+    "cc": "BE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "As mentioned before, municipality names are often mentioned on street signs, usually in smaller font than the street nam"
+  },
+  "country:BO:1": {
+    "cc": "BO",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Bolivia is very limited, both in geographic scope and the density of roads covered. Only the central and cen"
+  },
+  "country:BO:region:Local areas:4": {
+    "cc": "BO",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Aside from being a useful identifier for the country, cobblestone roads are mainly found in and southeast of Cochabamba."
+  },
+  "country:BR:region:Rio de Janeiro:3": {
+    "cc": "BR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Most commonly found in Paraiba in the North, and in Parana, Sao Paulo and Rio de Janeiro.\nIt's pretty rare.\n\nMemorize th"
+  },
+  "country:BT:4": {
+    "cc": "BT",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Most of the Bhutanese street view coverage was taken on the main roads and cities."
+  },
+  "country:BW:region:Local areas:0": {
+    "cc": "BW",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Botswana has many unique and distinct regions throughout the country. This image breaks down the main factors that diffe"
+  },
+  "country:BW:region:Local areas:1": {
+    "cc": "BW",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Botswana is fairly limited due to the country’s sparse road system. In addition to regular paved roads, you"
+  },
+  "country:CA:region:Local areas:0": {
+    "cc": "CA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The Balsam Fir is a very common species of tree found in Newfoundland. It has a Christmas tree-like appearance. NOTE: Wh"
+  },
+  "country:CA:region:Ontario:8": {
+    "cc": "CA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Some provinces have unique speed signs. Ontario speed limit signs may have a black section on the bottom with the words"
+  },
+  "country:CH:18": {
+    "cc": "CH",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "You may find several different types of road dividers across the country, distributed as seen in this graphic. This imag"
+  },
+  "country:CN:0": {
+    "cc": "CN",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in mainland China is limited to several small spots, mainly in or near major urban areas on the east coast. A s"
+  },
+  "country:DE:region:Bavaria:5": {
+    "cc": "DE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "While most of Germany uses B-Type guardrails, A-type guardrails are common in the northwest, as well as in Rhineland-Pal"
+  },
+  "country:DE:region:Rhineland-Palatinate:4": {
+    "cc": "DE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "While most of Germany uses B-Type guardrails, A-type guardrails are common in the northwest, as well as in Rhineland-Pal"
+  },
+  "country:DK:6": {
+    "cc": "DK",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "There are six regions in Denmark that each use a different bus transportation company. Each bus will have the brand writ"
+  },
+  "country:DK:region:Local areas:2": {
+    "cc": "DK",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Denmark has an easy to learn road numbering system. They order their roads from east to west. Roads starting with the nu"
+  },
+  "country:DO:1": {
+    "cc": "DO",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Street View coverage in the Dominican Republic is very limited. Only the capital Santo Domingo and the Northern city of"
+  },
+  "country:EC:region:Local areas:2": {
+    "cc": "EC",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "This is an elevation map of Ecuador. The imposing Andes mountains run through the middle of the country. The east and we"
+  },
+  "country:FR:region:Alsace:3": {
+    "cc": "FR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "France is the second largest wine producer in the world, with many famed wine regions. The most common include the area"
+  },
+  "country:FR:region:Corsica:3": {
+    "cc": "FR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "France is the second largest wine producer in the world, with many famed wine regions. The most common include the area"
+  },
+  "country:FR:region:Local areas:3": {
+    "cc": "FR",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "France is the second largest wine producer in the world, with many famed wine regions. The most common include the area"
+  },
+  "country:GH:1": {
+    "cc": "GH",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "The coverage in Ghana is limited and easy to memorize, as most of it was taken on its main roads and in major cities. Th"
+  },
+  "country:GR:region:Local areas:1": {
+    "cc": "GR",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Greece is a country with many small islands, some with coverage and some without. Furthermore, while mainland Greece and"
+  },
+  "country:GT:11": {
+    "cc": "GT",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Phone numbers starting with a 2 are unique to Guatemala City."
+  },
+  "country:GT:12": {
+    "cc": "GT",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Similarly, phone numbers starting with a 6 are unique to the Guatemala Department. NOTE: Phone numbers starting with 7 a"
+  },
+  "country:GT:region:Local areas:0": {
+    "cc": "GT",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Guatemala has a fairly low amount of coverage, particularly in the north. Here you can see which roads are covered."
+  },
+  "country:GT:region:Local areas:1": {
+    "cc": "GT",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "This is a topographic map of Guatemala. Generally speaking, the middle of the country is mountainous, while the south an"
+  },
+  "country:GU:1": {
+    "cc": "GU",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Guam is fairly limited, particularly in the southern half, where there is almost no coverage inland."
+  },
+  "country:HU:region:Somogy:0": {
+    "cc": "HU",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Many Hungarian town names use local prefixes, the most common of which are shown in this infographic. Note that some rar"
+  },
+  "country:ID:region:Papua:0": {
+    "cc": "ID",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Indonesia is fairly limited. Notably, there is no coverage on Papua or adjacent islands, and coverage is spa"
+  },
+  "country:IL:region:Local areas:1": {
+    "cc": "IL",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "This is a coverage map over Israel and the West Bank. Notably, southern Israel and most of the West Bank has very sparse"
+  },
+  "country:IS:region:Local areas:8": {
+    "cc": "IS",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Iceland is rather sparsely covered. The southwest region has the densest coverage. Only a few interior roads are covered"
+  },
+  "country:IS:region:Local areas:9": {
+    "cc": "IS",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Iceland has a very sensible road numbering system that allows for quick 5k’s, provided you find the yellow direction sig"
+  },
+  "country:JE:1": {
+    "cc": "JE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Most street name signs in Jersey are adorned with the coat of arms of the parish in which they are located. You can clic"
+  },
+  "country:JO:region:Local areas:0": {
+    "cc": "JO",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Jordan only has Street View coverage in the far western part of the country. Coverage is limited to bigger towns and mai"
+  },
+  "country:KE:3": {
+    "cc": "KE",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Most of the coverage in Kenya outside of the southwest is limited to main roads. You can click on the image to enlarge i"
+  },
+  "country:KE:4": {
+    "cc": "KE",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "The natural formation of land has great diversity between regions. The east and large portions of the north are extremel"
+  },
+  "country:KE:region:Local areas:1": {
+    "cc": "KE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Kenya has distinct regional climates. Some of these include: Humid Humid Semi-Arid Semi-Arid Arid Arid Very-Arid Very-Ar"
+  },
+  "country:KG:1": {
+    "cc": "KG",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "The coverage in Kyrgyzstan is very limited. So learning which roads are covered will help you improve a lot. You can cli"
+  },
+  "country:KG:2": {
+    "cc": "KG",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Learning which direction the Google Car is driving on most major roads will help you narrow down your options when guess"
+  },
+  "country:KH:13": {
+    "cc": "KH",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Near the northern border with Thailand, you can often see a mountainous ridgeline to your north. The soil in this region"
+  },
+  "country:KH:8": {
+    "cc": "KH",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Street view coverage is somewhat limited. Most of the coverage is located around the cities of Phnom Penh, Siem Reap and"
+  },
+  "country:LB:region:Local areas:0": {
+    "cc": "LB",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Most of the coverage is concentrated near the west coast, north of Beirut."
+  },
+  "country:LS:1": {
+    "cc": "LS",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Lesotho is very sparse, particularly in the southeastern half, where it’s mostly limited to yellow roads. Al"
+  },
+  "country:ME:region:Local areas:1": {
+    "cc": "ME",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Montenegro is limited to main roads, with very few minor roads covered. The only main road not covered is th"
+  },
+  "country:MK:region:Local areas:0": {
+    "cc": "MK",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage is sparse, only including some highways and some cities in the country. The cities of Skopje, Bitola, Kumanovo,"
+  },
+  "country:MP:region:Local areas:0": {
+    "cc": "MP",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "The only island with car coverage is the main island of Saipan. The islands north of that have no coverage. Tinian and S"
+  },
+  "country:NG:region:Local areas:1": {
+    "cc": "NG",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Shown is a Köppen climate map of Nigeria. The climate ranges from tropical rainforest in the far south, where you can fi"
+  },
+  "country:NG:region:Local areas:2": {
+    "cc": "NG",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Nigeria is a sparsely covered country, with very few roads in the northwest and east. Most of the coverage is centred ar"
+  },
+  "country:NZ:region:North Island:0": {
+    "cc": "NZ",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Several New Zealand cities have distinctive rubbish bins. The distinguishing feature of the bins are the council logos o"
+  },
+  "country:PE:region:Arequipa:2": {
+    "cc": "PE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert ne"
+  },
+  "country:PE:region:Lima:4": {
+    "cc": "PE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert ne"
+  },
+  "country:PE:region:Local areas:1": {
+    "cc": "PE",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Street View coverage in Peru is mostly located in the west and on main highways. There are some exceptions in the east n"
+  },
+  "country:PE:region:Local areas:2": {
+    "cc": "PE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert ne"
+  },
+  "country:PE:region:Tacna:3": {
+    "cc": "PE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The country is generally flat in the east and mountainous in the west. However, an exception is the often flat desert ne"
+  },
+  "country:PH:region:Cebu:2": {
+    "cc": "PH",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The Philippines have several different tuk-tuk and tricycle designs, roughly distributed as shown in this infographic. T"
+  },
+  "country:PK:0": {
+    "cc": "PK",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage in Pakistan is extremely limited, only being found in Punjab around major temples and tourist attractions. Due"
+  },
+  "country:PM:region:Local areas:0": {
+    "cc": "PM",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage is fairly limited, being only found in the eastern parts of Saint-Pierre as well as at the northern tip of Miqu"
+  },
+  "country:QA:region:Local areas:0": {
+    "cc": "QA",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Qatar is pretty well covered, with almost every main road and some side roads having coverage. Only the south and west l"
+  },
+  "country:RE:1": {
+    "cc": "RE",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Only a handful of roads were covered without a trekker. Learning the general regions with coverage will help you get tho"
+  },
+  "country:RS:region:Local areas:2": {
+    "cc": "RS",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "This is a coverage map of Serbia. Most of the coverage is in the north in Vojvodina, around Belgrade and in the southeas"
+  },
+  "country:SE:10": {
+    "cc": "SE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region"
+  },
+  "country:SE:11": {
+    "cc": "SE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Many regions have their own distinct type of bus shelters, which may either replace or complement the bus stop signs. Th"
+  },
+  "country:SE:region:Orebro:0": {
+    "cc": "SE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region"
+  },
+  "country:SE:region:Uppsala:0": {
+    "cc": "SE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Many regions have their own distinct type of bus shelters, which may either replace or complement the bus stop signs. Th"
+  },
+  "country:SE:region:Uppsala:1": {
+    "cc": "SE",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Many cities and towns have their own local bus stop signs, which are different from the signs in the rest of the region"
+  },
+  "country:SK:7": {
+    "cc": "SK",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Apart from the major highways, for which the numbers do not follow any clear pattern, there are two types of numbered ro"
+  },
+  "country:SN:region:Local areas:0": {
+    "cc": "SN",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "This is a coverage map of Senegal. Most of the coverage is west of Touba, with very few roads apart from main roads cove"
+  },
+  "country:TN:1": {
+    "cc": "TN",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The dark green Mazda is the most common follow car in Tunisia. This becomes apparent if you look at the coverage map, it"
+  },
+  "country:TN:region:Local areas:0": {
+    "cc": "TN",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Coverage is mostly limited to the east coast, between Bizerte in the north and Medinine in the south. Most coverage is i"
+  },
+  "country:TW:13": {
+    "cc": "TW",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Similar to the blue plaques found on utility poles, Taiwan also features stickers to ID the locations of lamps. These ca"
+  },
+  "country:TW:7": {
+    "cc": "TW",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Taiwan’s National Freeway system is organised so that odd numbers represent north-south roads and even numbers represent"
+  },
+  "country:TW:8": {
+    "cc": "TW",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "These signs indicate Township roads, with the character written before or above the road number indicating the county. Y"
+  },
+  "country:US:25": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Corn fields can most commonly be found in these regions. For a detailed overview, see this map."
+  },
+  "country:US:region:Florida:12": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The US, as well as most of the Americas, uses short licence plates, in contrast to longer European ones. Each US state h"
+  },
+  "country:US:region:Ohio:2": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "The US, as well as most of the Americas, uses short licence plates, in contrast to longer European ones. Each US state h"
+  },
+  "country:US:region:Southern US:2": {
+    "cc": "US",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Interstate Highways are divided highways that often span large areas of the United States. Even-numbered Interstates run"
+  },
+  "country:UY:region:Local areas:0": {
+    "cc": "UY",
+    "reason": "compendium (compendium_desc / compendium_url)",
+    "detected_text": "Coverage in Uruguay is somewhat limited. The densest coverage is in the south, in and around Montevideo. Outside of this"
+  },
+  "country:UY:region:Local areas:1": {
+    "cc": "UY",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Subtle differences in elevation can help when trying to region-guess Uruguay. The highest hills are mostly concentrated"
+  },
+  "country:VI:2": {
+    "cc": "VI",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Primary roads on the Southern US Virgin Island of St. Croix follow a loose grid pattern. Main roads are angled from WSW"
+  },
+  "country:VU:region:Local areas:0": {
+    "cc": "VU",
+    "reason": "compendium (compendium_url)",
+    "detected_text": "Although Vanuatu consists of 13 primary islands, only Ambrym Island has coverage. Look for the ‘Port Vato’ label on the"
+  },
+  "country:ZA:region:Free State:0": {
+    "cc": "ZA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each province features a different licence plate design, which can be somewhat visible through the blur. Most notably Fr"
+  },
+  "country:ZA:region:KwaZulu-Natal:2": {
+    "cc": "ZA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Sugarcane plantations are most commonly seen in KwaZulu-Natal, mostly along the coast. However, they can also be seen in"
+  },
+  "country:ZA:region:KwaZulu-Natal:3": {
+    "cc": "ZA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Each province features a different licence plate design, which can be somewhat visible through the blur. Most notably Fr"
+  },
+  "country:ZA:region:KwaZulu-Natal:5": {
+    "cc": "ZA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Sugarcane plantations are most commonly seen in KwaZulu-Natal, mostly along the coast. However, they can also be seen in"
+  },
+  "country:ZA:region:Mpumalanga:6": {
+    "cc": "ZA",
+    "reason": "compendium (compendium_desc)",
+    "detected_text": "Sugarcane plantations are most commonly seen in KwaZulu-Natal, mostly along the coast. However, they can also be seen in"
+  },
+  "country:BD:7": {
+    "cc": "BD",
+    "reason": "map_typed_meta",
+    "detected_text": "While most of Bangladesh is almost completely flat, in the eastern parts of Chittagong you may find"
+  },
+  "country:BO:region:Local areas:3": {
+    "cc": "BO",
+    "reason": "map_typed_meta",
+    "detected_text": "Within this tropical area, coverage on unpaved roads is only found around Santa Cruz. These roads ag"
+  },
+  "country:BW:2": {
+    "cc": "BW",
+    "reason": "map_typed_meta",
+    "detected_text": "Most of Botswana is as flat as a pancake. However, every now and then you will find some elevation."
+  },
+  "country:CA:region:New Brunswick:6": {
+    "cc": "CA",
+    "reason": "map_typed_meta",
+    "detected_text": "You can find these rectangular markers on the sides of the roads in Québec. The colours can vary. NO"
+  },
+  "country:LT:region:Local areas:1": {
+    "cc": "LT",
+    "reason": "map_typed_meta",
+    "detected_text": "Lithuania is overall a fairly flat country, with no hills over 300 metres. However, you can sometime"
+  },
+  "country:LU:4": {
+    "cc": "LU",
+    "reason": "map_typed_meta",
+    "detected_text": "The north of the country is hillier and has an overall higher elevation than the south."
+  },
+  "country:MN:3": {
+    "cc": "MN",
+    "reason": "map_typed_meta",
+    "detected_text": "Small dirt tracks within flat, vast grassy fields are mainly found in far eastern Mongolia."
+  },
+  "country:MN:region:Local areas:0": {
+    "cc": "MN",
+    "reason": "map_typed_meta",
+    "detected_text": "There are several areas with off-road desert coverage in southern Mongolia. Most of this coverage is"
+  },
+  "country:CH:region:Local areas:1": {
+    "cc": "CH",
+    "reason": "map_typed_meta",
+    "detected_text": "Elevation is an important part of region-guessing Switzerland. The southern half of Switzerland is e"
+  },
+  "country:PT:9": {
+    "cc": "PT",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure infographic titled 'The Azores Coverage Map' showing labeled islands on a dark background — no real photo content."
+  },
+  "country:CY:0": {
+    "cc": "CY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Labeled chart 'Cyprus Road Numbers Map' showing colored regions with numerals 1–9 — pure reference graphic."
+  },
+  "country:CY:2": {
+    "cc": "CY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Labeled chart 'Cyprus Postal Codes Map' showing colored regions with first-digit ranges — pure reference graphic."
+  },
+  "country:DE:region:Saarland:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Squarespace-hosted 'Germany_bicycle_signs_map.png' — same reference graphic as the local copy: labeled map of Germany with sign-design call-outs."
+  },
+  "country:DE:region:Saarland:1": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Squarespace-hosted 'German_Guardrails_Map.png' — a reference graphic in plonkit's regional-classification style (matching naming convention)."
+  },
+  "country:DE:region:Saarland:4": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "'German Bicycle Signs Map' — full labeled map of Germany with colored regions and sign call-out boxes; pure infographic."
+  },
+  "country:DE:region:Hamburg:6": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Same 'German Bicycle Signs Map' infographic — full labeled map of Germany, no photo."
+  },
+  "country:DE:region:Lower Saxony:1": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Squarespace-hosted 'Germany_bicycle_signs_map.png' — same labeled-regions infographic of Germany."
+  },
+  "country:DE:region:Lower Saxony:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Same 'German Bicycle Signs Map' labeled-region infographic of Germany."
+  },
+  "country:DE:region:Rhineland-Palatinate:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Squarespace-hosted 'German_Guardrails_Map.png' — regional classification map in plonkit's reference-graphic style."
+  },
+  "country:DE:region:North Rhine-Westphalia:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Same 'German Bicycle Signs Map' labeled-region infographic of Germany."
+  },
+  "country:DE:region:Saxony:2": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Same 'German Bicycle Signs Map' labeled-region infographic of Germany."
+  },
+  "country:DE:region:Schleswig-Holstein:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Squarespace-hosted 'Germany_bicycle_signs_map.png' — same labeled-regions infographic of Germany."
+  },
+  "country:KZ:4": {
+    "cc": "KZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "'Kazakhstan Driving Directions' map covered in red arrows and labels — pure reference graphic."
+  },
+  "country:RW:region:Local areas:0": {
+    "cc": "RW",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "'Rwanda Coverage Map' showing street-view coverage in magenta on a country outline — pure reference graphic."
+  },
+  "country:US:region:Hawaii:5": {
+    "cc": "US",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure infographic of Hawaiian islands colored by highway numbering scheme with no real-world photo"
+  },
+  "country:US:region:Alaska:2": {
+    "cc": "US",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Large labeled map of Anchorage area roads with city names (Palmer, Anchorage, Crow Point) dominates the image"
+  },
+  "country:US:region:Alaska:8": {
+    "cc": "US",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Large annotated route map of Alaska pipeline with city labels (Prudhoe Bay, Fairbanks, Delta Junction, Valdez)"
+  },
+  "country:US:region:Wisconsin:7": {
+    "cc": "US",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-panel comparison labeled Wisconsin/Missouri showing county highway sign styles"
+  },
+  "country:US:region:Wisconsin:11": {
+    "cc": "US",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Three-panel multi-photo grid comparing different driveway-end sign styles"
+  },
+  "country:US:region:Michigan:6": {
+    "cc": "US",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Three-panel multi-photo grid comparing different driveway-end sign styles"
+  },
+  "country:AT:region:Vienna:0": {
+    "cc": "AT",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure map of Austria with road number ranges labeled in blue boxes per region"
+  },
+  "country:PT:21": {
+    "cc": "PT",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure reference map showing Azores, Madeira, Canary Islands locations relative to Portugal/Morocco"
+  },
+  "country:BE:8": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic: large Belgium country map with warning sign comparison panels and arrows"
+  },
+  "country:BE:11": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic: large Belgium country map with warning sign comparison panels and arrows"
+  },
+  "country:BE:region:Brussels:2": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic: large Belgium country map with warning sign comparison panels and arrows"
+  },
+  "country:BE:9": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic: large Belgium country map with traffic light pole comparison panels"
+  },
+  "country:BE:12": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic: large Belgium country map with traffic light pole comparison panels"
+  },
+  "country:BE:region:Local areas:0": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Belgium language regions map labeled Dutch/French/German"
+  },
+  "country:BE:region:Local areas:1": {
+    "cc": "BE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Belgium language regions map labeled Dutch/French/German"
+  },
+  "country:BR:region:Rio Grande do Sul:13": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Brazil 2-digit postcodes choropleth map"
+  },
+  "country:BR:region:Rio Grande do Sul:16": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Brazil wooden pole percentage choropleth with small photo inset"
+  },
+  "country:BR:region:Rio de Janeiro:11": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Brazil wooden pole percentage choropleth with small photo inset"
+  },
+  "country:BW:region:Gaborone:0": {
+    "cc": "BW",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "4-photo Gaborone grid with Botswana location map"
+  },
+  "country:BR:73": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "4-photo grid of Ceara lamps with Brazil region map"
+  },
+  "country:BR:region:Rio de Janeiro:14": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "2-photo gamma box pole comparison with Brazil region map"
+  },
+  "country:BR:region:Roraima:6": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Dominantly a Brazil distribution map with percentage labels by region; only a tiny pole photo as inset"
+  },
+  "country:BR:region:Amazonas:3": {
+    "cc": "BR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Dominantly a Brazil distribution map with percentage labels by region; only a tiny pole photo as inset"
+  },
+  "country:CA:region:Nova Scotia:0": {
+    "cc": "CA",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "4-panel collage of French-language street/store signs with Canada map showing Quebec highlighted"
+  },
+  "country:CL:10": {
+    "cc": "CL",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Chile map with regional letter labels A-Y plus a green I REGION A-40 road shield infographic"
+  },
+  "country:CL:15": {
+    "cc": "CL",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-photo grid of road weather coverage types with labeled legend and Chile region map"
+  },
+  "country:CL:25": {
+    "cc": "CL",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-photo side-by-side comparison panel of all-yellow road lines"
+  },
+  "country:CO:0": {
+    "cc": "CO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "4-panel infographic comparing signpost backs with green check and red X marks"
+  },
+  "country:CO:7": {
+    "cc": "CO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-panel infographic with Colombia distribution map and three electricity meter close-ups"
+  },
+  "country:CO:23": {
+    "cc": "CO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Colombia country map filled with pink dot distribution showing wax palm range"
+  },
+  "country:CO:32": {
+    "cc": "CO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-photo side-by-side comparison of Kapok trees"
+  },
+  "country:CO:34": {
+    "cc": "CO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Colombia country shape filled with orange dot distribution showing guava range"
+  },
+  "country:HR:2": {
+    "cc": "HR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-panel pedestrian-sign comparison labeled Croatia and Portugal with red text labels"
+  },
+  "country:CW:0": {
+    "cc": "CW",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "4-photo grid of pastel bungalows arranged as architecture reference panel"
+  },
+  "country:CY:3": {
+    "cc": "CY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full topographic/road map of Cyprus with no photo content"
+  },
+  "country:CZ:0": {
+    "cc": "CZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Three-photo grid showing different Czech bollard variants side by side"
+  },
+  "country:CZ:1": {
+    "cc": "CZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-photo grid comparing arrow-shaped Czech directional signs"
+  },
+  "country:CZ:5": {
+    "cc": "CZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-photo side-by-side architectural comparison of baroque houses"
+  },
+  "country:CZ:8": {
+    "cc": "CZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Czechia region map color-coded with bike-path number labels and bicycle icons"
+  },
+  "country:CZ:region:Prague:0": {
+    "cc": "CZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Czechia regions map color-coded by road-number prefix digits 1-5"
+  },
+  "country:CZ:region:Prague:1": {
+    "cc": "CZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Czechia region map color-coded with bike-path number labels and bicycle icons"
+  },
+  "country:DK:2": {
+    "cc": "DK",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Two-photo side-by-side comparison of town entry/exit signs"
+  },
+  "country:DK:5": {
+    "cc": "DK",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure clipart pedestrian crossing sign icon, not a real photographed sign"
+  },
+  "country:DK:7": {
+    "cc": "DK",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Sign photo paired with Denmark map showing pin-marked ring road locations"
+  },
+  "country:EE:region:Local areas:0": {
+    "cc": "EE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Topographic altitude reference map of Estonia with French labels (legend, region names)"
+  },
+  "country:FR:26": {
+    "cc": "FR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Detailed administrative divisions map of France with all regions and departments labeled"
+  },
+  "country:FR:27": {
+    "cc": "FR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Detailed administrative divisions map of France with all regions and departments labeled"
+  },
+  "country:FR:28": {
+    "cc": "FR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Detailed administrative divisions map of France with all regions and departments labeled"
+  },
+  "country:FR:29": {
+    "cc": "FR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Detailed administrative divisions map of France with all regions and departments labeled"
+  },
+  "country:FR:region:Provence:0": {
+    "cc": "FR",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-photo grid of Senyera flag examples combined with a France map highlighting Pyrenees-Orientales"
+  },
+  "country:DE:20": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic chart titled 'FLAGS OF GERMAN LANDS' showing all state flags with labels"
+  },
+  "country:DE:region:Saarland:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic chart titled 'FLAGS OF GERMAN LANDS' showing all state flags with labels"
+  },
+  "country:DE:region:Berlin:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic chart titled 'FLAGS OF GERMAN LANDS' showing all state flags with labels"
+  },
+  "country:DE:region:Hamburg:4": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic chart titled 'FLAGS OF GERMAN LANDS' showing all state flags with labels"
+  },
+  "country:DE:region:Brandenburg:1": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic chart titled 'FLAGS OF GERMAN LANDS' showing all state flags with labels"
+  },
+  "country:DE:region:Hamburg:5": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic chart titled 'COATS OF ARMS OF GERMAN LANDS' showing all state coats with labels"
+  },
+  "country:DE:region:Bremen:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags (no real-world photo)"
+  },
+  "country:DE:region:Bavaria:4": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full Germany postal code map showing PLZ regions 0-9"
+  },
+  "country:DE:region:Mecklenburg-Vorpommern:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Language suffix map shared by language entries"
+  },
+  "country:DE:region:Mecklenburg-Vorpommern:4": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Rhineland-Palatinate:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Language suffix map shared by language entries"
+  },
+  "country:DE:region:Saxony:1": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full Germany postal code map"
+  },
+  "country:DE:region:Thuringia:2": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full Germany postal code map"
+  },
+  "country:DE:region:Schleswig-Holstein:3": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Hessen:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Niedersachsen:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Rheinland-Pfalz:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Sachsen:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Sachsen:1": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state coats of arms"
+  },
+  "country:DE:region:Sachsen-Anhalt:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full chart of all German state flags"
+  },
+  "country:DE:region:Eastern Germany:0": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Language suffix map shared by language entries"
+  },
+  "country:DE:region:Eastern Germany:1": {
+    "cc": "DE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Language suffix map shared by language entries"
+  },
+  "country:HU:region:Budapest:1": {
+    "cc": "HU",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full Hungary map showing road number first-digit zones"
+  },
+  "country:GT:6": {
+    "cc": "GT",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full Guatemala map titled 'Guatemala Green Pole Plates' with road labels"
+  },
+  "country:ID:region:Jakarta:1": {
+    "cc": "ID",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Side-by-side comparison infographic with compass and labels 'Lombok West' / 'Jakarta East'"
+  },
+  "country:JP:19": {
+    "cc": "JP",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full 'Japan Pole Plates Infographic Map' with regional plates labeled by region across map of Japan"
+  },
+  "country:JP:region:Okinawa:8": {
+    "cc": "JP",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Japan pole reflectors infographic showing reflector styles overlaid on a regional map of Japan"
+  },
+  "country:JP:region:Okinawa:9": {
+    "cc": "JP",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Japan Diamonds Infographic Map showing road diamond variations by prefecture region"
+  },
+  "country:KZ:region:Local areas:1": {
+    "cc": "KZ",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Topographic/terrain relief map of Kazakhstan with no real-world photo content"
+  },
+  "country:LU:3": {
+    "cc": "LU",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Map of Luxembourg colored by road number first digit zones (1, 2, 3)"
+  },
+  "country:MY:5": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Johor:1": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Perlis:2": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Sabah:1": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Map of Malaysia with road letter codes labeled per state"
+  },
+  "country:MY:region:Sabah:2": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Sarawak:2": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Negeri Sembilan:1": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Kuala Lumpur:1": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Selangor:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Perak:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Kedah:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Kelantan:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Terengganu:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Pahang:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MY:region:Penang:0": {
+    "cc": "MY",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Infographic showing all Malaysian state and federal territory flags with labels"
+  },
+  "country:MX:region:Veracruz:5": {
+    "cc": "MX",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Mexico chloropleth map showing percentage occurrence of acorn insulators by state, with small inset photo"
+  },
+  "country:MX:region:Colima:0": {
+    "cc": "MX",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Mexico chloropleth map showing percentage occurrence of acorn insulators by state, with small inset photo"
+  },
+  "country:MX:24": {
+    "cc": "MX",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Mexico License Plates infographic showing labeled plates from every state with cactus background"
+  },
+  "country:NL:region:Friesland:0": {
+    "cc": "NL",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Reference graphic showing 3 Dutch provincial flags with corresponding province location maps"
+  },
+  "country:NL:region:Noord-Brabant:0": {
+    "cc": "NL",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Grid of three Dutch province flags above three Netherlands maps with provinces highlighted"
+  },
+  "country:NG:8": {
+    "cc": "NG",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full topographic/elevation map of Nigeria with scale bars and contour colors"
+  },
+  "country:NG:region:Local areas:4": {
+    "cc": "NG",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Religion infographic with Nigeria map filled with crescent/cross symbols and multi-photo grid of mosques/churches/attire"
+  },
+  "country:NO:region:Svalbard:0": {
+    "cc": "NO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full political map of Europe with Svalbard archipelago highlighted in red"
+  },
+  "country:PH:region:Davao:1": {
+    "cc": "PH",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure colored map of Philippines provinces with all province names labeled."
+  },
+  "country:QA:region:Local areas:1": {
+    "cc": "QA",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-panel infographic showing Qatar municipalities and zone numbers, no photo content."
+  },
+  "country:QA:3": {
+    "cc": "QA",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Comparison chart of Qatar license plate types (Standard / Commercial / Police) with text labels."
+  },
+  "country:PL:0": {
+    "cc": "PL",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Three-panel comparison labeled HUNGARY / POLAND / ROMANIA showing pole differences."
+  },
+  "country:RO:3": {
+    "cc": "RO",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Side-by-side comparison labeled RO / BG of road line widths."
+  },
+  "country:RU:region:Amur:0": {
+    "cc": "RU",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full colored map of Russia regions with license plate code numbers labeling each region; dominant content is data/labels, not a photo."
+  },
+  "country:RU:region:Krasnodar:0": {
+    "cc": "RU",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Same Russia license plate codes reference map; full colored region map with code numbers."
+  },
+  "country:RS:region:Local areas:3": {
+    "cc": "RS",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Pure topographic elevation map of Serbia with height legend, no photo content at all."
+  },
+  "country:ES:region:Galicia:2": {
+    "cc": "ES",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Text passage with Spain map highlighting Galicia, no real-world photo"
+  },
+  "country:ES:region:Basque Country:1": {
+    "cc": "ES",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Text passage in Basque language with Spain map highlighting Basque region"
+  },
+  "country:ES:region:Galicia:3": {
+    "cc": "ES",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Text passage in Galician with Spain map highlighting Galicia"
+  },
+  "country:ES:region:Canary Islands:0": {
+    "cc": "ES",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Spain languages map with legend (Spanish/Catalan/Basque/Galician color-coded)"
+  },
+  "country:CH:0": {
+    "cc": "CH",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Switzerland speed sign infographic with map color-coded by region/language with sample sign photos"
+  },
+  "country:CH:6": {
+    "cc": "CH",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Switzerland canton map with two-letter abbreviation labels for each canton"
+  },
+  "country:CH:7": {
+    "cc": "CH",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Switzerland 2-digit postcode map with all postal codes labeled by region"
+  },
+  "country:CH:region:Local areas:0": {
+    "cc": "CH",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Switzerland Language Map infographic with German/French/Italian/Romansh color-coded legend"
+  },
+  "country:TW:0": {
+    "cc": "TW",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Taiwan utility pole plaques infographic with annotated map grid (A-V) and percentage diagram"
+  },
+  "country:ES:region:Madrid:1": {
+    "cc": "ES",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-photo grid of bus stops/buses in Madrid with map highlights between panels"
+  },
+  "country:SE:region:Stockholm:1": {
+    "cc": "SE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-photo labeled grid (Gothenburg/Norrkoping/Stockholm) of trams with map highlights"
+  },
+  "country:SE:region:Dalarna:3": {
+    "cc": "SE",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-photo grid of street name signs (Pellasgattu/Sandgatu) with map highlight"
+  },
+  "country:TN:3": {
+    "cc": "TN",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Multi-photo grid of Djerba scenes (palm trees, whitewashed buildings) with Tunisia map highlight"
+  },
+  "country:TN:region:Tunis:0": {
+    "cc": "TN",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Four-panel grid of different Tunis follow cars with Tunisia map highlight"
+  },
+  "country:UA:3": {
+    "cc": "UA",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Side-by-side comparison chart of Lithuania vs Ukraine pedestrian crossing signs with country labels"
+  },
+  "country:UA:6": {
+    "cc": "UA",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Full reference map of Ukraine showing oblast license plate codes labeled per region"
+  },
+  "country:GB:0": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "UK license plate infographic showing 4 plate variants labeled Front/Rear with text"
+  },
+  "country:GB:region:Scotland:3": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Map of UK with all 4 country flags and regions colored - pure reference"
+  },
+  "country:GB:region:England:0": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Map of UK with all 4 country flags and regions colored - pure reference"
+  },
+  "country:GB:region:Wales:0": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Map of UK with all 4 country flags and regions colored - pure reference"
+  },
+  "country:GB:region:Northern Ireland:0": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Map of UK with all 4 country flags and regions colored - pure reference"
+  },
+  "country:GB:region:England:1": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "Locator map of Jersey within Europe with inset zoom - no real-world photo"
+  },
+  "country:GB:region:Northern Ireland:1": {
+    "cc": "GB",
+    "reason": "reference_map (visual_audit)",
+    "detected_text": "UK road numbering zones map with colored regions and numbered districts"
+  }
+}

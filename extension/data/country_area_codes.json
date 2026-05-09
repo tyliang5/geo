@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "doc": "Per-country area-code → admin-1 region mappings. Powers the per-country area-code quiz topics. Each entry: {name, intro, code_to_region: {code: regionName}, note (optional mnemonic per code)}. Region names must match the keys used in subregion_polygons.json so the click-on-map quiz can resolve them. Source-of-truth is the plonkit area-code map for each country."
+  },
+  "KZ": {
+    "name": "Kazakhstan",
+    "intro": "Kazakh area codes go 710-729. They roughly follow an east-to-west and north-to-south sweep — 71x covers the north + west, 72x covers the south + east.",
+    "code_to_region": {
+      "710": "Qaraghandy",
+      "711": "West Kazakhstan",
+      "712": "Atyrau",
+      "713": "Aqtöbe",
+      "714": "Qostanay",
+      "715": "North Kazakhstan",
+      "716": "Aqmola",
+      "717": "Astana",
+      "718": "Pavlodar",
+      "721": "Qaraghandy",
+      "722": "East Kazakhstan",
+      "723": "East Kazakhstan",
+      "724": "Qyzylorda",
+      "725": "South Kazakhstan",
+      "726": "Zhambyl",
+      "727": "Almaty City",
+      "728": "Almaty",
+      "729": "Mangghystau"
+    },
+    "notes": {
+      "710": "Newer code for Ulytau region (split from Qaraghandy in 2022). On Street View it usually still shows 721.",
+      "711": "Far west — Oral. Near Russian border.",
+      "712": "Atyrau on the Caspian. Oil capital.",
+      "713": "Aqtöbe — biggest western oblast. Soviet-era mining city.",
+      "714": "Qostanay — north-central wheat belt.",
+      "715": "Petropavl — far north, Russian-speaking.",
+      "716": "Aqmola — surrounds Astana but isn't the city itself.",
+      "717": "🟢 Astana — capital city only (since 1997). Easy anchor.",
+      "718": "Pavlodar — northeast, Irtysh river, industrial.",
+      "721": "Karaganda — central, Kazakh USSR mining hub. Also still used in Ulytau region.",
+      "722": "Semey (Abai region) — east, near Russian border.",
+      "723": "Oskemen / East Kazakhstan — far east corner.",
+      "724": "Kyzylorda — south-central along Syr Darya, Aral Sea.",
+      "725": "Shymkent / South Kazakhstan / Turkestan — biggest southern city.",
+      "726": "Taraz / Zhambyl — south, Silk Road city.",
+      "727": "🟢 Almaty city — former capital. The biggest city in Kazakhstan.",
+      "728": "Taldykorgan / Zhetysu / Almaty Region — east of the city.",
+      "729": "🟢 Aktau / Mangystau — far southwest peninsula on Caspian. The only oblast on the SW peninsula."
+    }
+  },
+  "KR": {
+    "name": "South Korea",
+    "intro": "Korean area codes increase from north (02) to south (064 = Jeju). Always 2 or 3 digits.",
+    "code_to_region": {
+      "02": "Seoul",
+      "031": "Gyeonggi",
+      "032": "Incheon",
+      "033": "Gangwon",
+      "041": "Chungcheongnam-do",
+      "042": "Daejeon",
+      "043": "Chungcheongbuk-do",
+      "044": "Sejong",
+      "051": "Busan",
+      "052": "Ulsan",
+      "053": "Daegu",
+      "054": "Gyeongsangbuk-do",
+      "055": "Gyeongsangnam-do",
+      "061": "Jeollanam-do",
+      "062": "Gwangju",
+      "063": "Jeollabuk-do",
+      "064": "Jeju"
+    },
+    "notes": {
+      "02": "🟢 Seoul. The lowest code = the capital.",
+      "031": "Gyeonggi — the province surrounding Seoul.",
+      "032": "Incheon — port city + Seoul's airport.",
+      "033": "Gangwon — northeast mountains, ski country.",
+      "051": "🟢 Busan — second-biggest city, southern port.",
+      "053": "Daegu — central south, fashion + textiles.",
+      "062": "Gwangju — southwestern metro.",
+      "064": "🟢 Jeju — the southern island. The HIGHEST code = furthest south."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+# Build / cache artefacts
+scraper/.image_cache/
+scraper/__pycache__/
+scraper/slides/
+
+# Local image mirror — runtime uses learnablemeta.com URLs directly so we
+# don't need this 141MB folder in the repo.
+extension/assets/img/lm/
+
+# Untrimmed admin-1 source (39MB) — runtime uses the trimmed version when
+# present, but we keep admin1.geojson tracked for now since app.js still
+# loads it. Comment this back in if you swap to admin1_trim.
+# extension/data/admin1.geojson
+
+# Local backups
+*.bak
+*.bak.*
+*.bak[0-9]*
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
