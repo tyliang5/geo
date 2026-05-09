@@ -19,6 +19,11 @@ html, body {
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
   min-height: 100vh;
+  /* Hard stop on horizontal scroll — no element should ever push the
+     viewport sideways on mobile. Anything that needs internal horizontal
+     scroll (the map, sometimes a wide table) sets its own overflow. */
+  overflow-x: hidden;
+  max-width: 100vw;
   /* iOS: stop the rubber-band overscroll bouncing the whole page */
   overscroll-behavior-y: none;
   /* iOS Safari hides the address bar on scroll; prevent any text from
@@ -56,6 +61,20 @@ body {
   top: 0;
   z-index: 100;
   gap: 24px;
+  min-width: 0;            /* let grid children shrink instead of pushing the row wider */
+  max-width: 100%;
+}
+.topbar > * { min-width: 0; }
+@media (max-width: 600px) {
+  .topbar {
+    padding: 10px 14px;
+    gap: 10px;
+    /* Drop the status column on mobile so the topbar fits cleanly. */
+    grid-template-columns: auto 1fr;
+  }
+  .status { display: none; }
+  .tab { padding: 6px 10px; font-size: 13px; }
+  .brand { font-size: 16px; }
 }
 .brand {
   font-weight: 800;
