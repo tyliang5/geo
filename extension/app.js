@@ -666,14 +666,37 @@ async function pushCloudProgress(progress) {
   }
 }
 
-// Debounced cloud push so we don't hit the API on every single answer.
+// Debounced cloud push. We use a long debounce (15s) because the user
+// rarely switches devices mid-session — a typical study sweep of 50 cards
+// then becomes one push at the end of the burst, not 50 individual ones.
+// To avoid losing the tail of a session, we force-flush on visibility
+// change (app backgrounded / tab hidden) and on pagehide.
+const PUSH_DEBOUNCE_MS = 15000;
 let _pushTimer = null;
+function flushPushProgress() {
+  clearTimeout(_pushTimer);
+  _pushTimer = null;
+  const local = readLocalProgress();
+  // Use sendBeacon when available (during pagehide we may have only ms);
+  // PATCH-via-fetch is fine in normal cases since the call is small.
+  pushCloudProgress(local);
+}
 function schedulePushProgress() {
   clearTimeout(_pushTimer);
-  _pushTimer = setTimeout(() => {
-    const local = readLocalProgress();
-    pushCloudProgress(local);
-  }, 1500);
+  _pushTimer = setTimeout(flushPushProgress, PUSH_DEBOUNCE_MS);
+}
+// Flush pending pushes the moment the app loses focus or the page hides.
+// Covers: switching apps on iOS, locking screen, closing the tab,
+// switching tabs in desktop, etc. — never leave queued progress unsent.
+if (typeof document !== 'undefined') {
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && _pushTimer) {
+      flushPushProgress();
+    }
+  });
+  window.addEventListener('pagehide', () => {
+    if (_pushTimer) flushPushProgress();
+  });
 }
 
 // On boot: pull cloud, merge, write back. After this, localStorage and the
