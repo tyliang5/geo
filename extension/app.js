@@ -1074,6 +1074,7 @@ function buildCountryLayer() {
       }
     },
   }).addTo(quiz.map);
+  wirePeekHandlers(quiz.map, quiz.geoLayer);
 }
 
 function countryStyle(feat) {
@@ -1155,10 +1156,141 @@ function buildSubregionLayer(cc) {
       layer.bindTooltip(name || fid, { sticky: true, direction: 'top' });
     },
   }).addTo(quiz.map);
+  wirePeekHandlers(quiz.map, quiz.subLayer);
   // Force a Leaflet canvas redraw — adding a layer right after fitBounds
   // doesn't always trigger one. A 1-pixel pan-and-restore does.
   quiz.map.panBy([1, 0], { animate: false });
   quiz.map.panBy([-1, 0], { animate: false });
+}
+
+// Long-press / drag-to-peek country names. Tap = answer (existing
+// behaviour). Touch and hold ≥ 350ms or drag a finger across the map =
+// "peek": opens the tooltip for whichever country/region is under the
+// finger, suppresses the click that would otherwise fire on touchend, and
+// follows the finger as long as it's down.
+//
+// On desktop the existing mouseover-tooltip already covers this — these
+// handlers only kick in on touch devices.
+function wirePeekHandlers(map, layerGroup) {
+  if (!map || !layerGroup) return;
+  // Skip on devices with real hover (desktop) — the built-in tooltip
+  // already shows on cursor hover, no need to add touch handling.
+  if (window.matchMedia('(hover: hover)').matches) return;
+  const HOLD_MS = 350;
+  const MOVE_PX = 8;
+  const el = map.getContainer();
+
+  let startX = 0, startY = 0;
+  let startTime = 0;
+  let holdTimer = null;
+  let peekingLayer = null;
+  let peekActive = false;   // true once we've shown a tooltip → suppress next click
+
+  // Point-in-polygon ray-casting for a list of [lng, lat] rings.
+  // Returns true if [lng, lat] is inside any of the rings (after subtracting
+  // holes — for our use case holes are rare and we ignore them).
+  const pointInRing = (pt, ring) => {
+    let inside = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const xi = ring[i][0], yi = ring[i][1];
+      const xj = ring[j][0], yj = ring[j][1];
+      const hit = ((yi > pt[1]) !== (yj > pt[1]))
+        && (pt[0] < ((xj - xi) * (pt[1] - yi)) / (yj - yi) + xi);
+      if (hit) inside = !inside;
+    }
+    return inside;
+  };
+  const containsPoint = (geometry, lng, lat) => {
+    const p = [lng, lat];
+    if (geometry.type === 'Polygon') {
+      return geometry.coordinates.some(ring => pointInRing(p, ring));
+    }
+    if (geometry.type === 'MultiPolygon') {
+      return geometry.coordinates.some(poly => poly.some(ring => pointInRing(p, ring)));
+    }
+    return false;
+  };
+  const layerAtLatLng = (latlng) => {
+    let found = null;
+    layerGroup.eachLayer(l => {
+      if (found) return;
+      const f = l.feature;
+      if (!f?.geometry) return;
+      // Quick bounds reject before the heavier ray-cast
+      if (l.getBounds && !l.getBounds().contains(latlng)) return;
+      if (containsPoint(f.geometry, latlng.lng, latlng.lat)) found = l;
+    });
+    return found;
+  };
+
+  const showLayerAt = (clientX, clientY) => {
+    const rect = el.getBoundingClientRect();
+    const containerPoint = L.point(clientX - rect.left, clientY - rect.top);
+    const latlng = map.containerPointToLatLng(containerPoint);
+    const layer = layerAtLatLng(latlng);
+    if (!layer) return;
+    if (layer !== peekingLayer) {
+      if (peekingLayer) peekingLayer.closeTooltip();
+      peekingLayer = layer;
+    }
+    layer.openTooltip(latlng);
+  };
+
+  const closePeek = () => {
+    if (peekingLayer) {
+      peekingLayer.closeTooltip();
+      peekingLayer = null;
+    }
+  };
+
+  el.addEventListener('touchstart', (e) => {
+    if (!e.touches[0]) return;
+    const t = e.touches[0];
+    startX = t.clientX; startY = t.clientY;
+    startTime = Date.now();
+    peekActive = false;
+    clearTimeout(holdTimer);
+    holdTimer = setTimeout(() => {
+      peekActive = true;
+      showLayerAt(startX, startY);
+    }, HOLD_MS);
+  }, { passive: true });
+
+  el.addEventListener('touchmove', (e) => {
+    if (!e.touches[0]) return;
+    const t = e.touches[0];
+    const dx = Math.abs(t.clientX - startX);
+    const dy = Math.abs(t.clientY - startY);
+    if (!peekActive && (dx > MOVE_PX || dy > MOVE_PX)) {
+      // The user is dragging — switch to peek/scrub mode and cancel the
+      // hold timer (the click that would fire on touchend is suppressed
+      // via peekActive).
+      peekActive = true;
+      clearTimeout(holdTimer);
+    }
+    if (peekActive) showLayerAt(t.clientX, t.clientY);
+  }, { passive: true });
+
+  const onEnd = () => {
+    clearTimeout(holdTimer);
+    closePeek();
+    // Reset peekActive on next animation frame so the synthetic click that
+    // iOS fires after touchend can read it before we clear.
+    if (peekActive) {
+      // capture-phase listener below will swallow that click; clear after.
+      setTimeout(() => { peekActive = false; }, 50);
+    }
+  };
+  el.addEventListener('touchend', onEnd);
+  el.addEventListener('touchcancel', onEnd);
+
+  // Suppress the click that iOS fires after touchend if we were peeking.
+  el.addEventListener('click', (e) => {
+    if (peekActive) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }, true);
 }
 
 // Style helper: with the canvas renderer we set fill/stroke options directly
