@@ -3,7 +3,7 @@
 // Click-on-map quiz uses Leaflet + Natural Earth countries.geojson.
 
 // Cache-bust topics.js so dev edits show without a hard refresh.
-import { buildTopics } from './topics.js?v=13';
+import { buildTopics } from './topics.js?v=14';
 
 const SUPABASE_URL = 'https://qhudavmfhbumknqddgig.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_aGh_bbXqckmx-0DgaEySWg_9yyc_994';
@@ -398,6 +398,7 @@ function recordTopicAnswer(topicId, isCorrect) {
   s.lastSeen = Date.now();
   stats[topicId] = s;
   localStorage.setItem(TOPIC_STATS_KEY, JSON.stringify(stats));
+  schedulePushProgress?.();
 }
 
 // Per-card accuracy: keyed by stable cardKey so the same card across
@@ -419,6 +420,7 @@ function recordCardAnswer(cardKey, cc, metaType, isCorrect) {
   s.lastSeen = Date.now();
   stats[cardKey] = s;
   localStorage.setItem(CARD_STATS_KEY, JSON.stringify(stats));
+  schedulePushProgress?.();
 }
 
 function loadQuizStats() {
@@ -434,6 +436,7 @@ function recordQuizAnswer(cc, isCorrect, score) {
   s.lastSeen = Date.now();
   stats[cc] = s;
   localStorage.setItem(QUIZ_STATS_KEY, JSON.stringify(stats));
+  schedulePushProgress?.();
 }
 
 // Leitner box (1-5). Lower = practice more. Reset to 1 on miss; +1 on hit (cap 5).
@@ -446,6 +449,7 @@ function getLeitnerBox(cc, idx) {
 }
 function setLeitnerBox(cc, idx, box) {
   localStorage.setItem(leitnerKey(cc, idx), JSON.stringify({ box, lastSeen: Date.now() }));
+  schedulePushProgress?.();
 }
 
 // ---------- data loading ----------
@@ -535,6 +539,155 @@ async function loadRounds() {
     console.warn('supabase fetch failed', e);
   }
   return all;
+}
+
+// ============================================================
+// Cross-device progress sync (Supabase, single shared 'self' row).
+// localStorage is the primary store; cloud is a write-through merge target.
+// ============================================================
+const PROGRESS_ROW_ID = 'self';
+
+const PROGRESS_LS_KEYS = {
+  card_stats:  'plonker:card-stats',
+  blacklist:   'plonker:card-blacklist',
+  topic_stats: 'plonker:topic-stats',
+  quiz_stats:  'plonker:quiz-stats',
+  // 'leitner' is special — many keys with the prefix 'plonker:leitner:'
+};
+
+// Read all progress out of localStorage into a single shape that maps to
+// the plonker_progress table columns.
+function readLocalProgress() {
+  const json = (k, fb) => { try { return JSON.parse(localStorage.getItem(k)) ?? fb; } catch { return fb; } };
+  const leitner = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k?.startsWith('plonker:leitner:')) continue;
+    leitner[k.slice('plonker:leitner:'.length)] = json(k, null);
+  }
+  return {
+    card_stats:  json(PROGRESS_LS_KEYS.card_stats,  {}),
+    blacklist:   json(PROGRESS_LS_KEYS.blacklist,   []),
+    topic_stats: json(PROGRESS_LS_KEYS.topic_stats, {}),
+    quiz_stats:  json(PROGRESS_LS_KEYS.quiz_stats,  {}),
+    leitner,
+  };
+}
+
+// Write a merged progress object back into localStorage, including the
+// per-key plonker:leitner:* entries.
+function writeLocalProgress(p) {
+  if (!p) return;
+  if (p.card_stats)  localStorage.setItem(PROGRESS_LS_KEYS.card_stats,  JSON.stringify(p.card_stats));
+  if (p.blacklist)   localStorage.setItem(PROGRESS_LS_KEYS.blacklist,   JSON.stringify(p.blacklist));
+  if (p.topic_stats) localStorage.setItem(PROGRESS_LS_KEYS.topic_stats, JSON.stringify(p.topic_stats));
+  if (p.quiz_stats)  localStorage.setItem(PROGRESS_LS_KEYS.quiz_stats,  JSON.stringify(p.quiz_stats));
+  if (p.leitner) {
+    for (const [k, v] of Object.entries(p.leitner)) {
+      if (v == null) continue;
+      localStorage.setItem(`plonker:leitner:${k}`, JSON.stringify(v));
+    }
+  }
+}
+
+// Merge cloud + local. Per-card-key fields (card_stats, leitner) take the
+// entry with the newer lastSeen. topic_stats/quiz_stats sum their counts
+// (additive, since both devices may have practised in parallel). blacklist
+// is a union.
+function mergeProgress(cloud, local) {
+  const out = {};
+  // card_stats: newer lastSeen wins per cardKey
+  out.card_stats = { ...(cloud.card_stats || {}) };
+  for (const [k, v] of Object.entries(local.card_stats || {})) {
+    const c = out.card_stats[k];
+    if (!c || (v.lastSeen || 0) >= (c.lastSeen || 0)) out.card_stats[k] = v;
+  }
+  // leitner: same rule
+  out.leitner = { ...(cloud.leitner || {}) };
+  for (const [k, v] of Object.entries(local.leitner || {})) {
+    const c = out.leitner[k];
+    if (!c || (v.lastSeen || 0) >= (c.lastSeen || 0)) out.leitner[k] = v;
+  }
+  // blacklist: set union
+  out.blacklist = [...new Set([
+    ...(cloud.blacklist || []),
+    ...(local.blacklist || []),
+  ])];
+  // topic_stats / quiz_stats: per key, take the row with higher count
+  const mergeStatsMap = (a, b) => {
+    const r = { ...(a || {}) };
+    for (const [k, v] of Object.entries(b || {})) {
+      const c = r[k];
+      if (!c || (v.count || 0) > (c.count || 0)) r[k] = v;
+    }
+    return r;
+  };
+  out.topic_stats = mergeStatsMap(cloud.topic_stats, local.topic_stats);
+  out.quiz_stats  = mergeStatsMap(cloud.quiz_stats,  local.quiz_stats);
+  return out;
+}
+
+async function loadCloudProgress() {
+  try {
+    const r = await fetch(
+      `${SUPABASE_URL}/rest/v1/plonker_progress?id=eq.${PROGRESS_ROW_ID}&select=*`,
+      { headers: SUPA_HEADERS }
+    );
+    if (!r.ok) return null;
+    const rows = await r.json();
+    return rows[0] || null;
+  } catch (e) {
+    console.warn('cloud progress fetch failed:', e);
+    return null;
+  }
+}
+
+async function pushCloudProgress(progress) {
+  try {
+    // PATCH the singleton row. The server will set updated_at via trigger.
+    const r = await fetch(
+      `${SUPABASE_URL}/rest/v1/plonker_progress?id=eq.${PROGRESS_ROW_ID}`,
+      {
+        method: 'PATCH',
+        headers: { ...SUPA_HEADERS, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify({
+          card_stats:  progress.card_stats,
+          leitner:     progress.leitner,
+          blacklist:   progress.blacklist,
+          topic_stats: progress.topic_stats,
+          quiz_stats:  progress.quiz_stats,
+        }),
+      }
+    );
+    return r.ok;
+  } catch (e) {
+    console.warn('cloud progress push failed:', e);
+    return false;
+  }
+}
+
+// Debounced cloud push so we don't hit the API on every single answer.
+let _pushTimer = null;
+function schedulePushProgress() {
+  clearTimeout(_pushTimer);
+  _pushTimer = setTimeout(() => {
+    const local = readLocalProgress();
+    pushCloudProgress(local);
+  }, 1500);
+}
+
+// On boot: pull cloud, merge, write back. After this, localStorage and the
+// cloud row are aligned, and the rest of the app reads localStorage as
+// usual. Failures are logged and the app falls back to pure local mode.
+async function initProgressSync() {
+  const cloud = await loadCloudProgress();
+  if (!cloud) return;
+  const local = readLocalProgress();
+  const merged = mergeProgress(cloud, local);
+  writeLocalProgress(merged);
+  // Push the merged state so the cloud reflects anything local that wasn't
+  // there yet.
+  pushCloudProgress(merged);
 }
 
 // ---------- focus resolution ----------
@@ -1061,11 +1214,13 @@ function blacklistCard(cardKey) {
   const set = loadCardBlacklist();
   set.add(cardKey);
   localStorage.setItem(BLACKLIST_KEY, JSON.stringify([...set]));
+  schedulePushProgress?.();
 }
 function unblacklistCard(cardKey) {
   const set = loadCardBlacklist();
   set.delete(cardKey);
   localStorage.setItem(BLACKLIST_KEY, JSON.stringify([...set]));
+  schedulePushProgress?.();
 }
 
 function buildQuizPool() {
@@ -2278,6 +2433,13 @@ function populateRegionSelect() {
 
 async function boot() {
   $('status').textContent = 'Loading data…';
+  // Pull cloud progress + merge into localStorage BEFORE building topics so
+  // the smart pools (Weak / Unseen) reflect the merged stats on first paint.
+  // Don't block the UI on a slow Supabase round-trip beyond ~2s.
+  await Promise.race([
+    initProgressSync(),
+    new Promise(r => setTimeout(r, 2000)),
+  ]);
   await loadAll();
   state.topics = buildTopics();
   populateCountrySelect();
