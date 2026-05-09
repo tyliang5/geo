@@ -33,11 +33,9 @@ html, body {
      as a single click, never a zoom gesture */
   touch-action: manipulation;
 }
-/* iPhone notch / home indicator safe-area padding for the topbar and
-   bottom buttons so they don't sit underneath the system UI. */
-.topbar {
-  padding-top: env(safe-area-inset-top);
-}
+/* iPhone notch / home indicator safe-area padding lives in the rules
+   below — see `.topbar` and the @media block, where it's combined into
+   the padding shorthand so it isn't clobbered by later rules. */
 body {
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -53,7 +51,10 @@ body {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 10px 24px;
+  /* Top padding folds in the iPhone notch safe-area so the bar isn't
+     hidden under the system status bar in PWA mode. Combined into the
+     shorthand so later rules don't clobber it. */
+  padding: calc(env(safe-area-inset-top) + 10px) 24px 10px;
   border-bottom: 1px solid var(--border);
   background: rgba(15, 23, 42, .9);
   backdrop-filter: blur(8px);
@@ -67,7 +68,7 @@ body {
 .topbar > * { min-width: 0; }
 @media (max-width: 600px) {
   .topbar {
-    padding: 10px 14px;
+    padding: calc(env(safe-area-inset-top) + 10px) 14px 10px;
     gap: 10px;
     /* Drop the status column on mobile so the topbar fits cleanly. */
     grid-template-columns: auto 1fr;
