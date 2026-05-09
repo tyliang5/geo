@@ -38,6 +38,11 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          # Auto-enable Pages on this repo + set source to GitHub Actions
+          # if not already configured. Saves the user a manual toggle in
+          # Settings → Pages.
+          enablement: true
 
       - name: Upload extension/ as Pages artifact
         uses: actions/upload-pages-artifact@v3
