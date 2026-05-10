@@ -1,0 +1,1546 @@
+{
+  "drills": [
+    {
+      "id": "landscape__tall_snow_capped_mountain_ranges_alpine",
+      "label": "Tall snow-capped mountain ranges (Alpine)",
+      "category": "landscape",
+      "cards": [
+        "country:AR:3",
+        "country:CL:14",
+        "country:CL:28",
+        "country:DE:region:Local areas:2",
+        "country:FR:6",
+        "country:IN:3",
+        "country:IN:13",
+        "country:IN:34",
+        "country:IN:40",
+        "country:IS:5",
+        "country:IS:10",
+        "country:IS:region:Local areas:11",
+        "country:LB:region:Local areas:2",
+        "country:LI:region:Local areas:0",
+        "country:JP:region:Local areas:0",
+        "country:MX:8",
+        "country:GR:12"
+      ]
+    },
+    {
+      "id": "landscape__flat_agricultural_plains_with_green_golden_field",
+      "label": "Flat agricultural plains with green/golden fields",
+      "category": "landscape",
+      "cards": [
+        "country:US:13",
+        "country:AT:4",
+        "country:HR:4",
+        "country:DK:region:Local areas:0",
+        "country:AU:11",
+        "country:IS:6",
+        "country:DE:1",
+        "country:DE:18",
+        "country:JP:region:Local areas:2",
+        "country:CL:8",
+        "country:GT:4",
+        "country:LS:region:Local areas:0",
+        "country:CN:region:Local areas:1",
+        "country:KH:9",
+        "country:NG:region:Local areas:0"
+      ]
+    },
+    {
+      "id": "infrastructure__wires_heavy_utility_pole_top_with_crossbars_and_",
+      "label": "Wires-heavy utility pole top with crossbars and transformer",
+      "category": "infrastructure",
+      "cards": [
+        "country:JP:20",
+        "country:JP:24",
+        "country:JP:25",
+        "country:JP:26",
+        "country:JP:27",
+        "country:JP:29",
+        "country:JP:31",
+        "country:IN:10",
+        "country:IN:24",
+        "country:IN:36",
+        "country:ID:35",
+        "country:ID:36"
+      ]
+    },
+    {
+      "id": "infrastructure__cobra_head_curved_arm_street_lamp_with_rounded_t",
+      "label": "Cobra-head / curved-arm street lamp with rounded teardrop luminaire against blue sky",
+      "category": "infrastructure",
+      "cards": [
+        "country:BR:9",
+        "country:BR:21",
+        "country:BR:27",
+        "country:BR:39",
+        "country:BR:48",
+        "country:BR:49",
+        "country:BR:92",
+        "country:CL:6",
+        "country:CL:20",
+        "country:MX:3"
+      ]
+    },
+    {
+      "id": "landscape__dry_red_orange_dirt_with_low_shrubs_arid_bush",
+      "label": "Dry red/orange dirt with low shrubs (arid bush)",
+      "category": "landscape",
+      "cards": [
+        "country:AR:21",
+        "country:AU:9",
+        "country:AU:12",
+        "country:BW:region:Local areas:3",
+        "country:BW:region:Local areas:4",
+        "country:MX:11",
+        "country:CO:38",
+        "country:DO:3",
+        "country:EC:6",
+        "country:BR:55"
+      ]
+    },
+    {
+      "id": "bollard__white_wedge_black_top_dark_grey_red_small_reflec",
+      "label": "White wedge, black top, dark grey/red small reflector (Austrian/Swiss/Nordic)",
+      "category": "bollard",
+      "cards": [
+        "country:AT:0",
+        "country:AT:2",
+        "country:LU:0",
+        "country:LU:2",
+        "country:CH:1",
+        "country:CH:2",
+        "country:SE:5",
+        "country:SE:region:Local areas:1",
+        "country:NO:7"
+      ]
+    },
+    {
+      "id": "infrastructure__blue_enamel_street_name_plaques_white_text_on_da",
+      "label": "Blue enamel street name plaques (white text on dark blue, ornate border)",
+      "category": "infrastructure",
+      "cards": [
+        "country:FR:8",
+        "country:FR:13",
+        "country:FR:17",
+        "country:FR:18",
+        "country:DE:26",
+        "country:DE:region:Local areas:0",
+        "country:DE:region:Local areas:3",
+        "country:DE:region:Local areas:4"
+      ]
+    },
+    {
+      "id": "landscape__jagged_sharp_coastal_fjord_mountains",
+      "label": "Jagged sharp coastal/fjord mountains",
+      "category": "landscape",
+      "cards": [
+        "country:IS:4",
+        "country:IS:12",
+        "country:IS:region:Local areas:5",
+        "country:NO:6",
+        "country:NO:18",
+        "country:FO:2",
+        "country:NO:region:Local areas:1",
+        "country:HR:5"
+      ]
+    },
+    {
+      "id": "landscape__vast_desert_sandy_highway_with_distant_mountains",
+      "label": "Vast desert / sandy highway with distant mountains",
+      "category": "landscape",
+      "cards": [
+        "country:CL:region:Local areas:7",
+        "country:CL:region:Local areas:10",
+        "country:JO:region:Local areas:1",
+        "country:JO:region:Local areas:2",
+        "country:JO:region:Local areas:3",
+        "country:JO:region:Local areas:6",
+        "country:JO:2",
+        "country:MN:4"
+      ]
+    },
+    {
+      "id": "region__pole_markings_stripes_ids_white_black_yellow",
+      "label": "Pole markings/stripes/IDs (white/black/yellow)",
+      "category": "region",
+      "cards": [
+        "country:BR:81",
+        "country:BR:86",
+        "country:CO:28",
+        "country:CR:1",
+        "country:CR:2",
+        "country:DO:6",
+        "country:LT:6",
+        "country:GT:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "bollard__white_wedge_black_top_red_front_reflector_italia",
+      "label": "White wedge, black top, red front reflector (Italian-style triangular)",
+      "category": "bollard",
+      "cards": [
+        "country:AL:0",
+        "country:IT:0",
+        "country:IT:3",
+        "country:HR:1",
+        "country:SI:0",
+        "country:SI:2",
+        "country:CY:11",
+        "country:MK:0"
+      ]
+    },
+    {
+      "id": "infrastructure__modern_flat_rectangular_led_cobra_head_lamp_on_m",
+      "label": "Modern flat rectangular LED cobra-head lamp on metal pole",
+      "category": "infrastructure",
+      "cards": [
+        "country:CL:5",
+        "country:CL:6",
+        "country:CO:21",
+        "country:CO:25",
+        "country:MX:4",
+        "country:MX:7",
+        "country:MX:15"
+      ]
+    },
+    {
+      "id": "infrastructure__pole_mounted_street_name_signs_sign_attached_to_",
+      "label": "Pole-mounted street name signs (sign attached to lamp/utility pole)",
+      "category": "infrastructure",
+      "cards": [
+        "country:BR:13",
+        "country:BR:35",
+        "country:BR:54",
+        "country:BR:93",
+        "country:CL:region:Local areas:3",
+        "country:CO:19",
+        "country:US:31"
+      ]
+    },
+    {
+      "id": "region__flat_agricultural_plains_with_distant_mountains",
+      "label": "Flat agricultural plains with distant mountains",
+      "category": "region",
+      "cards": [
+        "country:LB:region:Local areas:1",
+        "country:LB:region:Local areas:3",
+        "country:SZ:3",
+        "country:EC:region:Local areas:4",
+        "country:GT:2",
+        "country:GR:11",
+        "country:IL:region:Local areas:5"
+      ]
+    },
+    {
+      "id": "region__snowy_small_cold_weather_settlement_car_coverage",
+      "label": "Snowy small cold-weather settlement / car coverage",
+      "category": "region",
+      "cards": [
+        "country:GL:2",
+        "country:GL:3",
+        "country:GL:4",
+        "country:GL:5",
+        "country:GL:region:Local areas:1",
+        "country:GL:region:Local areas:3",
+        "country:MN:region:Local areas:1"
+      ]
+    },
+    {
+      "id": "unique_car__gray_tan_car_with_visible_roof_rack_bars_and_sid",
+      "label": "Gray/tan car with visible roof rack bars and side mirrors",
+      "category": "unique car",
+      "cards": [
+        "country:DO:0",
+        "country:DO:7",
+        "country:GH:0",
+        "country:GT:13",
+        "country:KG:region:Local areas:0",
+        "country:RE:0",
+        "country:UG:0"
+      ]
+    },
+    {
+      "id": "infrastructure__rectangular_blue_street_name_signs_with_white_bo",
+      "label": "Rectangular blue street name signs with white border (modern)",
+      "category": "infrastructure",
+      "cards": [
+        "country:FR:8",
+        "country:FR:15",
+        "country:DE:12",
+        "country:DE:15",
+        "country:DE:26",
+        "country:DE:region:Local areas:3"
+      ]
+    },
+    {
+      "id": "infrastructure__yellow_plate_yellow_paint_pole_ids_on_metal_conc",
+      "label": "Yellow plate / yellow paint pole IDs on metal/concrete poles",
+      "category": "infrastructure",
+      "cards": [
+        "country:BR:14",
+        "country:BR:15",
+        "country:BR:38",
+        "country:BR:74",
+        "country:BR:85",
+        "country:CO:2"
+      ]
+    },
+    {
+      "id": "landscape__dense_tropical_rainforest_with_road_cutting_thro",
+      "label": "Dense tropical rainforest with road cutting through",
+      "category": "landscape",
+      "cards": [
+        "country:BR:58",
+        "country:BR:68",
+        "country:BR:95",
+        "country:BR:region:Local areas:1",
+        "country:CL:region:Local areas:6",
+        "country:NZ:region:Local areas:0"
+      ]
+    },
+    {
+      "id": "landscape__hilly_green_agricultural_rolling_countryside",
+      "label": "Hilly green agricultural rolling countryside",
+      "category": "landscape",
+      "cards": [
+        "country:CL:8",
+        "country:IM:0",
+        "country:JE:0",
+        "country:IL:region:Local areas:6",
+        "country:IL:region:Local areas:7",
+        "country:GT:4"
+      ]
+    },
+    {
+      "id": "landscape__coastal_palm_lined_sandy_beaches",
+      "label": "Coastal palm-lined sandy beaches",
+      "category": "landscape",
+      "cards": [
+        "country:AS:1",
+        "country:GH:5",
+        "country:MG:7",
+        "country:MG:region:Local areas:8",
+        "country:MG:region:Local areas:3",
+        "country:FK:2"
+      ]
+    },
+    {
+      "id": "landscape__bay_harbor_coverage_with_mountains_and_ocean",
+      "label": "Bay/harbor coverage with mountains and ocean",
+      "category": "landscape",
+      "cards": [
+        "country:AS:8",
+        "country:AS:region:Local areas:2",
+        "country:AS:region:Local areas:3",
+        "country:AS:region:Local areas:5",
+        "country:AS:16",
+        "country:CL:14"
+      ]
+    },
+    {
+      "id": "landscape__snowy_polar_ice_landscape",
+      "label": "Snowy polar/ice landscape",
+      "category": "landscape",
+      "cards": [
+        "country:AQ:3",
+        "country:AQ:region:Local areas:2",
+        "country:AQ:region:Local areas:3",
+        "country:AQ:region:Local areas:6",
+        "country:IS:11",
+        "country:IS:14"
+      ]
+    },
+    {
+      "id": "region__power_line_utility_pole_crossbar_configurations",
+      "label": "Power line / utility pole crossbar configurations",
+      "category": "region",
+      "cards": [
+        "country:BR:71",
+        "country:BR:72",
+        "country:BR:77",
+        "country:BR:84",
+        "country:MX:21",
+        "country:MX:16"
+      ]
+    },
+    {
+      "id": "vegetation__red_dirt_road_through_scrubby_tropical_savannah_",
+      "label": "Red dirt road through scrubby tropical savannah with scattered trees",
+      "category": "vegetation",
+      "cards": [
+        "country:GH:region:Local areas:1",
+        "country:NG:7",
+        "country:NG:6",
+        "country:SN:region:Local areas:1",
+        "country:SN:region:Local areas:2",
+        "country:SN:region:Local areas:4"
+      ]
+    },
+    {
+      "id": "vegetation__open_road_through_tall_golden_grass_with_green_h",
+      "label": "Open road through tall golden grass with green hills backdrop",
+      "category": "vegetation",
+      "cards": [
+        "country:SZ:1",
+        "country:BW:5",
+        "country:KH:11",
+        "country:IE:3",
+        "country:JO:region:Local areas:4",
+        "country:JO:region:Local areas:7"
+      ]
+    },
+    {
+      "id": "bollard__white_wedge_with_black_rectangle_insert_orange_y",
+      "label": "White wedge with black rectangle insert, orange/yellow rectangular front reflector (Lithuanian/Spanish)",
+      "category": "bollard",
+      "cards": [
+        "country:LT:0",
+        "country:LT:2",
+        "country:ES:1",
+        "country:ES:5",
+        "country:KR:3",
+        "country:PE:7"
+      ]
+    },
+    {
+      "id": "language__bilingual_road_shop_sign_photo_with_regional_map",
+      "label": "Bilingual road/shop sign photo with regional map inset",
+      "category": "language",
+      "cards": [
+        "country:EE:region:Local areas:1",
+        "country:FR:48",
+        "country:FR:50",
+        "country:FR:region:Local areas:1",
+        "country:UA:region:Local areas:2",
+        "country:GB:region:Local areas:1"
+      ]
+    },
+    {
+      "id": "infrastructure__old_enamel_street_signs_white_bordered_plate_wit",
+      "label": "Old enamel street signs - white-bordered plate with city emblem",
+      "category": "infrastructure",
+      "cards": [
+        "country:FR:13",
+        "country:DE:6",
+        "country:DE:14",
+        "country:DE:15",
+        "country:DE:region:Local areas:1"
+      ]
+    },
+    {
+      "id": "infrastructure__slim_white_vertical_bollards_with_reflective_ora",
+      "label": "Slim white vertical bollards with reflective orange/red bands",
+      "category": "infrastructure",
+      "cards": [
+        "country:JP:35",
+        "country:JP:36",
+        "country:JP:region:Local areas:1",
+        "country:CO:19",
+        "country:IN:8"
+      ]
+    },
+    {
+      "id": "infrastructure__sticker_small_paint_label_on_signpost_or_utility",
+      "label": "Sticker / small paint label on signpost or utility pole",
+      "category": "infrastructure",
+      "cards": [
+        "country:JP:21",
+        "country:IN:1",
+        "country:IN:22",
+        "country:AU:6",
+        "country:FR:16"
+      ]
+    },
+    {
+      "id": "infrastructure__cobblestone_patterned_stone_sidewalk_close_up",
+      "label": "Cobblestone / patterned stone sidewalk close-up",
+      "category": "infrastructure",
+      "cards": [
+        "country:BR:8",
+        "country:BR:12",
+        "country:BR:23",
+        "country:BR:25",
+        "country:CO:8"
+      ]
+    },
+    {
+      "id": "landscape__open_grassland_steppe_pampa_with_scattered_trees",
+      "label": "Open grassland / steppe / pampa with scattered trees",
+      "category": "landscape",
+      "cards": [
+        "country:AR:5",
+        "country:CO:35",
+        "country:ID:34",
+        "country:KZ:region:Local areas:0",
+        "country:AU:7"
+      ]
+    },
+    {
+      "id": "landscape__smooth_eroded_sandy_desert_mountains",
+      "label": "Smooth eroded sandy/desert mountains",
+      "category": "landscape",
+      "cards": [
+        "country:US:region:Local areas:7",
+        "country:CL:region:Local areas:5",
+        "country:JO:1",
+        "country:IN:14",
+        "country:IN:7"
+      ]
+    },
+    {
+      "id": "landscape__volcanic_black_dark_soil_and_barren_rock",
+      "label": "Volcanic black/dark soil and barren rock",
+      "category": "landscape",
+      "cards": [
+        "country:AQ:2",
+        "country:AQ:3",
+        "country:IS:14",
+        "country:IS:region:Local areas:7",
+        "country:IN:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "landscape__high_altitude_valley_road_with_snow_capped_peaks",
+      "label": "High altitude valley road with snow-capped peaks beyond",
+      "category": "landscape",
+      "cards": [
+        "country:CL:12",
+        "country:IN:13",
+        "country:IN:34",
+        "country:IN:38",
+        "country:IS:region:Local areas:6"
+      ]
+    },
+    {
+      "id": "region__pine_forest_plantations",
+      "label": "Pine forest plantations",
+      "category": "region",
+      "cards": [
+        "country:PT:19",
+        "country:CL:region:Local areas:15",
+        "country:NP:region:Local areas:0",
+        "country:MN:2",
+        "country:PK:12"
+      ]
+    },
+    {
+      "id": "region__snow_capped_jagged_mountains_andean_ranges",
+      "label": "Snow-capped jagged mountains / Andean ranges",
+      "category": "region",
+      "cards": [
+        "country:BO:4",
+        "country:KZ:6",
+        "country:CL:19",
+        "country:BG:10",
+        "country:IS:region:Local areas:10"
+      ]
+    },
+    {
+      "id": "car_meta__dark_grey_black_car_or_truck_top_with_side_mirro",
+      "label": "Dark/grey/black car or truck top with side mirrors",
+      "category": "car meta",
+      "cards": [
+        "country:AS:4",
+        "country:AS:5",
+        "country:CO:10",
+        "country:GL:region:Local areas:0",
+        "country:ZA:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "infrastructure__empty_divided_highway_with_grass_median_perspect",
+      "label": "Empty divided highway with grass median, perspective shot",
+      "category": "infrastructure",
+      "cards": [
+        "country:BR:56",
+        "country:IS:2",
+        "country:IS:region:Local areas:1",
+        "country:CO:33"
+      ]
+    },
+    {
+      "id": "landscape__caatinga_dry_shrub_cactus_arid_scrubland",
+      "label": "Caatinga / dry shrub / cactus arid scrubland",
+      "category": "landscape",
+      "cards": [
+        "country:BR:region:Local areas:0",
+        "country:EC:region:Local areas:3",
+        "country:CL:17",
+        "country:CL:18"
+      ]
+    },
+    {
+      "id": "landscape__bare_treeless_tabletop_flat_topped_highland_moun",
+      "label": "Bare treeless tabletop / flat-topped highland mountains",
+      "category": "landscape",
+      "cards": [
+        "country:LS:0",
+        "country:ME:region:Local areas:4",
+        "country:IS:region:Local areas:12",
+        "country:US:region:Local areas:4"
+      ]
+    },
+    {
+      "id": "landscape__cliff_rocky_island_shoreline",
+      "label": "Cliff / rocky island shoreline",
+      "category": "landscape",
+      "cards": [
+        "country:AQ:0",
+        "country:FK:3",
+        "country:IO:0",
+        "country:IS:region:Local areas:5"
+      ]
+    },
+    {
+      "id": "landscape__moored_fishing_boats_with_mountain_backdrop",
+      "label": "Moored fishing boats with mountain backdrop",
+      "category": "landscape",
+      "cards": [
+        "country:GL:6",
+        "country:GL:region:Local areas:5",
+        "country:GL:region:Local areas:6",
+        "country:NO:11"
+      ]
+    },
+    {
+      "id": "landscape__foggy_misty_overcast_highland_coverage",
+      "label": "Foggy / misty / overcast highland coverage",
+      "category": "landscape",
+      "cards": [
+        "country:PT:23",
+        "country:MN:region:Local areas:5",
+        "country:AS:14",
+        "country:AR:21"
+      ]
+    },
+    {
+      "id": "landscape__treeless_rolling_hills_with_dry_dead_grass",
+      "label": "Treeless rolling hills with dry/dead grass",
+      "category": "landscape",
+      "cards": [
+        "country:LS:region:Local areas:0",
+        "country:ME:region:Local areas:4",
+        "country:IL:region:Local areas:3",
+        "country:GU:2"
+      ]
+    },
+    {
+      "id": "region__vineyards_terraced_vineyards",
+      "label": "Vineyards / terraced vineyards",
+      "category": "region",
+      "cards": [
+        "country:PT:region:Local areas:1",
+        "country:CY:6",
+        "country:LU:5",
+        "country:ME:region:Local areas:3"
+      ]
+    },
+    {
+      "id": "region__dry_rugged_red_orange_desert_mountains",
+      "label": "Dry rugged red/orange desert mountains",
+      "category": "region",
+      "cards": [
+        "country:MN:6",
+        "country:OM:region:Local areas:4",
+        "country:KE:region:Local areas:10",
+        "country:NG:region:Local areas:6"
+      ]
+    },
+    {
+      "id": "region__lush_tropical_green_dense_vegetation",
+      "label": "Lush tropical green dense vegetation",
+      "category": "region",
+      "cards": [
+        "country:BO:region:Local areas:2",
+        "country:GH:4",
+        "country:EC:4",
+        "country:SZ:2"
+      ]
+    },
+    {
+      "id": "region__dense_mid_rise_urban_downtown_skyline",
+      "label": "Dense mid-rise urban downtown skyline",
+      "category": "region",
+      "cards": [
+        "country:BM:region:Local areas:1",
+        "country:DO:4",
+        "country:HK:region:Local areas:1",
+        "country:MO:0"
+      ]
+    },
+    {
+      "id": "region__eastern_brick_red_brick_fortress_college_walls",
+      "label": "Eastern brick / red brick fortress / college walls",
+      "category": "region",
+      "cards": [
+        "country:PK:1",
+        "country:PK:4",
+        "country:PK:region:Local areas:2",
+        "country:EG:4"
+      ]
+    },
+    {
+      "id": "vegetation__arid_sparse_rocky_red_dirt_semi_desert_plain",
+      "label": "Arid sparse rocky red-dirt semi-desert plain",
+      "category": "vegetation",
+      "cards": [
+        "country:CY:8",
+        "country:TN:4",
+        "country:IS:8",
+        "country:PT:25"
+      ]
+    },
+    {
+      "id": "vegetation__red_soil_hilly_landscape_with_cleared_cultivated",
+      "label": "Red-soil hilly landscape with cleared/cultivated plots",
+      "category": "vegetation",
+      "cards": [
+        "country:VN:10",
+        "country:VN:17",
+        "country:KE:6",
+        "country:TW:11"
+      ]
+    },
+    {
+      "id": "vegetation__overcast_gray_sky_over_barren_rocky_hills_gravel",
+      "label": "Overcast gray sky over barren rocky hills/gravel road",
+      "category": "vegetation",
+      "cards": [
+        "country:UY:region:Local areas:2",
+        "country:UY:region:Local areas:3",
+        "country:LS:2",
+        "country:VU:1"
+      ]
+    },
+    {
+      "id": "vegetation__dry_steppe_plain_with_patchy_shrubs_under_wide_s",
+      "label": "Dry steppe plain with patchy shrubs under wide sky",
+      "category": "vegetation",
+      "cards": [
+        "country:MN:5",
+        "country:MN:region:Local areas:2",
+        "country:KZ:region:Local areas:3",
+        "country:BO:2"
+      ]
+    },
+    {
+      "id": "vegetation__lush_tropical_roadside_vegetation_with_palms_and",
+      "label": "Lush tropical roadside vegetation with palms and dense greenery",
+      "category": "vegetation",
+      "cards": [
+        "country:LK:6",
+        "country:VN:region:Local areas:1",
+        "country:KH:10",
+        "country:PK:region:Local areas:6"
+      ]
+    },
+    {
+      "id": "bollard__round_baton_white_post_with_black_band_and_two_c",
+      "label": "Round/baton white post with black band and two circular reflectors (Estonian/Latvian/Finnish)",
+      "category": "bollard",
+      "cards": [
+        "country:EE:4",
+        "country:LV:5",
+        "country:FI:2",
+        "country:NO:17"
+      ]
+    },
+    {
+      "id": "bollard__short_white_cylindrical_bollard_with_single_colo",
+      "label": "Short white cylindrical bollard with single colored stripe near top (UK/Netherlands rounded)",
+      "category": "bollard",
+      "cards": [
+        "country:GB:3",
+        "country:GB:4",
+        "country:NL:region:Local areas:0",
+        "country:AU:0"
+      ]
+    },
+    {
+      "id": "architecture__alpine_chalet_light_walls_dark_wood_balconies_mo",
+      "label": "Alpine chalet: light walls + dark wood balconies, mountain backdrop",
+      "category": "architecture",
+      "cards": [
+        "country:FR:12",
+        "country:CH:12",
+        "country:SI:4",
+        "country:BT:1"
+      ]
+    },
+    {
+      "id": "architecture__beige_limestone_stone_walls_mediterranean_dry_cl",
+      "label": "Beige limestone/stone walls (Mediterranean/dry climate)",
+      "category": "architecture",
+      "cards": [
+        "country:MT:8",
+        "country:IL:8",
+        "country:FR:2",
+        "country:CH:13"
+      ]
+    },
+    {
+      "id": "car_meta__white_pickup_truck_top_with_visible_side_mirrors",
+      "label": "White pickup truck top with visible side mirrors",
+      "category": "car meta",
+      "cards": [
+        "country:CL:region:Local areas:4",
+        "country:MX:9",
+        "country:QA:0",
+        "country:IS:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "coverage_meta__tropical_green_road_with_palms_dense_foliage",
+      "label": "Tropical green road with palms / dense foliage",
+      "category": "coverage meta",
+      "cards": [
+        "country:BR:88",
+        "country:CO:39",
+        "country:LK:7",
+        "country:MO:1"
+      ]
+    },
+    {
+      "id": "agriculture__flat_low_rolling_green_farmland_with_distant_mou",
+      "label": "Flat low-rolling green farmland with distant mountains/hills under pale sky",
+      "category": "agriculture",
+      "cards": [
+        "country:CY:region:Local areas:1",
+        "country:IS:9",
+        "country:NO:region:Local areas:5",
+        "country:TW:10"
+      ]
+    },
+    {
+      "id": "language__country_map_with_colored_language_suffix_regions",
+      "label": "Country map with colored language/suffix regions",
+      "category": "language",
+      "cards": [
+        "country:FR:24",
+        "country:FR:45",
+        "country:DE:22",
+        "country:DE:23"
+      ]
+    },
+    {
+      "id": "infrastructure__low_concrete_stone_barriers_lining_rural_roadsid",
+      "label": "Low concrete/stone barriers lining rural roadside",
+      "category": "infrastructure",
+      "cards": [
+        "country:MT:2",
+        "country:MT:3",
+        "country:IN:39"
+      ]
+    },
+    {
+      "id": "infrastructure__metal_w_beam_guardrail_along_highway_shoulder",
+      "label": "Metal W-beam guardrail along highway shoulder",
+      "category": "infrastructure",
+      "cards": [
+        "country:FR:49",
+        "country:MT:3",
+        "country:AS:region:Local areas:0"
+      ]
+    },
+    {
+      "id": "infrastructure__white_rectangular_kilometer_markers_with_black_t",
+      "label": "White rectangular kilometer markers with black text on roadside",
+      "category": "infrastructure",
+      "cards": [
+        "country:AR:8",
+        "country:AR:10",
+        "country:BR:31"
+      ]
+    },
+    {
+      "id": "infrastructure__tropical_island_coastal_road_with_palms_and_ocea",
+      "label": "Tropical island coastal road with palms and ocean / mountainside",
+      "category": "infrastructure",
+      "cards": [
+        "country:AS:6",
+        "country:AS:region:Local areas:0",
+        "country:IN:6"
+      ]
+    },
+    {
+      "id": "landscape__eucalyptus_tree_plantations_along_road",
+      "label": "Eucalyptus / tree plantations along road",
+      "category": "landscape",
+      "cards": [
+        "country:CL:11",
+        "country:CL:22",
+        "country:NZ:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "landscape__grassy_treeless_mountain_meadows_alpine_pasture",
+      "label": "Grassy treeless mountain meadows (alpine pasture)",
+      "category": "landscape",
+      "cards": [
+        "country:LS:0",
+        "country:ME:region:Local areas:4",
+        "country:IS:region:Local areas:6"
+      ]
+    },
+    {
+      "id": "landscape__treeless_windswept_moorland_flat_coastal_plain",
+      "label": "Treeless windswept moorland / flat coastal plain",
+      "category": "landscape",
+      "cards": [
+        "country:FK:region:Local areas:1",
+        "country:IO:0",
+        "country:JE:region:Local areas:1"
+      ]
+    },
+    {
+      "id": "landscape__rocky_river_valley_with_cliffs",
+      "label": "Rocky river valley with cliffs",
+      "category": "landscape",
+      "cards": [
+        "country:JO:1",
+        "country:MN:region:Local areas:6",
+        "country:AR:31"
+      ]
+    },
+    {
+      "id": "landscape__distinctive_single_conical_pointy_mountain_landm",
+      "label": "Distinctive single conical/pointy mountain landmark",
+      "category": "landscape",
+      "cards": [
+        "country:CO:11",
+        "country:JP:region:Local areas:0",
+        "country:GL:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "landscape__lake_large_body_of_water_with_mountain_shore",
+      "label": "Lake / large body of water with mountain shore",
+      "category": "landscape",
+      "cards": [
+        "country:PT:11",
+        "country:BO:region:Local areas:1",
+        "country:GH:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "region__olive_plantations_orchards_on_rolling_hills",
+      "label": "Olive plantations / orchards on rolling hills",
+      "category": "region",
+      "cards": [
+        "country:PT:17",
+        "country:GR:15",
+        "country:IT:13"
+      ]
+    },
+    {
+      "id": "region__citrus_fruit_plantations_in_rows",
+      "label": "Citrus / fruit plantations in rows",
+      "category": "region",
+      "cards": [
+        "country:GR:16",
+        "country:IT:13",
+        "country:BD:9"
+      ]
+    },
+    {
+      "id": "region__rice_paddies_lush_green_flat_fields",
+      "label": "Rice paddies - lush green flat fields",
+      "category": "region",
+      "cards": [
+        "country:BD:3",
+        "country:BD:6",
+        "country:HK:2"
+      ]
+    },
+    {
+      "id": "region__bright_white_sandy_soil_on_roads",
+      "label": "Bright white sandy soil on roads",
+      "category": "region",
+      "cards": [
+        "country:BW:region:Local areas:5",
+        "country:KH:12",
+        "country:KE:5"
+      ]
+    },
+    {
+      "id": "region__reddish_soil_farmland_tilled_fields",
+      "label": "Reddish soil farmland tilled fields",
+      "category": "region",
+      "cards": [
+        "country:JO:region:Local areas:5",
+        "country:CY:5",
+        "country:MG:region:Local areas:10"
+      ]
+    },
+    {
+      "id": "region__identical_apartment_block_residential_clusters",
+      "label": "Identical apartment block residential clusters",
+      "category": "region",
+      "cards": [
+        "country:HK:5",
+        "country:HK:4",
+        "country:MO:0"
+      ]
+    },
+    {
+      "id": "region__sandstone_islamic_citadel_mosque_with_minarets",
+      "label": "Sandstone Islamic citadel / mosque with minarets",
+      "category": "region",
+      "cards": [
+        "country:EG:2",
+        "country:GI:1",
+        "country:PK:8"
+      ]
+    },
+    {
+      "id": "region__blue_street_signs_european",
+      "label": "Blue street signs (European)",
+      "category": "region",
+      "cards": [
+        "country:CZ:9",
+        "country:LI:1",
+        "country:LI:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "region__cobblestone_unique_pavement_style",
+      "label": "Cobblestone / unique pavement style",
+      "category": "region",
+      "cards": [
+        "country:MX:17",
+        "country:CC:region:Local areas:0",
+        "country:MX:26"
+      ]
+    },
+    {
+      "id": "region__rugged_grassland_forest_national_park",
+      "label": "Rugged grassland/forest national park",
+      "category": "region",
+      "cards": [
+        "country:MN:region:Local areas:3",
+        "country:MG:region:Local areas:4",
+        "country:KE:region:Local areas:9"
+      ]
+    },
+    {
+      "id": "bollard__red_and_white_striped_cylindrical_concrete_bolla",
+      "label": "Red-and-white striped cylindrical concrete bollard (developing-country style)",
+      "category": "bollard",
+      "cards": [
+        "country:BD:0",
+        "country:RW:1",
+        "country:TH:4"
+      ]
+    },
+    {
+      "id": "bollard__white_round_bollard_with_diagonal_black_stripe_b",
+      "label": "White round bollard with diagonal black stripe / band near top (post-Soviet)",
+      "category": "bollard",
+      "cards": [
+        "country:RU:region:Local areas:0",
+        "country:KG:3",
+        "country:KZ:8"
+      ]
+    },
+    {
+      "id": "architecture__red_brick_single_story_low_houses",
+      "label": "Red brick single-story/low houses",
+      "category": "architecture",
+      "cards": [
+        "country:BR:24",
+        "country:DE:4",
+        "country:IN:region:Local areas:4"
+      ]
+    },
+    {
+      "id": "architecture__white_stucco_walls_with_terracotta_red_tile_roof",
+      "label": "White stucco walls with terracotta/red tile roofs",
+      "category": "architecture",
+      "cards": [
+        "country:PT:6",
+        "country:IT:11",
+        "country:AR:9"
+      ]
+    },
+    {
+      "id": "architecture__white_painted_wooden_buildings_clapboard_cabin",
+      "label": "White painted wooden buildings (clapboard/cabin)",
+      "category": "architecture",
+      "cards": [
+        "country:US:30",
+        "country:GS:1",
+        "country:AQ:4"
+      ]
+    },
+    {
+      "id": "trekker__boat_deck_trekker_on_open_water",
+      "label": "Boat-deck trekker on open water",
+      "category": "trekker",
+      "cards": [
+        "country:AS:3",
+        "country:FR:5",
+        "country:GS:region:Local areas:1"
+      ]
+    },
+    {
+      "id": "trekker__dense_tropical_jungle_interior_with_ferns",
+      "label": "Dense tropical jungle interior with ferns",
+      "category": "trekker",
+      "cards": [
+        "country:MQ:2",
+        "country:VU:2",
+        "country:MG:15"
+      ]
+    },
+    {
+      "id": "car_meta__reddish_orange_street_view_car_blur",
+      "label": "Reddish/orange Street View car blur",
+      "category": "car meta",
+      "cards": [
+        "country:IN:17",
+        "country:PH:6",
+        "country:IS:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "coverage_meta__close_up_car_roof_antenna_meta",
+      "label": "Close-up car roof / antenna meta",
+      "category": "coverage meta",
+      "cards": [
+        "country:BG:16",
+        "country:BG:17",
+        "country:SN:7"
+      ]
+    },
+    {
+      "id": "unique_car__heavily_blurred_car_with_only_antenna_visible_to",
+      "label": "Heavily blurred car with only antenna visible (top-down road view)",
+      "category": "unique car",
+      "cards": [
+        "country:GU:0",
+        "country:MP:0",
+        "country:GR:17"
+      ]
+    },
+    {
+      "id": "unique_car__blurred_car_back_front_with_subtle_stripes_or_co",
+      "label": "Blurred car back/front with subtle stripes or color tint",
+      "category": "unique car",
+      "cards": [
+        "country:KH:14",
+        "country:LK:1",
+        "country:BM:0"
+      ]
+    },
+    {
+      "id": "unique_car__pickup_truck_rear_with_brake_light_on_cargo_bed_",
+      "label": "Pickup truck rear with brake light on cargo bed/roof",
+      "category": "unique car",
+      "cards": [
+        "country:AS:0",
+        "country:RW:0",
+        "country:MN:0"
+      ]
+    },
+    {
+      "id": "agriculture__banana_broad_leaved_tropical_plantation_greenery",
+      "label": "Banana/broad-leaved tropical plantation greenery",
+      "category": "agriculture",
+      "cards": [
+        "country:CO:22",
+        "country:CO:24",
+        "country:PH:8"
+      ]
+    },
+    {
+      "id": "street_name_ending__blue_rectangular_street_sign_with_white_text_nor",
+      "label": "Blue rectangular street sign with white text (Nordic/Baltic)",
+      "category": "street name ending",
+      "cards": [
+        "country:DK:1",
+        "country:EE:0",
+        "country:LV:7"
+      ]
+    },
+    {
+      "id": "street_name_ending__white_rectangular_street_sign_with_black_text",
+      "label": "White rectangular street sign with black text",
+      "category": "street name ending",
+      "cards": [
+        "country:FI:0",
+        "country:LT:1",
+        "country:EE:0"
+      ]
+    },
+    {
+      "id": "landscape__swampy_waterlogged_road_with_sparse_trees",
+      "label": "Swampy / waterlogged road with sparse trees",
+      "category": "landscape",
+      "cards": [
+        "country:BR:51",
+        "country:CO:16"
+      ]
+    },
+    {
+      "id": "landscape__wind_turbines_on_hills_coast",
+      "label": "Wind turbines on hills/coast",
+      "category": "landscape",
+      "cards": [
+        "country:BG:11",
+        "country:IN:21"
+      ]
+    },
+    {
+      "id": "landscape__white_exposed_limestone_or_pale_chalky_rock_terr",
+      "label": "White/exposed limestone or pale chalky rock terrain",
+      "category": "landscape",
+      "cards": [
+        "country:CY:4",
+        "country:CO:38"
+      ]
+    },
+    {
+      "id": "landscape__citrus_oil_palm_plantations",
+      "label": "Citrus / oil palm plantations",
+      "category": "landscape",
+      "cards": [
+        "country:PT:20",
+        "country:GT:5"
+      ]
+    },
+    {
+      "id": "landscape__rice_paddies_off_season_barren_fields_with_emban",
+      "label": "Rice paddies / off-season barren fields with embankments",
+      "category": "landscape",
+      "cards": [
+        "country:BD:region:Local areas:2",
+        "country:KH:9"
+      ]
+    },
+    {
+      "id": "landscape__coastal_palm_fringed_multi_story_riviera_town",
+      "label": "Coastal palm-fringed multi-story riviera town",
+      "category": "landscape",
+      "cards": [
+        "country:FR:43",
+        "country:JE:2"
+      ]
+    },
+    {
+      "id": "region__banana_plantations_dense_green_leaves",
+      "label": "Banana plantations - dense green leaves",
+      "category": "region",
+      "cards": [
+        "country:PT:22",
+        "country:EC:3"
+      ]
+    },
+    {
+      "id": "region__sparse_oak_savanna_scattered_trees_on_grassland_",
+      "label": "Sparse oak savanna / scattered trees on grassland (montado)",
+      "category": "region",
+      "cards": [
+        "country:PT:16",
+        "country:CR:3"
+      ]
+    },
+    {
+      "id": "region__date_palm_tree_plantations",
+      "label": "Date / palm tree plantations",
+      "category": "region",
+      "cards": [
+        "country:AR:17",
+        "country:IL:9"
+      ]
+    },
+    {
+      "id": "region__sugar_cane_tall_green_crop_fields",
+      "label": "Sugar cane / tall green crop fields",
+      "category": "region",
+      "cards": [
+        "country:SZ:5",
+        "country:BD:region:Local areas:4"
+      ]
+    },
+    {
+      "id": "region__dry_sandy_desert_with_red_dunes",
+      "label": "Dry sandy desert with red dunes",
+      "category": "region",
+      "cards": [
+        "country:OM:5",
+        "country:IL:7"
+      ]
+    },
+    {
+      "id": "region__semi_arid_hills_with_low_shrubs",
+      "label": "Semi-arid hills with low shrubs",
+      "category": "region",
+      "cards": [
+        "country:BW:region:Local areas:2",
+        "country:OM:region:Local areas:6"
+      ]
+    },
+    {
+      "id": "region__forested_mountainous_green_region",
+      "label": "Forested mountainous green region",
+      "category": "region",
+      "cards": [
+        "country:IL:region:Local areas:4",
+        "country:DO:2"
+      ]
+    },
+    {
+      "id": "region__coastal_palm_trees_with_white_sand",
+      "label": "Coastal palm trees with white sand",
+      "category": "region",
+      "cards": [
+        "country:KE:5",
+        "country:MG:region:Local areas:9"
+      ]
+    },
+    {
+      "id": "region__alpine_style_white_houses_with_brown_wooden_deta",
+      "label": "Alpine-style white houses with brown wooden details",
+      "category": "region",
+      "cards": [
+        "country:BG:12",
+        "country:LI:region:Local areas:1"
+      ]
+    },
+    {
+      "id": "region__distinctive_road_markers_with_grainy_asphalt",
+      "label": "Distinctive road markers with grainy asphalt",
+      "category": "region",
+      "cards": [
+        "country:BW:4",
+        "country:AR:13"
+      ]
+    },
+    {
+      "id": "region__lamp_light_fixture_identification",
+      "label": "Lamp / light fixture identification",
+      "category": "region",
+      "cards": [
+        "country:BR:86",
+        "country:IM:4"
+      ]
+    },
+    {
+      "id": "region__tropical_amazon_forest_with_white_bark_trees",
+      "label": "Tropical Amazon forest with white-bark trees",
+      "category": "region",
+      "cards": [
+        "country:EC:4",
+        "country:BO:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "region__yellow_flower_bushes_wild_mustard",
+      "label": "Yellow flower bushes / wild mustard",
+      "category": "region",
+      "cards": [
+        "country:CY:7",
+        "country:KE:region:Local areas:11"
+      ]
+    },
+    {
+      "id": "region__roads_inside_under_tree_canopy_narrow_forest_roa",
+      "label": "Roads inside/under tree canopy (narrow forest roads)",
+      "category": "region",
+      "cards": [
+        "country:CL:23",
+        "country:NZ:region:Local areas:3"
+      ]
+    },
+    {
+      "id": "region__hilly_hazy_semi_mountainous_coverage",
+      "label": "Hilly hazy semi-mountainous coverage",
+      "category": "region",
+      "cards": [
+        "country:PK:region:Local areas:5",
+        "country:LI:0"
+      ]
+    },
+    {
+      "id": "region__bantam_cocos_islands_car_coverage_white_car_visi",
+      "label": "Bantam Cocos Islands car coverage (white car visible)",
+      "category": "region",
+      "cards": [
+        "country:CC:1",
+        "country:PK:region:Local areas:0"
+      ]
+    },
+    {
+      "id": "vegetation__tall_eucalyptus_stand_with_light_trunks_lining_r",
+      "label": "Tall eucalyptus stand with light trunks lining road",
+      "category": "vegetation",
+      "cards": [
+        "country:PT:18",
+        "country:BD:10"
+      ]
+    },
+    {
+      "id": "vegetation__olive_grove_plantation_along_flat_road",
+      "label": "Olive grove plantation along flat road",
+      "category": "vegetation",
+      "cards": [
+        "country:TN:region:Local areas:2",
+        "country:FR:37"
+      ]
+    },
+    {
+      "id": "vegetation__rocky_hill_outcrops_over_savannah_scrubland",
+      "label": "Rocky hill outcrops over savannah scrubland",
+      "category": "vegetation",
+      "cards": [
+        "country:NG:region:Local areas:5",
+        "country:AR:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "vegetation__pine_plantation_stand_bordering_road",
+      "label": "Pine plantation stand bordering road",
+      "category": "vegetation",
+      "cards": [
+        "country:SZ:4",
+        "country:FR:20"
+      ]
+    },
+    {
+      "id": "vegetation__hazy_dusty_bright_sky_over_open_road_with_thin_t",
+      "label": "Hazy/dusty bright sky over open road with thin tree line",
+      "category": "vegetation",
+      "cards": [
+        "country:RU:region:Local areas:5",
+        "country:KZ:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "bollard__white_cylindrical_bollard_with_red_orange_tip_to",
+      "label": "White cylindrical bollard with red/orange tip top (Andorra/Vietnam)",
+      "category": "bollard",
+      "cards": [
+        "country:AD:0",
+        "country:VN:6"
+      ]
+    },
+    {
+      "id": "architecture__dark_wood_old_wooden_townscape_mining_western_ti",
+      "label": "Dark-wood old wooden townscape (mining/western timber)",
+      "category": "architecture",
+      "cards": [
+        "country:US:32",
+        "country:NO:8"
+      ]
+    },
+    {
+      "id": "architecture__ornate_grand_white_facade_victorian_colonial_dom",
+      "label": "Ornate grand white facade (Victorian/colonial domes)",
+      "category": "architecture",
+      "cards": [
+        "country:US:22",
+        "country:PK:3"
+      ]
+    },
+    {
+      "id": "trekker__snowy_walking_line_trekker_people_in_conga",
+      "label": "Snowy walking-line trekker (people in conga)",
+      "category": "trekker",
+      "cards": [
+        "country:AQ:1",
+        "country:CL:13"
+      ]
+    },
+    {
+      "id": "trekker__open_windswept_rocky_grassy_plain_with_sea_horiz",
+      "label": "Open windswept rocky/grassy plain with sea horizon",
+      "category": "trekker",
+      "cards": [
+        "country:FK:0",
+        "country:MG:region:Local areas:17"
+      ]
+    },
+    {
+      "id": "car_meta__silver_metallic_roof_rack_visible_on_street_view",
+      "label": "Silver/metallic roof rack visible on Street View vehicle",
+      "category": "car meta",
+      "cards": [
+        "country:MG:region:Local areas:5",
+        "country:ZA:region:Local areas:2"
+      ]
+    },
+    {
+      "id": "car_meta__minimal_heavily_blurred_car_with_only_antenna_sl",
+      "label": "Minimal/heavily blurred car with only antenna sliver visible",
+      "category": "car meta",
+      "cards": [
+        "country:QA:0",
+        "country:UA:4"
+      ]
+    },
+    {
+      "id": "coverage_meta__mountainous_scenic_road_with_snow_autumn_vegetat",
+      "label": "Mountainous scenic road with snow / autumn vegetation",
+      "category": "coverage meta",
+      "cards": [
+        "country:CL:27",
+        "country:GB:region:Local areas:0"
+      ]
+    },
+    {
+      "id": "coverage_meta__map_only_meta_tile_no_street_view_scene",
+      "label": "Map-only meta tile (no Street View scene)",
+      "category": "coverage meta",
+      "cards": [
+        "country:BD:12",
+        "country:BR:78"
+      ]
+    },
+    {
+      "id": "coverage_meta__eucalyptus_temperate_forest_road",
+      "label": "Eucalyptus / temperate forest road",
+      "category": "coverage meta",
+      "cards": [
+        "country:AU:region:Local areas:0",
+        "country:BR:66"
+      ]
+    },
+    {
+      "id": "agriculture__tall_slim_eucalyptus_tree_plantation_rows_beside",
+      "label": "Tall slim eucalyptus/tree plantation rows beside road",
+      "category": "agriculture",
+      "cards": [
+        "country:AR:14",
+        "country:BR:89"
+      ]
+    },
+    {
+      "id": "agriculture__road_through_green_valley_flanked_by_forested_mo",
+      "label": "Road through green valley flanked by forested mountains",
+      "category": "agriculture",
+      "cards": [
+        "country:ME:1",
+        "country:TW:12"
+      ]
+    },
+    {
+      "id": "agriculture__dense_wall_of_green_crop_bushes_filling_frame",
+      "label": "Dense wall-of-green crop bushes filling frame",
+      "category": "agriculture",
+      "cards": [
+        "country:PH:8",
+        "country:TR:2"
+      ]
+    },
+    {
+      "id": "language__bengali_script_sample_devanagari_like_top_bar",
+      "label": "Bengali script sample (Devanagari-like top bar)",
+      "category": "language",
+      "cards": [
+        "country:BD:13",
+        "country:IN:region:Local areas:8"
+      ]
+    }
+  ]
+}

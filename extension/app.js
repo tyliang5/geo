@@ -200,6 +200,65 @@ function detectInsetBox(imgEl) {
   }
 }
 
+// Render a description with the giveaway phrases highlighted as visual cues.
+// Cards have a precomputed list of country/region/place names that appear in
+// their description — we wrap each match in a styled <span> so the user can
+// see at a glance "these are the words that pin the answer." Phrases were
+// pre-sorted longest-first by the aggregator so we can do greedy matching
+// without overlapping.
+function renderDescriptionWithRedactions(text, cardKey) {
+  if (!text) return '';
+  const phrases = (state.cardRedactions && state.cardRedactions[cardKey]) || [];
+  if (!phrases.length) return escapeHtml(text);
+  // Greedy non-overlapping match. Build a mask array tracking which chars are
+  // already matched, then walk left-to-right collecting plain runs vs
+  // redacted runs.
+  const lower = text.toLowerCase();
+  const claimed = new Array(text.length).fill(false);
+  for (const { phrase } of phrases) {
+    if (!phrase) continue;
+    const pl = phrase.toLowerCase();
+    let from = 0;
+    while (from < lower.length) {
+      const idx = lower.indexOf(pl, from);
+      if (idx < 0) break;
+      // Word-boundary check on each side so "Iceland" doesn't match
+      // "Icelandic" partial; allow apostrophes/spaces/punctuation.
+      const before = idx === 0 ? ' ' : text[idx - 1];
+      const after = idx + pl.length >= text.length ? ' ' : text[idx + pl.length];
+      const isWordChar = ch => /[A-Za-zÀ-ÿ0-9]/.test(ch);
+      if (!isWordChar(before) && !isWordChar(after)) {
+        for (let k = idx; k < idx + pl.length; k++) claimed[k] = true;
+      }
+      from = idx + pl.length;
+    }
+  }
+  let out = '';
+  let i = 0;
+  while (i < text.length) {
+    if (claimed[i]) {
+      let j = i;
+      while (j < text.length && claimed[j]) j++;
+      out += `<span class="redacted">${escapeHtml(text.slice(i, j))}</span>`;
+      i = j;
+    } else {
+      let j = i;
+      while (j < text.length && !claimed[j]) j++;
+      out += escapeHtml(text.slice(i, j));
+      i = j;
+    }
+  }
+  return out;
+}
+
+// Render the 1-line mnemonic for a card if we have one. Designed for the
+// answer-reveal callout: bold short takeaway above the longer description.
+function renderMnemonic(cardKey) {
+  const m = cardKey && state.cardMnemonics ? state.cardMnemonics[cardKey] : null;
+  if (!m) return '';
+  return `<div class="qmnem">💡 ${escapeHtml(m)}</div>`;
+}
+
 // Apply a detected mask box (or hide the mask entirely if no inset detected).
 function applyMaskBox(maskEl, box) {
   if (!maskEl) return;
@@ -484,7 +543,7 @@ function setLeitnerBox(cc, idx, box) {
 const loadJson = (path) => fetch(path, { cache: 'no-cache' }).then(r => r.json());
 
 async function loadAll() {
-  const [tips, geojson, admin1, subregions, facts, reference, areaCodes, areaCodeNotes, countryAreaCodes, compendiumQuizzes, cardMasks, extras, ocrBlacklist, plonkitCovered, geoAliases] = await Promise.all([
+  const [tips, geojson, admin1, subregions, facts, reference, areaCodes, areaCodeNotes, countryAreaCodes, compendiumQuizzes, cardMasks, cardRedactions, cardMnemonics, confusionDrills, extras, ocrBlacklist, plonkitCovered, geoAliases] = await Promise.all([
     loadJson('data/tips.json'),
     loadJson('data/countries.geojson'),
     loadJson('data/admin1.geojson').catch(() => null),
@@ -496,6 +555,9 @@ async function loadAll() {
     loadJson('data/country_area_codes.json').catch(() => ({})),
     loadJson('data/compendium_quizzes.json').catch(() => ({})),
     loadJson('data/card_masks.json').catch(() => ({})),
+    loadJson('data/card_redactions.json').catch(() => ({})),
+    loadJson('data/card_mnemonics.json').catch(() => ({})),
+    loadJson('data/confusion_drills.json').catch(() => ({drills: []})),
     loadJson('data/meta_extras.json').catch(() => null),
     loadJson('data/giveaway_blacklist.json').catch(() => ({})),
     loadJson('data/plonkit_covered.json').catch(() => null),
@@ -512,6 +574,9 @@ async function loadAll() {
   state.countryAreaCodes = countryAreaCodes || {};
   state.compendiumQuizzes = compendiumQuizzes || {};
   state.cardMasks = cardMasks || {};
+  state.cardRedactions = cardRedactions || {};
+  state.cardMnemonics = cardMnemonics || {};
+  state.confusionDrills = (confusionDrills && confusionDrills.drills) || [];
   state.extras = extras;
   state.ocrBlacklist = ocrBlacklist || {};   // pre-built {cardKey: {reason, ...}}
   state.geoAliases = geoAliases || {};       // {cc: {phrase: [region names]}}
@@ -2035,7 +2100,9 @@ function finishQuizAnswer({ isRight, score, clickedCc, clickedFid }) {
   const flagPrefix = (quiz.card.correctCcs && quiz.card.correctCcs.length === 1)
     ? flagEmoji(quiz.card.correctCcs[0]) + ' '
     : (quiz.card.cc ? flagEmoji(quiz.card.cc) + ' ' : '');
-  fb.innerHTML = `<strong>${flagPrefix}${verdict}</strong>${scoreLine}<br>${escapeHtml(quiz.card.description || '')}`;
+  const mnemHtml = renderMnemonic(quiz.card.cardKey);
+  const descHtml = renderDescriptionWithRedactions(quiz.card.description || '', quiz.card.cardKey);
+  fb.innerHTML = `<strong>${flagPrefix}${verdict}</strong>${scoreLine}${mnemHtml}<br>${descHtml}`;
   $('quiz-next').hidden = false;
   updateQuizStats();
   // Bring the Next button into view. Direct scrollTop assignment works
@@ -2770,6 +2837,17 @@ async function boot() {
   ]);
   await loadAll();
   state.topics = buildTopics();
+  // Expand any factory-style topics that produce N concrete topics from runtime
+  // data (e.g. confusion-drill topics, one per audit-detected cluster).
+  const expanded = [];
+  for (const t of state.topics) {
+    if (typeof t.factoryExpand === 'function') {
+      expanded.push(...t.factoryExpand(state));
+    } else {
+      expanded.push(t);
+    }
+  }
+  state.topics = expanded;
   populateCountrySelect();
   populateRegionSelect();
   populateTopicSelect();

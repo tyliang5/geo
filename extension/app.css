@@ -649,6 +649,30 @@ button.ghost:hover { background: var(--bg-elev); color: var(--fg); }
 .quiz-feedback.wrong { border-left-color: var(--bad); }
 .quiz-feedback strong { font-size: 15px; }
 
+/* Mnemonic — short flashcard-back takeaway shown above the longer description
+   on the answer reveal. Bold + accent so the user's eye snaps to it. */
+.qmnem {
+  margin: 8px 0 4px;
+  padding: 8px 10px;
+  background: rgba(245, 158, 11, 0.12);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Redaction highlight — country/region/place names inside the description
+   that were the actual giveaways. Marked so the user can recognise the
+   teaching cue ("ah, when I see Croatia again I'll know") next time. */
+.quiz-feedback .redacted {
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--accent);
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
 .quiz-actions {
   display: flex;
   justify-content: space-between;

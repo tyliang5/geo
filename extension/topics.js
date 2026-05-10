@@ -355,7 +355,69 @@ export function buildTopics() {
     // shows two countries and asks you to identify which is which based
     // on a meta image. Falls back to empty pool if no GG data is loaded.
     confusedPairsTopic(),
+
+    // ---- Confusion drills ----
+    // Pre-computed by the cross-country visual-similarity audit. Each drill
+    // groups cards from different countries that look almost identical so
+    // a player can train themselves to tell them apart. Built dynamically
+    // from state.confusionDrills which is loaded from confusion_drills.json.
+    ...confusionDrillTopics(),
   ];
+}
+
+// ---- Confusion drills ----
+// One topic per audit-detected visual cluster. The clusters were produced
+// offline by parallel agents that grouped cards which look so similar a
+// player will mistake one for the other (e.g. nine countries' Italian-style
+// triangular bollards, all painted white with red front reflectors).
+function confusionDrillTopics() {
+  return [{
+    id: '__confusion_drill_factory__',
+    label: '__factory__',
+    group: '__factory__',
+    hidden: true,
+    description: '',
+    mode: 'image_country',
+    buildPool: () => [],
+    factoryExpand(state) {
+      const drills = state.confusionDrills || [];
+      return drills.map(d => ({
+        id: `confusion_${d.id}`,
+        label: `🔀 Confused: ${d.label}`,
+        group: 'Confusion drills',
+        description: `${d.cards.length} lookalike cards from ${
+          new Set(d.cards.map(k => (k.match(/^country:([A-Z]+)/) || [])[1]))
+            .size
+        } countries — train yourself to tell them apart.`,
+        mode: 'image_country',
+        buildPool(state) {
+          const cards = [];
+          for (const k of d.cards) {
+            // Resolve cardKey → meta.
+            const m = k.match(/^country:([A-Z]+)(?::region:(.+):(\d+)|:(\d+))$/);
+            if (!m) continue;
+            const cc = m[1];
+            const c = state.tips[cc];
+            if (!c) continue;
+            let meta;
+            if (m[2] != null) {
+              meta = (c.regions?.[m[2]] || [])[parseInt(m[3], 10)];
+            } else {
+              meta = (c.metas || [])[parseInt(m[4], 10)];
+            }
+            if (!meta || !(meta.images || [])[0]) continue;
+            cards.push({
+              img: meta.images[0],
+              correctCcs: [cc],
+              description: meta.description || meta.text || '',
+              cardKey: k,
+            });
+          }
+          return cards;
+        },
+      }));
+    },
+  }];
 }
 
 // ---------- topic builders ----------
