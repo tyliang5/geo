@@ -4,16 +4,6 @@
     "reason": "country_name_in_image",
     "detected_text": "ARGENTINA / REPUBLICA ARGENTINA / DHN / OBBTAA 828 JL"
   },
-  "country:AU:0": {
-    "cc": "AU",
-    "reason": "country_name_in_image",
-    "detected_text": "F / B / F / B / B / F / AUS / TURKEY / NZ"
-  },
-  "country:PT:7": {
-    "cc": "PT",
-    "reason": "country_name_in_image",
-    "detected_text": "Cf8ata / Portugal"
-  },
   "country:BR:52": {
     "cc": "BR",
     "reason": "country_name_in_image",
@@ -73,11 +63,6 @@
     "cc": "FR",
     "reason": "country_name_in_image / reference_map",
     "detected_text": "Rare France Antennas infographic / plonkit net/guide"
-  },
-  "country:FR:23": {
-    "cc": "FR",
-    "reason": "country_name_in_image",
-    "detected_text": "Ville / Orly / AU: / Allee / DELA CrOU E / des / Bleuets / Wt / CHAMPIGAANuR / FRAMCASE | / ROUGF"
   },
   "country:GR:1": {
     "cc": "GR",
@@ -154,16 +139,6 @@
     "reason": "country_name_in_image",
     "detected_text": "Luro\" / Manlla / Philippines / u / C bu / icolod / Brocees Folit / Dunozutte Cagayan / Lnau_ / de Oro / Bsd / 0044n0 / Peqoflo / Meldnm / Davao / dalan / #ham / Moradt"
   },
-  "country:RO:0": {
-    "cc": "RO",
-    "reason": "country_name_in_image",
-    "detected_text": "HUNGARY / FOLAND / ROMANIA"
-  },
-  "country:RO:1": {
-    "cc": "RO",
-    "reason": "country_name_in_image",
-    "detected_text": "Ttaly / Romania / Serbia / Slovenia"
-  },
   "country:SK:5": {
     "cc": "SK",
     "reason": "country_name_in_image",
@@ -178,11 +153,6 @@
     "cc": "TR",
     "reason": "country_name_in_image",
     "detected_text": "F / B / F / B / B / F / AUS / TURKEY / NZ"
-  },
-  "country:TR:8": {
-    "cc": "TR",
-    "reason": "country_name_in_image",
-    "detected_text": "CAHit SITKI / SOKAK / KULTUR MAHALLESI TN 52"
   },
   "country:US:34": {
     "cc": "US",

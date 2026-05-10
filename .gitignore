@@ -21,4 +21,5 @@ extension/assets/img/lm/
 .DS_Store
 .idea/
 .vscode/
+.claude/
 *.swp

@@ -385,6 +385,10 @@ button.ghost:hover { background: var(--bg-elev); color: var(--fg); }
 .qimg-wrap.show-mask .qimg-mask { display: block; }
 .qimg-mask.disabled { opacity: 0; pointer-events: none; }
 .qimg-mask.no-inset { display: none !important; }
+/* Precomputed multi-masks. Skip the default ::after "click to show" so we
+ * don't repeat the message on every box; tooltip on each div explains. */
+.qimg-mask.qimg-mask-multi { display: block; }
+.qimg-mask.qimg-mask-multi::after { content: ''; }
 
 /* ============ Searchable picker (mobile-only replacement for native <select>) ============
  * The native iOS select wheel is unusable when there are 100+ options.

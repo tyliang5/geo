@@ -228,6 +228,32 @@ function applyMaskBox(maskEl, box) {
   maskEl.style.maxHeight = 'none';
 }
 
+// Render multiple precomputed mask boxes on the quiz image. Each box gets
+// its own div sitting on top of the photo. Tap/click any individual mask
+// to peek under just that one.
+function applyCardMasks(boxes) {
+  const wrap = document.querySelector('.qimg-wrap');
+  if (!wrap) return;
+  // Clear any existing multi-masks before rendering the new set.
+  wrap.querySelectorAll('.qimg-mask-multi').forEach(el => el.remove());
+  if (!boxes || !boxes.length) return;
+  for (const box of boxes) {
+    const div = document.createElement('div');
+    div.className = 'qimg-mask qimg-mask-multi';
+    div.title = box.reason || 'Click to reveal — covers a giveaway region';
+    div.style.left   = (box.x * 100).toFixed(2) + '%';
+    div.style.top    = (box.y * 100).toFixed(2) + '%';
+    div.style.width  = (box.w * 100).toFixed(2) + '%';
+    div.style.height = (box.h * 100).toFixed(2) + '%';
+    div.style.right = 'auto';
+    div.style.bottom = 'auto';
+    div.style.maxWidth = 'none';
+    div.style.maxHeight = 'none';
+    div.addEventListener('click', () => div.classList.toggle('disabled'));
+    wrap.appendChild(div);
+  }
+}
+
 // ---------- region groupings ----------
 const REGION_GROUPS = {
   // Continents
@@ -458,7 +484,7 @@ function setLeitnerBox(cc, idx, box) {
 const loadJson = (path) => fetch(path, { cache: 'no-cache' }).then(r => r.json());
 
 async function loadAll() {
-  const [tips, geojson, admin1, subregions, facts, reference, areaCodes, areaCodeNotes, countryAreaCodes, compendiumQuizzes, extras, ocrBlacklist, plonkitCovered, geoAliases] = await Promise.all([
+  const [tips, geojson, admin1, subregions, facts, reference, areaCodes, areaCodeNotes, countryAreaCodes, compendiumQuizzes, cardMasks, extras, ocrBlacklist, plonkitCovered, geoAliases] = await Promise.all([
     loadJson('data/tips.json'),
     loadJson('data/countries.geojson'),
     loadJson('data/admin1.geojson').catch(() => null),
@@ -469,6 +495,7 @@ async function loadAll() {
     loadJson('data/us_area_code_notes.json').catch(() => ({})),
     loadJson('data/country_area_codes.json').catch(() => ({})),
     loadJson('data/compendium_quizzes.json').catch(() => ({})),
+    loadJson('data/card_masks.json').catch(() => ({})),
     loadJson('data/meta_extras.json').catch(() => null),
     loadJson('data/giveaway_blacklist.json').catch(() => ({})),
     loadJson('data/plonkit_covered.json').catch(() => null),
@@ -484,6 +511,7 @@ async function loadAll() {
   state.areaCodeNotes = areaCodeNotes || {};
   state.countryAreaCodes = countryAreaCodes || {};
   state.compendiumQuizzes = compendiumQuizzes || {};
+  state.cardMasks = cardMasks || {};
   state.extras = extras;
   state.ocrBlacklist = ocrBlacklist || {};   // pre-built {cardKey: {reason, ...}}
   state.geoAliases = geoAliases || {};       // {cc: {phrase: [region names]}}
@@ -1789,17 +1817,33 @@ function presentNextCard() {
         maskEl.classList.remove('detected', 'no-inset');
       }
       if (showMask) {
-        // Auto-detect the inset's bbox in the actual image and reposition
-        // the mask over it. Falls back to default corner mask if detection
-        // finds nothing.
         const cardKey = quiz.card.cardKey;
-        const onLoad = () => {
-          if (quiz.card?.cardKey !== cardKey) return;   // card changed mid-flight
-          const box = detectInsetBox(imgEl);
-          applyMaskBox(maskEl, box);
-        };
-        if (imgEl.complete && imgEl.naturalWidth > 0) onLoad();
-        else imgEl.addEventListener('load', onLoad, { once: true });
+        // Prefer pre-computed mask boxes from card_masks.json (built by
+        // the visual-audit pipeline). They're more accurate than the
+        // runtime detector for non-rectangular giveaways like text
+        // watermarks. Falls back to runtime detector if no precomputed
+        // masks exist for this card.
+        const wrap = document.querySelector('.qimg-wrap');
+        wrap?.querySelectorAll('.qimg-mask-multi').forEach(el => el.remove());
+        const precomputed = state.cardMasks?.[cardKey];
+        if (precomputed?.boxes?.length) {
+          // Hide the legacy single-mask div; we'll render N divs ourselves.
+          maskEl.classList.add('no-inset');
+          applyCardMasks(precomputed.boxes);
+        } else {
+          // No precomputed masks → fall back to runtime inset detector.
+          const onLoad = () => {
+            if (quiz.card?.cardKey !== cardKey) return;
+            const box = detectInsetBox(imgEl);
+            applyMaskBox(maskEl, box);
+          };
+          if (imgEl.complete && imgEl.naturalWidth > 0) onLoad();
+          else imgEl.addEventListener('load', onLoad, { once: true });
+        }
+      } else {
+        // No mask should be shown — clean up any precomputed multi-masks
+        const wrap = document.querySelector('.qimg-wrap');
+        wrap?.querySelectorAll('.qimg-mask-multi').forEach(el => el.remove());
       }
     }
   }
