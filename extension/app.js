@@ -904,9 +904,23 @@ document.querySelectorAll('.tab').forEach(btn => {
 // ============================================================
 function populateCountrySelect() {
   const sel = $('country-select');
-  const sorted = [...state.countries].sort((a, b) =>
-    (state.tips[a]?.name || a).localeCompare(state.tips[b]?.name || b)
-  );
+  // Only list countries that have at least one quizzable card. A few
+  // plonkit-covered countries (Belarus, Iraq, Mali, Nepal, Tanzania, …)
+  // are listed in country_facts.json for completeness but ship zero
+  // metas — focusing on them produces an empty quiz pool with no
+  // actionable feedback for the user. Filter them out here.
+  const hasCards = cc => {
+    const c = state.tips[cc];
+    if (!c) return false;
+    if ((c.metas || []).some(m => (m.images || [])[0])) return true;
+    for (const arr of Object.values(c.regions || {})) {
+      if ((arr || []).some(e => (e.images || [])[0])) return true;
+    }
+    return false;
+  };
+  const sorted = [...state.countries]
+    .filter(hasCards)
+    .sort((a, b) => (state.tips[a]?.name || a).localeCompare(state.tips[b]?.name || b));
   sel.innerHTML = sorted.map(cc =>
     `<option value="${cc}">${flagEmoji(cc)} ${escapeHtml(state.tips[cc]?.name || cc)}</option>`
   ).join('');
@@ -1678,7 +1692,11 @@ function buildQuizPool() {
     if (!c?.metas?.length) continue;
     c.metas.forEach((m, i) => {
       if (!m.images?.[0]) return;
-      if (isRegionalMeta(m)) { skippedRegional++; return; }
+      // Regional filter only fires when the player hasn't picked a single
+      // country. When they HAVE picked one, narrow-locale cards
+      // ("commonly seen in the north") are valid — the player already
+      // knows the country, the regional cue is just extra study material.
+      if (!isCountryFocus && isRegionalMeta(m)) { skippedRegional++; return; }
       const cardKey = `country:${cc}:${i}`;
       if (blacklist.has(cardKey)) { skippedBlacklist++; return; }
       pool.push({
