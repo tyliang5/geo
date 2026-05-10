@@ -1492,9 +1492,14 @@ function buildQuizPool() {
       console.log(`[plonker] Filtered ${rawCards.length - cards.length} blacklisted cards from topic pool`);
     }
     return cards.map((c, i) => ({
-      mode: topic.mode,        // image_country | text_country | text_subregion | mc_text
-      topicId: topic.id,
-      countryCc: topic.countryCc || null,
+      // Prefer the card's own mode (set by mixed/factory topics like
+      // 📆 Recommended that pull cards from many sources) and only fall
+      // back to the topic's mode otherwise. Without this, a recommended
+      // mix topic stamps every card with mode: 'mixed', which the
+      // renderer can't draw — image hidden, text empty, just a map.
+      mode: c.mode || topic.mode,
+      topicId: c.topicId || topic.id,
+      countryCc: c.countryCc || topic.countryCc || null,
       img: c.img,
       text: c.text,
       subtext: c.subtext,
@@ -1507,9 +1512,9 @@ function buildQuizPool() {
       description: c.description || '',
       cardKey: c.cardKey,
       idx: i,
-      cc: (c.correctCcs && c.correctCcs[0]) || (c.highlightCcs && c.highlightCcs[0]) || topic.countryCc || null,
-      type: topic.label,
-      title: topic.label,
+      cc: (c.correctCcs && c.correctCcs[0]) || (c.highlightCcs && c.highlightCcs[0]) || c.countryCc || topic.countryCc || null,
+      type: c.type || topic.label,
+      title: c.title || topic.label,
     }));
   }
 
