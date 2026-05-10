@@ -139,6 +139,12 @@ const REGION_GROUPS_FOR_TIERS = {
 
 export function buildTopics() {
   return [
+    // ---- 📆 Recommended ----
+    // Mixes the weakest cards across ALL of your other topics into a single
+    // smart pool. Built from per-card stats, sorted by miss-rate. Empty
+    // until you've answered enough to have meaningful stats.
+    recommendedTopic(),
+
     // ---- Country flags ----
     // Flag image → click country on map. Always-loaded from flagcdn.com so
     // we don't have to bundle 130+ images. Includes a Starter pack of
@@ -353,6 +359,69 @@ export function buildTopics() {
 }
 
 // ---------- topic builders ----------
+
+// ---- 📆 Recommended quiz ----
+// The big shared smart-pool. Cards are pulled from EVERY other topic in
+// the registry, scored by your stored accuracy, and the worst-N are
+// returned mixed together. So one session blends weak area codes, weak
+// flags, weak bollards, etc. — whatever you've actually struggled with.
+//
+// We have to look up the topic registry at buildPool time (since topics
+// are built BEFORE this one in some recursive sense — this function is
+// called from inside buildTopics()). To avoid recursion we read
+// state.topics if it's been populated, otherwise return [].
+function recommendedTopic() {
+  return {
+    id: 'recommended_mix',
+    label: '📆 Recommended (smart mix of your weakest cards)',
+    group: '📆 Recommended',
+    description: 'Auto-built from your per-card stats. Pulls the cards you keep getting wrong from across ALL other topics — area codes, flags, bollards, languages, you name it. One blended session.',
+    mode: 'mixed',     // each card carries its own mode from the source topic
+    buildPool(state) {
+      let raw = {};
+      try { raw = JSON.parse(localStorage.getItem('plonker:card-stats')) || {}; }
+      catch {}
+      const allTopics = state.topics || [];
+      // Map: cardKey -> { card, accuracy, count, lastSeen }
+      const candidates = [];
+      const seen = new Set();
+      for (const t of allTopics) {
+        if (t.id === 'recommended_mix') continue;
+        if (t.mode === 'mixed') continue;   // skip self / other meta-topics
+        let pool;
+        try { pool = t.buildPool(state); } catch { continue; }
+        if (!pool || !pool.length) continue;
+        for (const c of pool) {
+          if (!c?.cardKey || seen.has(c.cardKey)) continue;
+          const s = raw[c.cardKey];
+          if (!s || s.count === 0) continue;     // skip unseen — recommended is review-only
+          const accuracy = s.hits / s.count;
+          if (accuracy >= 0.85 && s.count >= 3) continue;  // skip mastered
+          seen.add(c.cardKey);
+          // Tag the card with the source topic's mode + countryCc so the
+          // quiz engine knows how to render and grade it.
+          candidates.push({
+            ...c,
+            mode: t.mode,
+            topicId: t.id,
+            countryCc: t.countryCc || c.countryCc || null,
+            type: t.label,
+            title: t.label,
+            _accuracy: accuracy,
+            _count: s.count,
+            _lastSeen: s.lastSeen || 0,
+          });
+        }
+      }
+      // Sort: lowest accuracy first, ties broken by oldest lastSeen.
+      candidates.sort((a, b) =>
+        (a._accuracy - b._accuracy) ||
+        (a._lastSeen - b._lastSeen)
+      );
+      return candidates.slice(0, 40);
+    },
+  };
+}
 
 // ---- Country flags ----
 // Flag image → click country. Hand-curated starter set of the most

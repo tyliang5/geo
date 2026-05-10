@@ -3,7 +3,7 @@
 // Click-on-map quiz uses Leaflet + Natural Earth countries.geojson.
 
 // Cache-bust topics.js so dev edits show without a hard refresh.
-import { buildTopics } from './topics.js?v=14';
+import { buildTopics } from './topics.js?v=15';
 
 const SUPABASE_URL = 'https://qhudavmfhbumknqddgig.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_aGh_bbXqckmx-0DgaEySWg_9yyc_994';
@@ -817,6 +817,7 @@ function populateCountrySelect() {
   sel.innerHTML = sorted.map(cc =>
     `<option value="${cc}">${flagEmoji(cc)} ${escapeHtml(state.tips[cc]?.name || cc)}</option>`
   ).join('');
+  attachSearchablePicker(sel);
 }
 
 function populateTopicSelect() {
@@ -836,6 +837,7 @@ function populateTopicSelect() {
       }).join('')}
     </optgroup>
   `).join('');
+  attachSearchablePicker(sel);
 }
 
 function selectFocusCard(card) {
@@ -2584,6 +2586,133 @@ function populateRegionSelect() {
       ${grp.items.map(([key, label]) => `<option value="${key}">${escapeHtml(label)}</option>`).join('')}
     </optgroup>
   `).join('');
+  attachSearchablePicker(sel);
+}
+
+// ============================================================
+// Searchable picker — drop-in replacement for native <select> on touch
+// devices. Hides the underlying <select>, shows a button that opens a
+// fullscreen overlay with a search input + filtered options. The native
+// select still holds the current value, fires change events, etc., so
+// every existing handler keeps working.
+// ============================================================
+function attachSearchablePicker(sel) {
+  if (!sel || sel.dataset.spWired === '1') return;
+  sel.dataset.spWired = '1';
+  // Wrap the select in a parent we can flag with .has-sp so the CSS
+  // can hide the native select on touch devices.
+  let wrap = sel.parentElement;
+  if (!wrap?.classList.contains('has-sp')) {
+    const w = document.createElement('span');
+    w.className = 'has-sp';
+    w.style.display = 'block';
+    sel.parentElement.insertBefore(w, sel);
+    w.appendChild(sel);
+    wrap = w;
+  }
+  // The trigger button shows the currently-selected option's text.
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'sp-trigger';
+  const updateTrigger = () => {
+    const opt = sel.options[sel.selectedIndex];
+    trigger.textContent = opt ? opt.textContent.trim() : 'Select…';
+  };
+  updateTrigger();
+  wrap.appendChild(trigger);
+  sel.addEventListener('change', updateTrigger);
+  // Tapping the trigger opens the search overlay.
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    openSearchOverlay(sel);
+  });
+}
+
+let _spOverlay = null;
+function openSearchOverlay(sel) {
+  // Build (or reuse) the overlay DOM.
+  if (!_spOverlay) {
+    _spOverlay = document.createElement('div');
+    _spOverlay.className = 'sp-overlay hidden';
+    _spOverlay.innerHTML = `
+      <input type="search" class="sp-search" placeholder="Search…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="sp-list"></div>
+      <button type="button" class="sp-cancel">Cancel</button>
+    `;
+    document.body.appendChild(_spOverlay);
+  }
+  const overlay = _spOverlay;
+  const search = overlay.querySelector('.sp-search');
+  const list = overlay.querySelector('.sp-list');
+  const cancelBtn = overlay.querySelector('.sp-cancel');
+
+  // Build options grouped by optgroup label, with disabled state preserved.
+  const groups = [];
+  let currentGroup = { label: '', items: [] };
+  groups.push(currentGroup);
+  for (const child of sel.children) {
+    if (child.tagName === 'OPTGROUP') {
+      currentGroup = { label: child.label, items: [] };
+      groups.push(currentGroup);
+      for (const opt of child.children) {
+        currentGroup.items.push({
+          value: opt.value,
+          text: opt.textContent.trim(),
+          disabled: opt.disabled,
+          selected: opt.selected,
+        });
+      }
+    } else if (child.tagName === 'OPTION') {
+      groups[0].items.push({
+        value: child.value,
+        text: child.textContent.trim(),
+        disabled: child.disabled,
+        selected: child.selected,
+      });
+    }
+  }
+
+  const render = (q) => {
+    const needle = q.toLowerCase().trim();
+    list.innerHTML = '';
+    for (const grp of groups) {
+      const matched = grp.items.filter(it =>
+        !needle || it.text.toLowerCase().includes(needle));
+      if (!matched.length) continue;
+      if (grp.label) {
+        const lbl = document.createElement('div');
+        lbl.className = 'sp-optgroup-label';
+        lbl.textContent = grp.label;
+        list.appendChild(lbl);
+      }
+      for (const it of matched) {
+        const opt = document.createElement('div');
+        opt.className = 'sp-option';
+        if (it.disabled) opt.classList.add('disabled');
+        if (it.selected) opt.classList.add('selected');
+        opt.textContent = it.text;
+        opt.addEventListener('click', () => {
+          if (it.disabled) return;
+          sel.value = it.value;
+          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          close();
+        });
+        list.appendChild(opt);
+      }
+    }
+  };
+  const close = () => {
+    overlay.classList.add('hidden');
+    search.value = '';
+  };
+  cancelBtn.onclick = close;
+  overlay.onclick = (e) => { if (e.target === overlay) close(); };
+  search.oninput = () => render(search.value);
+
+  render('');
+  overlay.classList.remove('hidden');
+  // Defer focus so iOS doesn't fight the tap that opened the overlay
+  setTimeout(() => search.focus(), 50);
 }
 
 async function boot() {
