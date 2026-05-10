@@ -259,6 +259,20 @@ function renderMnemonic(cardKey) {
   return `<div class="qmnem">💡 ${escapeHtml(m)}</div>`;
 }
 
+// Some descriptions (notably area-code cards) bake their own 💡 mnemonic
+// into the description text with a `\n\n💡 …` separator. Pull it out so
+// it renders as its own .qmnem block instead of getting collapsed onto
+// the description's last line by the browser's whitespace rules.
+function splitInlineMnemonic(text) {
+  if (!text) return { mnemonic: '', body: text };
+  const m = text.match(/\n+💡\s*([^\n]+)\s*$/);
+  if (!m) return { mnemonic: '', body: text };
+  return {
+    mnemonic: m[1].trim(),
+    body: text.slice(0, m.index).trim(),
+  };
+}
+
 // Apply a detected mask box (or hide the mask entirely if no inset detected).
 function applyMaskBox(maskEl, box) {
   if (!maskEl) return;
@@ -2123,8 +2137,13 @@ function finishQuizAnswer({ isRight, score, clickedCc, clickedFid }) {
   const flagPrefix = (quiz.card.correctCcs && quiz.card.correctCcs.length === 1)
     ? flagEmoji(quiz.card.correctCcs[0]) + ' '
     : (quiz.card.cc ? flagEmoji(quiz.card.cc) + ' ' : '');
-  const mnemHtml = renderMnemonic(quiz.card.cardKey);
-  const descHtml = renderDescriptionWithRedactions(quiz.card.description || '', quiz.card.cardKey);
+  // Description may have an inline '\n\n💡 …' mnemonic (area-code cards
+  // build them this way). Split it out so it renders as its own styled
+  // block, not run-in to the prose.
+  const { mnemonic: inlineM, body } = splitInlineMnemonic(quiz.card.description || '');
+  const mnemHtml = renderMnemonic(quiz.card.cardKey)
+    || (inlineM ? `<div class="qmnem">💡 ${escapeHtml(inlineM)}</div>` : '');
+  const descHtml = renderDescriptionWithRedactions(body, quiz.card.cardKey);
   fb.innerHTML = `<strong>${flagPrefix}${verdict}</strong>${scoreLine}${mnemHtml}<br>${descHtml}`;
   $('quiz-next').hidden = false;
   updateQuizStats();
